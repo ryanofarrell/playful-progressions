@@ -1,9 +1,18 @@
 ---
 permalink: /about/
 title: ""
-
+layout: splash
 classes: wide
+author_profile: true
 ---
+
+<br />
+
+{% include figure
+    image_path="/assets/images/family.jpg"
+    alt="Me and my daughter"
+    class="align-left"
+%}
 
 Maria received her Bachelor of Health Science degree from the University of Florida in Gainesville, Florida. After working in customer service, Maria continued her education and received her Master’s of Science in Occupational Therapy degree from Florida Gulf Coast University in Fort Myers, Florida. Maria joined the PediaSpeech team in the fall of 2017.
 
@@ -13,4 +22,4 @@ In her free time, Maria enjoys watching college football (go gators!), hiking, r
 
 # Contact
 
-Always feel welcome to share your thoughts with me at [ryan@ryanof.com](mailto:ryan@ryanof.com)
+Feel free to reach out at [maria@pediaspeech.com](mailto:maria@pediaspeech.com) if you have any questions or thoughts!
