@@ -1,0 +1,8 @@
+## Serve local with live reload
+bundle exec jekyll serve --livereload
+
+# List processes running on specified port
+lsof -i tcp:4000
+
+# Kill process using pid
+kill <pid>
