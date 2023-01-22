@@ -6,3 +6,6 @@ lsof -i tcp:4000
 
 # Kill process using pid
 kill <pid>
+
+## Install everything in gemfile
+bundle install
