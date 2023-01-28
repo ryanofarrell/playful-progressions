@@ -14,11 +14,11 @@ author_profile: true
     class="align-left"
 %}
 
-Maria received her Bachelor of Health Science degree from the University of Florida in Gainesville, Florida. After working in customer service, Maria continued her education and received her Master’s of Science in Occupational Therapy degree from Florida Gulf Coast University in Fort Myers, Florida. Maria joined the PediaSpeech team in the fall of 2017.
+Hi there,
 
-Maria has several years of experience working with special needs children from working as a swim coach, a nanny and volunteering with community organizations. She has experience treating children with Autism Spectrum Disorder, Sensory Processing Disorder, Developmental Coordination Disorder, ADHD, Arthrogryposis, Ataxia, Cerebral Palsy, Down Syndrome, emotional regulation challenges, vision disorders, and Developmental Delay. Maria has completed extensive continuing education in sensory integration, reflex integration, Handwriting Without Tears, vision assessment and treatment, trauma informed care, and emotional regulation.
+I am Maria O’Farrell. I am a pediatric occupational therapist and first time mom. I am extremely passionate about development and often find myself wondering what signs of developmental delay, sensory processing disorders, and neurobiological disorders could have been recognized in utero and in early development. I am creating this blog to bridge the gap between parents and pediatric therapists alike and provide information and realistic suggestions for parents who are navigating the chaos of parenthood.
 
-In her free time, Maria enjoys watching college football (go gators!), hiking, reading, traveling and spending time with her daughter, husband and friends.
+I graduated with my BS in health sciences in 2014 and my MS in occupational therapy in 2017. I have been working in an outpatient pediatric clinic since and have tailored my continuing education primarily in sensory integration and reflex integration. With this level of clinical experience and education I hope to empower parents who are constantly battling their own intuition against their therapists’ suggestions and interpretation. Mothering and parenting are their own occupations and should be recognized as such. I hope this familial approach is beneficial, insightful, and humbling. Thanks for following along!
 
 # Contact
 
