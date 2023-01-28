@@ -4,4 +4,7 @@
 
 layout: home
 author_profile: true
+header:
+  image: /assets/images/header.jpeg
+  image_description: "Baby's feet"
 ---
