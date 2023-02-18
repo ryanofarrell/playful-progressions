@@ -1,9 +1,9 @@
 ---
 layout: single
 title: Sensory Processing Starts in the Womb
-date: 2023-01-07 08:03:00 -0400
+date: 2023-01-20 08:03:00 -0400
 categories: posts
-excerpt: Processing and organizing sensory input starts in utero.  This blog details the three primitive senses and how you can tell when your baby is using their sensory system.
+excerpt: Learn about the three primitive senses and how you can tell when your baby is using their sensory system in utero.
 classes: wide
 ---
 
