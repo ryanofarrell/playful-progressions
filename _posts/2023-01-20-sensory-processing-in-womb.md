@@ -5,7 +5,7 @@ date: 2023-01-20 08:03:00 -0400
 categories: posts
 excerpt: Learn about the three primitive senses and how you can tell when your baby is using their sensory system in utero.
 classes: wide
-tag: post
+tag: blog
 ---
 
 During a typical evaluation, I will ask parents the client’s pregnancy and birth history. Questions include whether there were prenatal or birth complications, if the child was born more than 2 weeks early or two weeks late, and if they required time in the NICU prior to discharge. While all of this information is important and pertinent to care, I am most excited about the extra information I get. Like when a mother will tell me how her baby was positioned in the womb and how it affected their movement as a newborn. Or when a mother tells me their child hated when she wore tight clothing, and are now very avoidant to any and all types of sensory input. I wholeheartedly believe that paying attention to our baby’s movement and patterns in utero can clue us in to their behaviors after birth.

@@ -5,7 +5,7 @@ date: 2023-04-19 08:03:00 -0400
 categories: posts
 excerpt: Here are some ways to facilitate 3-6 month development!
 classes: wide
-tag: post
+tag: blog
 ---
 
 _For 0-3 months [click here](2023-02-22-wake-windows-0-3-months)_

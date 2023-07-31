@@ -3,6 +3,8 @@ main:
     url: /
   - title: "5 Minute Friday"
     url: /5-minute-friday/
+  - title: "Blogs"
+    url: /blogs/
   - title: "About"
     url: /about/
   # - title: "Mind Map"
