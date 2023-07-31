@@ -31,3 +31,5 @@ Mardi gras (or party beads) are a great tool for any age. They are shiny, intere
 - Party beads are great for helping your toddler learn to put on a shirt overhead or step into pants and pull them up. Simply model putting the beads overhead or stepping into them, and have your child repeat. This encourages body awareness and uses motor learning to encourage independence in dressing skills.
 
 Enjoy this activity through the many stages of childhood! As parents, we can have fun and let our kids benefit from the party. I do recommend only playing with beads under adult supervision.
+
+_All 5 Minute Friday posts are available [here](/5-minute-friday)._

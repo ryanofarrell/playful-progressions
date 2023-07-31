@@ -35,3 +35,5 @@ Painters tape can be used on a variety of surfaces like a wall, tray, or even on
 - Visual motor skill development - Babies must see the tape, then form a motor plan to get to it, thus improving visual motor integration skills. These foundational skills are essential for handwriting and drawing later on.
 
 Enjoy this simple and fun activity with your little one! It can be repeated over and over again and never gets old!
+
+_All 5 Minute Friday posts are available [here](/5-minute-friday)._

@@ -5,6 +5,7 @@ date: 2023-03-10 08:03:00 -0400
 categories: posts
 excerpt: You may feel pressure to choose one method between baby led weaning and purees, but you do not have to! Both are packed with benefits for you and your baby.
 classes: wide
+tag: post
 ---
 
 No matter what way you slice it, feeding a baby is hard. Once your baby is 6 months old (baby’s gut really cannot handle food before then), sitting up unsupported for at least 5 seconds, and has great head control you can start feeding your baby solids. It may feel overwhelming and scary at first to know what and how to feed your baby. The great news is, you do not have to stick with any one program. Find what works best for your baby and run with it. Here are some reasons why I chose to do both baby led weaning and purees.

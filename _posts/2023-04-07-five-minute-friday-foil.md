@@ -31,3 +31,5 @@ Foil is best used for babies 6 months and up who are able to control their hands
 - Write “messages” draw pictures, letters, shapes, etc. on foil, then crumble it up.  Have your child open the foil and look at the message.  For older kiddos, you can have them copy the form you made inside.  This is great for fine motor coordination, bilateral coordination, visual motor integration, and grasping reflex integration.
 
 Foil can be fun for all ages, and not just in the kitchen!  It is packed with fine motor benefits for the whole family.
+
+_All 5 Minute Friday posts are available [here](/5-minute-friday)._

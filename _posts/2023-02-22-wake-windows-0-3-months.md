@@ -5,6 +5,7 @@ date: 2023-02-22 08:03:00 -0400
 categories: posts
 excerpt: You’ve fed them, you’ve burped them, you’ve changed them…now what?!  Here are some ways to fill those small but mighty wake windows in the newborn phase that are beneficial to you and your little one.
 classes: wide
+tag: post
 ---
 
 _For 3-6 months [click here](2023-04-19-wake-windows-3-6-months)_

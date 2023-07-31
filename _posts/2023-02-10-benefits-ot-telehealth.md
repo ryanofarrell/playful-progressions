@@ -5,6 +5,7 @@ date: 2023-02-10 08:03:00 -0400
 categories: posts
 excerpt: Prior to 2020, OT via teletherapy was unheard of. We’ve come a long way since then and have uncovered some undeniable benefits to teletherapy along the way.
 classes: wide
+tag: post
 ---
 
 _Original post [here](https://www.pediaspeech.com/5-benefits-of-doing-occupational-therapy-through-telehealth/)_
