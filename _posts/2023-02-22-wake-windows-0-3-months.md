@@ -7,6 +7,8 @@ excerpt: You’ve fed them, you’ve burped them, you’ve changed them…now wh
 classes: wide
 ---
 
+_For 3-6 months [click here](2023-04-19-wake-windows-3-6-months)_
+
 You’ve fed them, you’ve burped them, you’ve changed them…now what?! Here are some ways to fill those small but mighty wake windows in the newborn phase that are beneficial to you and your little one.
 
 1. **Infant massage** - Infant massage is such a sweet way to provide your baby with much needed tactile and proprioceptive input, as well as bond with your baby. Providing tactile input produces oxytocin for you and your baby, which promotes bonding and is a mood stabilizer. In addition, providing these types of sensory input help your baby develop body awareness. It also provides a calming effect and was very effective for us in the ‘witching hour.’ There is no right or wrong way to massage. I use our favorite lotion and start by gliding my hands gently over baby’s arms, then legs. Then I spend some time on those tiny toes and move the ankles through their full range of motion. This is especially helpful to work out any awkward positioning from their time in the womb. You can add in tummy massage to work through any gas or discomfort as well.
