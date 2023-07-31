@@ -1,7 +1,7 @@
 ---
 layout: single
 title: The Importance of Tummy Time
-date: 2023-07-10 08:03:00 -0400
+date: 2023-08-10 08:03:00 -0400
 categories: posts
 excerpt: Most parents know that tummy time is important, but many don't know why! Understanding the why behind the action is so important, and will encourage more consistency.
 classes: wide
