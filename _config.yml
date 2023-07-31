@@ -126,7 +126,7 @@ author:
       # url: "https://github.com/"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://instagram.com/maria.0t"
 
 # Site Footer
 footer:
@@ -268,10 +268,6 @@ compress_html:
     envs: development
 
 # Collections: mind map
-# collections:
-#   mindmap:
-#     output: true
-#     permalink: /:collection/:name/
 
 # Defaults
 defaults:
