@@ -1,8 +1,8 @@
 main:
   - title: "Home"
     url: /
-  - title: "Posts"
-    url: /posts/
+  - title: "5 Minute Friday"
+    url: /5-minute-friday/
   - title: "About"
     url: /about/
   # - title: "Mind Map"
