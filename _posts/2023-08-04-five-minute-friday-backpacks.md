@@ -9,7 +9,7 @@ tag: 5 minute friday
 ---
 
 
-It is never a bad idea to practice using a backpack! Backpacks are not just for school aged kids and are packed with several benefits beyond hauling your stuff!  Prepare for back-to-school with a backpack focused  5-minute Friday!
+It is never a bad idea to practice using a backpack! Backpacks are not just for school aged kids and are packed with several benefits beyond hauling your stuff!  Prepare for back-to-school with a backpack focused 5-minute Friday!
 
 - Backpacks are amazing to practice zippers!  Using a backpack is a great way to introduce the grasp pattern (lateral pinch) used for zippers.  Typically, backpacks have a variety of zippers to work with and explore.  The sooner you introduce zippers, the sooner your child will be able to manage their backpack, lunch box, and coat!
 - Stuffing a backpack with a blanket, toys, stuffed animals, anything really and having your child walk around with it is a great way to get in some ‘heavy work’ and provide the proprioceptive input they need to regulate.  Much like we find relief with a weighted blanket, your kiddos will feel more grounded doing some heavy work tasks.
