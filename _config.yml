@@ -11,13 +11,16 @@
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
 # theme: "minimal-mistakes-jekyll"
-#theme: jekyll-agency
-remote_theme: raviriley/agency-jekyll-theme
+theme: jekyll-agency
+# remote_theme: raviriley/agency-jekyll-theme
 # minimal_mistakes_skin: "air" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale: "en-US"
-title: "Maria, OT"
+logo: #optional, defaults to site title
+  path: assets\img\logo.jpg
+title: "Maria, OTTTT"
+
 title_separator: "-"
 subtitle: # site tagline that appears below site title in masthead
 name: "Maria O'Farrell"
@@ -99,57 +102,57 @@ analytics:
     tracking_id: G-QZZP1T1K0B
     anonymize_ip: true # true, false (default)
 
-# Site Author
-author:
-  name: "Maria O'Farrell, OTR/L"
-  avatar: "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  # bio              : "I am an **amazing** person."
-  location: "Atlanta, GA"
-  # email            :
-  links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/_ryanof"
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin"
-      # url: "https://www.linkedin.com/in/ryan-ofarrell/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/maria.0t"
+# # Site Author
+# author:
+#   name: "Maria O'Farrell, OTR/L"
+#   avatar: "/assets/images/profile.jpeg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+#   # bio              : "I am an **amazing** person."
+#   location: "Atlanta, GA"
+#   # email            :
+# links:
+#   - label: "Email"
+#     icon: "fas fa-fw fa-envelope-square"
+#     # url: "mailto:your.name@email.com"
+#   - label: "Website"
+#     icon: "fas fa-fw fa-link"
+#     # url: "https://your-website.com"
+#   - label: "Twitter"
+#     icon: "fab fa-fw fa-twitter-square"
+#     # url: "https://twitter.com/_ryanof"
+#   - label: "LinkedIn"
+#     icon: "fab fa-fw fa-linkedin"
+#     # url: "https://www.linkedin.com/in/ryan-ofarrell/"
+#   - label: "Facebook"
+#     icon: "fab fa-fw fa-facebook-square"
+#     # url: "https://facebook.com/"
+#   - label: "GitHub"
+#     icon: "fab fa-fw fa-github"
+#     # url: "https://github.com/"
+#   - label: "Instagram"
+#     icon: "fab fa-fw fa-instagram"
+#     url: "https://instagram.com/maria.0t"
 
 # Site Footer
-footer:
-  links:
-    - label: "Tweeeeeeeeeter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+# footer:
+#   links:
+#     - label: "Tweeeeeeeeeter"
+#       icon: "fab fa-fw fa-twitter-square"
+#       # url:
+#     - label: "Facebook"
+#       icon: "fab fa-fw fa-facebook-square"
+#       # url:
+#     - label: "GitHub"
+#       icon: "fab fa-fw fa-github"
+#       # url:
+#     - label: "GitLab"
+#       icon: "fab fa-fw fa-gitlab"
+#       # url:
+#     - label: "Bitbucket"
+#       icon: "fab fa-fw fa-bitbucket"
+#       # url:
+#     - label: "Instagram"
+#       icon: "fab fa-fw fa-instagram"
+#       # url:
 
 # Reading Files
 include:
