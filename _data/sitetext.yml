@@ -11,14 +11,14 @@
 # -----------------
 en: &DEFAULT_EN
   header:
-    title: Welcome to our Studio!
-    text: It's Nice To Meet You
-    button: Tell Me More
+    title: Pediatric Occupational Therapy
+    text: Helping kids thrive
+    button: What we offer
     buttonlink: "#services"
 
   services:
     title: "Services"
-    text: "Lorem ipsum"
+    text: "For yah kids"
     section: services
     list:
       - title: "Therapy"
