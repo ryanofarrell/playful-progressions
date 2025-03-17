@@ -2,6 +2,7 @@
 .btn {
   @include heading-font;
   font-weight: 700;
+  color: $white;
 }
 
 .btn-xl {
@@ -17,6 +18,36 @@
   &:hover {
     background-color: darken($primary, 7.5%) !important;
     border-color: darken($primary, 7.5%) !important;
+    color: white;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  }
+}
+.btn-secondary {
+  background-color: $secondary;
+  border-color: $secondary;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($secondary, 7.5%) !important;
+    border-color: darken($secondary, 7.5%) !important;
+    color: white;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+  }
+}
+.btn-action {
+  background-color: $action;
+  border-color: $action;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($action, 7.5%) !important;
+    border-color: darken($action, 7.5%) !important;
     color: white;
   }
   &:active,
