@@ -25,8 +25,8 @@ description: "Learnings from an Occupational Therapist and mother"
 author: "Maria O'Farrell"
 
 logo: #optional, defaults to site title
-  path: assets\img\logo.jpg
-  height: 80 #height in px, defaults to 52px
+  path: assets\img\logo2.png
+  height: 52 #height in px, defaults to 52px
 
 locale: "en-US" # See available languages in _data/sitetext.yml
 
