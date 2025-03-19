@@ -25,10 +25,14 @@ en: &DEFAULT_EN
     section: about
 
   testimonial:
-    title: "What parents say"
+    title: What parents say
     quotes:
-      text: "This is an example quote"
-      name: "Julia M"
+      - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
+        name: "Julia M"
+      - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
+        name: "Test name 2"
+      - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
+        name: "Test name 2"
 
   team:
     title: "Meet our Team"
