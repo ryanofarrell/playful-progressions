@@ -13,16 +13,14 @@ en: &DEFAULT_EN
   nav:
     - title: "About"
       section: about
+    - title: "Testimonials"
+      section: testimonial
     - title: "Team"
       section: team
     - title: "Services"
       section: services
-    - title: "Testimonials"
-      section: portfolio
     # - title: "Timeline"
     #   section: timeline
-    - title: "Contact"
-      section: contact
 en-US:
   <<: *DEFAULT_EN
 en-CA:
