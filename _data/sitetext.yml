@@ -24,6 +24,12 @@ en: &DEFAULT_EN
     body: "At Playful Progressions, we believe every child deserves the opportunity to grow, learn, and thrive through the power of play—the most important occupation of childhood! We are dedicated to creating a collaborative approach to therapy, working closely with families and schools to develop personalized strategies tailored to each child's unique needs. By focusing on the child's natural environment—whether at home or school—we ensure meaningful progress that enhances their development and success."
     section: about
 
+  testimonial:
+    title: "What parents say"
+    quotes:
+      text: "This is an example quote"
+      name: "Julia M"
+
   team:
     title: "Meet our Team"
     # text: "Owner"
@@ -54,11 +60,6 @@ en: &DEFAULT_EN
         desc: "Skilled, individualized occupational therapy treatment provided in the client’s natural environment.  Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
         icon: fa-solid fa-plane-up
 
-  portfolio:
-    title: "Portfolio"
-    text: "Lorem ipsum dolor sit amet consectetur."
-    section: portfolio
-    closebutton: "Close Project"
 
   timeline:
     title: "Timeline"
