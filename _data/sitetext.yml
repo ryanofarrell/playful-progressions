@@ -26,6 +26,7 @@ en: &DEFAULT_EN
 
   testimonial:
     title: What parents say
+    section: testimonial
     quotes:
       - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
         name: "Julia M"
