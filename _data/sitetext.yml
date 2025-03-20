@@ -67,14 +67,14 @@ en: &DEFAULT_EN
     list:
       - title: "Collaborative Consultations"
         desc: "Maria provides 45 minute virtual consultations/coaching sessions for caregivers, other providers, and schools.  These sessions are designed to provide individualized guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
-        image: assets/img/smiling-crawling-baby.png
+        image: assets/img/baby-playing-game.png
         icon: fas fa-clipboard #find more at https://fontawesome.com/icons
       - title: "Occupational Therapy Evaluation"
         desc: "Comprehensive occupational therapy evaluation including standard assessment, skilled observations, parent interview and plan of care development with full write up (60-90 minutes)"
-        image: assets/img/baby-playing-game.png
+        image: assets/img/baby-crawling.png
         icon: fas fa-notes-medical
       - title: "Occupational Therapy Intervention"
-        image: assets/img/baby-crawling.png
+        image: assets/img/kid-ot-playing.png
         desc: "Skilled, individualized occupational therapy treatment provided in the client’s natural environment.  Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
         icon: fa-solid fa-plane-up
 
