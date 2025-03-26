@@ -2,16 +2,18 @@
 # Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 header:
   title: Playful Progressions Therapy
-  text: Nurturing Development Through Play
-  button1: Book Now
-  buttonlink1: "https://calendly.com/playfulprogressions-info/phone-consultation"
-  button2: Learn More
-  buttonlink2: "#services"
+  subtitle: Nurturing Development Through Play
+  buttons:
+    - label: Book Now
+      link: "#book"
+      class: btn-action
+    - label: Learn More
+      link: "#services"
 
 about:
   section: about
   title: "Pediatric Occupational Therapy"
-  text: "Nurturing Development Through Play"
+  subtitle: "Nurturing Development Through Play"
   body: "At Playful Progressions, we believe every child deserves the opportunity to grow, learn, and thrive through the power of play—the most important occupation of childhood! We are dedicated to creating a collaborative approach to therapy, working closely with families and schools to develop personalized strategies tailored to each child's unique needs. By focusing on the child's natural environment—whether at home or school—we ensure meaningful progress that enhances their development and success."
 
 testimonial:
@@ -67,6 +69,10 @@ services:
       image: assets/img/kid-ot-playing.png
       desc: "Skilled, individualized occupational therapy treatment provided in the client’s natural environment.  Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
       icon: fa-solid fa-plane-up
+
+book:
+  title: "Book"
+  subtitle: "Schedule your free consultation today!"
 
 
 footer:

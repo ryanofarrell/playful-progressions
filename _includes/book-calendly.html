@@ -1,12 +1,8 @@
 <!-- Book -->
-<section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
+<section class="page-section" id="{{ site.data.sitetext.book.section | default: "book" }}">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.title | default: "About Us" }}</h2>
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext.text | default: "" }}</h3>
-      </div>
-    </div>
+    <!-- Section header include -->
+    {% include _section_header title=site.data.sitetext.book.title subtitle=site.data.sitetext.book.subtitle %}
     <!-- Calendly inline widget begin -->
     <div
       class="calendly-inline-widget"
