@@ -6,9 +6,9 @@ header:
   buttons:
     - label: Book Now
       link: "#book"
-      class: btn-action
-    - label: Learn More
-      link: "#services"
+      class: btn-primary
+    # - label: Learn More
+    #   link: "#services"
 
 about:
   section: about
@@ -28,14 +28,13 @@ testimonial:
       name: "Test name 2"
 
 team:
-  title: "Meet our Team"
-  # text: "Owner"
-  subtext: "**Hi, I'm Maria O'Farrell, MS, OTR/L**, a passionate pediatric occupational therapist and the proud owner of Playful Progressions! With over eight years of experience, I've had the privilege of working with children and adolescents (ages 0-21) in various settings, including outpatient clinics, homes, and schools. \n
-
-  At Playful Progressions, I provide comprehensive occupational therapy evaluations and personalized interventions in homes and schools, ensuring that each child receives the support they need in a familiar and comfortable environment. My approach is rooted in collaboration, practicality, and kindness—I believe in offering individualized, judgment-free guidance to families navigating sensory differences and developmental milestones. \n
-
-  I'm dedicated to helping children build confidence, independence, and essential life skills through play-based, engaging therapy. I'd love to be part of your child's journey!"
   section: team
+  title: "Meet our Team"
+  subtitle: "Caring, experienced, engaging therapy"
+  subtext:
+    "**Hi, I'm Maria O'Farrell, MS, OTR/L**, a passionate pediatric occupational therapist and the proud owner of Playful Progressions! With over eight years of experience, I've had the privilege of working with children and adolescents (ages 0-21) in various settings, including outpatient clinics, homes, and schools. \n\n
+    At Playful Progressions, I provide comprehensive occupational therapy evaluations and personalized interventions in homes and schools, ensuring that each child receives the support they need in a familiar and comfortable environment. My approach is rooted in collaboration, practicality, and kindness—I believe in offering individualized, judgment-free guidance to families navigating sensory differences and developmental milestones. \n\n
+    I'm dedicated to helping children build confidence, independence, and essential life skills through play-based, engaging therapy. I'd love to be part of your child's journey!"
   people:
     - name: "Maria O'Farrell"
       role: "Owner"
@@ -50,7 +49,6 @@ team:
     - Astronaut Training
     - Torticollis and Plagiocephaly
     - Feeding Therapy
-
 
 services:
   title: "Services"
@@ -73,7 +71,6 @@ services:
 book:
   title: "Book"
   subtitle: "Schedule your free consultation today!"
-
 
 footer:
   legal: "Privacy Policy"

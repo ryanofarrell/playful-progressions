@@ -25,6 +25,8 @@
           <li class="nav-item">
             {%- if link.url -%}
               <a class="nav-link js-scroll-trigger" href="{{ link.url }}">{{ link.title }}</a>
+            {%- elsif link.button -%}
+              <a class="btn nav-button {{ button.class | default: "btn-action" }} btn-m text-uppercase js-scroll-trigger m-2" href="#{{ link.section }}">{{ link.title }}</a>
             {%- elsif link.section -%}
               <a class="nav-link js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
             {%- else -%}

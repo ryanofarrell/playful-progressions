@@ -1,12 +1,8 @@
 <!-- Testimonial -->
 <section class="page-section" id="{{ site.data.sitetext.testimonial.section | default: "about" }}">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.testimonial.title | default: "About Us" }}</h2>
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext.testimonial.subtitle | default: "" }}</h3>
-      </div>
-    </div>
+    <!-- Section header include -->
+    {% include _section_header title=site.data.sitetext.testimonial.title subtitle=site.data.sitetext.testimonial.subtitle %}
     <div class="row">
       {% for obj in site.data.sitetext.testimonial.quotes %}
         <div class="col-md-4 col-sm-6 portfolio-item">

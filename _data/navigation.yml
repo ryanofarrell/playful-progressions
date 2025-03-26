@@ -10,3 +10,4 @@ nav:
   - title: "Book"
     section: book
     button: true
+    button-class: btn-primary
