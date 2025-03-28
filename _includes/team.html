@@ -26,11 +26,19 @@
         </div>
       {% endfor %}
     </div>
-    <div class="row">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="large text-muted">{{ site.data.sitetext.team.subtext | markdownify }}</div>
+    <!-- Traning Section -->
+    <div class="col text-center" id="training">
+      <h2 class="section-subheading ">Specialty Areas:</h2>
+      <div class="row justify-content-center">
+        {% for topic in site.data.sitetext.team.training %}
+          <div class="mx-2 my-2 col-auto topic justify-items-center">
+            {{ topic }}
+          </div>
+        {% endfor %}
       </div>
     </div>
+
+
   </div>
 </section>
 <!-- End Team -->

@@ -1,0 +1,28 @@
+// Styling for the services section
+.service-heading {
+  margin: 15px 0;
+  text-transform: none;
+}
+
+.service-image {
+  font-size: 4em;
+  margin-bottom: 15px;
+  img {
+    width: 85%;
+    height: auto;
+    border: 1px solid fade-out($black, 0.9);
+  }
+
+}
+
+// For id=training, put a border around
+#training {
+  // for divs within, put a red border
+  div.topic {
+    background-color: $secondary;
+    padding: 14px;
+    font-size: 1.05em;
+    color: $white;
+    border-radius: 10px;
+  }
+}

@@ -20,8 +20,8 @@ testimonial:
   section: testimonial
   title: What parents say
   quotes:
-    - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
-      name: "Julia M"
+    - text: "Mrs. Maria is an angel on earth! My daughter has dyspraxia and speech apraxia - what Maria did with my daughter's progress in a year is TRULY REMARKABLE!!!! Mrs. Maria is the exact type of person that you want your child to be with because her warmth coupled with her ability to make everything fun - while also learning - is a gift unlike anything I have ever seen! <b>I can not recommend Mrs. Maria enough!</b>"
+      name: "Emily & 4yo Daughter"
     - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
       name: "Test name 2"
     - text: "This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. This is example quote 2. "
@@ -39,7 +39,6 @@ team:
     - name: "Maria O'Farrell"
       role: "Owner"
       image: assets/img/maria_headshot.jpeg
-  training-lead-in: "I have formal training in:"
   training:
     - Sensory Integration
     - Neurodevelopmental Treatment (NDT) strategies
@@ -52,7 +51,7 @@ team:
 
 services:
   title: "Services"
-  # text: "For yah kids"
+  subtitle: "A full suite of pediatric therapy needs"
   section: services
   list:
     - title: "Collaborative Consultations"
@@ -70,7 +69,8 @@ services:
 
 book:
   title: "Book"
-  subtitle: "Schedule your free consultation today!"
+  section: book
+  subtitle: "Speak with Maria to determine the best course for your child"
 
 footer:
   legal: "Privacy Policy"
