@@ -17,11 +17,32 @@
   {% endfor %}
 {% endif %}
 
+@function custom-lighten($color, $amount) {
+  // Extract the RGB values from the color
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  // Lighten the color by adjusting its brightness
+  $lightened-color: rgb($red + $amount, $green + $amount, $blue + $amount);
+  
+  @return $lightened-color;
+}
+
+@function custom-opacity($color, $opacity) {
+  @if $opacity < 0 or $opacity > 1 {
+    @warn "Opacity value should be between 0 and 1. Using 1 as the default.";
+    $opacity: 1; // Default opacity if an invalid value is provided
+  }
+
+  @return rgba($color, $opacity);
+}
+
 // Custom colors
 $primary: {{ site.data.style.primary | default: "#E16473" }} !default;
-$lightened-primary: mix($primary, white, 50%);
+$lightened-primary: custom-lighten($primary, 30); // Lighten by 30
 $secondary: {{ site.data.style.secondary | default: "#fff" }} !default;
-$lightened-secondary: lighten($secondary, 50%);
+$lightened-secondary: custom-opacity($secondary, 0.2);
 $action: {{ site.data.style.action | default: "#fff" }} !default;
 $white: {{ site.data.style.white | default: "#fff" }} !default;
 $black: {{ site.data.style.black | default: "#000000" }} !default;
