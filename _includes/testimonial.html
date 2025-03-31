@@ -3,20 +3,10 @@
   <div class="container">
     <!-- Section header include -->
     {% include _section_header title=site.data.sitetext.testimonial.title subtitle=site.data.sitetext.testimonial.subtitle %}
-    <div class="row">
-      {% for obj in site.data.sitetext.testimonial.quotes %}
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <div class="portfolio-caption">
-            <p class="large text-muted">"{{ obj.text }}"</p>
-            <h4>{{ obj.name }}</h4>
-          </div>
-        </div>
-      {% endfor %}
-    </div>
 
     <div
       id="testimonial-carousel"
-      class="carousel slide"
+      class="carousel slide h-md-300px h-500px "
       data-ride="carousel">
       <ol class="carousel-indicators">
         {% for obj in site.data.sitetext.testimonial.quotes %}
@@ -28,16 +18,18 @@
             {% endif %}></li>
         {% endfor %}
       </ol>
-      <div class="carousel-inner ">
+      <div class="carousel-inner px-5 h-100 w-80 mx-auto">
         {% for obj in site.data.sitetext.testimonial.quotes %}
           <div class="carousel-item {% if forloop.first %} active {% endif %}">
-            <p>{{ obj.text }}</p>
-            <h4>{{ obj.name }}</h4>
+            <blockquote class="blockquote">
+              <p class="text text-muted fs-2">"{{ obj.text }}"</p>
+              <footer class="blockquote-footer">{{ obj.name }}</footer>
+            </blockquote>
           </div>
         {% endfor %}
       </div>
       <a
-        class="carousel-control-prev"
+        class="carousel-control-prev carousel-control"
         href="#testimonial-carousel"
         role="button"
         data-slide="prev">
@@ -47,7 +39,7 @@
         <span class="sr-only">Previous</span>
       </a>
       <a
-        class="carousel-control-next"
+        class="carousel-control-next carousel-control"
         href="#testimonial-carousel"
         role="button"
         data-slide="next">

@@ -2,7 +2,8 @@
 ---
 @charset "utf-8";
 // Core variables and mixins
-@import "base/variables.scss";
+@import "base/_variables";
+@import "base/custom_utilities";
 @import "base/mixins.scss";
 
 // Custom Fonts
@@ -18,7 +19,9 @@
 
 // Custom colors
 $primary: {{ site.data.style.primary | default: "#E16473" }} !default;
+$lightened-primary: mix($primary, white, 50%);
 $secondary: {{ site.data.style.secondary | default: "#fff" }} !default;
+$lightened-secondary: lighten($secondary, 50%);
 $action: {{ site.data.style.action | default: "#fff" }} !default;
 $white: {{ site.data.style.white | default: "#fff" }} !default;
 $black: {{ site.data.style.black | default: "#000000" }} !default;
@@ -44,4 +47,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/team.scss";
 @import "layout/contact.scss";
 @import "layout/footer.scss";
-@import "layout/_testimonial.scss"
+@import "layout/_testimonial.scss";
+
+
+// Finally, import bootstrap here
+@import "bootstrap.min.css";
