@@ -1,0 +1,13 @@
+nav:
+  - title: "About"
+    section: about
+  - title: "Testimonials"
+    section: testimonial
+  - title: "Team"
+    section: team
+  - title: "Services"
+    section: services
+  - title: "Book"
+    section: book
+    button: true
+    button-class: btn-primary

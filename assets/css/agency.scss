@@ -1,0 +1,75 @@
+---
+---
+@charset "utf-8";
+// Core variables and mixins
+@import "base/_variables";
+@import "base/custom_utilities";
+@import "base/mixins.scss";
+
+// Custom Fonts
+{% if site.data.style.fonts %}
+  {% for font in site.data.style.fonts %}
+    @mixin {{font.for}}-font {
+      font-family: "{{ font.name }}", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+  {% endfor %}
+{% endif %}
+
+@function custom-lighten($color, $amount) {
+  // Extract the RGB values from the color
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+
+  // Lighten the color by adjusting its brightness
+  $lightened-color: rgb($red + $amount, $green + $amount, $blue + $amount);
+  
+  @return $lightened-color;
+}
+
+@function custom-opacity($color, $opacity) {
+  @if $opacity < 0 or $opacity > 1 {
+    @warn "Opacity value should be between 0 and 1. Using 1 as the default.";
+    $opacity: 1; // Default opacity if an invalid value is provided
+  }
+
+  @return rgba($color, $opacity);
+}
+
+// Custom colors
+$primary: {{ site.data.style.primary | default: "#E16473" }} !default;
+$lightened-primary: custom-lighten($primary, 30); // Lighten by 30
+$secondary: {{ site.data.style.secondary | default: "#fff" }} !default;
+$lightened-secondary: custom-opacity($secondary, 0.2);
+$action: {{ site.data.style.action | default: "#fff" }} !default;
+$white: {{ site.data.style.white | default: "#fff" }} !default;
+$black: {{ site.data.style.black | default: "#000000" }} !default;
+
+// Custom Images
+$header-image: "{{ site.data.style.header-image }}";
+$contact-image: "{{ site.data.style.contact-image }}";
+
+// Global CSS
+@import "base/page.scss";
+
+// Components
+@import "components/buttons.scss";
+@import "components/navbar.scss";
+@import "components/client-scroll.scss";
+
+// Layout
+@import "layout/masthead.scss";
+@import "layout/services.scss";
+@import "layout/training.scss";
+@import "layout/portfolio.scss";
+@import "layout/timeline.scss";
+@import "layout/team.scss";
+@import "layout/contact.scss";
+@import "layout/footer.scss";
+@import "layout/_testimonial.scss";
+
+
+// Finally, import bootstrap here
+@import "bootstrap.min.css";

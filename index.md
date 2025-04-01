@@ -3,8 +3,5 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-author_profile: true
-header:
-  image: /assets/images/header.jpeg
-  image_description: "Baby's feet"
+
 ---

@@ -1,0 +1,29 @@
+// Styling for the team section
+.carousel {
+  background-color: $lightened-secondary;
+  // width: 100%;
+  text-align: center;
+  align-items: center;
+  .carousel-inner {
+    // background-color: yellow;
+    align-content: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .carousel-arrow {
+    color: $primary;
+    font-size: 50px;
+  }
+  .carousel-control {
+    width: 10%;
+  }
+  ol.carousel-indicators {
+    bottom: 0;
+  }
+  .carousel-indicators li {
+    background-color: $secondary;
+  }
+  .carousel-indicators li.active {
+    background-color: $secondary;
+  }
+}

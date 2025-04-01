@@ -1,0 +1,18 @@
+<!-- Book -->
+<section class="page-section" id="{{ site.data.sitetext.book.section | default: "book" }}">
+  <div class="container">
+    <!-- Section header include -->
+    {% include _section_header title=site.data.sitetext.book.title subtitle=site.data.sitetext.book.subtitle %}
+    <!-- Calendly inline widget begin -->
+    <div
+      class="calendly-inline-widget"
+      data-url="https://calendly.com/playfulprogressions-info/phone-consultation"
+      style="min-width:320px;height:700px;"></div>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async></script>
+  <!-- Calendly inline widget end -->
+  </div>
+</section>
+<!-- End About -->
