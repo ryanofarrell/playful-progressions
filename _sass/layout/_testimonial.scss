@@ -9,6 +9,14 @@
     align-content: center;
     padding-top: 50px;
     padding-bottom: 50px;
+    .carousel-item {
+      align-items: center !important;
+      justify-content: center !important;
+      text-align: center;
+      align-self: center;
+      justify-items: center;
+      align-content: center;
+    }
   }
   .carousel-arrow {
     color: $primary;
