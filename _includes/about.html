@@ -8,6 +8,20 @@
         <div class="large text-muted">{{ site.data.sitetext.about.body | markdownify }}</div>
       </div>
     </div>
+    <!-- Traning Section -->
+    <div class="col text-center mx-auto mt-4" id="location">
+      <div class="row my-4 justify-content-center align-items-center">
+        <i class="fas fa-map-marker fa-2x mr-4 text-muted" aria-hidden="true"></i>
+        <h2 class="section-subheading mb-0 text-muted">{{ site.data.sitetext.about.location }}</h2>
+      </div>
+      <div class="row justify-content-center">
+        {% for hood in site.data.sitetext.about.neighborhoods %}
+          <div class="mx-2 my-2 col-auto topic justify-items-center">
+            {{ hood }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </section>
 <!-- End About -->
