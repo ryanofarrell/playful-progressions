@@ -249,3 +249,28 @@ $font-sizes: (
         }
     }
 }
+
+// Gap-x and Gap-y Utilities Generator (Single Block)
+@each $breakpoint, $bpSize in $breakpoints {
+    @if $bpSize == 0 {
+        @each $key, $value in $spacings {
+            .gap-x-#{$key} > * + * {
+                margin-left: #{$value} !important;
+            }
+            .gap-y-#{$key} > * + * {
+                margin-top: #{$value} !important;
+            }
+        }
+    } @else {
+        @media (min-width: #{$bpSize}) {
+            @each $key, $value in $spacings {
+                .gap-x-#{$breakpoint}-#{$key} > * + * {
+                    margin-left: #{$value} !important;
+                }
+                .gap-y-#{$breakpoint}-#{$key} > * + * {
+                    margin-top: #{$value} !important;
+                }
+            }
+        }
+    }
+}

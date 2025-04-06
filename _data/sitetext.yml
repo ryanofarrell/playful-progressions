@@ -23,6 +23,21 @@ about:
     - Sandy Springs
     - Dunwoody
     - Midtown
+  what-we-treat:
+    - title: Infants
+      items:
+        - Sensory processing and regulation
+        - Bodywork for movement and alignment
+        - Torticollis and plagiocephaly treatment
+        - Reflex integration for early motor development
+    - title: Toddlers & Young Children
+      items:
+        - Fine and gross motor skill development
+        - Sensory integration and self-regulation
+        - Handwriting and school-related tasks
+        - Activities of daily living (dressing, feeding, hygiene)
+        - Coordination, balance, and motor planning
+        - Social skills and emotional regulation
 
 testimonial:
   section: testimonial
