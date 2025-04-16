@@ -3,6 +3,22 @@
   <div class="container">
     <!-- Section header include -->
     {% include _section_header title=site.data.sitetext.book.title subtitle=site.data.sitetext.book.subtitle %}
+    <!-- Contact info -->
+    <div class="border p-4 rounded bg-light text-center gap-y-5">
+      <p class="h4">
+        <a href="tel:{{ site.phone-numeric }}" class="h4">
+          <i class="fas fa-phone-alt fa-lg mr-3"></i>
+          {{ site.phone-text }}</a>
+      </p>
+      <p class="h4">
+        <a href="mailto:{{ site.email }}" class="h4">
+          <i class="fas fa-envelope fa-lg mr-3"></i>
+          {{ site.email }}</a>
+      </p>
+    </div>
+    <div class="mt-5 text-center text-muted">
+      <h5>Or, schedule time with Maria below!</h5>
+    </div>
     <!-- Calendly inline widget begin -->
     <div
       class="calendly-inline-widget"
