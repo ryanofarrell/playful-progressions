@@ -4,7 +4,7 @@ header:
   title: Playful Progressions Therapy
   subtitle: Nurturing Development Through Play
   buttons:
-    - label: Book Now
+    - label: Contact Maria
       link: "#book"
       class: btn-primary
     # - label: Learn More
@@ -52,7 +52,7 @@ testimonial:
 
 team:
   section: team
-  title: "Meet our Team"
+  title: "Meet Maria"
   subtitle: "Caring, experienced, engaging therapy"
   subtext:
     "**Hi, I'm Maria O'Farrell, MS, OTR/L**, a passionate pediatric occupational therapist and the proud owner of Playful Progressions! With over eight years of experience, I've had the privilege of working with children and adolescents (ages 0-21) in various settings, including outpatient clinics, homes, and schools. \n\n
@@ -77,21 +77,21 @@ services:
   subtitle: "A full suite of pediatric therapy needs"
   section: services
   list:
-    - title: "Collaborative Consultations"
-      desc: "Maria provides 45 minute virtual consultations/coaching sessions for caregivers, other providers, and schools.  These sessions are designed to provide individualized guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
-      image: assets/img/baby-playing-game.png
-      icon: fas fa-clipboard #find more at https://fontawesome.com/icons
-    - title: "Occupational Therapy Evaluation"
+    - title: "Initial Evaluation"
       desc: "Comprehensive occupational therapy evaluation including standard assessment, skilled observations, parent interview and plan of care development with full write up (60-90 minutes)"
       image: assets/img/baby-crawling.png
       icon: fas fa-notes-medical
-    - title: "Occupational Therapy Intervention"
+    - title: "OT Treatment"
       image: assets/img/kid-ot-playing.png
-      desc: "Skilled, individualized occupational therapy treatment provided in the client’s natural environment.  Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
+      desc: "Skilled, individualized occupational therapy treatment provided in the client's natural environment (home/school). Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
       icon: fa-solid fa-plane-up
+    - title: "Consultations"
+      desc: "Virtual consultations/coaching sessions for caregivers, other providers, and schools. Sessions are designed to provide guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
+      image: assets/img/baby-playing-game.png
+      icon: fas fa-clipboard #find more at https://fontawesome.com/icons
 
 book:
-  title: "Book"
+  title: "Contact"
   section: book
   subtitle: "Speak with Maria to determine the best course for your child"
 
