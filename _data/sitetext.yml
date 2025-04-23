@@ -61,7 +61,7 @@ team:
   people:
     - name: "Maria O'Farrell"
       role: "Owner"
-      image: assets/img/maria_headshot.png
+      image: assets/img/maria_headshot.avif
   training:
     - Sensory Integration
     - Neurodevelopmental Treatment (NDT) strategies
