@@ -79,15 +79,15 @@ services:
   list:
     - title: "Initial Evaluation"
       desc: "Comprehensive occupational therapy evaluation including standard assessment, skilled observations, parent interview and plan of care development with full write up (60-90 minutes)"
-      image: assets/img/baby-crawling.png
+      image: assets/img/baby-crawling.avif
       icon: fas fa-notes-medical
     - title: "OT Treatment"
-      image: assets/img/kid-ot-playing.png
+      image: assets/img/kid-ot-playing.avif
       desc: "Skilled, individualized occupational therapy treatment provided in the client's natural environment (home/school). Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
       icon: fa-solid fa-plane-up
     - title: "Consultations"
       desc: "Virtual consultations/coaching sessions for caregivers, other providers, and schools. Sessions are designed to provide guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
-      image: assets/img/baby-playing-game.png
+      image: assets/img/baby-playing-game.avif
       icon: fas fa-clipboard #find more at https://fontawesome.com/icons
 
 book:
