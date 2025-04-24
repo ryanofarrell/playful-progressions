@@ -38,15 +38,19 @@
   {% if site.data.style.fonts_urls %}
     {% for font_url in site.data.style.fonts_urls %}
       <link
-        href="{{font_url}}"
-        rel="stylesheet"
-        type="text/css">
+        rel="preload"
+        href="{{ font_url }}"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+        crossorigin="anonymous">
+      <noscript>
+        <link
+          href="{{ font_url }}"
+          rel="stylesheet"
+          type="text/css">
+      </noscript>
     {% endfor %}
   {% else %}
-    <link
-      href="assets/css/all.min.css"
-      rel="stylesheet"
-      type="text/css">
     <link
       href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
       rel="stylesheet"
