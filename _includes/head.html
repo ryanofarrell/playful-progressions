@@ -29,45 +29,90 @@
 
   <!-- Bootstrap core CSS -->
   <!-- link href="assets/css/bootstrap.min.css" rel="stylesheet" / -->
+  <style>
+    /* Masthead styles */
+    header.masthead {
+      text-align: center;
+      color: white;
+      background-image: url('{{ "/assets/img/masthead.avif" | relative_url }}');
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center center;
+      background-size: cover;
+    }
+
+    header.masthead .intro-text {
+      padding-top: 150px;
+      padding-bottom: 100px;
+    }
+
+    header.masthead .intro-lead-in {
+      font-size: 22px;
+      font-style: italic;
+      line-height: 22px;
+      margin-bottom: 25px;
+      font-family: "Droid Serif"
+      , Georgia
+      , serif;
+    }
+
+    header.masthead .intro-heading {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 40px;
+      margin-bottom: 25px;
+      font-family: "Montserrat"
+      , -apple-system
+      , BlinkMacSystemFont
+      , "Segoe UI"
+      , Roboto
+      , "Helvetica Neue"
+      , Arial
+      , sans-serif
+      , "Apple Color Emoji"
+      , "Segoe UI Emoji"
+      , "Segoe UI Symbol"
+      , "Noto Color Emoji";
+    }
+
+    @media (min-width: 768px) {
+      header.masthead .intro-text {
+        padding-top: 300px;
+        padding-bottom: 200px;
+      }
+
+      header.masthead .intro-lead-in {
+        font-size: 40px;
+        line-height: 40px;
+      }
+
+      header.masthead .intro-heading {
+        font-size: 50px;
+        line-height: 50px;
+        margin-bottom: 50px;
+      }
+    }
+  </style>
 
   <!-- Custom fonts for this template -->
   <link
     href="assets/css/all.min.css"
     rel="stylesheet"
     type="text/css">
-  {% if site.data.style.fonts_urls %}
-    {% for font_url in site.data.style.fonts_urls %}
+  {% for font_url in site.data.style.fonts_urls %}
+    <link
+      rel="preload"
+      href="{{ font_url }}"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      crossorigin="anonymous">
+    <noscript>
       <link
-        rel="preload"
         href="{{ font_url }}"
-        as="style"
-        onload="this.onload=null;this.rel='stylesheet'"
-        crossorigin="anonymous">
-      <noscript>
-        <link
-          href="{{ font_url }}"
-          rel="stylesheet"
-          type="text/css">
-      </noscript>
-    {% endfor %}
-  {% else %}
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-      type="text/css">
-    <link
-      href='https://fonts.googleapis.com/css?family=Kaushan+Script'
-      rel='stylesheet'
-      type='text/css'>
-    <link
-      href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic'
-      rel='stylesheet'
-      type='text/css'>
-    <link
-      href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700'
-      rel='stylesheet'
-      type='text/css'>
-  {% endif %}
+        rel="stylesheet"
+        type="text/css">
+    </noscript>
+  {% endfor %}
   <!-- Custom styles for this theme -->
   <!-- <link href="assets/css/agency.min.css" rel="stylesheet"> -->
   <link href="assets/css/agency.css" rel="stylesheet" />
@@ -80,14 +125,6 @@
     href="{{ '/assets/img/masthead.avif' | relative_url }}"
     type="image/avif">
 
-  <style>
-    header.masthead {
-      background-image: url('{{ "/assets/img/masthead.avif" | relative_url }}');
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
-  </style>
 
   <!-- Page container change top padding when nav shrinks -->
   {% if page.layout == "page" %}
