@@ -69,17 +69,13 @@
       line-height: 40px;
       margin-bottom: 25px;
       font-family: "Montserrat"
-      , -apple-system
+      , system-ui
       , BlinkMacSystemFont
       , "Segoe UI"
       , Roboto
       , "Helvetica Neue"
       , Arial
-      , sans-serif
-      , "Apple Color Emoji"
-      , "Segoe UI Emoji"
-      , "Segoe UI Symbol"
-      , "Noto Color Emoji";
+      , sans-serif;
     }
 
     @media (min-width: 768px) {
@@ -101,11 +97,7 @@
     }
   </style>
 
-  <!-- Custom fonts for this template -->
-  <link
-    href="assets/css/all.min.css"
-    rel="stylesheet"
-    type="text/css">
+  <!-- Preload Fonts -->
   {% for font_url in site.data.style.fonts_urls %}
     <link
       rel="preload"
@@ -113,15 +105,23 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
       crossorigin="anonymous">
-    <noscript>
+  {% endfor %}
+  <noscript>
+    {% for font_url in site.data.style.fonts_urls %}
       <link
         href="{{ font_url }}"
         rel="stylesheet"
         type="text/css">
-    </noscript>
-  {% endfor %}
+    {% endfor %}
+  </noscript>
 
-  <!-- Custom styles for this theme -->
+  <!-- Custom fonts for this template -->
+  <link
+    href="assets/css/all.min.css"
+    rel="stylesheet"
+    type="text/css">
+
+    <!-- Custom styles for this theme -->
   <link href="assets/css/agency.css" rel="stylesheet" />
 
     <!-- Performance improvements -->
