@@ -3,13 +3,12 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
     <script defer>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-              dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-
-          gtag("config", "{{ site.analytics.google }}");
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "{{ site.analytics.google }}");
     </script>
   {% endif %}
 
@@ -23,22 +22,33 @@
     {% if page.title %}
       {{ page.title | append: " | " | append: site.title }}
     {% else %}
-      {{ site.title }}{% endif %}
+      {{ site.title }}
+    {% endif %}
   </title>
 
   <style>
-    /* Masthead styles */
+    /* Masthead styles (image-based) */
     header.masthead {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
       text-align: center;
       color: white;
-      background-image: url('{{ "/assets/img/masthead.avif" | relative_url }}');
-      background-repeat: no-repeat;
-      background-attachment: scroll;
-      background-position: center center;
-      background-size: cover;
     }
 
-    header.masthead .intro-text {
+    header.masthead img.masthead-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    header.masthead .masthead-content {
+      position: relative;
+      z-index: 1;
       padding-top: 150px;
       padding-bottom: 100px;
     }
@@ -73,7 +83,7 @@
     }
 
     @media (min-width: 768px) {
-      header.masthead .intro-text {
+      header.masthead .masthead-content {
         padding-top: 300px;
         padding-bottom: 200px;
       }
@@ -119,10 +129,10 @@
     rel="preload"
     as="image"
     href="{{ '/assets/img/masthead.avif' | relative_url }}"
-    type="image/avif">
+    type="image/avif"
+    fetchpriority="high">
 
-
-  <!-- Page container change top padding when nav shrinks -->
+  <!-- Page container padding if needed -->
   {% if page.layout == "page" %}
     <style>
       #pagecontainer {
