@@ -12,7 +12,8 @@
             <img
               class="mx-auto"
               src="{{ service.image }}"
-              alt="">
+              alt=""
+              loading="lazy">
           </div>
           <h4 class="service-heading">{{ service.title | markdownify }}</h4>
           {% if service.desc %}
