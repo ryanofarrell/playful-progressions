@@ -2,16 +2,15 @@
   {% if site.analytics.google %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
-    <script>
+    <script defer>
           window.dataLayer = window.dataLayer || [];
           function gtag() {
-      dataLayer.push(arguments);
+              dataLayer.push(arguments);
           }
           gtag("js", new Date());
 
           gtag("config", "{{ site.analytics.google }}");
     </script>
-    <!-- End Google Analytics -->
   {% endif %}
 
   <meta charset="utf-8">
@@ -27,8 +26,6 @@
       {{ site.title }}{% endif %}
   </title>
 
-  <!-- Bootstrap core CSS -->
-  <!-- link href="assets/css/bootstrap.min.css" rel="stylesheet" / -->
   <style>
     /* Masthead styles */
     header.masthead {
@@ -113,10 +110,9 @@
         type="text/css">
     </noscript>
   {% endfor %}
-  <!-- Custom styles for this theme -->
-  <!-- <link href="assets/css/agency.min.css" rel="stylesheet"> -->
-  <link href="assets/css/agency.css" rel="stylesheet" />
 
+  <!-- Custom styles for this theme -->
+  <link href="assets/css/agency.css" rel="stylesheet" />
 
     <!-- Performance improvements -->
   <link
