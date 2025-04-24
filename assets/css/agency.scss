@@ -48,7 +48,7 @@ $white: {{ site.data.style.white | default: "#fff" }} !default;
 $black: {{ site.data.style.black | default: "#000000" }} !default;
 
 // Custom Images
-$header-image: "{{ site.data.style.header-image }}";
+$header-image: "/assets/img/masthead.avif";
 $contact-image: "{{ site.data.style.contact-image }}";
 
 // Global CSS

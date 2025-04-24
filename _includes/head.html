@@ -68,6 +68,23 @@
   <!-- <link href="assets/css/agency.min.css" rel="stylesheet"> -->
   <link href="assets/css/agency.css" rel="stylesheet" />
 
+
+    <!-- Performance improvements -->
+  <link
+    rel="preload"
+    as="image"
+    href="{{ '/assets/img/masthead.avif' | relative_url }}"
+    type="image/avif">
+
+  <style>
+    header.masthead {
+      background-image: url('{{ "/assets/img/masthead.avif" | relative_url }}');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  </style>
+
   <!-- Page container change top padding when nav shrinks -->
   {% if page.layout == "page" %}
     <style>
