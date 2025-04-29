@@ -25,23 +25,6 @@
     {% endif %}
   </title>
 
-  {% for font_url in site.data.style.fonts_urls %}
-    <link
-      rel="preload"
-      href="{{ font_url }}"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      crossorigin="anonymous">
-  {% endfor %}
-  <noscript>
-    {% for font_url in site.data.style.fonts_urls %}
-      <link
-        href="{{ font_url }}"
-        rel="stylesheet"
-        type="text/css">
-    {% endfor %}
-  </noscript>
-
   <link
     href="assets/css/all.min.css"
     rel="stylesheet"
