@@ -25,77 +25,6 @@
     {% endif %}
   </title>
 
-  <style>
-    /* Masthead styles (image-based) */
-    header.masthead {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      text-align: center;
-      color: white;
-    }
-
-    header.masthead img.masthead-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    header.masthead .masthead-content {
-      position: relative;
-      z-index: 1;
-      padding-top: 150px;
-      padding-bottom: 100px;
-    }
-
-    header.masthead .intro-lead-in {
-      font-size: 22px;
-      font-style: italic;
-      line-height: 22px;
-      margin-bottom: 25px;
-      font-family: "Droid Serif"
-      , Georgia
-      , serif;
-    }
-
-    header.masthead .intro-heading {
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 40px;
-      margin-bottom: 25px;
-      font-family: "Montserrat"
-      , system-ui
-      , BlinkMacSystemFont
-      , "Segoe UI"
-      , Roboto
-      , "Helvetica Neue"
-      , Arial
-      , sans-serif;
-    }
-
-    @media (min-width: 768px) {
-      header.masthead .masthead-content {
-        padding-top: 300px;
-        padding-bottom: 200px;
-      }
-
-      header.masthead .intro-lead-in {
-        font-size: 40px;
-        line-height: 40px;
-      }
-
-      header.masthead .intro-heading {
-        font-size: 50px;
-        line-height: 50px;
-        margin-bottom: 50px;
-      }
-    }
-  </style>
-
   {% for font_url in site.data.style.fonts_urls %}
     <link
       rel="preload"
@@ -126,19 +55,6 @@
     href="{{ '/assets/img/masthead.avif' | relative_url }}"
     type="image/avif"
     fetchpriority="high">
-
-  {% if page.layout == "page" %}
-    <style>
-      #pagecontainer {
-        padding-top: 150px;
-      }
-      @media only screen and (max-width: 991px) {
-        #pagecontainer {
-          padding-top: 100px;
-        }
-      }
-    </style>
-  {% endif %}
 
   <link
     rel="apple-touch-icon"

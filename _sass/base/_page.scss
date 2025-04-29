@@ -69,3 +69,12 @@ img::selection {
 img::-moz-selection {
   background: transparent;
 }
+
+// Page container padding if needed (Moved from head.html)
+#pagecontainer {
+  padding-top: 150px;
+
+  @media only screen and (max-width: 991px) {
+    padding-top: 100px;
+  }
+}
