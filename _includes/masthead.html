@@ -1,0 +1,28 @@
+<header class="masthead position-relative text-center text-white">
+  <img
+    src="{{ '/assets/img/masthead.avif' | relative_url }}"
+    alt="Playful Progressions background"
+    class="position-absolute w-100 h-100 object-fit-cover masthead-bg"
+    fetchpriority="high"
+    decoding="async"
+    loading="eager" />
+
+  <div class="container position-relative masthead-content">
+    <div class="intro-text">
+      {%- if site.data.sitetext.header.title -%}
+        <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
+      {%- endif -%}
+      {%- if site.data.sitetext.header.subtitle -%}
+        <div class="intro-heading text-uppercase">{{ site.data.sitetext.header.subtitle | markdownify }}</div>
+      {%- endif -%}
+
+      {%- if site.data.sitetext.header.buttons -%}
+        <div class="row justify-content-center">
+          {% for button in site.data.sitetext.header.buttons %}
+            <a class="btn {{ button.class | default: "btn-primary" }} btn-xl text-uppercase js-scroll-trigger m-2" href="{{ button.link }}">{{ button.label }}</a>
+          {% endfor %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</header>

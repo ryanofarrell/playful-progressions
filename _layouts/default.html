@@ -3,26 +3,30 @@
 
   {% include head.html %}
 
-    <body id="page-top">
+  <body id="page-top">
+
+    {% include navigation.html %}
+
+    {% if page.layout == "home" %}
+      {% include masthead.html %}
+    {% else %}
+      {% include mini-masthead.html %}
+    {% endif %}
+
 
     {{ content }}
 
     {% include footer.html %}
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/jquery.min.js" defer></script>
 
-    <!-- Bootstrap core JavaScript -->
     <script src="assets/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Plugin JavaScript (Scroll animations, etc.) -->
     <script src="assets/js/jquery.easing.min.js" defer></script>
 
-    <!-- Contact form JavaScript -->
     <script src="assets/js/jqBootstrapValidation.js" defer></script>
     <script src="assets/js/contact_me.js" defer></script>
 
-    <!-- Custom scripts for this template -->
     <script src="assets/js/agency.min.js" defer></script>
 
   </body>

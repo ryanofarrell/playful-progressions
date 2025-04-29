@@ -78,6 +78,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/footer.scss";
 @import "layout/_testimonial.scss";
 @import "layout/_about.scss";
+@import "layout/_mini_masthead.scss"; // Import the new mini-masthead styles
 
 
 // Finally, import bootstrap here

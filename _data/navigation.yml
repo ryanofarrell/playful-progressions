@@ -1,13 +1,15 @@
 nav:
   - title: "About"
-    section: about
-  - title: "Testimonials"
-    section: testimonial
-  # - title: "Team"
-  #   section: team
+    url: "/about/" # Assuming your about page will be at /about/
+    section: about # Keep section for potential smooth scroll on home page
   - title: "Services"
-    section: services
+    url: "/services/" # Assuming your services page will be at /services/
+    section: services # Keep section for potential smooth scroll on home page
+  - title: "Blog"
+    url: "/blog/" # Assuming your blog index page will be at /blog/
   - title: "Contact"
-    section: book
+    url: "/contact/" # Assuming your contact page will be at /contact/
+    # You might still want a section link on the contact page itself if the form is a section
+    section: book # Keep section for potential smooth scroll on contact page
     button: true
     button-class: btn-primary

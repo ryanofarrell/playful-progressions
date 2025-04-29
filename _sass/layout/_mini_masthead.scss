@@ -1,0 +1,57 @@
+// Mini Masthead styles for internal pages
+header.mini-masthead {
+    position: relative;
+    height: 40vh; // Adjust height as needed
+    min-height: 250px; // Minimum height to prevent collapse
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+    background-color: $primary; // Fallback background color
+
+    .mini-masthead-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .mini-masthead-content {
+        position: relative;
+        z-index: 1;
+        padding: 0 15px; // Keep horizontal padding
+
+        .page-title {
+            font-size: 36px; // Adjust font size
+            font-weight: 700;
+            margin-bottom: 10px;
+            @include heading-font;
+        }
+
+        .page-subtitle {
+            font-size: 20px; // Adjust font size
+            font-style: italic;
+            @include serif-font;
+        }
+    }
+
+    @media (min-width: 768px) {
+        height: 30vh; // Adjust height for larger screens
+        min-height: 300px; // Adjust min-height for larger screens
+
+        .mini-masthead-content {
+            .page-title {
+                font-size: 48px; // Adjust font size for larger screens
+            }
+
+            .page-subtitle {
+                font-size: 24px; // Adjust font size for larger screens
+            }
+        }
+    }
+}
