@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {{ content }}
+
+  {% comment %}
+    Typically, a minimal 404 page doesn't need most site scripts.
+    Only include scripts here if absolutely necessary.
+  {% endcomment %}
+  </body>
+
+</html>

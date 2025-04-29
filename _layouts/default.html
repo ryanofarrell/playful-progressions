@@ -18,16 +18,11 @@
 
     {% include footer.html %}
 
-    <script src="assets/js/jquery.min.js" defer></script>
-
-    <script src="assets/js/bootstrap.bundle.min.js" defer></script>
-
-    <script src="assets/js/jquery.easing.min.js" defer></script>
-
-    <script src="assets/js/jqBootstrapValidation.js" defer></script>
-    <script src="assets/js/contact_me.js" defer></script>
-
-    <script src="assets/js/agency.min.js" defer></script>
-
+    <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/jqBootstrapValidation.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
   </body>
 </html>
