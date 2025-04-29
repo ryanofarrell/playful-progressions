@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Muffin Tins!
 date: 2023-06-02 08:03:00 -0400
 categories: posts
 excerpt: Muffin tins are for more than just baking delicious treats!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

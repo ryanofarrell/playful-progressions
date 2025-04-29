@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Balloons!
 date: 2024-03-06 08:03:00 -0400
 categories: posts
 excerpt: We love a party vibe! Simple latex balloons are fantastic for endless fun for kids of all ages!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

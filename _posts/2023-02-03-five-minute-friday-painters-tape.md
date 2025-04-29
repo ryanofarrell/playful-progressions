@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Painters Tape!
 date: 2023-02-03 08:03:00 -0400
 categories: posts
 excerpt: Just trying to get through the wake window? Learn how much you can do for your little one with just painters tape!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 header:
     teaser: /assets/images/5mf-blanket.jpg
 ---

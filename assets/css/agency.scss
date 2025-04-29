@@ -66,6 +66,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "components/buttons.scss";
 @import "components/navbar.scss";
 @import "components/client-scroll.scss";
+@import "components/_blog-filter.scss"; // Import the blog filter styles
+
 
 // Layout
 @import "layout/masthead.scss";
@@ -78,8 +80,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/footer.scss";
 @import "layout/_testimonial.scss";
 @import "layout/_about.scss";
-@import "layout/_mini_masthead.scss"; // Import the new mini-masthead styles
-@import "layout/_blog.scss"; // Import the new blog styles
+@import "layout/_mini_masthead.scss";
+@import "layout/_blog.scss";
 
 
 // Finally, import bootstrap here

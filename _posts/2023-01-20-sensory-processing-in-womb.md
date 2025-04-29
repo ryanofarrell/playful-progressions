@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: Sensory Processing Starts in the Womb
 date: 2023-01-20 08:03:00 -0400
 categories: posts

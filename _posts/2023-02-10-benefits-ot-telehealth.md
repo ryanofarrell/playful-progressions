@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: 5 Benefits of Doing Occupational Therapy Through Telehealth
 date: 2023-02-10 08:03:00 -0400
 categories: posts

@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Baking Sheets!
 date: 2024-02-06 08:03:00 -0400
 categories: posts
 excerpt: In between baking, why not involve your kiddos with your trusty baking sheet?
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

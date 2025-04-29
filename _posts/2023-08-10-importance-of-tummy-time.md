@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: The Importance of Tummy Time
 date: 2023-08-10 08:03:00 -0400
 categories: posts

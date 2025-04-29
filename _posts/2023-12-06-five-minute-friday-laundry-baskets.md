@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Laundry Baskets!
 date: 2023-12-06 08:03:00 -0400
 categories: posts
 excerpt: Creative ways to turn your laundry basket into a fun activity for both you and your little one
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

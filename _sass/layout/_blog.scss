@@ -57,3 +57,68 @@
 .blog-card-meta .badge {
     vertical-align: middle; /* Align badge nicely with text */
 }
+
+.post-content {
+    /* Styling for the article container */
+    /* Inherits padding from .page-section */
+
+    .post-header {
+        /* Styling for the header area above post content */
+        margin-bottom: 30px; /* Add space below header */
+    }
+
+    .post-title {
+        /* Styling for the blog post title (H1) */
+        font-size: 1rem; /* Make it pop */
+        font-weight: 700; /* Bold */
+        margin-bottom: 10px;
+        @include heading-font; /* Use heading font */
+        text-transform: uppercase; /* If uppercase is desired */
+        color: $gray-800; /* Or a specific color like $primary */
+
+        @media (min-width: 768px) {
+            font-size: 3.5rem; /* Larger size on desktop */
+        }
+    }
+
+    .post-meta {
+        /* Styling for date, author, categories */
+        font-size: 0.9rem;
+        color: $gray-600;
+        margin-bottom: 20px;
+    }
+
+    .post-teaser-img {
+        /* Styling for the teaser image below the title/meta */
+        max-width: 100%;
+        height: auto;
+    }
+
+    .post-body {
+        /* Styling for the main post content area */
+        /* Add typography styles here */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @include heading-font; /* Ensure headings within content use heading font */
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Prevent extra space below images */
+            margin: 1em auto; /* Center images within content */
+        }
+        /* Add styles for lists, blockquotes, code, etc. */
+    }
+}

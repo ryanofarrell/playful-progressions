@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Party Beads!
 date: 2023-03-03 08:03:00 -0400
 categories: posts
 excerpt: Just trying to get through the wake window? Learn how much you can do for your little one with just party beads!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 header:
     teaser: /assets/images/5mf-party-beads.jpeg
 ---

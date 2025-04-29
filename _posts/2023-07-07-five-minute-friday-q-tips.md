@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Q-Tips!
 date: 2023-07-07 08:03:00 -0400
 categories: posts
 excerpt: Q-tips are a bathroom staple, but can also be used to develop so many skills for kids of all ages!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

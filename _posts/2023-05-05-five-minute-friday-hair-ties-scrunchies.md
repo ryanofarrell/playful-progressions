@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Hair Ties and Scrunchies!
 date: 2023-05-05 08:03:00 -0400
 categories: posts
 excerpt: Hair ties and scrunchies can be used for a variety of play activities and can be very beneficial!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

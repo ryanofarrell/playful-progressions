@@ -3,13 +3,14 @@
 
   {% include head.html %}
 
-  <body>
+  {% comment %} Add body class for styling based on background {% endcomment %}
+  <body class="body-light-background">
 
     {{ content }}
 
   {% comment %}
-    Typically, a minimal 404 page doesn't need most site scripts.
-    Only include scripts here if absolutely necessary.
+    Optionally include minimal scripts here if needed for the 404 page,
+    but typically a 404 page should be as fast as possible.
   {% endcomment %}
   </body>
 

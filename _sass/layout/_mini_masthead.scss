@@ -4,8 +4,8 @@ header.mini-masthead {
     height: 40vh; // Adjust height as needed
     min-height: 250px; // Minimum height to prevent collapse
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* Vertically centers content within remaining space */
+    justify-content: center; /* Horizontally centers content */
     text-align: center;
     color: white;
     overflow: hidden;
@@ -25,12 +25,13 @@ header.mini-masthead {
         position: relative;
         z-index: 1;
         padding: 0 15px; // Keep horizontal padding
+        padding-top: 100px; /* Increased padding-top to push content below fixed navbar (adjust value) */
 
         .page-title {
             font-size: 36px; // Adjust font size
             font-weight: 700;
             margin-bottom: 10px;
-            @include heading-font;
+            @include heading-font; // Use your heading font mixin
         }
 
         .page-subtitle {
@@ -45,6 +46,8 @@ header.mini-masthead {
         min-height: 300px; // Adjust min-height for larger screens
 
         .mini-masthead-content {
+            padding-top: 180px; /* Increased padding-top for larger screens (adjust value) */
+
             .page-title {
                 font-size: 48px; // Adjust font size for larger screens
             }

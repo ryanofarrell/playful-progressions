@@ -1,7 +1,7 @@
 ---
 permalink: /5-minute-friday/
 layout: tag
-taxonomy: 5 minute friday
+taxonomy: 5 Minute Friday
 entries_layout: grid
 classes: wide
 title: 5 Minute Friday

@@ -1,6 +1,11 @@
 // Styling for the navbar
 #mainNav {
-  background-color: $gray-100;
+  /* Base styles (mobile default) */
+  background-color: $gray-100; /* Mobile default: light grey background */
+  transition: background-color 0.2s ease-in-out; /* Smooth background transition */
+  border: none; /* Remove border */
+
+  /* Toggler styles (consistent with original) */
   .navbar-toggler {
     font-size: 12px;
     right: 0;
@@ -11,50 +16,48 @@
     background-color: $primary;
     @include heading-font;
   }
+
+  /* Brand/Logo styles (consistent with original) */
   .navbar-brand {
-    color: $primary;
+    color: $primary; /* Default: primary brand color */
     @include script-font;
+    transition: all 0.3s; /* Smooth brand transition */
     &.active,
     &:active,
     &:focus,
     &:hover {
-      color: darken($primary, 10%);
+      color: darken($primary, 10%); /* Hover effect */
     }
   }
+
+  /* Navigation links and buttons (Mobile - consistent with original) */
   .navbar-nav {
     .nav-item {
       .nav-link-text {
         font-size: 90%;
         font-weight: 400;
-        padding: 0.75em 0;
+        padding: 0.75em 0; /* Mobile padding */
         letter-spacing: 1px;
-        color: $primary;
+        color: $primary; /* Default: primary link text */
         @include heading-font;
-        &.active,
-        &:hover {
-          color: $action;
-        }
       }
       .nav-button {
-        // font-size: 90%;
-        // font-weight: 400;
-        // padding: 0.75em 0;
-        // letter-spacing: 1px;
-        // color: $primary;
-        color: white;
+        color: white; /* Default: white text on action button */
         @include heading-font;
+      }
+      .nav-link {
+        /* Generic nav-link styles */
         &.active,
         &:hover {
-          background-color: darken($action, 10%);
-          color: white;
+          color: $action; /* Default active/hover color */
         }
       }
     }
   }
-}
-@media (min-width: 992px) {
-  #mainNav {
-    padding-top: 25px;
+
+  /* Responsive styles for desktop */
+  @media (min-width: 992px) {
+    padding-top: 25px; /* Desktop padding */
     padding-bottom: 25px;
     -webkit-transition:
       padding-top 0.3s,
@@ -65,48 +68,166 @@
     transition:
       padding-top 0.3s,
       padding-bottom 0.3s;
-    border: none;
-    background-color: transparent;
+
+    background-color: transparent; /* Desktop default: transparent background on dark headers */
+
     .navbar-brand {
-      font-size: 1.75em;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      transition: all 0.3s;
+      font-size: 1.75em; /* Desktop font size */
+      color: $primary; /* Desktop: primary brand color */
     }
+
     .navbar-nav {
       .nav-item {
         .nav-link-text {
-          padding: 1.1em 1em !important;
-          color: white;
+          padding: 1.1em 1em !important; /* Desktop padding */
+          color: white; /* Desktop: white link text on dark headers (consistent with original) */
         }
-        .nav-button {
-          // font-size: 90%;
-          // font-weight: 400;
-          // padding: 0.75em 0;
-          // letter-spacing: 1px;
-          // color: $primary;
-          @include heading-font;
+        .nav-link {
+          /* Generic nav-link style for desktop */
+          color: white; /* Desktop: white link text on dark headers */
           &.active,
           &:hover {
-            background-color: darken($action, 10%);
-            color: white;
+            color: $action; /* Active/hover color */
           }
         }
       }
     }
+
+    /* Navbar Shrink styles (applied by JS on scroll, primarily for home page) */
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-100;
+      background-color: $gray-100; /* Shrunk: light grey background (consistent with original) */
+
+      .navbar-brand {
+        font-size: 1.25em; /* Shrunk brand size */
+        padding: 12px 0; /* Shrunk brand padding */
+        color: $primary; /* Shrunk: primary brand color (using original base brand color) */
+      }
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: $gray-900; /* Shrunk: dark grey link color (consistent with original) */
+            &.active,
+            &:hover {
+              color: $action; /* Action color on hover when shrunk */
+            }
+          }
+        }
+      }
+      .navbar-toggler {
+        color: $gray-900; /* Shrunk: dark toggler */
+        background-color: transparent;
+      }
+    }
+  }
+
+  /* --- Styles for the navbar on a light background (overrides default/responsive) --- */
+  /* This applies when the body has the .body-light-background class */
+  body.body-light-background & {
+    background-color: $gray-100; /* Solid light grey background on light pages */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Optional subtle shadow */
+
+    /* Toggler styles on light background */
+    .navbar-toggler {
+      color: $gray-800; /* Dark toggler on light background */
+      background-color: transparent;
+    }
+
+    /* Brand/Logo styles on light background */
+    .navbar-brand {
+      color: $primary; /* Primary brand color on light background */
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: darken($primary, 10%); /* Darkened primary hover on light background */
+      }
+    }
+
+    /* Navigation links and buttons on light background */
+    .navbar-nav {
       .nav-item {
+        .nav-link-text {
+          color: $primary; /* Primary link text on light background (mobile) */
+          &.active,
+          &:hover {
+            color: $action; /* Action active/hover on light background */
+          }
+        }
+        .nav-button {
+          color: white; /* White text on action button (consistent) */
+          &.active,
+          &:hover {
+            background-color: darken($action, 10%);
+          }
+        }
         .nav-link {
-          color: $gray-900;
+          /* Generic nav-link style on light background */
+          color: $primary; /* Primary link text on light background */
+          &.active,
+          &:hover {
+            color: $action;
+          }
+        }
+      }
+    }
+
+    /* Responsive styles for desktop on light background */
+    @media (min-width: 992px) {
+      /* Desktop padding should likely remain the same as default desktop */
+      padding-top: 25px;
+      padding-bottom: 25px;
+
+      .navbar-brand {
+        font-size: 1.75em; /* Keep original desktop font size */
+        color: $primary; /* Desktop: primary brand color on light background */
+      }
+      .navbar-nav {
+        .nav-item {
+          .nav-link-text {
+            /* Desktop padding should likely remain the same */
+            padding: 1.1em 1em !important;
+            color: $primary; /* Primary link text on light background (desktop) */
+          }
+          .nav-link {
+            /* Generic nav-link style on light background (desktop) */
+            color: $primary; /* Primary link text on light background */
+            &.active,
+            &:hover {
+              color: $action;
+            }
+          }
         }
       }
 
-      .navbar-brand {
-        font-size: 1.25em;
-        padding: 12px 0;
+      /* Navbar Shrink styles on light background (applied by JS) */
+      /* When shrunk on a light background, it stays light grey. */
+      &.navbar-shrink {
+        /* Shrunk padding should match default shrunk padding */
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        background-color: $gray-100; /* Stay light grey when shrunk on light pages */
+
+        .navbar-brand {
+          font-size: 1.25em; /* Shrunk brand size */
+          padding: 12px 0; /* Shrunk brand padding */
+          color: $primary; /* Shrunk: primary brand on light background */
+        }
+
+        .nav-item {
+          .nav-link {
+            color: $primary; /* Shrunk: primary link color on light background (using original link color) */
+            &.active,
+            &:hover {
+              color: $action;
+            }
+          }
+        }
+        .navbar-toggler {
+          color: $gray-800; /* Shrunk: dark toggler on light navbar */
+          background-color: transparent;
+        }
       }
     }
   }

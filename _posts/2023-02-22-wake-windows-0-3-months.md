@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: How to fill Wake Windows 0-3 Months
 date: 2023-02-22 08:03:00 -0400
 categories: posts

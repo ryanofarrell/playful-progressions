@@ -1,11 +1,11 @@
 ---
-layout: single
+layout: post
 title: 5 Minute Friday - Backpacks!
 date: 2023-08-04 08:03:00 -0400
 categories: posts
 excerpt: Backpacks are not just for school aged kids and are packed with several benefits beyond hauling your stuff!
 classes: wide
-tag: 5 minute friday
+tag: 5 Minute Friday
 ---
 
 

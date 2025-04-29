@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: 5 Changes I Made to Boost my Postpartum Mental Health
 date: 2023-03-13 08:03:00 -0400
 categories: posts
