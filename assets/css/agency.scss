@@ -79,6 +79,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/_testimonial.scss";
 @import "layout/_about.scss";
 @import "layout/_mini_masthead.scss"; // Import the new mini-masthead styles
+@import "layout/_blog.scss"; // Import the new blog styles
 
 
 // Finally, import bootstrap here

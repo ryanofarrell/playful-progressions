@@ -1,0 +1,59 @@
+// Blog index and card styles
+
+.blog-card {
+    border: 1px solid #e9ecef; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing image corners */
+    height: 100%; /* Make cards equal height in a row */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out; /* Subtle hover effect */
+
+    &:hover {
+        transform: translateY(-5px); /* Lift card on hover */
+    }
+
+    a {
+        text-decoration: none; /* Remove underline from links */
+        color: inherit; /* Inherit text color */
+    }
+
+    .blog-card-img {
+        width: 100%;
+        height: 200px; /* Fixed height for images (adjust as needed) */
+        object-fit: cover; /* Cover the area without distorting aspect ratio */
+    }
+
+    .blog-card-content {
+        padding: 15px;
+        flex-grow: 1; /* Allows content area to expand */
+
+        .blog-card-title {
+            font-size: 1.25rem; /* Adjust title size */
+            margin-bottom: 10px;
+            @include heading-font; /* Use your heading font mixin */
+
+            a {
+                &:hover {
+                    color: $primary; /* Change link color on hover */
+                }
+            }
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem; /* Adjust excerpt size */
+            color: $gray-700; /* Use a muted color for excerpt (assuming Bootstrap variables) */
+            margin-bottom: 15px;
+        }
+
+        .blog-card-meta {
+            font-size: 0.85rem; /* Adjust meta info size */
+            color: $gray-600; /* Use a muted color for meta info */
+        }
+    }
+}
+
+/* Style for the 5 Minute Friday badge */
+.blog-card-meta .badge {
+    vertical-align: middle; /* Align badge nicely with text */
+}

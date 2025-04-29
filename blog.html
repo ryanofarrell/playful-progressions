@@ -1,0 +1,47 @@
+---
+layout: default
+title: Our Blog
+subtitle: Latest posts and articles
+permalink: /blog/
+---
+
+<section class="page-section" id="blog">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Blog</h2>
+        <h3 class="section-subheading text-muted">Read our latest insights and updates.</h3>
+      </div>
+    </div>
+    <div class="row">
+      {% assign sorted_posts = site.posts | sort: "date" | reverse %}
+      {% for post in sorted_posts %}
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="blog-card">
+            <a href="{{ post.url | relative_url }}">
+              {% if post.header.teaser %}
+                <img
+                  src="{{ post.header.teaser | relative_url }}"
+                  alt="{{ post.title }}"
+                  class="blog-card-img">
+              {% endif %}
+            </a>
+            <div class="blog-card-content">
+              <h4 class="blog-card-title">
+                <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+              </h4>
+              <p class="blog-card-excerpt">{{ post.excerpt }}</p>
+              <p class="blog-card-meta">
+                <small>{{ post.date | date: "%B %d, %Y" }}</small>
+                {% comment %} Check for the '5 minute friday' tag for the badge {% endcomment %}
+                {% if post.tag == '5 minute friday' %}
+                  <span class="badge badge-primary ml-2">5 Minute Friday</span>
+                {% endif %}
+              </p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
