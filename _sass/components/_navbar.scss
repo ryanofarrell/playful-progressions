@@ -28,7 +28,7 @@
     background-color: transparent; /* Toggler background color - Changed to transparent for light background */
     @include heading-font;
     margin-bottom: 5px; /* Space below the toggler */
-    width: 105px; /* Adjust this value as needed */
+    width: 120px; /* Adjust this value as needed */
     // Add hover/focus styles for toggler on mobile if desired
     &:hover,
     &:focus {
@@ -223,14 +223,14 @@
     /* Responsive styles for desktop on light background */
     @media (min-width: 992px) {
       /* Apply shrunk appearance directly to the navbar on light background desktop */
-      padding-top: 0.5rem; /* Shrunk padding */
-      padding-bottom: 0.5rem;
+      padding-top: 0; /* Set padding-top to 0 to match shrunk size */
+      padding-bottom: 0; /* Set padding-bottom to 0 to match shrunk size */
       background-color: $gray-100; /* Solid light grey background */
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Optional subtle shadow */
 
       .navbar-brand {
         font-size: 1.25em; /* Shrunk brand size */
-        padding: 12px 0; /* Shrunk brand padding */
+        padding: 12px 0; /* Apply shrunk brand padding */
         color: $primary; /* Primary brand color */
       }
       .navbar-nav {
