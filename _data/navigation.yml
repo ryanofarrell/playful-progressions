@@ -1,15 +1,22 @@
 nav:
-  - title: "About"
-    url: "/about/" # Assuming your about page will be at /about/
-    section: about # Keep section for potential smooth scroll on home page
   - title: "Services"
-    url: "/services/" # Assuming your services page will be at /services/
-    section: services # Keep section for potential smooth scroll on home page
+    url: "/services/"
+    section: services
   - title: "Blog"
-    url: "/blog/" # Assuming your blog index page will be at /blog/
-  - title: "Contact"
-    url: "/contact/" # Assuming your contact page will be at /contact/
-    # You might still want a section link on the contact page itself if the form is a section
-    section: book # Keep section for potential smooth scroll on contact page
-    button: true
-    button-class: btn-primary
+    url: "/blog/"
+  - title: "FAQ"
+    url: "/faq/"
+
+contact_icons:
+  - type: "phone"
+    icon: "fas fa-phone" # Font Awesome class for phone
+    # Removed the Liquid tag here, will construct the link in HTML
+    data_key: "phone-numeric" # Add a key to reference _config.yml data
+  - type: "email"
+    icon: "fas fa-envelope" # Font Awesome class for envelope
+    # Removed the Liquid tag here
+    data_key: "email" # Add a key to reference _config.yml data
+  - type: "sms"
+    icon: "fas fa-sms" # Font Awesome class for SMS
+    # Removed the Liquid tag here
+    data_key: "phone-numeric" # Add a key to reference _config.yml data

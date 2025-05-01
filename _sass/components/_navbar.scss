@@ -1,20 +1,33 @@
 // Styling for the navbar
 #mainNav {
-  /* Base styles (mobile default) */
-  background-color: $gray-100; /* Mobile default: light grey background */
+  /* Base styles (mobile default and desktop default on dark headers) */
+  background-color: $gray-100; /* Mobile default: light grey background (from original) */
   transition: background-color 0.2s ease-in-out; /* Smooth background transition */
   border: none; /* Remove border */
+
+  /* Adjust mobile navbar height */
+  padding-top: 10px; /* Add some top padding */
+  padding-bottom: 10px; /* Add some bottom padding */
+
+  /* Container for Mobile Toggler and Contact Icons */
+  .navbar-toggler-container {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    margin-right: 10px; /* Space between this container and other navbar content */
+  }
 
   /* Toggler styles (consistent with original) */
   .navbar-toggler {
     font-size: 12px;
-    right: 0;
     padding: 13px;
     text-transform: uppercase;
     color: white;
     border: 0;
     background-color: $primary;
     @include heading-font;
+    margin-bottom: 5px; /* Space below the toggler */
+    width: 120px; /* Adjust this value as needed */
   }
 
   /* Brand/Logo styles (consistent with original) */
@@ -30,7 +43,7 @@
     }
   }
 
-  /* Navigation links and buttons (Mobile - consistent with original) */
+  /* Navigation links and buttons (Mobile default) */
   .navbar-nav {
     .nav-item {
       .nav-link-text {
@@ -55,6 +68,26 @@
     }
   }
 
+  /* Mobile Contact Icons Container (Flexbox positioning) */
+  /* Now just controls the layout of icons within the container */
+  .mobile-contact-icons {
+    display: flex; /* Use flexbox for icons within the container */
+    justify-content: space-around; /* Distribute space evenly around icons */
+    align-items: center;
+    width: 100%; /* Ensure the container takes full width of its parent */
+    // Remove margin-right as spacing is handled by the container
+    // margin-right: 10px; /* Space between icons and toggler */
+  }
+
+  /* Common styles for Contact Icons */
+  /* Base size and spacing between icons (mobile spacing) */
+  .contact-icon {
+    font-size: 1.3rem; /* Adjust icon size */
+    // Removed horizontal margin here to let flexbox handle spacing
+    // margin: 0 5px; /* Space between icons on mobile (horizontal margin) */
+    /* Default color defined below */
+  }
+
   /* Responsive styles for desktop */
   @media (min-width: 992px) {
     padding-top: 25px; /* Desktop padding */
@@ -71,6 +104,11 @@
 
     background-color: transparent; /* Desktop default: transparent background on dark headers */
 
+    /* Hide the mobile toggler container on desktop */
+    .navbar-toggler-container {
+      display: none;
+    }
+
     .navbar-brand {
       font-size: 1.75em; /* Desktop font size */
       color: $primary; /* Desktop: primary brand color */
@@ -80,7 +118,7 @@
       .nav-item {
         .nav-link-text {
           padding: 1.1em 1em !important; /* Desktop padding */
-          color: white; /* Desktop: white link text on dark headers (consistent with original) */
+          color: white; /* Desktop: white link text on dark headers */
         }
         .nav-link {
           /* Generic nav-link style for desktop */
@@ -91,33 +129,71 @@
           }
         }
       }
+      /* Desktop Contact Icons Container */
+      /* Controlled by Bootstrap d-none d-lg-flex utility class in HTML */
+      .desktop-contact-icons {
+        align-items: center;
+        margin-left: 15px; /* Space between last nav link and icons */
+
+        /* Add vertical pipe separator before the icons */
+        &::before {
+          content: "|"; /* The pipe character */
+          margin-right: 15px; /* Space between pipe and first icon */
+          color: $gray-500; /* Default pipe color (on dark desktop) */
+          font-size: 1.5rem; /* Adjust pipe size */
+          vertical-align: middle; /* Align pipe with icons */
+        }
+
+        .contact-icon {
+          font-size: 1.3rem; /* Adjust icon size, match mobile */
+          margin-left: 15px; /* Increased space between icons on desktop */
+        }
+      }
     }
 
     /* Navbar Shrink styles (applied by JS on scroll, primarily for home page) */
+    /* Appearance when navbar-shrink class is present on a dark header */
     &.navbar-shrink {
       padding-top: 0;
       padding-bottom: 0;
-      background-color: $gray-100; /* Shrunk: light grey background (consistent with original) */
+      background-color: $gray-100; /* Shrunk: light grey background */
 
       .navbar-brand {
         font-size: 1.25em; /* Shrunk brand size */
         padding: 12px 0; /* Shrunk brand padding */
-        color: $primary; /* Shrunk: primary brand color (using original base brand color) */
+        color: $primary; /* Shrunk: primary brand color */
       }
       .navbar-nav {
         .nav-item {
           .nav-link {
-            color: $gray-900; /* Shrunk: dark grey link color (consistent with original) */
+            color: $gray-900; /* Shrunk: dark grey link color */
             &.active,
             &:hover {
-              color: $action; /* Action color on hover when shrunk */
+              color: $action;
             }
+          }
+        }
+        /* Desktop Contact Icons when Shrunk */
+        .desktop-contact-icons {
+          &::before {
+            color: $gray-600; /* Pipe color when shrunk on dark */
+          }
+          .contact-icon {
+            /* Color inherits from shrunk .nav-link styles */
           }
         }
       }
       .navbar-toggler {
         color: $gray-900; /* Shrunk: dark toggler */
         background-color: transparent;
+      }
+
+      /* Contact icon color when navbar is shrunk (on dark header) */
+      .contact-icon {
+        color: $gray-300; /* Light grey color when shrunk on dark */
+        &:hover {
+          color: $action;
+        }
       }
     }
   }
@@ -130,18 +206,18 @@
 
     /* Toggler styles on light background */
     .navbar-toggler {
-      color: $gray-800; /* Dark toggler on light background */
+      color: $gray-800;
       background-color: transparent;
     }
 
     /* Brand/Logo styles on light background */
     .navbar-brand {
-      color: $primary; /* Primary brand color on light background */
+      color: $primary;
       &.active,
       &:active,
       &:focus,
       &:hover {
-        color: darken($primary, 10%); /* Darkened primary hover on light background */
+        color: darken($primary, 10%);
       }
     }
 
@@ -149,14 +225,14 @@
     .navbar-nav {
       .nav-item {
         .nav-link-text {
-          color: $primary; /* Primary link text on light background (mobile) */
+          color: $primary;
           &.active,
           &:hover {
-            color: $action; /* Action active/hover on light background */
+            color: $action;
           }
         }
         .nav-button {
-          color: white; /* White text on action button (consistent) */
+          color: white;
           &.active,
           &:hover {
             background-color: darken($action, 10%);
@@ -164,35 +240,50 @@
         }
         .nav-link {
           /* Generic nav-link style on light background */
-          color: $primary; /* Primary link text on light background */
+          color: $primary;
           &.active,
           &:hover {
             color: $action;
           }
         }
       }
+      /* Desktop contact icons on light background inherit .nav-link styles */
+      .desktop-contact-icons {
+        &::before {
+          color: $gray-700; /* Pipe color on light desktop */
+        }
+      }
+    }
+
+    /* Mobile Contact Icons on Light Background */
+    /* Explicitly set color on light background */
+    .mobile-contact-icons {
+      .contact-icon {
+        color: $gray-800;
+        &:hover {
+          color: $primary;
+        }
+      }
     }
 
     /* Responsive styles for desktop on light background */
     @media (min-width: 992px) {
-      /* Desktop padding should likely remain the same as default desktop */
       padding-top: 25px;
       padding-bottom: 25px;
 
       .navbar-brand {
-        font-size: 1.75em; /* Keep original desktop font size */
-        color: $primary; /* Desktop: primary brand color on light background */
+        font-size: 1.75em;
+        color: $primary;
       }
       .navbar-nav {
         .nav-item {
           .nav-link-text {
-            /* Desktop padding should likely remain the same */
             padding: 1.1em 1em !important;
-            color: $primary; /* Primary link text on light background (desktop) */
+            color: $primary;
           }
           .nav-link {
             /* Generic nav-link style on light background (desktop) */
-            color: $primary; /* Primary link text on light background */
+            color: $primary;
             &.active,
             &:hover {
               color: $action;
@@ -204,20 +295,19 @@
       /* Navbar Shrink styles on light background (applied by JS) */
       /* When shrunk on a light background, it stays light grey. */
       &.navbar-shrink {
-        /* Shrunk padding should match default shrunk padding */
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        background-color: $gray-100; /* Stay light grey when shrunk on light pages */
+        background-color: $gray-100;
 
         .navbar-brand {
-          font-size: 1.25em; /* Shrunk brand size */
-          padding: 12px 0; /* Shrunk brand padding */
-          color: $primary; /* Shrunk: primary brand on light background */
+          font-size: 1.25em;
+          padding: 12px 0;
+          color: $primary;
         }
 
         .nav-item {
           .nav-link {
-            color: $primary; /* Shrunk: primary link color on light background (using original link color) */
+            color: $primary;
             &.active,
             &:hover {
               color: $action;
@@ -225,10 +315,34 @@
           }
         }
         .navbar-toggler {
-          color: $gray-800; /* Shrunk: dark toggler on light navbar */
+          color: $gray-800;
           background-color: transparent;
         }
+
+        /* Contact icon color when shrunk on light background */
+        .contact-icon {
+          color: $gray-800;
+          &:hover {
+            color: $primary;
+          }
+        }
+
+        /* Desktop contact icons when shrunk on light background */
+        .desktop-contact-icons {
+          &::before {
+            color: $gray-600;
+          }
+        }
       }
+    }
+  }
+
+  /* Default color for contact icons when not on light background AND not shrunk */
+  /* This applies to mobile icons on dark header BEFORE scrolling */
+  .contact-icon {
+    color: $primary;
+    &:hover {
+      color: rgba(255, 255, 255, 0.75);
     }
   }
 }

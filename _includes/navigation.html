@@ -4,23 +4,54 @@
       {%- if site.logo -%}
         <img
           height="{{ site.logo.height | default: 52 }}"
-          src="{{ site.logo.path }}"
+          src="{{ site.logo.path | relative_url }}"
           alt="Playful Progressions Logo" />
       {%- else -%}
         {{ site.title }}
       {%- endif -%}
     </a>
-    <button
-      class="navbar-toggler navbar-toggler-right"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarResponsive"
-      aria-controls="navbarResponsive"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      Menu
-      <i class="fas fa-bars"></i>
-    </button>
+
+    <div class="navbar-toggler-container d-lg-none">
+      <button
+        class="navbar-toggler navbar-toggler-right"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <div class="mobile-contact-icons">
+        {% for icon in site.data.navigation.contact_icons %}
+          {% comment %} Construct the link using the data_key to access site variables {% endcomment %}
+        {% assign link_href = "" %}
+          {% comment %} Get message and subject from _config.yml, URL encode, and replace + with %20 {% endcomment %}
+          {% assign encoded_message = site.pre_populate_message | url_encode | replace: '+', '%20' %}
+          {% assign encoded_subject = site.email_subject | url_encode | replace: '+', '%20' %}
+
+          {% if icon.type == "phone" %}
+            {% assign link_href = "tel:" | append: site[icon.data_key] %}
+          {% elsif icon.type == "email" %}
+            {% comment %} Add subject and body for mailto links {% endcomment %}
+            {% assign link_href = "mailto:" | append: site[icon.data_key] | append: "?subject=" | append: encoded_subject | append: "&body=" | append: encoded_message %}
+          {% elsif icon.type == "sms" %}
+            {% comment %} Add body for sms links {% endcomment %}
+            {% assign link_href = "sms:" | append: site[icon.data_key] | append: "?body=" | append: encoded_message %}
+          {% endif %}
+          <a
+            href="{{ link_href }}"
+            class="contact-icon"
+            aria-label="{{ icon.type }}">
+            <i class="{{ icon.icon }}"></i>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+
+
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         {% for link in site.data.navigation.nav %}
@@ -36,6 +67,34 @@
             {%- endif -%}
           </li>
         {% endfor %}
+
+        {% comment %} Desktop Contact Icons (Visible on desktop, hidden on mobile) {% endcomment %}
+        <li class="nav-item desktop-contact-icons d-none d-lg-flex align-items-center ml-3">
+          {% for icon in site.data.navigation.contact_icons %}
+            {% comment %} Construct the link using the data_key to access site variables {% endcomment %}
+          {% assign link_href = "" %}
+            {% comment %} Get message and subject from _config.yml, URL encode, and replace + with %20 {% endcomment %}
+            {% assign encoded_message = site.pre_populate_message | url_encode | replace: '+', '%20' %}
+            {% assign encoded_subject = site.email_subject | url_encode | replace: '+', '%20' %}
+
+            {% if icon.type == "phone" %}
+              {% assign link_href = "tel:" | append: site[icon.data_key] %}
+            {% elsif icon.type == "email" %}
+              {% comment %} Add subject and body for mailto links {% endcomment %}
+              {% assign link_href = "mailto:" | append: site[icon.data_key] | append: "?subject=" | append: encoded_subject | append: "&body=" | append: encoded_message %}
+            {% elsif icon.type == "sms" %}
+              {% comment %} Add body for sms links {% endcomment %}
+              {% assign link_href = "sms:" | append: site[icon.data_key] | append: "?body=" | append: encoded_message %}
+            {% endif %}
+            <a
+              href="{{ link_href }}"
+              class="nav-link contact-icon"
+              aria-label="{{ icon.type }}">
+              <i class="{{ icon.icon }}"></i>
+            </a>
+          {% endfor %}
+        </li>
+
       </ul>
     </div>
   </div>
