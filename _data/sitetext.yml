@@ -1,4 +1,3 @@
-#
 # Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 header:
   title: Playful Progressions Therapy
@@ -101,7 +100,7 @@ services:
           includes:
             - Standardized assessments
             - Clinical observations
-            - Parent/caregiver interview
+            - More detailed parent/caregiver interview
             - Brief written summary of findings
             - Initial recommendations
         - name: "Comprehensive Evaluation"
@@ -109,7 +108,7 @@ services:
           includes:
             - Standardized assessments
             - Clinical observations
-            - Parent/caregiver interview
+            - In-depth parent/caregiver interview
             - Detailed written report with assessment scores and analysis
             - Comprehensive recommendations and plan of care
             - Follow-up consultation to review findings and plan
@@ -168,3 +167,35 @@ footer:
     #   icon: "fab fa-github"
     - url: https://instagram.com
       icon: "fab fa-instagram"
+
+# FAQ Content
+faq: # New section for FAQ
+  title: "Your Questions Answered"
+  subtitle: "Find information about payments, insurance, appointments, and more."
+  items:
+    - question: "What is your payment process?"
+      answer: |
+        All payments are securely processed through our HIPAA-compliant payment processor, Jane Payments. When you schedule your child's initial evaluation, you will complete intake forms where you can safely enter your credit card, HSA, or FSA information to be kept on file. Your card will be charged at the time of service.
+
+    - question: "What is your cancellation policy?"
+      answer: |
+        We understand that scheduling changes can happen! To ensure we can provide dedicated care to all families, we require advance notice for cancellations or rescheduling.
+
+        * Cancellations made within **48 hours** of your appointment will incur a **25% fee** of the session cost.
+        * Cancellations made within **24 hours** of your appointment will be charged **50%** of the session fee.
+
+        Your understanding and cooperation are greatly appreciated!
+
+    - question: "Do you accept insurance?"
+      answer: |
+        Playful Progressions operates as a **private-pay practice** and does not directly accept commercial insurance. However, many insurance plans offer reimbursement for services received from an out-of-network provider.
+
+        We are happy to provide you with a **superbill** that you can submit to your insurance company for potential reimbursement. Our superbills include commonly used treatment codes such as Therapeutic Activity (97530) and Occupational Therapy Initial Evaluation (97165, 97166, 97167).
+
+        We strongly recommend contacting your insurance provider directly to understand your specific out-of-network benefits and reimbursement options. We are available to help guide you through this process if you have questions.
+
+    - question: "Why choose private pay over in-network providers?"
+      answer: |
+        While using insurance can be beneficial, in-network providers often have long waiting lists, which can delay essential support for your child. As a private-pay practice, Playful Progressions can offer services more immediately, helping to bridge that gap.
+
+        Additionally, insurance coverage is frequently subject to deductibles and coinsurance, meaning you may still have out-of-pocket costs. Our focus is on providing high-quality, individualized therapy without unnecessary delays, ensuring your child receives timely support for their development.
