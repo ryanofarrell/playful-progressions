@@ -1,3 +1,4 @@
+#
 # Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 header:
   title: Playful Progressions Therapy
@@ -68,31 +69,20 @@ team:
     - Torticollis and Plagiocephaly
     - Feeding Therapy
 
+# Consolidated Services Section
 services:
   title: "Services"
   subtitle: "A full suite of pediatric therapy needs"
   section: services # This section ID might still be useful for the home page link
-  list: # Keep the existing list for the home page section
-    - title: "Initial Evaluation"
-      desc: "Comprehensive occupational therapy evaluation including standard assessment, skilled observations, parent interview and plan of care development with full write up (60-90 minutes)"
-      image: assets/img/baby-crawling.avif
-      icon: fas fa-notes-medical
-    - title: "OT Treatment"
-      image: assets/img/kid-ot-playing.avif
-      desc: "Skilled, individualized occupational therapy treatment provided in the client's natural environment (home/school). Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
-      icon: fa-solid fa-plane-up
-    - title: "Consultations"
-      desc: "Virtual consultations/coaching sessions for caregivers, other providers, and schools. Sessions are designed to provide guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
-      image: assets/img/baby-playing-game.avif
-      icon: fas fa-clipboard #find more at https://fontawesome.com/icons
-
-  # New detailed list for the services page
-  detailed_list:
+  # Detailed list of offerings for the services page
+  offerings:
     - id: "evaluations" # ID for mini-nav link
       title: "OT Evaluations"
       description: "A comprehensive evaluation to understand your child's unique needs and strengths."
+      type: "tiered" # Indicate a tiered pricing structure
       tiers:
         - name: "Foundational Evaluation"
+          price: "$250" # Added pricing
           description: "Includes clinical observations, parent interview, and initial recommendations."
           includes:
             - Clinical observations
@@ -101,6 +91,7 @@ services:
             - Brief written summary of findings
             - Initial recommendations
         - name: "Comprehensive Evaluation"
+          price: "$300" # Added pricing
           description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation. Recommended if we plan to submit for reimbursement"
           includes:
             - (+) Standardized assessments (PDMS-3, .....)
@@ -113,43 +104,43 @@ services:
 
     - id: "treatments"
       title: "OT Treatments"
-      description: "Individualized therapy sessions focused on achieving specific developmental goals."
-      tiers:
-        - name: "Foundational Treatment"
-          description: "Regular therapy sessions in the child's natural environment."
-          includes:
-            - 50-minute direct therapy session
-            - 10-minute parent/caregiver education and home program guidance
-            - Therapy provided in home or school setting
-        - name: "Comprehensive Treatment Package" # Example of slightly different tier name
-          description: "Includes foundational treatment plus enhanced support and resources."
-          includes:
-            - 50-minute direct therapy session
-            - 10-minute parent/caregiver education and home program guidance
-            - Therapy provided in home or school setting
-            - Access to exclusive home program resources
-            - Priority scheduling
+      description: |
+        Skilled, individualized occupational therapy treatment provided in the client's natural environment (home/school). Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits. Sessions can be scheduled weekly or bi-weekly based on need and availability.
+      type: "volume_pricing" # Indicate volume pricing structure
+      pricing_tiers:
+        - volume: "1 Session"
+          price: "$200" # Added pricing
+          details: "" # No extra detail for single session
+        - volume: "4 Sessions"
+          price: "$185/session" # Added pricing
+          details: "(Save $15/session)"
+        - volume: "8+ Sessions"
+          price: "$175/session" # Added pricing
+          details: "(Save $25/session) - Includes a midpoint 20-minute virtual check-in with parents." # Added detail
 
-    - id: "consultations"
-      title: "OT Consultations"
-      description: "Guidance and support for caregivers, educators, and other professionals."
-      tiers:
-        - name: "Foundational Consultation"
-          description: "Single virtual session to address specific questions or concerns."
-          includes:
-            - 60-minute virtual consultation session
-            - Discussion of specific challenges and strategies
-        - name: "Comprehensive Consultation Package"
-          description: "Multiple virtual sessions and ongoing support."
-          includes:
-            - Three 60-minute virtual consultation sessions
-            - Ongoing email support between sessions
-            - Collaborative strategy development
-
-book:
-  title: "Contact"
-  section: book
-  subtitle: "Speak with Maria to determine the best course for your child"
+    - id: "other-offerings" # New ID for mini-nav link
+      title: "Other Offerings"
+      description: "Additional services designed to support families and children in various contexts."
+      type: "list" # Indicate a simple list structure
+      items:
+        - name: "Parent Consultation"
+          price: "$100" # Added pricing
+          duration: "30 minutes"
+          format: "Online"
+          description: "Get strategies for specific known problems and guidance for home programming."
+        - name: "School Consultation"
+          price: "$150" # Added pricing
+          duration: "45 minutes"
+          format: "On-site or Virtual"
+          description: "Educate teachers and school staff on strategies to best support your child's participation and learning in the school environment."
+        - name: "Play Group"
+          price: "$40/child" # Added pricing
+          duration: "Scheduled ~1/month"
+          format: "Local Parks (Atlanta, GA)"
+          description: |
+            A fun, informal opportunity for parents to network with families of similar-aged children and for kids to engage in play targeting a specific developmental skill each session. Location varies, typically held on weekends.
+          form: true # Flag to indicate this item needs a form
+          form_id: "xyzwelkn" # Placeholder for Play Group Formspree ID
 
 footer:
   legal: "Privacy Policy"
@@ -165,8 +156,8 @@ footer:
     - url: https://instagram.com
       icon: "fab fa-instagram"
 
-# FAQ Content
-faq: # New section for FAQ
+# FAQ Content (Kept separate as requested)
+faq:
   title: "Your Questions Answered"
   subtitle: "Find information about payments, insurance, appointments, and more."
   items:
@@ -176,23 +167,19 @@ faq: # New section for FAQ
 
     - question: "What is your cancellation policy?"
       answer: |
-        We understand that scheduling changes can happen! To ensure we can provide dedicated care to all families, we require advance notice for cancellations or rescheduling.
-
-        * Cancellations made within **48 hours** of your appointment will incur a **25% fee** of the session cost.
-        * Cancellations made within **24 hours** of your appointment will be charged **50%** of the session fee.
-
-        Your understanding and cooperation are greatly appreciated!
+        We understand that life happens, and sometimes plans change! However, because each appointment is reserved just for you, we kindly ask for advance notice if you need to cancel or reschedule. Cancellations made within 48 hours of your appointment will incur a 25% fee, and those made within 24 hours will be charged 50% of the session fee.
+        This policy helps us ensure that we can continue providing dedicated care to all the families we serve. We truly appreciate your understanding and cooperation!
 
     - question: "Do you accept insurance?"
       answer: |
-        Playful Progressions operates as a **private-pay practice** and does not directly accept commercial insurance. However, many insurance plans offer reimbursement for services received from an out-of-network provider.
-
-        We are happy to provide you with a **superbill** that you can submit to your insurance company for potential reimbursement. Our superbills include commonly used treatment codes such as Therapeutic Activity (97530) and Occupational Therapy Initial Evaluation (97165, 97166, 97167).
-
-        We strongly recommend contacting your insurance provider directly to understand your specific out-of-network benefits and reimbursement options. We are available to help guide you through this process if you have questions.
+        Insurance & Payment Information
+        At Playful Progressions, we are a private-pay practice and do not accept commercial insurance. However, many insurance plans offer reimbursement for services received from an out-of-network provider. We are happy to provide superbills, which you can submit to your insurance company for potential reimbursement.
+        Our superbills include the commonly used treatment codes:
+        Therapeutic Activity: 97530
+        Occupational Therapy Initial Evaluation: 97165, 97166, 97167
+        We recommend checking with your insurance provider to understand your out-of-network benefits and reimbursement options. If you have any questions, we're happy to help guide you through the process!
 
     - question: "Why choose private pay over in-network providers?"
       answer: |
-        While using insurance can be beneficial, in-network providers often have long waiting lists, which can delay essential support for your child. As a private-pay practice, Playful Progressions can offer services more immediately, helping to bridge that gap.
-
-        Additionally, insurance coverage is frequently subject to deductibles and coinsurance, meaning you may still have out-of-pocket costs. Our focus is on providing high-quality, individualized therapy without unnecessary delays, ensuring your child receives timely support for their development.
+        While using insurance can be a great option, it's important to keep in mind that coverage is often subject to deductibles and coinsurance. We're here to provide high-quality, individualized therapy to support your child's development without unnecessary delays.
+        If you have any questions about how we can help, we'd love to chat!

@@ -70,6 +70,28 @@
             flex-grow: 1; /* Allows description to take available space */
         }
 
+        .tier-details {
+            /* Style for pricing tier details */
+            font-size: 0.85rem;
+            margin-top: -10px; /* Pull details closer to price */
+            margin-bottom: 15px;
+        }
+
+        .item-format {
+            /* Style for other offering format */
+            font-size: 0.9rem;
+            margin-top: -10px; /* Pull format closer to price */
+            margin-bottom: 10px;
+        }
+
+        .item-description {
+            /* Style for other offering description */
+            font-size: 0.95rem;
+            color: $gray-700;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Allows description to take available space */
+        }
+
         .tier-includes-list {
             /* Style for the list of inclusions */
             list-style: none; /* Remove default list style */
@@ -85,6 +107,57 @@
                     color: $primary; /* Primary color for checkmarks */
                 }
             }
+        }
+
+        .price {
+            /* Style for pricing text */
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: $action; /* Use action color for price */
+            margin-bottom: 15px;
+        }
+    }
+
+    /* Specific styles for Treatment pricing tier cards */
+    .pricing-tier-card {
+        /* Add any specific styling for treatment cards here if needed */
+    }
+
+    /* Specific styles for Other Offering cards */
+    .other-offering-card {
+        /* Add any specific styling for other offering cards here if needed */
+    }
+
+    /* Styles for the Play Group Form Block */
+    .play-group-form-block {
+        border-top: 1px solid $gray-200; /* Separator above the form */
+        padding-top: 20px;
+        margin-top: 20px;
+
+        h5 {
+            @include heading-font;
+            font-size: 1.1rem;
+            color: $primary;
+        }
+
+        .form-group {
+            margin-bottom: 15px; /* Reduced space in form */
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 10px; /* Reduced padding in form */
+            font-size: 0.9rem;
+        }
+
+        .help-block.text-danger {
+            font-size: 0.75rem;
+        }
+
+        .btn-sm {
+            /* Ensure small button size */
+            padding: 8px 15px;
+            font-size: 0.9rem;
         }
     }
 }
