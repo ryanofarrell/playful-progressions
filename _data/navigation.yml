@@ -6,6 +6,8 @@ nav:
     url: "/blog/"
   - title: "FAQ"
     url: "/faq/"
+  - title: "Contact" # Added Contact link
+    url: "/contact/" # Link to the new contact page
 
 contact_icons:
   - type: "phone"

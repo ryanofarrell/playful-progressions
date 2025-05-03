@@ -1,0 +1,115 @@
+---
+layout: default # Use the default layout
+title: Contact Us
+subtitle: Get in touch with Playful Progressions
+permalink: /contact/
+# Optional: Specify a custom header image for this page
+# header_image: /assets/img/your-contact-header-image.avif
+---
+
+<section class="page-section first-content-section" id="contact-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        {% comment %} Reverted column width {% endcomment %}
+
+        {% comment %} Section header {% endcomment %}
+        <h2 class="section-heading text-center text-uppercase mb-4">Send Us a Message</h2>
+        <h3 class="section-subheading text-muted text-center mb-5">We'd love to hear from you! Fill out the form below or use our contact info.</h3>
+        {% comment %} Reverted subtitle {% endcomment %}
+
+        <div class="row">
+          {% comment %} Added row wrapper back {% endcomment %}
+          <div class="col-md-6 mb-4">
+            {% comment %} Added column for contact info block back {% endcomment %}
+            <div class="contact-info-block">
+              <h4 class="mb-3">Contact Information</h4>
+              <p>
+                <i class="fas fa-envelope text-primary mr-2"></i>
+                Email:
+                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+              </p>
+              <p>
+                <i class="fas fa-phone text-primary mr-2"></i>
+                Phone:
+                <a href="tel:{{ site.phone-numeric }}">{{ site.phone-text }}</a>
+              </p>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            {% comment %} Added column for form block back {% endcomment %}
+            <div class="contact-form-block">
+              <h4 class="mb-3 text-center">Contact Form</h4>
+              {% comment %}
+                Formspree setup:
+                1. Go to https://formspree.io/ and create a new form.
+                2. Verify your email address.
+                3. Copy the unique endpoint URL provided by Formspree (it will look like https://formspree.io/f/xxxxxxxx).
+                4. Replace the "YOUR_FORMSPREE_ENDPOINT" below with your unique URL.
+                5. Formspree will send submissions to the email address you verified.
+                6. We've added a hidden _subject field to indicate the source.
+                7. The form is configured to redirect to /thank-you/ on success.
+              {% endcomment %}
+
+              {% comment %} Placeholder for success/failure messages from contact_me.js {% endcomment %}
+              <div id="success"></div>
+
+              <form
+                id="contactForm"
+                action="https://formspree.io/f/xgvkapgj"
+                method="POST">
+                {% comment %} Updated Formspree endpoint {% endcomment %}
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    placeholder="Your Name *"
+                    required="required"
+                    data-validation-required-message="Please enter your name."
+                    name="name">
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    placeholder="Your Email *"
+                    required="required"
+                    data-validation-required-message="Please enter your email address."
+                    name="email">
+                  <p class="help-block text-danger"></p>
+                </div>
+                {% comment %} Removed the phone field {% endcomment %}
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    placeholder="Your Message *"
+                    required="required"
+                    data-validation-required-message="Please enter a message."
+                    name="message"></textarea>
+                  <p class="help-block text-danger"></p>
+                </div>
+                <div class="text-center">
+                  <button
+                    id="sendMessageButton"
+                    class="btn btn-primary btn-xl text-uppercase"
+                    type="submit">Send Message</button>
+                </div>
+                {% comment %} Hidden field for email subject indicator {% endcomment %}
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="Website Contact Form Submission">
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
