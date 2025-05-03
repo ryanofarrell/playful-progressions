@@ -134,8 +134,8 @@ services:
           format: "On-site or Virtual"
           description: "Educate teachers and school staff on strategies to best support your child's participation and learning in the school environment."
         - name: "Play Group"
-          price: "$40" # Added pricing
-          duration: "~1/month"
+          price: "$40 to attend" # Added pricing
+          duration: "1 per month"
           format: "Local Parks (Atlanta, GA)"
           description: |
             A fun, informal opportunity for parents to network with families of similar-aged children and for kids to engage in play targeting a specific developmental skill each session. Location varies, typically held on weekends.
