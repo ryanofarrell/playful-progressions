@@ -1,1 +1,62 @@
-{% include services.html %}
+---
+layout: post # Use the post layout for light background navbar
+title: Our Services
+subtitle: Detailed information about our offerings
+permalink: /services/
+---
+
+<section class="page-section first-content-section" id="services-page">
+  <div class="container">
+
+    {% include _section_header title=site.data.sitetext.services.title subtitle=site.data.sitetext.services.subtitle %}
+
+    <div class="row mb-5">
+      <div class="col-lg-12 text-center">
+        <h4 class="mb-3">Jump to a Service:</h4>
+        <ul class="list-inline mini-nav">
+          {% for service in site.data.sitetext.services.detailed_list %}
+            <li class="list-inline-item">
+              <a class="btn btn-outline-primary btn-services-nav js-scroll-trigger" href="#{{ service.id }}">{{ service.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% for service in site.data.sitetext.services.detailed_list %}
+      <section id="{{ service.id }}" class="service-detail-section mb-5">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="service-detail-title">{{ service.title }}</h3>
+            <p class="service-detail-description text-muted">{{ service.description }}</p>
+
+            <div class="row">
+              {% for tier in service.tiers %}
+                <div class="col-md-6 mb-4">
+                  <div class="service-tier-card">
+                    <h4 class="tier-name">{{ tier.name }}</h4>
+                    <p class="tier-description">{{ tier.description }}</p>
+                    <h5>Includes:</h5>
+                    <ul class="tier-includes-list">
+                      {% for item in tier.includes %}
+                        <li>
+                          <i class="fas fa-check-circle text-primary mr-2"></i>
+                          {{ item }}</li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% comment %} Include smooth scroll script if not using agency.min.js {% endcomment %}
+{% comment %} If agency.min.js is only on home, you might need a separate smooth scroll for internal links {% endcomment %}
+{% comment %} If you keep agency.min.js on all pages, this is not needed {% endcomment %}
+{% comment %} <script src="{{ 'assets/js/smooth-scroll.js' | relative_url }}" defer></script> {% endcomment %}

@@ -1,0 +1,79 @@
+// Services Page Styles
+
+.mini-nav {
+    .btn-services-nav {
+        /* Style for mini-navigation buttons */
+        margin: 0 5px;
+        margin-bottom: 10px; /* Space below buttons */
+    }
+}
+
+.service-detail-section {
+    /* Padding/margin for each service section */
+    padding-top: 50px; /* Space above each section */
+    border-bottom: 1px solid $gray-200; /* Separator between sections */
+    margin-bottom: 50px; /* Space below each section */
+
+    &:last-child {
+        border-bottom: none; /* No border on the last section */
+    }
+
+    .service-detail-title {
+        /* Style for the service title (H3) */
+        font-size: 2rem;
+        margin-bottom: 10px;
+        @include heading-font;
+        color: $primary;
+    }
+
+    .service-detail-description {
+        /* Style for the service description */
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .service-tier-card {
+        /* Style for the tier cards */
+        border: 1px solid $gray-300;
+        border-radius: 5px;
+        padding: 20px;
+        height: 100%; /* Make tier cards equal height in a row */
+        display: flex;
+        flex-direction: column;
+        background-color: white; /* White background for cards */
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); /* Subtle shadow */
+
+        .tier-name {
+            /* Style for tier name (H4) */
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            @include heading-font;
+            color: $primary; /* Primary color for tier names */
+        }
+
+        .tier-description {
+            /* Style for tier description */
+            font-size: 0.95rem;
+            color: $gray-700;
+            margin-bottom: 15px;
+            flex-grow: 1; /* Allows description to take available space */
+        }
+
+        .tier-includes-list {
+            /* Style for the list of inclusions */
+            list-style: none; /* Remove default list style */
+            padding-left: 0;
+            margin-bottom: 0; /* Remove bottom margin */
+
+            li {
+                margin-bottom: 8px;
+                font-size: 0.9rem;
+
+                i {
+                    /* Style for the checkmark icon */
+                    color: $primary; /* Primary color for checkmarks */
+                }
+            }
+        }
+    }
+}

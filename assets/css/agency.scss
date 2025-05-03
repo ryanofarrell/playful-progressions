@@ -82,7 +82,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/_about.scss";
 @import "layout/_mini_masthead.scss";
 @import "layout/_blog.scss";
-
+@import "layout/_services-page.scss"; // Import the new services page styles
 
 // Finally, import bootstrap here
 @import "bootstrap.min.css";

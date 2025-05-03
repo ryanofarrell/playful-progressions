@@ -75,8 +75,8 @@ team:
 services:
   title: "Services"
   subtitle: "A full suite of pediatric therapy needs"
-  section: services
-  list:
+  section: services # This section ID might still be useful for the home page link
+  list: # Keep the existing list for the home page section
     - title: "Initial Evaluation"
       desc: "Comprehensive occupational therapy evaluation including standard assessment, skilled observations, parent interview and plan of care development with full write up (60-90 minutes)"
       image: assets/img/baby-crawling.avif
@@ -89,6 +89,66 @@ services:
       desc: "Virtual consultations/coaching sessions for caregivers, other providers, and schools. Sessions are designed to provide guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
       image: assets/img/baby-playing-game.avif
       icon: fas fa-clipboard #find more at https://fontawesome.com/icons
+
+  # New detailed list for the services page
+  detailed_list:
+    - id: "evaluations" # ID for mini-nav link
+      title: "OT Evaluations"
+      description: "A comprehensive evaluation to understand your child's unique needs and strengths."
+      tiers:
+        - name: "Foundational Evaluation"
+          description: "Includes standard assessments, parent interview, and initial recommendations."
+          includes:
+            - Standardized assessments
+            - Clinical observations
+            - Parent/caregiver interview
+            - Brief written summary of findings
+            - Initial recommendations
+        - name: "Comprehensive Evaluation"
+          description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
+          includes:
+            - Standardized assessments
+            - Clinical observations
+            - Parent/caregiver interview
+            - Detailed written report with assessment scores and analysis
+            - Comprehensive recommendations and plan of care
+            - Follow-up consultation to review findings and plan
+            - School/provider communication (if applicable)
+
+    - id: "treatments"
+      title: "OT Treatments"
+      description: "Individualized therapy sessions focused on achieving specific developmental goals."
+      tiers:
+        - name: "Foundational Treatment"
+          description: "Regular therapy sessions in the child's natural environment."
+          includes:
+            - 50-minute direct therapy session
+            - 10-minute parent/caregiver education and home program guidance
+            - Therapy provided in home or school setting
+        - name: "Comprehensive Treatment Package" # Example of slightly different tier name
+          description: "Includes foundational treatment plus enhanced support and resources."
+          includes:
+            - 50-minute direct therapy session
+            - 10-minute parent/caregiver education and home program guidance
+            - Therapy provided in home or school setting
+            - Access to exclusive home program resources
+            - Priority scheduling
+
+    - id: "consultations"
+      title: "OT Consultations"
+      description: "Guidance and support for caregivers, educators, and other professionals."
+      tiers:
+        - name: "Foundational Consultation"
+          description: "Single virtual session to address specific questions or concerns."
+          includes:
+            - 60-minute virtual consultation session
+            - Discussion of specific challenges and strategies
+        - name: "Comprehensive Consultation Package"
+          description: "Multiple virtual sessions and ongoing support."
+          includes:
+            - Three 60-minute virtual consultation sessions
+            - Ongoing email support between sessions
+            - Collaborative strategy development
 
 book:
   title: "Contact"

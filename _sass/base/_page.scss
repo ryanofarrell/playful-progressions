@@ -46,11 +46,16 @@ h6 {
   }
 }
 @media (min-width: 768px) {
+  /* Apply increased padding only to the first section on desktop, AND only on pages with a light background */
+  body.body-light-background section:first-of-type {
+    padding-top: 250px; // Increased padding-top for the first section on light background pages
+  }
+
+  /* Keep default padding for all other sections on desktop (including first section on home page) */
   section {
-    padding-top: 150px;
+    padding-top: 150px; // Default padding for all sections on desktop
   }
 }
-
 // Highlight color customization
 ::-moz-selection {
   background: $primary;
