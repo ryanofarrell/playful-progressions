@@ -23,16 +23,16 @@
     font-size: 12px;
     padding: 13px;
     text-transform: uppercase;
-    color: $gray-800; /* Toggler text color - Changed to dark for light background */
+    color: white; /* Toggler text color - Changed to dark for light background */
     border: 0;
-    background-color: transparent; /* Toggler background color - Changed to transparent for light background */
+    background-color: $primary; /* Toggler background color - Changed to transparent for light background */
     @include heading-font;
     margin-bottom: 5px; /* Space below the toggler */
     width: 120px; /* Adjust this value as needed */
     // Add hover/focus styles for toggler on mobile if desired
     &:hover,
     &:focus {
-      color: $primary; /* Example: Primary color on hover/focus */
+      color: white; /* Example: Primary color on hover/focus */
     }
   }
 
