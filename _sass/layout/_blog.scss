@@ -1,4 +1,4 @@
-// Blog index and card styles
+// Blog index and card styles (existing)
 
 .blog-card {
     border: 1px solid #e9ecef; /* Light grey border */
@@ -58,6 +58,34 @@
     vertical-align: middle; /* Align badge nicely with text */
 }
 
+/* Specific styles for the '5 Minute Friday' button */
+.btn-filter.btn-5mfriday {
+    /* Unselected state: Primary outline */
+    background-color: transparent;
+    color: $primary;
+    border-color: $primary;
+
+    &:hover:not(.active) {
+        background-color: rgba($primary, 0.1); /* Light hover background */
+        border-color: darken($primary, 5%);
+        color: darken($primary, 5%);
+    }
+
+    /* Active state: Primary solid (inherits from .btn-filter.active but can be made explicit) */
+    &.active {
+        background-color: $primary;
+        color: white;
+        border-color: $primary;
+    }
+
+    &:hover.active {
+        background-color: darken($primary, 5%);
+        border-color: darken($primary, 5%);
+    }
+}
+
+// Styles for individual blog posts
+
 .post-content {
     /* Styling for the article container */
     /* Inherits padding from .page-section */
@@ -65,16 +93,19 @@
     .post-header {
         /* Styling for the header area above post content */
         margin-bottom: 30px; /* Add space below header */
+
+        /* Add padding-top to push title down */
+        padding-top: 60px; /* Adjust this value as needed */
     }
 
     .post-title {
         /* Styling for the blog post title (H1) */
-        font-size: 1rem; /* Make it pop */
+        font-size: 2.5rem; /* Make it pop */
         font-weight: 700; /* Bold */
         margin-bottom: 10px;
         @include heading-font; /* Use heading font */
         text-transform: uppercase; /* If uppercase is desired */
-        color: $gray-800; /* Or a specific color like $primary */
+        color: $gray-900; /* Or a specific color like $primary */
 
         @media (min-width: 768px) {
             font-size: 3.5rem; /* Larger size on desktop */

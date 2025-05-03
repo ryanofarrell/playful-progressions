@@ -11,6 +11,10 @@ header.mini-masthead {
     overflow: hidden;
     background-color: $primary; // Fallback background color
 
+    /* Add padding-top to clear the fixed navbar */
+    /* Adjust these values based on your actual fixed navbar height */
+    padding-top: 90px; // Estimated mobile navbar height
+
     .mini-masthead-bg {
         position: absolute;
         top: 0;
@@ -25,7 +29,8 @@ header.mini-masthead {
         position: relative;
         z-index: 1;
         padding: 0 15px; // Keep horizontal padding
-        padding-top: 100px; /* Increased padding-top to push content below fixed navbar (adjust value) */
+        // Removed padding-top here, space is created on the parent header
+        // padding-top: 100px; /* Increased padding-top to push content below fixed navbar (adjust value) */
 
         .page-title {
             font-size: 36px; // Adjust font size
@@ -45,8 +50,13 @@ header.mini-masthead {
         height: 30vh; // Adjust height for larger screens
         min-height: 300px; // Adjust min-height for larger screens
 
+        /* Adjust padding-top for desktop (shrunk navbar height) */
+        /* Adjust this value based on your actual fixed navbar height on desktop */
+        padding-top: 104px; // Estimated desktop shrunk navbar height
+
         .mini-masthead-content {
-            padding-top: 180px; /* Increased padding-top for larger screens (adjust value) */
+            // Removed padding-top here for desktop as well
+            // padding-top: 180px; /* Increased padding-top for larger screens (adjust value) */
 
             .page-title {
                 font-size: 48px; // Adjust font size for larger screens

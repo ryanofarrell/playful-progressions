@@ -29,4 +29,3 @@ Mardi gras (or party beads) are a great tool for any age. They are shiny, intere
 
 Enjoy this activity through the many stages of childhood! As parents, we can have fun and let our kids benefit from the party. I do recommend only playing with beads under adult supervision.
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

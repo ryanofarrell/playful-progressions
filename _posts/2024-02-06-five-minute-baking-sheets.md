@@ -33,4 +33,3 @@ Challenge your older kids with baking sheet activities that promote strength and
 Get your kiddos involved in the kitchen action and watch their sensory motor skills flourish with this simple kitchen staple!
 
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

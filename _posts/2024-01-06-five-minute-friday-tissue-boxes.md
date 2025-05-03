@@ -31,4 +31,3 @@ For older kids, consider creating smaller holes in the sides of the tissue box t
 
 As we near the end of cold and flu season, you may find yourself with a surplus of tissue boxes. Why not repurpose them for these engaging activities? After all, a little fun amidst the nose-wiping can make the season more bearable for everyone!
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

@@ -33,4 +33,3 @@ Painters tape can be used on a variety of surfaces like a wall, tray, or even on
 
 Enjoy this simple and fun activity with your little one! It can be repeated over and over again and never gets old!
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

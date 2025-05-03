@@ -25,4 +25,3 @@ I seem to always find hair ties lying around.  Luckily, they can be for more tha
 ## Bigger Kids
 Scrunchies and hair ties make great slingshots!  Creating a slingshot and manipulating slingshots are great for building fine motor strength and bilateral coordination
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

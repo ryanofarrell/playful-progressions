@@ -12,6 +12,7 @@
 
     {% include navigation.html %}
 
+    {% comment %} Include masthead on home page, mini-masthead on other pages {% endcomment %}
     {% if page.layout == "home" %}
       {% include masthead.html %}
     {% else %}
@@ -29,9 +30,12 @@
     <script src="{{ 'assets/js/jqBootstrapValidation.js' | relative_url }}" defer></script>
     <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
 
-    {% comment %} Include agency.min.js only on the home page {% endcomment %}
-    {% if page.layout == "home" %}
+    {% comment %} Load agency.min.js only on the home page (for shrink effect, etc.) {% endcomment %}
+    {% if page.url == "/" %} 
       <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
+    {% else %}
+      {% comment %} Load simple smooth scroll script on other pages using this layout {% endcomment %}
+      <script src="{{ 'assets/js/smooth-scroll-only.js' | relative_url }}" defer></script>
     {% endif %}
 
   </body>

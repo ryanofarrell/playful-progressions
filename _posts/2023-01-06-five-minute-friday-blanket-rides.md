@@ -29,4 +29,3 @@ Enter blanket rides! The set up is super easy and involves simply lying your bla
 - While your baby is light, pulling them provides proprioceptive input for mom, which can be regulating and give you a much needed boost of energy– movement is medicine after all
 - Bonus: photos and videos of your baby enjoying a gifted blanket make for a very easy and heartfelt thank you note
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

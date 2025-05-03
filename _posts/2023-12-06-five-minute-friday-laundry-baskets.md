@@ -36,4 +36,3 @@ Laundry baskets have holes that can be utilized for fine motor activities. Attac
 
 By incorporating these activities, you can transform your laundry basket into a preferred play space for you and your child. Here's to making laundry time a little more enjoyable!
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

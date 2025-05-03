@@ -20,4 +20,3 @@ It is never a bad idea to practice using a backpack! Backpacks are not just for 
 
 With back to school just around the corner, it's a great time to use that new backpack for play and development opportunities!
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

@@ -29,4 +29,3 @@ Foil is best used for babies 6 months and up who are able to control their hands
 
 Foil can be fun for all ages, and not just in the kitchen!  It is packed with fine motor benefits for the whole family.
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

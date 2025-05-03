@@ -28,4 +28,3 @@ Using a muffin tray and hard toys such as marbles inside can also make a great n
 
 Muffin trays are always a go-to in the clinic, and can be so much fun at home for all ages!
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._

@@ -25,4 +25,3 @@ Q-tips are a bathroom staple, but can also be used to develop so many skills for
 
 Using q-tips are not just for grooming!  They are a great asset to developing fine motor skills for all ages!
 
-_All 5 Minute Friday posts are available [here](/5-minute-friday)._
