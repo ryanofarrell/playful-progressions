@@ -5,6 +5,17 @@
         /* Style for mini-navigation buttons */
         margin: 0 5px;
         margin-bottom: 10px; /* Space below buttons */
+        background-color: $primary; /* Solid primary background */
+        color: white; /* White text */
+        border-color: $primary; /* Primary border */
+        /* Add padding, font size, etc. if needed, potentially inheriting from .btn */
+
+        &:hover,
+        &:focus {
+            background-color: darken($primary, 10%); /* Darken on hover/focus */
+            border-color: darken($primary, 10%);
+            color: white; /* Keep text white */
+        }
     }
 }
 

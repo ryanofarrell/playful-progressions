@@ -1,4 +1,6 @@
-<header class="mini-masthead position-relative text-center text-white">
+<header
+class="mini-masthead position-relative text-center text-white">
+  {% comment %} Check for page.header_image first, then fallback to site default {% endcomment %}
   {% assign page_header_image = page.header_image | default: site.data.style.default_header_image %}
   {% if page_header_image %}
     <img
