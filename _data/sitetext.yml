@@ -4,11 +4,8 @@ header:
   subtitle: Nurturing Development Through Play
   buttons:
     - label: Contact Maria
-      link: "#book"
+      link: "/contact/" # Updated link to the contact page
       class: btn-primary
-    # - label: Learn More
-    #   link: "#services"
-
 about:
   section: about
   title: "Pediatric Occupational Therapy"
