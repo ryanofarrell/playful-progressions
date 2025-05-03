@@ -31,12 +31,16 @@
     <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
 
     {% comment %} Load agency.min.js only on the home page (for shrink effect, etc.) {% endcomment %}
-    {% if page.url == "/" %} 
+    {% if page.url == "/" %}
       <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
     {% else %}
       {% comment %} Load simple smooth scroll script on other pages using this layout {% endcomment %}
       <script src="{{ 'assets/js/smooth-scroll-only.js' | relative_url }}" defer></script>
     {% endif %}
+
+    {% comment %} Include custom script for Play Group form handling (Depends on jQuery and Validation) {% endcomment %}
+    <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
+
 
   </body>
 </html>
