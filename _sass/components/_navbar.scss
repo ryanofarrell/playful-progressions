@@ -100,6 +100,33 @@
         color: darken($primary, 10%); /* Darkened primary color on click/focus */
       }
     }
+
+    /* Style for the Instagram icon specifically */
+    .fab.fa-instagram {
+      /* Add background and shape styles to make it appear filled */
+      background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      ); /* Instagram gradient */
+      color: white; /* White icon color on gradient */
+      border-radius: 50%; /* Make it a circle */
+      padding: 5px; /* Adjust padding to control circle size */
+      width: 1.3em; /* Ensure a fixed width */
+      height: 1.3em; /* Ensure a fixed height */
+      display: inline-flex; /* Use flexbox to center the icon within the circle */
+      justify-content: center;
+      align-items: center;
+      // Ensure it doesn't inherit color changes from parent .contact-icon hover/active
+      &:hover,
+      &:focus,
+      &.active {
+        color: white; /* Keep icon white */
+      }
+    }
   }
 
   /* Responsive styles for desktop */

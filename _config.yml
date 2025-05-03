@@ -38,8 +38,11 @@ collections:
   portfolio:
 
 # Pre-populated Contact Message and Subject
-pre_populate_message: "Hi Maria, I would like to learn more about Playful Progressions offerings!"
+pre_populate_message: "Hi Maria, I would like to learn more about Playful Progressions' offerings!"
 email_subject: "Inquiry about Playful Progressions"
+
+# Instagram URL
+instagram_url: "https://www.instagram.com/playfulprogressionsatl/" # Added Instagram URL
 
 markdown: kramdown
 # Uncomment following line to use Formspree form ID based URL instead of email based URL

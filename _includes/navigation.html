@@ -40,11 +40,16 @@
           {% elsif icon.type == "sms" %}
             {% comment %} Add body for sms links {% endcomment %}
             {% assign link_href = "sms:" | append: site[icon.data_key] | append: "?body=" | append: encoded_message %}
+          {% elsif icon.type == "instagram" %}
+            {% assign link_href = site[icon.data_key] %}
           {% endif %}
           <a
             href="{{ link_href }}"
             class="contact-icon"
-            aria-label="{{ icon.type }}">
+            aria-label="{{ icon.type }}"
+            {% if icon.type == "instagram" %}
+            target="_blank"
+            {% endif %}>
             <i class="{{ icon.icon }}"></i>
           </a>
         {% endfor %}
@@ -85,11 +90,16 @@
             {% elsif icon.type == "sms" %}
               {% comment %} Add body for sms links {% endcomment %}
               {% assign link_href = "sms:" | append: site[icon.data_key] | append: "?body=" | append: encoded_message %}
+            {% elsif icon.type == "instagram" %}
+              {% assign link_href = site[icon.data_key] %}
             {% endif %}
             <a
               href="{{ link_href }}"
               class="nav-link contact-icon"
-              aria-label="{{ icon.type }}">
+              aria-label="{{ icon.type }}"
+              {% if icon.type == "instagram" %}
+              target="_blank"
+              {% endif %}>
               <i class="{{ icon.icon }}"></i>
             </a>
           {% endfor %}

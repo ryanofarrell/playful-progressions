@@ -10,13 +10,10 @@ nav:
 contact_icons:
   - type: "phone"
     icon: "fas fa-phone" # Font Awesome class for phone
-    # Removed the Liquid tag here, will construct the link in HTML
     data_key: "phone-numeric" # Add a key to reference _config.yml data
   - type: "email"
     icon: "fas fa-envelope" # Font Awesome class for envelope
-    # Removed the Liquid tag here
     data_key: "email" # Add a key to reference _config.yml data
-  - type: "sms"
-    icon: "fas fa-sms" # Font Awesome class for SMS
-    # Removed the Liquid tag here
-    data_key: "phone-numeric" # Add a key to reference _config.yml data
+  - type: "instagram" # Changed type from sms to instagram
+    icon: "fab fa-instagram" # Font Awesome class for Instagram
+    data_key: "instagram_url" # Changed data_key to reference the new instagram_url
