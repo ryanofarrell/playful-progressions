@@ -56,6 +56,7 @@ permalink: /services/
               </div>
 
             {% elsif offering.type == "volume_pricing" %}
+              {% comment %} This block remains for other potential volume pricing, or you can remove if not needed elsewhere {% endcomment %}
               <div class="row justify-content-center">
                 {% for tier in offering.pricing_tiers %}
                   <div class="col-md-4 mb-4">
@@ -65,10 +66,29 @@ permalink: /services/
                       {% if tier.details %}
                         <p class="tier-details text-muted">{{ tier.details }}</p>
                       {% endif %}
-                    {% comment %} You might add core inclusions here if they apply to all tiers {% endcomment %}
                     </div>
                   </div>
                 {% endfor %}
+              </div>
+
+            {% elsif offering.type == "single_treatment_bulleted" %}
+              {% comment %} New block for single treatment price with bullet points {% endcomment %}
+              <div class="row justify-content-center">
+                <div class="col-md-8 mb-4">
+                  <div class="service-tier-card single-treatment-card">
+                    <h4 class="tier-name">{{ offering.title }}</h4>
+                    <p class="price">{{ offering.price }}</p>
+                    <h5>Details:</h5>
+                    <ul class="tier-includes-list">
+                      {% for detail in offering.details_list %}
+                        <li>
+                          <i class="fas fa-check-circle text-primary mr-2"></i>
+                          {{ detail }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
               </div>
 
             {% elsif offering.type == "list" %}
@@ -139,7 +159,6 @@ permalink: /services/
               </div>
 
             {% endif %}
-
           </div>
         </div>
       </section>

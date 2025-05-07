@@ -115,20 +115,17 @@ services:
 
     - id: "treatments"
       title: "OT Treatments"
-      description: |
-        Skilled, individualized occupational therapy treatment provided in the client's natural environment (home/school). Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits. Sessions can be scheduled weekly or bi-weekly based on need and availability.
-      type: "volume_pricing" # Indicate volume pricing structure
-      pricing_tiers:
-        - volume: "1 Session"
-          price: "$200" # Added pricing
-          details: "" # No extra detail for single session
-        - volume: "4 Sessions"
-          price: "$185/session" # Added pricing
-          details: "(Save $15/session)"
-        - volume: "8+ Sessions"
-          price: "$175/session" # Added pricing
-          details: "(Save $25/session) - Includes a midpoint 20-minute virtual check-in with parents." # Added detail
-
+      # Changed type to render as a single card with bullets
+      type: "single_treatment_bulleted"
+      # Single price for treatment sessions
+      price: "$175/session"
+      # Restructured description into a list of key details
+      details_list:
+        - Skilled, individualized occupational therapy treatment
+        - Provided in the client's natural environment (home/school)
+        - 50-minute treatment sessions
+        - Includes 10 minutes of parent education and home programming guidance
+        - Sessions available weekly or bi-weekly based on need
     - id: "other-offerings" # New ID for mini-nav link
       title: "Other Offerings"
       description: "Additional services designed to support families and children in various contexts."
