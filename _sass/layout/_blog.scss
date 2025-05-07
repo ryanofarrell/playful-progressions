@@ -49,38 +49,68 @@
         .blog-card-meta {
             font-size: 0.85rem; /* Adjust meta info size */
             color: $gray-600; /* Use a muted color for meta info */
+
+            .badge {
+                vertical-align: middle; /* Align badge nicely with text */
+                // Base badge styles - Bootstrap's badge-pill class provides most of this
+                // padding: .3em .6em;
+                // border-radius: .25rem;
+                // font-weight: 700;
+                // line-height: 1;
+                // text-align: center;
+                // white-space: nowrap;
+                // vertical-align: baseline;
+                // display: inline-block;
+            }
+
+            // Styles for individual tag badge colors
+            .badge-tag-5-minute-friday {
+                background-color: $primary; // Match color from _data/tags.yml
+                color: white; // Text color on badge (adjust based on background lightness)
+            }
+            // Styles for individual tag badge colors
+            .badge-tag-posts {
+                background-color: $action; // Match color from _data/tags.yml
+                color: white; // Text color on badge (adjust based on background lightness)
+            }
         }
     }
 }
 
-/* Style for the 5 Minute Friday badge */
-.blog-card-meta .badge {
-    vertical-align: middle; /* Align badge nicely with text */
-}
+/* Styles for blog filter buttons */
+.btn-filter {
+    margin: 0 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Match existing style */
 
-/* Specific styles for the '5 Minute Friday' button */
-.btn-filter.btn-5mfriday {
-    /* Unselected state: Primary outline */
-    background-color: transparent;
-    color: $primary;
-    border-color: $primary;
-
-    &:hover:not(.active) {
-        background-color: rgba($primary, 0.1); /* Light hover background */
-        border-color: darken($primary, 5%);
-        color: darken($primary, 5%);
+    // Style for the "All Posts" button - keeps its default primary outline style
+    &.btn-outline-primary {
+        // No changes needed here if you want the default primary outline
     }
 
-    /* Active state: Primary solid (inherits from .btn-filter.active but can be made explicit) */
+    // Active state for any filter button
     &.active {
-        background-color: $primary;
+        background-color: $secondary; // Solid secondary color when active
         color: white;
-        border-color: $primary;
+        border-color: $secondary;
+
+        &:hover {
+            background-color: darken($secondary, 5%);
+            border-color: darken($secondary, 5%);
+        }
     }
 
-    &:hover.active {
-        background-color: darken($primary, 5%);
-        border-color: darken($primary, 5%);
+    // Style for filter buttons that are NOT active when any filter *is* active
+    // This requires JavaScript to add a class (e.g., 'filter-active') to the container
+    #blog-filters.filter-active & {
+        &.btn-filter:not(.active):not(.btn-outline-primary) {
+            /* Target non-active tag buttons */
+            opacity: 0.5; /* Grey out effect */
+            // You might also override colors explicitly if needed, e.g.:
+            // color: $gray-600 !important;
+            // border-color: $gray-300 !important;
+            // background-color: transparent !important;
+        }
     }
 }
 

@@ -8,19 +8,16 @@ permalink: /blog/
 <section class="page-section" id="blog">
   <div class="container">
 
-
-    <div class="row mb-4">
+    <div class="row mb-4" id="blog-filters">
       <div class="col-lg-12 text-center">
-        {% comment %} Get unique tags from all posts {% endcomment %}
-        {% assign all_tags = site.posts | map: "tag" | compact | uniq | sort %}
         <h3 class="section-subheading text-muted">Filter to specific post types</h3>
         <button class="btn btn-outline-primary btn-filter active" data-tag="all">All Posts</button>
 
-        {% for tag in all_tags %}
-          {% if tag %}
-            {% comment %} Ensure tag is not empty {% endcomment %}
-            <button class="btn btn-outline-secondary btn-filter {% if tag == '5 Minute Friday' %}btn-5mfriday{% endif %}" data-tag="{{ tag | slugify }}">{{ tag | upcase }}</button>
-          {% endif %}
+        {% comment %} Loop through tags defined in data file to create filter buttons {% endcomment %}
+        {% for tag_item in site.data.tags.tag_colors %}
+          {% assign tag_name = tag_item | first %}
+          {% assign tag_data = tag_item | last %}
+          <button class="btn btn-filter btn-tag-{{ tag_name | slugify }}" data-tag="{{ tag_name | slugify }}">{{ tag_name | upcase }}</button>
         {% endfor %}
       </div>
     </div>
@@ -46,9 +43,9 @@ permalink: /blog/
               <p class="blog-card-excerpt">{{ post.excerpt }}</p>
               <p class="blog-card-meta">
                 <small>{{ post.date | date: "%B %d, %Y" }}</small>
-                {% comment %} Check for the '5 Minute Friday' tag for the badge {% endcomment %}
-                {% if post.tag == '5 Minute Friday' %}
-                  <span class="badge badge-primary ml-2">5 Minute Friday</span>
+                {% comment %} Display tag badge with dynamic class for coloring {% endcomment %}
+                {% if post.tag %}
+                  <span class="badge badge-pill badge-tag-{{ post.tag | slugify }} ml-2">{{ post.tag }}</span>
                 {% endif %}
               </p>
             </div>

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
   const filterButtons = document.querySelectorAll(".btn-filter");
   const postCards = document.querySelectorAll(".blog-post-card");
+  // Get the container of the filter buttons
+  const filterContainer = document.getElementById("blog-filters");
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -10,6 +12,13 @@ document.addEventListener("DOMContentLoaded", function () {
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       // Add 'active' class to the clicked button
       this.classList.add("active");
+
+      // Add/remove 'filter-active' class on the container based on the selected tag
+      if (selectedTag === "all") {
+        filterContainer.classList.remove("filter-active");
+      } else {
+        filterContainer.classList.add("filter-active");
+      }
 
       postCards.forEach((card) => {
         const cardTags = card.getAttribute("data-tags");

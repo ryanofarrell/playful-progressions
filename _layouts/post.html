@@ -30,13 +30,7 @@
                   {% endfor %}
                 {% endif %}
               </p>
-              {% comment %} Display the teaser image if available {% endcomment %}
-              {% if page.header.teaser %}
-                <img
-                  src="{{ page.header.teaser | relative_url }}"
-                  alt="{{ page.title }}"
-                  class="post-teaser-img mb-4">
-              {% endif %}
+
             </header>
 
             <div class="post-body text-muted">
