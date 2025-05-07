@@ -51,10 +51,21 @@ team:
   section: team
   title: "Meet Maria"
   subtitle: "Caring, experienced, engaging therapy"
-  subtext:
-    "**Hi, I'm Maria O'Farrell, MS, OTR/L**, a passionate pediatric occupational therapist and the proud owner of Playful Progressions! With over eight years of experience, I've had the privilege of working with children and adolescents (ages 0-21) in various settings, including outpatient clinics, homes, and schools. \n\n
-    At Playful Progressions, I provide comprehensive occupational therapy evaluations and personalized interventions in homes and schools, ensuring that each child receives the support they need in a familiar and comfortable environment. My approach is rooted in collaboration, practicality, and kindness—I believe in offering individualized, judgment-free guidance to families navigating sensory differences and developmental milestones. \n\n
-    I'm dedicated to helping children build confidence, independence, and essential life skills through play-based, engaging therapy. I'd love to be part of your child's journey!"
+  # This is the detailed bio for the dedicated page
+  subtext: |
+    Maria is a pediatric occupational therapist who brings warmth, expertise, and deep compassion to the families she serves. She earned her Bachelor of Health Science from the University of Florida in 2014, followed by a Master of Science in Occupational Therapy from Florida Gulf Coast University in 2017. Since then, she has dedicated her career to helping children thrive through a strengths-based, individualized approach.
+
+    Maria is passionate about supporting children's development by emphasizing sensory processing skills to promote emotional regulation, motor coordination, and learning readiness. She also incorporates reflex integration strategies to support foundational movement patterns and neurological development. Her approach is both evidence-informed and rooted in meaningful connection—with children and their families.
+
+    Maria is also a part-time instructor in the Occupational Therapy program at Georgia State University, where she enjoys mentoring future therapists and sharing her knowledge with both students and families. Her teaching reflects her commitment to empowering others through practical, family-centered strategies.
+
+    As a mother of two, Maria deeply understands the challenges and joys of parenting. She strives to offer realistic, sustainable support that fits within the natural flow of daily family life. She is just as passionate about encouraging and equipping parents as she is about working directly with children.
+
+    Maria brings advanced training in sensory integration, reflex integration, eye movement disorders, feeding therapy, DIR/Floortime, Handwriting Without Tears, Astronaut Training, and the treatment of plagiocephaly without a helmet. Her extensive continuing education allows her to tailor therapy with care and precision.
+
+    Above all, Maria is honored to be part of your child's journey. She looks forward to walking alongside your family with compassion, creativity, and clinical expertise.
+  # This is the shorter blurb for the home page
+  short_bio: "Maria O'Farrell, MS, OTR/L, is a passionate pediatric occupational therapist dedicated to helping children thrive through compassionate, play-based therapy. She provides individualized support in home and school environments, empowering both children and their families to learn and grow."
   people:
     - name: "Maria O'Farrell"
       role: "Owner"
