@@ -5,7 +5,7 @@ date: 2024-08-10 08:03:00 -0400
 categories: posts
 excerpt: Most parents know that tummy time is important, but many don't know why! Understanding the why behind the action is so important, and will encourage more consistency.
 classes: wide
-tag: blog
+tag: Posts
 ---
 
 {% include figure

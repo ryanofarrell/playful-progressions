@@ -5,7 +5,7 @@ date: 2024-03-13 08:03:00 -0400
 categories: posts
 excerpt: Hindsight is 20/20, but I know that I will adopt these changes much earlier the next time we welcome a new baby to the world. Give yourself grace and don’t be afraid to make some changes when things are not going exactly as you thought they would.
 classes: wide
-tag: blog
+tag: Posts
 ---
 
 When I was pregnant, people would often remark on how lucky I was that I already knew so much about child development and what to do with a baby, and they are right, I am lucky to have the knowledge that I have; however, I was holding myself to an impossible standard. I let go of a few things that markedly improved my well-being and increased my confidence in my new role.

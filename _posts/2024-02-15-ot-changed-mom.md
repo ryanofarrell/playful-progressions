@@ -5,7 +5,7 @@ date: 2024-02-15 08:03:00 -0400
 categories: posts
 excerpt: A lot changed for me after having a child, but the most unexpected changes happened within my practice
 classes: wide
-tag: blog
+tag: Posts
 ---
 
 I love every one of my patients. I have been in the same clinic for almost six years now, and have developed a strong relationship with so many families. I remember thinking, “is it possible that I will love my baby as much (or more) than these kids?” The answer is yes, because having your own child is SO different. If I’m being honest, I have felt a little imposter syndrome as my job requires me to provide parenting advice; without the experience of ever having parented. While I thought I would be able to feel more confident about my recommendations after having my own child, my practice changed in so many more unexpected ways.
