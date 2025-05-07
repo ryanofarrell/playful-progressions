@@ -107,7 +107,7 @@ services:
             - Standard written summary of findings
 
         - name: "Comprehensive Evaluation"
-          price: "$300" # Added pricing
+          price: "$299" # Added pricing
           # Modified description, removed the footnote text
           description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
           # Added a new field for the footnote text
@@ -143,7 +143,7 @@ services:
       type: "list" # Indicate a simple list structure
       items:
         - name: "Parent Consultation"
-          price: "$100" # Added pricing
+          price: "$99" # Added pricing
           duration: "30 minutes"
           format: "Virtual"
           description: "Get strategies for specific known problems and guidance for home programming."
