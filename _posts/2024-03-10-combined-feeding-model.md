@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Why I Chose a Combined Feeding Model (Baby Led Weaning and Purees)
-date: 2023-03-10 08:03:00 -0400
+date: 2024-03-10 08:03:00 -0400
 categories: posts
 excerpt: You may feel pressure to choose one method between baby led weaning and purees, but you do not have to! Both are packed with benefits for you and your baby.
 classes: wide

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 5 Minute Friday - Blanket Rides!
-date: 2023-01-06 08:03:00 -0400
+date: 2024-01-06 08:03:00 -0400
 categories: posts
 excerpt: Just trying to get through the wake window? Learn how much you can do for your little one with just one blanket!
 classes: wide

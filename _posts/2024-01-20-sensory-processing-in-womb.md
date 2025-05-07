@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sensory Processing Starts in the Womb
-date: 2023-01-20 08:03:00 -0400
+date: 2024-01-20 08:03:00 -0400
 categories: posts
 excerpt: Learn about the three primitive senses and how you can tell when your baby is using their sensory system in utero.
 classes: wide

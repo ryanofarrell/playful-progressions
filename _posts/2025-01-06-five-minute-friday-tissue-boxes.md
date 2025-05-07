@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 5 Minute Friday - Tissue Boxes!
-date: 2024-01-06 08:03:00 -0400
+date: 2025-01-06 08:03:00 -0400
 categories: posts
 excerpt: Tissue boxes can serve a purpose beyond wiping runny noses!
 classes: wide

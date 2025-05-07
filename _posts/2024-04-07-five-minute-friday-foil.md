@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 5 Minute Friday - Aluminum Foil!
-date: 2023-04-07 08:03:00 -0400
+date: 2024-04-07 08:03:00 -0400
 categories: posts
 excerpt: Foil can be fun for all ages, and not just in the kitchen!  It is packed with fine motor benefits for the whole family!
 classes: wide
