@@ -21,7 +21,7 @@
 
 .service-detail-section {
     /* Padding/margin for each service section */
-    padding-top: 50px; /* Space above each section */
+    padding-top: 10px; /* Space above each section */
     border-bottom: 1px solid $gray-200; /* Separator between sections */
     margin-bottom: 50px; /* Space below each section */
 
@@ -67,7 +67,7 @@
             font-size: 0.95rem;
             color: $gray-700;
             margin-bottom: 15px;
-            flex-grow: 1; /* Allows description to take available space */
+            // REMOVED: flex-grow: 1; /* Allows description to take available space */
         }
 
         .tier-details {
@@ -89,7 +89,7 @@
             font-size: 0.95rem;
             color: $gray-700;
             margin-bottom: 15px;
-            flex-grow: 1; /* Allows description to take available space */
+            // REMOVED: flex-grow: 1; /* Allows description to take available space */
         }
 
         .tier-includes-list {
@@ -159,5 +159,12 @@
             padding: 8px 15px;
             font-size: 0.9rem;
         }
+    }
+
+    // Style for additional includes in tiered cards
+    .additional-include {
+        // You can add specific styles here if needed,
+        // beyond the text color applied by the icon class
+        // font-weight: bold;
     }
 }

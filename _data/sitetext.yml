@@ -20,6 +20,9 @@ about:
     - Sandy Springs
     - Dunwoody
     - Midtown
+  location_note_pre_link: "Don't see your part of town?"
+  location_note_link_text: "Contact Maria to discuss options!"
+  location_note_link_url: "/contact/" # Make sure this URL matches your contact page URL
   what-we-treat:
     - title: Infants
       items:
@@ -95,23 +98,31 @@ services:
         - name: "Foundational Evaluation"
           price: "$250" # Added pricing
           description: "Includes clinical observations, parent interview, and initial recommendations."
-          includes:
+          # Renamed includes for consistency
+          standard_includes:
             - Clinical observations
             - Sensory Processing Measure assessment (SPM-2)
             - In-depth intake call with caregiver
-            - Brief written summary of findings
             - Initial recommendations
+            - Standard written summary of findings
+
         - name: "Comprehensive Evaluation"
           price: "$300" # Added pricing
-          description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation. Recommended if we plan to submit for reimbursement"
-          includes:
-            - (+) Standardized assessments (PDMS-3, .....)
+          # Modified description, removed the footnote text
+          description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
+          # Added a new field for the footnote text
+          footnote: "Recommended if we plan to submit for reimbursement"
+          # Standard items included in both tiers
+          standard_includes:
             - Clinical observations
             - Sensory Processing Measure assessment (SPM-2)
             - In-depth intake call with caregiver
-            - Brief written summary of findings
             - Initial recommendations
-            - (+) Follow-up consultation to review findings and plan
+          # Additional items specific to the comprehensive tier
+          additional_includes:
+            - Detailed written summary of findings
+            - Standardized assesments (PDMS-3 & Beery VMI)
+            - Follow-up consultation to review findings and plan # Removed (+)
 
     - id: "treatments"
       title: "OT Treatments"
@@ -134,7 +145,7 @@ services:
         - name: "Parent Consultation"
           price: "$100" # Added pricing
           duration: "30 minutes"
-          format: "Online"
+          format: "Virtual"
           description: "Get strategies for specific known problems and guidance for home programming."
         - name: "School Consultation"
           price: "$150" # Added pricing

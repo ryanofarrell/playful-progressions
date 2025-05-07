@@ -35,7 +35,7 @@ permalink: /services/
 
             {% comment %} Display content based on the type of offering {% endcomment %}
             {% if offering.type == "tiered" %}
-              <div class="row">
+              <div class="row justify-content-center">
                 {% for tier in offering.tiers %}
                   <div class="col-md-6 mb-4">
                     <div class="service-tier-card">
@@ -44,17 +44,35 @@ permalink: /services/
                       <p class="tier-description">{{ tier.description }}</p>
                       <h5>Includes:</h5>
                       <ul class="tier-includes-list">
-                        {% for item in tier.includes %}
-                          <li>
-                            <i class="fas fa-check-circle text-primary mr-2"></i>
-                            {{ item }}</li>
-                        {% endfor %}
+                        {% comment %} Loop through standard includes {% endcomment %}
+                        {% if tier.standard_includes %}
+                          {% for item in tier.standard_includes %}
+                            <li>
+                              <i class="fas fa-check-circle text-primary mr-2"></i>
+                              {{ item }}
+                            </li>
+                          {% endfor %}
+                        {% endif %}
+                        {% comment %} Loop through additional includes and style them differently {% endcomment %}
+                        {% if tier.additional_includes %}
+                          {% for item in tier.additional_includes %}
+                            <li class="additional-include">
+                              <i class="fas fa-check-circle text-success mr-2"></i>
+                              {{ item }}
+                            </li>
+                          {% endfor %}
+                        {% endif %}
                       </ul>
+                      {% comment %} Display footnote if it exists {% endcomment %}
+                      {% if tier.footnote %}
+                        <p class="tier-footnote text-muted mt-2 mb-0">
+                          <small>&#42; {{ tier.footnote }}</small>
+                        </p>
+                      {% endif %}
                     </div>
                   </div>
                 {% endfor %}
               </div>
-
             {% elsif offering.type == "volume_pricing" %}
               {% comment %} This block remains for other potential volume pricing, or you can remove if not needed elsewhere {% endcomment %}
               <div class="row justify-content-center">
