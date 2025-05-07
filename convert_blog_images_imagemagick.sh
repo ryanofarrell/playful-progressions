@@ -8,15 +8,14 @@ SOURCE_DIR="assets/images/blog/full-res"
 OUTPUT_DIR="assets/images/blog"
 
 # Quality settings (0-100 for ImageMagick, higher is better quality)
-WEBP_QUALITY=85
-AVIF_QUALITY=85
+WEBP_QUALITY=60
+AVIF_QUALITY=60
 
-# Settings for the "smallified" original image
-SMALL_MAX_DIMENSION=800 # Max width or height for the smallified image
-SMALL_JPG_QUALITY=80 # Quality for smallified JPG compression (0-100) - Applies only to JPGs
+# Settings for the compressed original image (compression only, no resize)
+SMALL_JPG_QUALITY=60 # Quality for compressed JPG compression (0-100) - Applies only to JPGs
 
 # Set this to 'true' for dry run, 'false' for actual execution
-DRY_RUN=true
+DRY_RUN=false
 # ---------------------
 
 echo "--- Running Bulk Image Conversion Script (Using ImageMagick, Dry Run: $DRY_RUN) ---"
@@ -60,11 +59,11 @@ find "$SOURCE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png
 
     # --- Create WebP Version ---
     # Using 'magick convert' for IMv7 compatibility
-    webp_command="magick convert \"$source_image\" -quality $WEBP_QUALITY \"$webp_output\""
+    webp_command="magick $source_image -quality $WEBP_QUALITY $webp_output"
     if [ "$DRY_RUN" = true ]; then
         echo "  Would create WebP: $webp_command"
     else
-        echo "  Creating WebP..."
+        echo "  Creating WebP with: $webp_command"
         if $webp_command; then
             echo "  -> Created $webp_output"
         else
@@ -74,7 +73,7 @@ find "$SOURCE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png
 
     # --- Create AVIF Version ---
     # Using 'magick convert' for IMv7 compatibility
-    avif_command="magick convert \"$source_image\" -quality $AVIF_QUALITY \"$avif_output\""
+    avif_command="magick $source_image -quality $AVIF_QUALITY $avif_output"
      if [ "$DRY_RUN" = true ]; then
         echo "  Would create AVIF: $avif_command"
     else
@@ -86,28 +85,32 @@ find "$SOURCE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png
          fi
     fi
 
-    # --- Create Smallified Original Version ---
+    # --- Create Compressed Original Version (No Resize) ---
     small_command="" # Initialize command
 
     # Command depends on the original file type for quality setting
     if [[ "$extension_lower" =~ ^(jpg|jpeg)$ ]]; then
-        # For JPG/JPEG, resize and apply quality
+        # For JPG/JPEG, apply quality (compression)
+        # Removed -resize option
         # Using 'magick convert' for IMv7 compatibility
-        small_command="magick convert \"$source_image\" -resize ${SMALL_MAX_DIMENSION}x${SMALL_MAX_DIMENSION}\> -quality $SMALL_JPG_QUALITY \"$small_output\""
+        small_command="magick $source_image -quality $SMALL_JPG_QUALITY $small_output"
     elif [[ "$extension_lower" == "png" ]]; then
-        # For PNG, resize only
+        # For PNG, just save a copy (convert applies lossless compression by default)
+        # Removed -resize option. -quality doesn't apply lossy compression to PNG in the same way.
         # Using 'magick convert' for IMv7 compatibility
-        small_command="magick convert \"$source_image\" -resize ${SMALL_MAX_DIMENSION}x${SMALL_MAX_DIMENSION}\> \"$small_output\""
+        small_command="magick $source_image $small_output"
+        # Optional: add -strip to remove metadata from PNG if desired:
+        # small_command="magick convert $source_image -strip $small_output"
     else
-        echo "  Skipping smallified version for unsupported format: $extension"
+        echo "  Skipping compressed original version for unsupported format: $extension"
     fi
 
-    # Only run the smallified command if it was successfully set
+    # Only run the compressed original command if it was successfully set
     if [ -n "$small_command" ]; then
         if [ "$DRY_RUN" = true ]; then
-            echo "  Would create smallified original: $small_command"
+            echo "  Would create compressed original: $small_command"
         else
-             echo "  Creating smallified original..."
+             echo "  Creating compressed original..."
             if $small_command; then
                 echo "  -> Created $small_output"
             else
