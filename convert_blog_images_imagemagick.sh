@@ -8,11 +8,11 @@ SOURCE_DIR="assets/images/blog/full-res"
 OUTPUT_DIR="assets/images/blog"
 
 # Quality settings (0-100 for ImageMagick, higher is better quality)
-WEBP_QUALITY=60
-AVIF_QUALITY=60
+WEBP_QUALITY=30
+AVIF_QUALITY=30
 
 # Settings for the compressed original image (compression only, no resize)
-SMALL_JPG_QUALITY=60 # Quality for compressed JPG compression (0-100) - Applies only to JPGs
+SMALL_JPG_QUALITY=30 # Quality for compressed JPG compression (0-100) - Applies only to JPGs
 
 # Set this to 'true' for dry run, 'false' for actual execution
 DRY_RUN=false
@@ -53,7 +53,7 @@ find "$SOURCE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png
     # Define output paths in the OUTPUT_DIR
     webp_output="$OUTPUT_DIR/$base_name.webp"
     avif_output="$OUTPUT_DIR/$base_name.avif"
-    small_output="$OUTPUT_DIR/$base_name-small.$extension_lower"
+    small_output="$OUTPUT_DIR/$base_name.$extension_lower"
 
     echo "Processing $source_image..."
 

@@ -3,11 +3,9 @@
 
   {% include head.html %}
 
-  {% comment %} Add body class for styling based on background {% endcomment %}
   <body id="page-top" class="body-light-background">
 
     {% include navigation.html %}
-    {% comment %} No masthead or mini-masthead include here {% endcomment %}
 
     <article class="post-content page-section">
       <div class="container">
@@ -18,7 +16,6 @@
               <h1 class="post-title">{{ page.title }}</h1>
               <p class="post-meta section-subheading text-muted">
                 {{ page.date | date: "%B %d, %Y" }}
-                {% comment %} Optional: Display author and categories {% endcomment %}
                 {% if page.author %}
                   by {{ page.author }}
                 {% endif %}
@@ -30,8 +27,36 @@
                   {% endfor %}
                 {% endif %}
               </p>
-
             </header>
+
+            {% if page.header.teaser %}
+              {% assign teaser_src = page.header.teaser | relative_url %}
+              {% assign teaser_base = teaser_src | split: "." | first %}
+
+              <div class="post-image-container mt-4 mb-4 text-center">
+                <picture>
+                  {% assign avif_path = teaser_base | append: ".avif" %}
+                  {% assign avif_file = site.static_files | where: "path", avif_path | first %}
+                  {% if avif_file %}
+                    {# Check if the variable contains a file #}
+                    <source srcset="{{ avif_path }}" type="image/avif">
+                  {% endif %}
+
+                  {% assign webp_path = teaser_base | append: ".webp" %}
+                  {% assign webp_file = site.static_files | where: "path", webp_path | first %}
+                  {% if webp_file %}
+                    <source srcset="{{ webp_path }}" type="image/webp">
+                  {% endif %}
+
+                  <img
+                    src="{{ teaser_src }}"
+                    alt="{{ page.title }}"
+                    class="post-teaser-img img-fluid"
+                    loading="lazy">
+                </picture>
+              </div>
+            {% endif %}
+
 
             <div class="post-body text-muted">
               {{ content }}

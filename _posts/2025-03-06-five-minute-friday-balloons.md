@@ -6,17 +6,13 @@ categories: posts
 excerpt: We love a party vibe! Simple latex balloons are fantastic for endless fun for kids of all ages!
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-balloons.jpeg
+
 ---
 
 
 We love a party vibe! Simple latex balloons are fantastic for endless fun for kids of all ages!
-
-{% include figure
-    image_path="/assets/images/5mf-balloons.png"
-    alt="Playing with Balloons"
-    class="align-middle"
-    caption="AI generated"
-%}
 
 ## Balloons for Babies
 

@@ -6,6 +6,9 @@ categories: posts
 excerpt: In between baking, why not involve your kiddos with your trusty baking sheet?
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-baking.jpeg
+
 ---
 
 

@@ -30,10 +30,24 @@ permalink: /blog/
           <div class="blog-card">
             <a href="{{ post.url | relative_url }}">
               {% if post.header.teaser %}
-                <img
-                  src="{{ post.header.teaser | relative_url }}"
-                  alt="{{ post.title }}"
-                  class="blog-card-img">
+                {% assign teaser_src = post.header.teaser | relative_url %}
+                {% assign teaser_base = teaser_src | split: "." | first %}
+                <picture>
+                  {% assign avif_path = teaser_base | append: ".avif" %}
+                  {% if site.static_files | where: "path", avif_path %}
+                    <source srcset="{{ avif_path }}" type="image/avif">
+                  {% endif %}
+
+                  {% assign webp_path = teaser_base | append: ".webp" %}
+                  {% if site.static_files | where: "path", webp_path %}
+                    <source srcset="{{ webp_path }}" type="image/webp">
+                  {% endif %}
+                  <img
+                    src="{{ teaser_src }}"
+                    alt="{{ post.title }}"
+                    class="blog-card-img"
+                    loading="lazy">
+                </picture>
               {% endif %}
             </a>
             <div class="blog-card-content">
