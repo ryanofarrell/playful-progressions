@@ -6,17 +6,14 @@ categories: posts
 excerpt: Tissue boxes can serve a purpose beyond wiping runny noses!
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-tissue.jpeg
+
 ---
 
 
 Let's face it, cold and flu season is still upon us! As you stock up on tissues, it's worth knowing that they can serve a purpose beyond wiping runny noses.
 
-{% include figure
-    image_path="/assets/images/5mf-tissue.png"
-    alt="Tissue kid!"
-    class="align-middle"
-    caption="AI generated"
-%}
 
 ## Tissue Box Play for Babies
 

@@ -6,17 +6,14 @@ categories: posts
 excerpt: Creative ways to turn your laundry basket into a fun activity for both you and your little one
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-laundry.jpeg
+
 ---
 
 
 Feeling overwhelmed by the sight of a laundry basket? Let's face it, laundry seems to be a never-ending task! In this edition of 5-Minute Friday, we'll explore some creative ways to turn your laundry basket into a fun activity for both you and your little one!
 
-{% include figure
-    image_path="/assets/images/5mf-laundry.png"
-    alt="Laundry Basket Kid!"
-    class="align-right"
-    caption="AI generated"
-%}
 
 ## Heavy Work Benefits
 
