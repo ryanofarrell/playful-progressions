@@ -14,13 +14,6 @@ header:
 
 'Tis the season to whip up something tasty for your Valentine! And in between baking, why not involve your kiddos with your trusty baking sheet?
 
-{% include figure
-    image_path="/assets/images/5mf-baking.png"
-    alt="Tummy Time with a Baking Sheet!"
-    class="align-right"
-    caption="AI generated"
-%}
-
 ## Baking Sheets for Babies
 
 Transform a rimmed baking sheet into a sensory station for babies! Fill it with a small amount of water and add light toys like balls or bath toys for splashy tummy time fun. Alternatively, use shaving cream, whipped cream, or sand for a messy sensory experience. Don't forget to include baby's feet in the sensory play for added engagement!

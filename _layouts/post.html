@@ -38,7 +38,6 @@
                   {% assign avif_path = teaser_base | append: ".avif" %}
                   {% assign avif_file = site.static_files | where: "path", avif_path | first %}
                   {% if avif_file %}
-                    {# Check if the variable contains a file #}
                     <source srcset="{{ avif_path }}" type="image/avif">
                   {% endif %}
 

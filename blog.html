@@ -13,7 +13,6 @@ permalink: /blog/
         <h3 class="section-subheading text-muted">Filter to specific post types</h3>
         <button class="btn btn-outline-primary btn-filter active" data-tag="all">All Posts</button>
 
-        {% comment %} Loop through tags defined in data file to create filter buttons {% endcomment %}
         {% for tag_item in site.data.tags.tag_colors %}
           {% assign tag_name = tag_item | first %}
           {% assign tag_data = tag_item | last %}
@@ -22,10 +21,8 @@ permalink: /blog/
       </div>
     </div>
     <div class="row" id="blog-post-list">
-      {% comment %} Add ID to the row containing posts {% endcomment %}
       {% assign sorted_posts = site.posts | sort: "date" | reverse %}
-        {% for post in sorted_posts %}
-        {% comment %} Add data attribute for tags to the card container {% endcomment %}
+      {% for post in sorted_posts %}
         <div class="col-md-6 col-lg-4 mb-4 blog-post-card" data-tags="{% if post.tag %}{{ post.tag | slugify }}{% endif %}">
           <div class="blog-card">
             <a href="{{ post.url | relative_url }}">
@@ -34,12 +31,14 @@ permalink: /blog/
                 {% assign teaser_base = teaser_src | split: "." | first %}
                 <picture>
                   {% assign avif_path = teaser_base | append: ".avif" %}
-                  {% if site.static_files | where: "path", avif_path %}
+                  {% assign avif_file = site.static_files | where: "path", avif_path | first %}
+                  {% if avif_file %}
                     <source srcset="{{ avif_path }}" type="image/avif">
                   {% endif %}
 
                   {% assign webp_path = teaser_base | append: ".webp" %}
-                  {% if site.static_files | where: "path", webp_path %}
+                  {% assign webp_file = site.static_files | where: "path", webp_path | first %}
+                  {% if webp_file %}
                     <source srcset="{{ webp_path }}" type="image/webp">
                   {% endif %}
                   <img
@@ -57,7 +56,6 @@ permalink: /blog/
               <p class="blog-card-excerpt">{{ post.excerpt }}</p>
               <p class="blog-card-meta">
                 <small>{{ post.date | date: "%B %d, %Y" }}</small>
-                {% comment %} Display tag badge with dynamic class for coloring {% endcomment %}
                 {% if post.tag %}
                   <span class="badge badge-pill badge-tag-{{ post.tag | slugify }} ml-2">{{ post.tag }}</span>
                 {% endif %}
@@ -70,5 +68,4 @@ permalink: /blog/
   </div>
 </section>
 
-{% comment %} Include the blog filter script {% endcomment %}
 <script src="{{ 'assets/js/blog-filter.js' | relative_url }}" defer></script>
