@@ -1,7 +1,7 @@
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your entire site, values
-# which you are expected to set up once and rarely need to edit after that.
+# which are you expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
@@ -26,7 +26,7 @@ description: "Learnings from an Occupational Therapist and mother"
 author: "Maria O'Farrell"
 
 logo: #optional, defaults to site title
-  path: assets\img\logo.avif
+  path: /assets/img/logo.avif
   height: 80 #height in px, defaults to 52px
 
 locale: "en-US" # See available languages in _data/sitetext.yml
@@ -37,7 +37,16 @@ analytics:
 collections:
   portfolio:
 
+# Pre-populated Contact Message and Subject
+pre_populate_message: "Hi Maria, I would like to learn more about Playful Progressions' offerings!"
+email_subject: "Inquiry about Playful Progressions"
+
+# Instagram URL
+instagram_url: "https://www.instagram.com/playfulprogressions/" # Added Instagram URL
+
 markdown: kramdown
 # Uncomment following line to use Formspree form ID based URL instead of email based URL
 # Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
 # formspree_form_path: "f/a_form_id"
+
+permalink: /blog/:title.html

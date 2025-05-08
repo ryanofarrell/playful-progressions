@@ -1,0 +1,45 @@
+---
+layout: default
+title: Privacy Policy
+subtitle: Your privacy is important to us
+permalink: /privacy-policy/
+# Optional: Specify a custom header image for this page
+# header_image: /assets/img/your-privacy-header-image.avif
+---
+
+<section class="page-section first-content-section" id="privacy-policy-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+
+        {% comment %} Loop through privacy policy sections directly from the data file {% endcomment %}
+        {% for section in site.data.privacy_policy.sections %}
+          <div class="privacy-policy-section mb-5">
+            <h4 class="privacy-policy-heading mb-3">{{ section.title }}</h4>
+            <div class="privacy-policy-content text-muted">
+              {{ section.content | markdownify }}
+            </div>
+          </div>
+        {% endfor %}
+
+        {% comment %} Add the Contact Us section separately to include site variables {% endcomment %}
+        <div class="privacy-policy-section mb-5">
+          <h4 class="privacy-policy-heading mb-3">Contact Us</h4>
+          <div class="privacy-policy-content text-muted">
+            <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+            <p>Email:
+              <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+            </p>
+            <p>Phone: {{ site.phone-text }}</p>
+          {% comment %} Optional: Add a physical address or link to your contact form {% endcomment %}
+          {% comment %} <p>Address: [Your Physical Address]</p> {% endcomment %}
+          {% comment %} <p>Or use our <a href="{{ '/#book' | relative_url }}">contact form</a>.</p> {% endcomment %}
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</section>

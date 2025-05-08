@@ -1,0 +1,49 @@
+---
+layout: default
+title: Meet Maria
+permalink: /meet-maria.html
+---
+
+<section class="page-section">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-10 mx-auto">
+
+        <div class="row">
+          <div class="col-md-4 text-center mb-4">
+            {% assign maria = site.data.sitetext.team.people | where: "name", "Maria O'Farrell" | first %}
+            {% if maria %}
+              <img
+                class="mx-auto rounded-circle img-fluid mb-3"
+                src="{{ maria.image | relative_url }}"
+                alt="{{ maria.name }}">
+              <h2>{{ maria.name }}</h2>
+              <p class="text-muted">{{ maria.role }}</p>
+            {% endif %}
+          </div>
+          <div class="col-md-8">
+            <div class="large text-muted">
+              {{ site.data.sitetext.team.subtext | markdownify }}
+            </div>
+          </div>
+        </div>
+
+        {% if site.data.sitetext.team.training %}
+          <!-- Traning Section -->
+          <div class="col text-center" id="training">
+            <br>
+            <h2 class="section-subheading ">Specialty Areas:</h2>
+            <div class="row justify-content-center">
+              {% for topic in site.data.sitetext.team.training %}
+                <div class="mx-2 my-2 col-auto topic justify-items-center">
+                  {{ topic }}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</section>

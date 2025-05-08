@@ -22,6 +22,14 @@
           </div>
         {% endfor %}
       </div>
+      <div class="mt-4">
+        <p class="text-muted">
+          {{ site.data.sitetext.about.location_note_pre_link }}
+          <a class="text-muted" href="{{ site.data.sitetext.about.location_note_link_url | relative_url }}">
+            {{ site.data.sitetext.about.location_note_link_text }}
+          </a>
+        </p>
+      </div>
     </div>
     <!-- How we help Section -->
     <div class="col text-center mx-auto mt-7" id="what-we-treat">

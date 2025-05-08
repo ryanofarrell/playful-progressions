@@ -1,73 +1,35 @@
-<!-- Footer -->
 <footer
   class="footer"
   id="footer"
   style="background-color: white">
   <div class="container">
-    {% if site.locale and site.locale != "" and site.locale != nil %}
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
-        </div>
-        <!-- Social Media -->
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            {% for link in site.data.sitetext[site.locale].footer.social %}
-              <li class="list-inline-item">
-                {% if link.url %}
-                  <a href="{{ link.url }}">
-                    {% if link.icon %}
-                      <i class="{{ link.icon }}"></i>
-                    {% endif %}
-                  </a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-      <!-- Legal -->
-      {% comment %} <div class="col-md-4">
-                  <ul class="list-inline quicklinks">
-                    <li class="list-inline-item">
-                      <a href="legal">{{ site.data.sitetext[site.locale].footer.legal | default: "Privacy Policy" }}</a>
-                    </li>
-                  </ul>
-              </div> {% endcomment %}
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        {% comment %} Adjusted column width {% endcomment %}
+        <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
       </div>
-    {% else %}
-      <div class="row align-items-center">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
-        </div>
-        <!-- Social Media -->
-        <div class="col-md-4">
-          <ul class="list-inline social-buttons">
-            {% for link in site.data.sitetext.footer.social %}
-              <li class="list-inline-item">
-                {% if link.url %}
-                  <a href="{{ link.url }}">
-                    {% if link.icon %}
-                      <i class="{{ link.icon }}"></i>
-                    {% endif %}
-                  </a>
-                {% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        <!-- Legal -->
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li class="list-inline-item">
-              <a href="legal">{{ site.data.sitetext.footer.legal | default: "Privacy Policy" }}</a>
-            </li>
-          </ul>
-        </div>
+      {% comment %} Removed Social Media block {% endcomment %}
+      <div class="col-md-6">
+        {% comment %} Adjusted column width - Removed text-right {% endcomment %}
+        <ul class="list-inline quicklinks">
+          <li class="list-inline-item">
+            <a href="{{ '/privacy-policy/' | relative_url }}" class="footer-privacy-link">{{ site.data.sitetext.footer.legal | default: "Privacy Policy" }}</a>
+          {% comment %} Link to the new privacy policy page - Added class for styling {% endcomment %}
+          </li>
+        {% comment %} Add other quick links here if needed {% endcomment %}
+        {% comment %}
+          <li class="list-inline-item">
+          <a href="#">Terms of Use</a>
+          </li>
+        {% endcomment %}
+        </ul>
       </div>
-    {% endif %}
+    </div>
   </div>
 </footer>
+{% comment %} Script for fixing footer position on short pages {% endcomment %}
 {% if page.layout == "page" %}
+  {% comment %} This condition might need adjustment based on your layouts {% endcomment %}
   <script>
       fixPageShort();
       function fixPageShort() {
@@ -81,4 +43,3 @@
       }
   </script>
 {% endif %}
-<!-- End Footer -->

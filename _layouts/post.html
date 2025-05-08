@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
+
+  {% include head.html %}
+
+  <body id="page-top" class="body-light-background">
+
+    {% include navigation.html %}
+
+    <article class="post-content page-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+
+            <header class="post-header text-center">
+              <h1 class="post-title">{{ page.title }}</h1>
+              <p class="post-meta section-subheading text-muted">
+                {{ page.date | date: "%B %d, %Y" }}
+                {% if page.author %}
+                  by {{ page.author }}
+                {% endif %}
+                {% if page.categories %}
+                  in
+                  {% for category in page.categories %}
+                    {{ category }}{% unless forloop.last %},
+                    {% endunless %}
+                  {% endfor %}
+                {% endif %}
+              </p>
+            </header>
+
+            {% if page.header.teaser %}
+              {% assign teaser_src = page.header.teaser | relative_url %}
+              {% assign teaser_base = teaser_src | split: "." | first %}
+
+              <div class="post-image-container mt-4 mb-4 text-center">
+                <picture>
+                  {% assign avif_path = teaser_base | append: ".avif" %}
+                  {% assign avif_file = site.static_files | where: "path", avif_path | first %}
+                  {% if avif_file %}
+                    <source srcset="{{ avif_path }}" type="image/avif">
+                  {% endif %}
+
+                  {% assign webp_path = teaser_base | append: ".webp" %}
+                  {% assign webp_file = site.static_files | where: "path", webp_path | first %}
+                  {% if webp_file %}
+                    <source srcset="{{ webp_path }}" type="image/webp">
+                  {% endif %}
+
+                  <img
+                    src="{{ teaser_src }}"
+                    alt="{{ page.title }}"
+                    class="post-teaser-img img-fluid"
+                    loading="lazy">
+                </picture>
+              </div>
+            {% endif %}
+
+
+            <div class="post-body text-muted">
+              {{ content }}
+            </div>
+
+            {% assign maria = site.data.sitetext.team.people | where: "name", "Maria O'Farrell" | first %}
+            {% if maria and site.data.sitetext.team.short_bio %}
+              <div class="about-author-section p-3 mt-5 border rounded bg-light">
+                <h6 class="section-subheading text-center">About the Author</h6>
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img
+                      src="{{ maria.image | relative_url }}"
+                      alt="{{ maria.name }}"
+                      class="rounded-circle"
+                      style="width: 80px; height: 80px; object-fit: cover;">
+                  </div>
+                  <div class="col">
+                    <div class="text-muted small">
+                      {{ site.data.sitetext.team.short_bio | markdownify }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+    {% include footer.html %}
+
+    <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/jqBootstrapValidation.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+    <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
+
+  </body>
+
+</html>

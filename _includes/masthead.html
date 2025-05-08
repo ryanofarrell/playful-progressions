@@ -1,0 +1,34 @@
+<header
+class="masthead position-relative text-center text-white">
+  {% comment %} Use the masthead image specified in _config.yml or default {% endcomment %}
+  {% assign masthead_image = site.data.style.masthead_image | default: '/assets/img/masthead.avif' %}
+  <img
+    src="{{ masthead_image | relative_url }}"
+    alt="{{ site.title | default: 'Website background' }} background"
+    class="position-absolute w-100 h-100 object-fit-cover masthead-bg"
+    fetchpriority="high"
+    decoding="async"
+    loading="eager" />
+
+  <div class="container position-relative masthead-content">
+    <div class="intro-text">
+      {%- comment %} Display the main title from sitetext {% endcomment -%}
+      {%- if site.data.sitetext.header.title -%}
+        <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
+      {%- endif -%}
+      {%- comment %} Display the subtitle from sitetext {% endcomment -%}
+      {%- if site.data.sitetext.header.subtitle -%}
+        <div class="intro-heading text-uppercase">{{ site.data.sitetext.header.subtitle | markdownify }}</div>
+      {%- endif -%}
+
+      {%- comment %} Loop through and display header buttons from sitetext {% endcomment -%}
+      {%- if site.data.sitetext.header.buttons -%}
+        <div class="row justify-content-center">
+          {% for button in site.data.sitetext.header.buttons %}
+            <a class="btn {{ button.class | default: "btn-primary" }} btn-xl text-uppercase js-scroll-trigger m-2" href="{{ button.link | relative_url }}">{{ button.label }}</a>
+          {% endfor %}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</header>

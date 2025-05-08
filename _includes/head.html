@@ -1,6 +1,5 @@
 <head>
-  {% if site.analytics.google %}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+  {% if site.analytics.google and jekyll.environment == "production" %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
     <script defer>
       window.dataLayer = window.dataLayer || [];
@@ -26,123 +25,34 @@
     {% endif %}
   </title>
 
-  <style>
-    /* Masthead styles (image-based) */
-    header.masthead {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      text-align: center;
-      color: white;
-    }
-
-    header.masthead img.masthead-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
-
-    header.masthead .masthead-content {
-      position: relative;
-      z-index: 1;
-      padding-top: 150px;
-      padding-bottom: 100px;
-    }
-
-    header.masthead .intro-lead-in {
-      font-size: 22px;
-      font-style: italic;
-      line-height: 22px;
-      margin-bottom: 25px;
-      font-family: "Droid Serif"
-      , Georgia
-      , serif;
-    }
-
-    header.masthead .intro-heading {
-      font-size: 40px;
-      font-weight: 700;
-      line-height: 40px;
-      margin-bottom: 25px;
-      font-family: "Montserrat"
-      , system-ui
-      , BlinkMacSystemFont
-      , "Segoe UI"
-      , Roboto
-      , "Helvetica Neue"
-      , Arial
-      , sans-serif;
-    }
-
-    @media (min-width: 768px) {
-      header.masthead .masthead-content {
-        padding-top: 300px;
-        padding-bottom: 200px;
-      }
-
-      header.masthead .intro-lead-in {
-        font-size: 40px;
-        line-height: 40px;
-      }
-
-      header.masthead .intro-heading {
-        font-size: 50px;
-        line-height: 50px;
-        margin-bottom: 50px;
-      }
-    }
-  </style>
-
-  <!-- Preload Fonts -->
-  {% for font_url in site.data.style.fonts_urls %}
-    <link
-      rel="preload"
-      href="{{ font_url }}"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-      crossorigin="anonymous">
-  {% endfor %}
-  <noscript>
-    {% for font_url in site.data.style.fonts_urls %}
-      <link
-        href="{{ font_url }}"
-        rel="stylesheet"
-        type="text/css">
-    {% endfor %}
-  </noscript>
-
-  <!-- Custom fonts for this template -->
   <link
-    href="assets/css/all.min.css"
+    href="{{ 'assets/css/all.min.css' | relative_url }}"
     rel="stylesheet"
     type="text/css">
 
-    <!-- Custom styles for this theme -->
-  <link href="assets/css/agency.css" rel="stylesheet" />
-
-    <!-- Performance improvements -->
-  <link
+  <link href="{{ 'assets/css/agency.css' | relative_url }}" rel="stylesheet" /> <link
     rel="preload"
     as="image"
     href="{{ '/assets/img/masthead.avif' | relative_url }}"
     type="image/avif"
     fetchpriority="high">
 
-  <!-- Page container padding if needed -->
-  {% if page.layout == "page" %}
-    <style>
-      #pagecontainer {
-        padding-top: 150px;
-      }
-      @media only screen and (max-width: 991px) {
-        #pagecontainer {
-          padding-top: 100px;
-        }
-      }
-    </style>
-  {% endif %}
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="{{ '/apple-touch-icon.png' | relative_url }}"> <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="{{ '/favicon-32x32.png' | relative_url }}"> <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="{{ '/favicon-16x16.png' | relative_url }}"> <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}"> <link
+    rel="mask-icon"
+    href="{{ '/safari-pinned-tab.svg' | relative_url }}"
+    color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
 </head>

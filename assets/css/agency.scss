@@ -1,6 +1,13 @@
 ---
 ---
 @charset "utf-8";
+
+// Import Google Fonts CSS files first from _data/style.yml
+{% for font_url in site.data.style.fonts_urls %}
+@import url('{{ font_url }}');
+{% endfor %}
+
+
 // Core variables and mixins
 @import "base/_variables";
 @import "base/custom_utilities";
@@ -17,6 +24,7 @@
   {% endfor %}
 {% endif %}
 
+// ... rest of your functions, variables, and imports
 @function custom-lighten($color, $amount) {
   // Extract the RGB values from the color
   $red: red($color);
@@ -25,7 +33,7 @@
 
   // Lighten the color by adjusting its brightness
   $lightened-color: rgb($red + $amount, $green + $amount, $blue + $amount);
-  
+
   @return $lightened-color;
 }
 
@@ -58,6 +66,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "components/buttons.scss";
 @import "components/navbar.scss";
 @import "components/client-scroll.scss";
+@import "components/_blog-filter.scss"; // Import the blog filter styles
+
 
 // Layout
 @import "layout/masthead.scss";
@@ -70,7 +80,10 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/footer.scss";
 @import "layout/_testimonial.scss";
 @import "layout/_about.scss";
-
+@import "layout/_mini_masthead.scss";
+@import "layout/_blog.scss";
+@import "layout/_services-page.scss"; // Import the new services page styles
+@import "layout/_contact-page.scss"; // Import the new contact page styles
 
 // Finally, import bootstrap here
 @import "bootstrap.min.css";

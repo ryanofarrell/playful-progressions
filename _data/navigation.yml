@@ -1,13 +1,23 @@
 nav:
-  - title: "About"
-    section: about
-  - title: "Testimonials"
-    section: testimonial
-  # - title: "Team"
-  #   section: team
+  - title: "Meet Maria" # Add this new entry
+    url: "/meet-maria.html" # Link to the new Meet Maria page
   - title: "Services"
+    url: "/services/"
     section: services
-  - title: "Contact"
-    section: book
-    button: true
-    button-class: btn-primary
+  - title: "FAQ"
+    url: "/faq/"
+  - title: "Contact" # Added Contact link
+    url: "/contact/" # Link to the new contact page
+  - title: "Blog"
+    url: "/blog/"
+
+contact_icons:
+  - type: "phone"
+    icon: "fas fa-phone" # Font Awesome class for phone
+    data_key: "phone-numeric" # Add a key to reference _config.yml data
+  - type: "email"
+    icon: "fas fa-envelope" # Font Awesome class for envelope
+    data_key: "email" # Add a key to reference _config.yml data
+  - type: "instagram" # Changed type from sms to instagram
+    icon: "fab fa-instagram" # Font Awesome class for Instagram
+    data_key: "instagram_url" # Changed data_key to reference the new instagram_url

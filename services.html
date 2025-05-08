@@ -1,0 +1,186 @@
+---
+layout: default # Use the default layout for standard header/footer
+title: Our Services
+subtitle: Detailed information about our offerings
+permalink: /services/
+# Optional: Specify a custom header image for this page
+# header_image: /assets/img/your-services-header-image.avif
+---
+
+<section class="page-section first-content-section" id="services-page">
+  <div class="container">
+
+    {% comment %} The main page title and subtitle come from the mini-masthead {% endcomment %}
+    <div class="row mb-5">
+      <div class="col-lg-12 text-center">
+        <h4 class="mb-3">Jump to a Service:</h4>
+        <ul class="list-inline mini-nav">
+          {% comment %} Loop through offerings to create mini-nav links {% endcomment %}
+          {% for offering in site.data.sitetext.services.offerings %}
+            <li class="list-inline-item">
+              <a class="btn btn-primary btn-services-nav js-scroll-trigger" href="#{{ offering.id }}">{{ offering.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+    {% comment %} Loop through each offering {% endcomment %}
+    {% for offering in site.data.sitetext.services.offerings %}
+      <section id="{{ offering.id }}" class="service-detail-section mb-5">
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="service-detail-title">{{ offering.title }}</h3>
+            <p class="service-detail-description text-muted">{{ offering.description | markdownify }}</p>
+
+            {% comment %} Display content based on the type of offering {% endcomment %}
+            {% if offering.type == "tiered" %}
+              <div class="row justify-content-center">
+                {% for tier in offering.tiers %}
+                  <div class="col-md-6 mb-4">
+                    <div class="service-tier-card">
+                      <h4 class="tier-name">{{ tier.name }}</h4>
+                      <p class="price">{{ tier.price }}</p>
+                      <p class="tier-description">{{ tier.description }}</p>
+                      <h5>Includes:</h5>
+                      <ul class="tier-includes-list">
+                        {% comment %} Loop through standard includes {% endcomment %}
+                        {% if tier.standard_includes %}
+                          {% for item in tier.standard_includes %}
+                            <li>
+                              <i class="fas fa-check-circle text-primary mr-2"></i>
+                              {{ item }}
+                            </li>
+                          {% endfor %}
+                        {% endif %}
+                        {% comment %} Loop through additional includes and style them differently {% endcomment %}
+                        {% if tier.additional_includes %}
+                          {% for item in tier.additional_includes %}
+                            <li class="additional-include">
+                              <i class="fas fa-check-circle text-success mr-2"></i>
+                              {{ item }}
+                            </li>
+                          {% endfor %}
+                        {% endif %}
+                      </ul>
+                      {% comment %} Display footnote if it exists {% endcomment %}
+                      {% if tier.footnote %}
+                        <p class="tier-footnote text-muted mt-2 mb-0">
+                          <small>&#42; {{ tier.footnote }}</small>
+                        </p>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% elsif offering.type == "volume_pricing" %}
+              {% comment %} This block remains for other potential volume pricing, or you can remove if not needed elsewhere {% endcomment %}
+              <div class="row justify-content-center">
+                {% for tier in offering.pricing_tiers %}
+                  <div class="col-md-4 mb-4">
+                    <div class="service-tier-card pricing-tier-card">
+                      <h4 class="tier-name">{{ tier.volume }}</h4>
+                      <p class="price">{{ tier.price }}</p>
+                      {% if tier.details %}
+                        <p class="tier-details text-muted">{{ tier.details }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+            {% elsif offering.type == "single_treatment_bulleted" %}
+              {% comment %} New block for single treatment price with bullet points {% endcomment %}
+              <div class="row justify-content-center">
+                <div class="col-md-8 mb-4">
+                  <div class="service-tier-card single-treatment-card">
+                    <h4 class="tier-name">{{ offering.title }}</h4>
+                    <p class="price">{{ offering.price }}</p>
+                    <h5>Details:</h5>
+                    <ul class="tier-includes-list">
+                      {% for detail in offering.details_list %}
+                        <li>
+                          <i class="fas fa-check-circle text-primary mr-2"></i>
+                          {{ detail }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            {% elsif offering.type == "list" %}
+              <div class="row">
+                {% for item in offering.items %}
+                  <div class="col-md-6 mb-4">
+                    <div class="service-tier-card other-offering-card">
+                      <h4 class="tier-name">{{ item.name }}</h4>
+                      <p class="price">{{ item.price }}
+                        {% if item.duration %}| {{ item.duration }}{% endif %}
+                      </p>
+                      {% if item.format %}
+                        <p class="item-format text-muted">{{ item.format }}</p>
+                      {% endif %}
+                      <p class="item-description">{{ item.description | markdownify }}</p>
+
+                      {% comment %} Add Formspree form for Play Group if flagged {% endcomment %}
+                      {% if item.form %}
+                        <div class="play-group-form-block mt-4">
+                          <h5 class="mb-3 text-center">Interested in Play Group?</h5>
+                          {% comment %} Placeholder for success/failure messages {% endcomment %}
+                          <div id="playGroupSuccess"></div>
+                          <form
+                            id="playGroupForm"
+                            action="https://formspree.io/f/{{ item.form_id }}"
+                            method="POST">
+                            <div class="form-group">
+                              <input
+                                class="form-control"
+                                id="playGroupName"
+                                type="text"
+                                placeholder="Your Name *"
+                                required="required"
+                                data-validation-required-message="Please enter your name."
+                                name="name">
+                              <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                              <input
+                                class="form-control"
+                                id="playGroupEmail"
+                                type="email"
+                                placeholder="Your Email *"
+                                required="required"
+                                data-validation-required-message="Please enter your email address."
+                                name="email">
+                              <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="text-center">
+                              <button
+                                id="sendPlayGroupMessageButton"
+                                class="btn btn-primary btn-sm text-uppercase"
+                                type="submit">Notify Me About Upcoming Play Groups</button>
+                            </div>
+                            {% comment %} Hidden field for email subject indicator {% endcomment %}
+                            <input
+                              type="hidden"
+                              name="_subject"
+                              value="Play Group Interest - Website Form">
+                            {% comment %} No _next redirect needed if using AJAX {% endcomment %}
+                          </form>
+                        </div>
+                      {% endif %}
+
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+
+            {% endif %}
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+
+  </div>
+</section>

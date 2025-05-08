@@ -15,6 +15,15 @@
     text-transform: none;
     @include heading-font;
   }
+  // Add this to your footer SCSS or a relevant styles file
+
+  .footer-privacy-link {
+    text-decoration: underline; /* Add underline */
+
+    &:hover {
+      text-decoration: none; /* Optional: Remove underline on hover if desired */
+    }
+  }
 }
 
 ul.social-buttons {

@@ -1,0 +1,34 @@
+---
+layout: default # Use the default layout for standard header/footer
+title: Frequently Asked Questions
+subtitle: Answers to common questions about our services
+permalink: /faq/
+# Optional: Specify a custom header image for this page
+# header_image: /assets/img/your-faq-header-image.avif
+---
+
+<section class="page-section first-content-section" id="faq-page">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+
+        {% comment %} Use title and subtitle from the data file {% endcomment %}
+        <h2 class="section-heading text-center text-uppercase mb-4">{{ site.data.sitetext.faq.title }}</h2>
+        <h3 class="section-subheading text-muted text-center mb-5">{{ site.data.sitetext.faq.subtitle }}</h3>
+
+        {% comment %} Loop through FAQ items from the data file {% endcomment %}
+        {% for item in site.data.sitetext.faq.items %}
+          <div class="faq-item mb-5">
+            <h4 class="faq-question mb-3">{{ item.question }}</h4>
+            <div class="faq-answer text-muted">
+              {{ item.answer | markdownify }}
+            </div>
+          </div>
+        {% endfor %}
+
+      {% comment %} Add more FAQ items here as needed in the data file {% endcomment %}
+
+      </div>
+    </div>
+  </div>
+</section>

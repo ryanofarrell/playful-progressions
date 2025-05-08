@@ -1,0 +1,55 @@
+# This file contains content for the Privacy Policy page.
+# The structure allows for easy looping through sections in the HTML template.
+# The Contact Us section is handled separately in the HTML to include site variables.
+
+title: "Our Privacy Policy"
+subtitle: "Understanding how we handle your information."
+sections:
+  - title: "Introduction"
+    content: |
+      Your privacy is important to Playful Progressions. This Privacy Policy outlines how we collect, use, and protect your information when you visit our website.
+
+  - title: "Information We Collect"
+    content: |
+      We collect information in the following ways:
+
+      * **Information you provide directly:** This includes information you voluntarily submit through our contact forms, email inquiries, or when scheduling services, such as your name, email address, phone number, and details about your child's needs.
+      * **Information collected automatically:** When you visit our website, we may automatically collect certain information about your device and usage, including your IP address, browser type, operating system, referring URLs, pages viewed, and the dates and times of your visits. This information is typically collected through standard web server logs and analytics services (like Google Analytics, if enabled).
+
+  - title: "How We Use Your Information"
+    content: |
+      We use the information we collect for the following purposes:
+
+      * To respond to your inquiries and provide the services you request.
+      * To communicate with you about your child's therapy and appointments.
+      * To improve our website and services.
+      * To analyze website usage and trends (using aggregated, non-personally identifiable data).
+      * For internal record-keeping and administrative purposes.
+
+  - title: "Data Sharing and Disclosure"
+    content: |
+      We do not sell, trade, or rent your personal information to third parties. We may share your information in the following limited circumstances:
+
+      * With service providers who perform functions on our behalf (such as payment processors or website hosting providers), but only to the extent necessary to provide those services. These providers are contractually obligated to protect your information.
+      * If required by law, regulation, or legal process.
+      * To protect the rights, property, or safety of Playful Progressions, our clients, or others.
+
+  - title: "Data Security"
+    content: |
+      We take reasonable measures to protect the information we collect from unauthorized access, use, or disclosure. However, please be aware that no internet transmission or electronic storage method is 100% secure.
+
+  - title: "Third-Party Links"
+    content: |
+      Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these third-party sites. We encourage you to review the privacy policies of any website you visit.
+
+  - title: "Children's Privacy"
+    content: |
+      Our website is not directed to children under the age of 13, and we do knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us.
+
+  - title: "Changes to This Privacy Policy"
+    content: |
+      We may update this Privacy Policy from time to time. We will post any changes on this page with a revised "Effective Date." Your continued use of the website after any changes indicates your acceptance of the updated policy.
+
+  # The "Contact Us" section content is intentionally left out of the YAML here.
+  # It will be added directly in the privacy-policy.html file using Liquid
+  # to access site.email and site.phone-text from _config.yml.

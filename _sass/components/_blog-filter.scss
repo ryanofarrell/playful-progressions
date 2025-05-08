@@ -1,0 +1,32 @@
+// Blog Filter Button Styles
+
+.btn-filter {
+    margin: 0 5px 10px 5px; /* Add some spacing between buttons */
+    cursor: pointer;
+    /* Add more styles for appearance (padding, font size, etc.) */
+
+    /* Style for the default (unselected) filter button */
+    background-color: $gray-200; /* Example: Use a light grey background. Adjust variable or use a hex code like #e9ecef */
+    color: $gray-800; /* Example: Use a dark grey color for text */
+    border-color: $gray-300; /* Example: Use a slightly darker grey for the border */
+
+    &:hover:not(.active) {
+        /* Optional: Style for hover state of unselected buttons */
+        background-color: $gray-300;
+        border-color: $gray-400;
+        color: $gray-900;
+    }
+
+    &.active {
+        /* Style for the active filter button */
+        background-color: $primary;
+        color: white;
+        border-color: $primary;
+    }
+
+    &:hover.active {
+        /* Optional: Style for hover state of active button */
+        background-color: darken($primary, 5%);
+        border-color: darken($primary, 5%);
+    }
+}

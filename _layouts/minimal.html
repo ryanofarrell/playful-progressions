@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
+
+  {% include head.html %}
+
+  {% comment %} Add body class for styling based on background {% endcomment %}
+  <body class="body-light-background">
+
+    {{ content }}
+
+  {% comment %}
+    Optionally include minimal scripts here if needed for the 404 page,
+    but typically a 404 page should be as fast as possible.
+  {% endcomment %}
+  </body>
+
+</html>

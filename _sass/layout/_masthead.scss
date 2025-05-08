@@ -1,12 +1,13 @@
 header.masthead {
   position: relative;
   height: 100vh;
+  min-height: 500px; // Added min-height to prevent vertical collapse (adjust value)
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
-  overflow: hidden;
+  overflow: hidden; // Keep overflow hidden to prevent image spill on very short viewports
 
   img.masthead-bg {
     position: absolute;
@@ -21,7 +22,7 @@ header.masthead {
   .intro-text {
     position: relative;
     z-index: 1;
-    padding: 0 15px;
+    padding: 0 15px; // Keep existing horizontal padding
 
     .intro-lead-in {
       font-size: 22px;
@@ -44,6 +45,10 @@ header.masthead {
 @media (min-width: 768px) {
   header.masthead {
     .intro-text {
+      // Padding from inline styles for larger screens
+      padding-top: 300px;
+      padding-bottom: 200px;
+
       .intro-lead-in {
         font-size: 40px;
         line-height: 40px;

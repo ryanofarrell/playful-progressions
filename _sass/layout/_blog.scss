@@ -1,0 +1,185 @@
+// Blog index and card styles (existing)
+
+.blog-card {
+    border: 1px solid #e9ecef; /* Light grey border */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Hide overflowing image corners */
+    height: 100%; /* Make cards equal height in a row */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out; /* Subtle hover effect */
+
+    &:hover {
+        transform: translateY(-5px); /* Lift card on hover */
+    }
+
+    a {
+        text-decoration: none; /* Remove underline from links */
+        color: inherit; /* Inherit text color */
+    }
+
+    .blog-card-img {
+        width: 100%;
+        height: 150px; /* Fixed height for images (adjust as needed) */
+        object-fit: cover; /* Cover the area without distorting aspect ratio */
+    }
+
+    .blog-card-content {
+        padding: 15px;
+        flex-grow: 1; /* Allows content area to expand */
+
+        .blog-card-title {
+            font-size: 1.25rem; /* Adjust title size */
+            margin-bottom: 10px;
+            @include heading-font; /* Use your heading font mixin */
+
+            a {
+                &:hover {
+                    color: $primary; /* Change link color on hover */
+                }
+            }
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem; /* Adjust excerpt size */
+            color: $gray-700; /* Use a muted color for excerpt (assuming Bootstrap variables) */
+            margin-bottom: 15px;
+        }
+
+        .blog-card-meta {
+            font-size: 0.85rem; /* Adjust meta info size */
+            color: $gray-600; /* Use a muted color for meta info */
+
+            .badge {
+                vertical-align: middle; /* Align badge nicely with text */
+                // Base badge styles - Bootstrap's badge-pill class provides most of this
+                // padding: .3em .6em;
+                // border-radius: .25rem;
+                // font-weight: 700;
+                // line-height: 1;
+                // text-align: center;
+                // white-space: nowrap;
+                // vertical-align: baseline;
+                // display: inline-block;
+            }
+
+            // Styles for individual tag badge colors
+            .badge-tag-5-minute-friday {
+                background-color: $primary; // Match color from _data/tags.yml
+                color: white; // Text color on badge (adjust based on background lightness)
+            }
+            // Styles for individual tag badge colors
+            .badge-tag-posts {
+                background-color: $action; // Match color from _data/tags.yml
+                color: white; // Text color on badge (adjust based on background lightness)
+            }
+        }
+    }
+}
+
+/* Styles for blog filter buttons */
+.btn-filter {
+    margin: 0 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase; /* Match existing style */
+
+    // Style for the "All Posts" button - keeps its default primary outline style
+    &.btn-outline-primary {
+        // No changes needed here if you want the default primary outline
+    }
+
+    // Active state for any filter button
+    &.active {
+        background-color: $secondary; // Solid secondary color when active
+        color: white;
+        border-color: $secondary;
+
+        &:hover {
+            background-color: darken($secondary, 5%);
+            border-color: darken($secondary, 5%);
+        }
+    }
+
+    // Style for filter buttons that are NOT active when any filter *is* active
+    // This requires JavaScript to add a class (e.g., 'filter-active') to the container
+    #blog-filters.filter-active & {
+        &.btn-filter:not(.active):not(.btn-outline-primary) {
+            /* Target non-active tag buttons */
+            opacity: 0.5; /* Grey out effect */
+            // You might also override colors explicitly if needed, e.g.:
+            // color: $gray-600 !important;
+            // border-color: $gray-300 !important;
+            // background-color: transparent !important;
+        }
+    }
+}
+
+// Styles for individual blog posts
+
+.post-content {
+    /* Styling for the article container */
+    /* Inherits padding from .page-section */
+
+    .post-header {
+        /* Styling for the header area above post content */
+        margin-bottom: 30px; /* Add space below header */
+
+        /* Add padding-top to push title down */
+        padding-top: 60px; /* Adjust this value as needed */
+    }
+
+    .post-title {
+        /* Styling for the blog post title (H1) */
+        font-size: 2.5rem; /* Make it pop */
+        font-weight: 700; /* Bold */
+        margin-bottom: 10px;
+        @include heading-font; /* Use heading font */
+        text-transform: uppercase; /* If uppercase is desired */
+        color: $gray-900; /* Or a specific color like $primary */
+
+        @media (min-width: 768px) {
+            font-size: 3.5rem; /* Larger size on desktop */
+        }
+    }
+
+    .post-meta {
+        /* Styling for date, author, categories */
+        font-size: 0.9rem;
+        color: $gray-600;
+        margin-bottom: 20px;
+    }
+
+    .post-teaser-img {
+        /* Styling for the teaser image below the title/meta */
+        max-width: 100%;
+        height: auto;
+    }
+
+    .post-body {
+        /* Styling for the main post content area */
+        /* Add typography styles here */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            @include heading-font; /* Ensure headings within content use heading font */
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.75em;
+        }
+
+        p {
+            margin-bottom: 1em;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block; /* Prevent extra space below images */
+            margin: 1em auto; /* Center images within content */
+        }
+        /* Add styles for lists, blockquotes, code, etc. */
+    }
+}

@@ -1,0 +1,58 @@
+// Contact Page Styles
+
+#contact-page {
+    /* Adjust padding if needed for this page */
+    .contact-info-block,
+    .contact-form-block {
+        /* Basic styling for the blocks */
+        padding: 20px;
+        // border: 1px solid $gray-300;
+        border-radius: 5px;
+        background-color: white;
+        height: 100%; /* Make columns equal height */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* Vertically center content within the block */
+    }
+
+    .contact-info-block {
+        /* Specific styles for the contact info block */
+        p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            i {
+                width: 20px; /* Give icons a fixed width for alignment */
+                text-align: center;
+            }
+        }
+        a {
+            color: $gray-700; /* Default link color */
+            &:hover {
+                color: $primary; /* Primary color on hover */
+            }
+        }
+    }
+
+    .contact-form-block {
+        /* Specific styles for the form block */
+        h4 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 25px; /* Space between form groups */
+        }
+        .form-control {
+            /* Basic form control styling */
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 1rem;
+        }
+        textarea.form-control {
+            min-height: 150px; /* Minimum height for textarea */
+        }
+        .help-block.text-danger {
+            font-size: 0.8rem;
+        }
+    }
+}

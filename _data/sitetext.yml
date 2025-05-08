@@ -5,11 +5,8 @@ header:
   subtitle: Nurturing Development Through Play
   buttons:
     - label: Contact Maria
-      link: "#book"
+      link: "/contact/" # Updated link to the contact page
       class: btn-primary
-    # - label: Learn More
-    #   link: "#services"
-
 about:
   section: about
   title: "Pediatric Occupational Therapy"
@@ -23,6 +20,9 @@ about:
     - Sandy Springs
     - Dunwoody
     - Midtown
+  location_note_pre_link: "Don't see your part of town?"
+  location_note_link_text: "Contact Maria to discuss options!"
+  location_note_link_url: "/contact/" # Make sure this URL matches your contact page URL
   what-we-treat:
     - title: Infants
       items:
@@ -54,10 +54,21 @@ team:
   section: team
   title: "Meet Maria"
   subtitle: "Caring, experienced, engaging therapy"
-  subtext:
-    "**Hi, I'm Maria O'Farrell, MS, OTR/L**, a passionate pediatric occupational therapist and the proud owner of Playful Progressions! With over eight years of experience, I've had the privilege of working with children and adolescents (ages 0-21) in various settings, including outpatient clinics, homes, and schools. \n\n
-    At Playful Progressions, I provide comprehensive occupational therapy evaluations and personalized interventions in homes and schools, ensuring that each child receives the support they need in a familiar and comfortable environment. My approach is rooted in collaboration, practicality, and kindness—I believe in offering individualized, judgment-free guidance to families navigating sensory differences and developmental milestones. \n\n
-    I'm dedicated to helping children build confidence, independence, and essential life skills through play-based, engaging therapy. I'd love to be part of your child's journey!"
+  # This is the detailed bio for the dedicated page
+  subtext: |
+    Maria is a pediatric occupational therapist who brings warmth, expertise, and deep compassion to the families she serves. She earned her Bachelor of Health Science from the University of Florida in 2014, followed by a Master of Science in Occupational Therapy from Florida Gulf Coast University in 2017. Since then, she has dedicated her career to helping children thrive through a strengths-based, individualized approach.
+
+    Maria is passionate about supporting children's development by emphasizing sensory processing skills to promote emotional regulation, motor coordination, and learning readiness. She also incorporates reflex integration strategies to support foundational movement patterns and neurological development. Her approach is both evidence-informed and rooted in meaningful connection—with children and their families.
+
+    Maria is also a part-time instructor in the Occupational Therapy program at Georgia State University, where she enjoys mentoring future therapists and sharing her knowledge with both students and families. Her teaching reflects her commitment to empowering others through practical, family-centered strategies.
+
+    As a mother of two, Maria deeply understands the challenges and joys of parenting. She strives to offer realistic, sustainable support that fits within the natural flow of daily family life. She is just as passionate about encouraging and equipping parents as she is about working directly with children.
+
+    Maria brings advanced training in sensory integration, reflex integration, eye movement disorders, feeding therapy, DIR/Floortime, Handwriting Without Tears, Astronaut Training, and the treatment of plagiocephaly without a helmet. Her extensive continuing education allows her to tailor therapy with care and precision.
+
+    Above all, Maria is honored to be part of your child's journey. She looks forward to walking alongside your family with compassion, creativity, and clinical expertise.
+  # This is the shorter blurb for the home page
+  short_bio: "Maria O'Farrell, MS, OTR/L, is a passionate pediatric occupational therapist dedicated to helping children thrive through compassionate, play-based therapy. She provides individualized support in home and school environments, empowering both children and their families to learn and grow."
   people:
     - name: "Maria O'Farrell"
       role: "Owner"
@@ -72,39 +83,111 @@ team:
     - Torticollis and Plagiocephaly
     - Feeding Therapy
 
+# Consolidated Services Section
 services:
   title: "Services"
   subtitle: "A full suite of pediatric therapy needs"
-  section: services
-  list:
-    - title: "Initial Evaluation"
-      desc: "Comprehensive occupational therapy evaluation including standard assessment, skilled observations, parent interview and plan of care development with full write up (60-90 minutes)"
-      image: assets/img/baby-crawling.avif
-      icon: fas fa-notes-medical
-    - title: "OT Treatment"
-      image: assets/img/kid-ot-playing.avif
-      desc: "Skilled, individualized occupational therapy treatment provided in the client's natural environment (home/school). Treatments are 50 minutes in duration, with 10 minutes of parent education and guidance for home programming between visits"
-      icon: fa-solid fa-plane-up
-    - title: "Consultations"
-      desc: "Virtual consultations/coaching sessions for caregivers, other providers, and schools. Sessions are designed to provide guidance for improving a child's experience across contexts, as well as generating a support system for carrying-over care"
-      image: assets/img/baby-playing-game.avif
-      icon: fas fa-clipboard #find more at https://fontawesome.com/icons
+  section: services # This section ID might still be useful for the home page link
+  # Detailed list of offerings for the services page
+  offerings:
+    - id: "evaluations" # ID for mini-nav link
+      title: "OT Evaluations"
+      description: "A comprehensive evaluation to understand your child's unique needs and strengths."
+      type: "tiered" # Indicate a tiered pricing structure
+      tiers:
+        - name: "Foundational Evaluation"
+          price: "$250" # Added pricing
+          description: "Includes clinical observations, parent interview, and initial recommendations."
+          # Renamed includes for consistency
+          standard_includes:
+            - Clinical observations
+            - Sensory Processing Measure assessment (SPM-2)
+            - In-depth intake call with caregiver
+            - Initial recommendations
+            - Standard written summary of findings
 
-book:
-  title: "Contact"
-  section: book
-  subtitle: "Speak with Maria to determine the best course for your child"
+        - name: "Comprehensive Evaluation"
+          price: "$299" # Added pricing
+          # Modified description, removed the footnote text
+          description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
+          # Added a new field for the footnote text
+          footnote: "Recommended if we plan to submit for reimbursement"
+          # Standard items included in both tiers
+          standard_includes:
+            - Clinical observations
+            - Sensory Processing Measure assessment (SPM-2)
+            - In-depth intake call with caregiver
+            - Initial recommendations
+          # Additional items specific to the comprehensive tier
+          additional_includes:
+            - Detailed written summary of findings
+            - Standardized assesments (PDMS-3 & Beery VMI)
+            - Follow-up consultation to review findings and plan # Removed (+)
+
+    - id: "treatments"
+      title: "OT Treatments"
+      # Changed type to render as a single card with bullets
+      type: "single_treatment_bulleted"
+      # Single price for treatment sessions
+      price: "$175/session"
+      # Restructured description into a list of key details
+      details_list:
+        - Skilled, individualized occupational therapy treatment
+        - Provided in the client's natural environment (home/school)
+        - 50-minute treatment sessions
+        - Includes 10 minutes of parent education and home programming guidance
+        - Sessions available weekly or bi-weekly based on need
+    - id: "other-offerings" # New ID for mini-nav link
+      title: "Other Offerings"
+      description: "Additional services designed to support families and children in various contexts."
+      type: "list" # Indicate a simple list structure
+      items:
+        - name: "Parent Consultation"
+          price: "$99" # Added pricing
+          duration: "30 minutes"
+          format: "Virtual"
+          description: "Get strategies for specific known problems and guidance for home programming."
+        - name: "School Consultation"
+          price: "$150" # Added pricing
+          duration: "45 minutes"
+          format: "On-site or Virtual"
+          description: "Educate teachers and school staff on strategies to best support your child's participation and learning in the school environment."
+        - name: "Play Group"
+          price: "$40 to attend" # Added pricing
+          duration: "1 per month"
+          format: "Local Parks (Atlanta, GA)"
+          description: |
+            A fun, informal opportunity for parents to network with families of similar-aged children and for kids to engage in play targeting a specific developmental skill each session. Location varies, typically held on weekends.
+          form: true # Flag to indicate this item needs a form
+          form_id: "xyzwelkn" # Placeholder for Play Group Formspree ID
 
 footer:
   legal: "Privacy Policy"
-  social:
-    # - url: https://twitter.com
-    #   icon: "fab fa-twitter"
-    # - url: https://facebook.com
-    #   icon: "fab fa-facebook-f"
-    # - url: https://linkedin.com
-    #   icon: "fab fa-linkedin-in"
-    # - url: https://github.com/raviriley/agency-jekyll-theme
-    #   icon: "fab fa-github"
-    - url: https://instagram.com
-      icon: "fab fa-instagram"
+
+# FAQ Content (Kept separate as requested)
+faq:
+  title: "Your Questions Answered"
+  subtitle: "Find information about payments, insurance, appointments, and more."
+  items:
+    - question: "What is your payment process?"
+      answer: |
+        All payments are securely processed through our HIPAA-compliant payment processor, Jane Payments. When you schedule your child's initial evaluation, you will complete intake forms where you can safely enter your credit card, HSA, or FSA information to be kept on file. Your card will be charged at the time of service.
+
+    - question: "What is your cancellation policy?"
+      answer: |
+        We understand that life happens, and sometimes plans change! However, because each appointment is reserved just for you, we kindly ask for advance notice if you need to cancel or reschedule. Cancellations made within 48 hours of your appointment will incur a 25% fee, and those made within 24 hours will be charged 50% of the session fee.
+        This policy helps us ensure that we can continue providing dedicated care to all the families we serve. We truly appreciate your understanding and cooperation!
+
+    - question: "Do you accept insurance?"
+      answer: |
+        Insurance & Payment Information
+        At Playful Progressions, we are a private-pay practice and do not accept commercial insurance. However, many insurance plans offer reimbursement for services received from an out-of-network provider. We are happy to provide superbills, which you can submit to your insurance company for potential reimbursement.
+        Our superbills include the commonly used treatment codes:
+        Therapeutic Activity: 97530
+        Occupational Therapy Initial Evaluation: 97165, 97166, 97167
+        We recommend checking with your insurance provider to understand your out-of-network benefits and reimbursement options. If you have any questions, we're happy to help guide you through the process!
+
+    - question: "Why choose private pay over in-network providers?"
+      answer: |
+        While using insurance can be a great option, it's important to keep in mind that coverage is often subject to deductibles and coinsurance. We're here to provide high-quality, individualized therapy to support your child's development without unnecessary delays.
+        If you have any questions about how we can help, we'd love to chat!

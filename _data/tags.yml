@@ -1,0 +1,6 @@
+# Define colors for your blog tags
+tag_colors:
+  "5 Minute Friday":
+    color: $secondary # Using $info as an example, choose a Bootstrap color variable or hex code
+  "Posts":
+    color: $secondary
