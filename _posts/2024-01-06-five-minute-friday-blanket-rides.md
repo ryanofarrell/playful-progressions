@@ -7,15 +7,9 @@ excerpt: Just trying to get through the wake window? Learn how much you can do f
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/5mf-blanket.jpg
+    teaser: /assets/images/blog/5mf-blanket.jpeg
 ---
 
-
-{% include figure
-    image_path="/assets/images/5mf-blanket.jpg"
-    alt="Blanket ride!"
-    class="align-right"
-%}
 
 For some reason, everyone I know has sent my baby a blanket of some kind. My mom crochet a beautiful blanket, my mother in law hand stitched an amazing quilt, and others have sent every blanket under the sun from muslin blankets to fleece. Luckily, they can be used for more than just decor or tucked away in a drawer.
 

@@ -6,6 +6,9 @@ categories: posts
 excerpt: Muffin tins are for more than just baking delicious treats!
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-muffin.jpeg
+
 ---
 
 

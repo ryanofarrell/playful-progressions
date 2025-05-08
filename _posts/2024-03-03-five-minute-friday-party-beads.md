@@ -7,15 +7,9 @@ excerpt: Just trying to get through the wake window? Learn how much you can do f
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/5mf-party-beads.jpeg
+    teaser: /assets/images/blog/5mf-beads.jpeg
 ---
 
-
-{% include figure
-    image_path="/assets/images/5mf-party-beads.jpeg"
-    alt="Party beads!"
-    class="align-right"
-%}
 
 Happy mardi gras season! If you are looking for something to do with all of those left over beads, look no further!
 

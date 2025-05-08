@@ -6,9 +6,10 @@ categories: posts
 excerpt: Hair ties and scrunchies can be used for a variety of play activities and can be very beneficial!
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-hair-tie.jpeg
+
 ---
-
-
 
 I seem to always find hair ties lying around.  Luckily, they can be for more than just holding your hair back from a baby who loves to pull!  Hair ties and scrunchies can be used for a variety of play activities and can be very beneficial!
 

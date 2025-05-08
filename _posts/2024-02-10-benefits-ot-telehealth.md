@@ -6,15 +6,11 @@ categories: posts
 excerpt: Prior to 2020, OT via teletherapy was unheard of. We’ve come a long way since then and have uncovered some undeniable benefits to teletherapy along the way.
 classes: wide
 tag: Posts
+header:
+    teaser: /assets/images/blog/tele-health.jpeg
+
 ---
 
-_Original post [here](https://www.pediaspeech.com/5-benefits-of-doing-occupational-therapy-through-telehealth/)_
-
-{% include figure
-    image_path="/assets/images/teletherapy.jpeg"
-    alt="Providing teletherapy services"
-    class="align-right"
-%}
 
 It’s hard to believe that almost three years ago we were ‘forced’ to switch to teletherapy for occupational therapy services. Today, we are still providing teletherapy; but this method of treatment is anything but forced. There are several unique benefits of doing occupational therapy through telehealth.
 

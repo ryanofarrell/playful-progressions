@@ -7,15 +7,9 @@ excerpt: Just trying to get through the wake window? Learn how much you can do f
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/5mf-blanket.jpg
+    teaser: /assets/images/blog/5mf-tape.jpeg
 ---
 
-
-{% include figure
-    image_path="/assets/images/5mf-blanket.jpg"
-    alt="Blanket ride!"
-    class="align-right"
-%}
 
 Babies by nature reach and grab everything they see (goodbye wearing your hair down). Instead of allowing your baby to pull out all of your luscious locks, try painters tape instead.
 

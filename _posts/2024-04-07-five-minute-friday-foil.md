@@ -6,16 +6,10 @@ categories: posts
 excerpt: Foil can be fun for all ages, and not just in the kitchen!  It is packed with fine motor benefits for the whole family!
 classes: wide
 tag: 5 Minute Friday
-header: 
-    teaser: /assets/images/5mf-foil.jpeg
+header:
+    teaser: /assets/images/blog/5mf-foil.jpeg
 ---
 
-
-{% include figure
-    image_path="/assets/images/5mf-foil.jpeg"
-    alt="Aluminum Foil!"
-    class="align-right"
-%}
 
 Foil is something we all have lying around.  In addition to a must have in the kitchen, it can be a must have to spice up play time!  
 

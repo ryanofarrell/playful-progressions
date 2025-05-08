@@ -6,9 +6,12 @@ categories: posts
 excerpt: Here are some ways to facilitate 3-6 month development!
 classes: wide
 tag: Posts
+header:
+    teaser: /assets/images/blog/wake-windows-3-6.jpeg
+
 ---
 
-_For 0-3 months [click here](2024-02-22-wake-windows-0-3-months)_
+_For 0-3 months [click here](wake-windows-0-3-months)_
 
 The 3-6 month phase was one of my favorites!  You are finally getting some positive feedback and encouragement from your little one– the smiles, the coos, watching them make connections and learn, it is truly the best!  Here are some ways to facilitate 3-6 month development!
 

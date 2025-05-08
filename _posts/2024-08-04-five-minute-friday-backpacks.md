@@ -6,6 +6,9 @@ categories: posts
 excerpt: Backpacks are not just for school aged kids and are packed with several benefits beyond hauling your stuff!
 classes: wide
 tag: 5 Minute Friday
+header:
+    teaser: /assets/images/blog/5mf-backpack.jpeg
+
 ---
 
 
