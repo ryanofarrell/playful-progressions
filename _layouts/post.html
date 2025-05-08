@@ -61,6 +61,28 @@
               {{ content }}
             </div>
 
+            {% assign maria = site.data.sitetext.team.people | where: "name", "Maria O'Farrell" | first %}
+            {% if maria and site.data.sitetext.team.short_bio %}
+              <div class="about-author-section p-3 mt-5 border rounded bg-light">
+                <h6 class="section-subheading">About the Author</h6>
+                <div class="row align-items-center">
+                  <div class="col-auto">
+                    <img
+                      src="{{ maria.image | relative_url }}"
+                      alt="{{ maria.name }}"
+                      class="rounded-circle"
+                      style="width: 80px; height: 80px; object-fit: cover;">
+                  </div>
+                  <div class="col">
+                    <div class="text-muted small">
+                      {{ site.data.sitetext.team.short_bio | markdownify }}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+
+
           </div>
         </div>
       </div>
