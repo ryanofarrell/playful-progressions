@@ -45,8 +45,7 @@ permalink: /services/
             ]{% assign has_offers = false %}{% if offering.tiers or offering.pricing_tiers or offering.items or offering.price %}{% assign has_offers = true %}
             {% endif %}
             {% if has_offers %},
-              "offers" : [
-                        {% if offering.tiers %}
+              "offers" : [{% if offering.tiers %}
                   {% for tier in offering.tiers %}
                     {
                       "@type": "Offer",
@@ -60,7 +59,7 @@ permalink: /services/
                         {% endif %}
                       }
                     }{% unless forloop.last %},
-                        {% endunless %}
+                    {% endunless %}
                     {% endfor %}
                   {% elsif offering.pricing_tiers %}
                     {% for tier in offering.pricing_tiers %}
@@ -76,7 +75,7 @@ permalink: /services/
                           {% endif %}
                         }
                       }{% unless forloop.last %},
-                        {% endunless %}
+                      {% endunless %}
                       {% endfor %}
                     {% elsif offering.items %}
                       {% for item in offering.items %}
@@ -96,7 +95,6 @@ permalink: /services/
                         {% endunless %}
                         {% endfor %}
                       {% elsif offering.price %}
-                        {# For single_treatment_bulleted or direct price on offering #}
                         {
                           "@type": "Offer",
                           "name": {{ offering.title | jsonify }},
@@ -108,8 +106,7 @@ permalink: /services/
                             {% endif %}
                           }
                         }
-                        {% endif %}
-                      ]
+                        {% endif %}]
                       {% endif %}
                     }{% unless forloop.last %},{% endunless %}
                   {% endfor %}
