@@ -7,6 +7,43 @@
 
     {% include navigation.html %}
 
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": {{ page.title | jsonify }},
+        "abstract": {{ page.excerpt | default: page.description | strip_html | normalize_whitespace | truncate: 160 | jsonify }},
+        {% if page.header.teaser %}
+          "image" : [{{ page.header.teaser | absolute_url | jsonify }}],
+        {% else %}
+          "image" : [{{ site.logo.path | absolute_url | jsonify }}],
+          {% endif %}
+          "author": {
+            "@type": "Person",
+            "name": {{ page.author | default: site.author | jsonify }}
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": {{ site.title | jsonify }},
+            "logo": {
+              "@type": "ImageObject",
+              "url": {{ site.logo.path | absolute_url | jsonify }}
+            }
+          },
+          "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+          {% if page.last_modified_at %}
+            "dateModified": {{ page.last_modified_at | date_to_xmlschema | jsonify }},
+          {% else %}
+            "dateModified": {{ page.date | date_to_xmlschema | jsonify }},
+            {% endif %}
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": {{ page.url | absolute_url | jsonify }}
+            }
+          }
+    </script>
+
+
     <article class="post-content page-section">
       <div class="container">
         <div class="row justify-content-center">
