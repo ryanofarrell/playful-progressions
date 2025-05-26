@@ -8,6 +8,7 @@ classes: wide
 tag: 5 Minute Friday
 header:
     teaser: /assets/images/blog/5mf-beads.jpeg
+image: /assets/images/blog/5mf-beads.jpeg
 ---
 
 

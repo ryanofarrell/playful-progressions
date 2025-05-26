@@ -6,6 +6,7 @@ categories: posts
 excerpt: Is OT telehealth effective? Discover 5 surprising benefits, from unmatched convenience to increased parent education and using your own home environment for tailored therapy. Learn why it's here to stay.
 classes: wide
 tag: Posts
+image: /assets/images/blog/tele-health.jpeg # <-- ADD THIS LINE
 header:
     teaser: /assets/images/blog/tele-health.jpeg
 

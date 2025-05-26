@@ -8,6 +8,7 @@ classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/combined-feeding.jpeg
+image: /assets/images/blog/combined-feeding.jpeg
 
 ---
 

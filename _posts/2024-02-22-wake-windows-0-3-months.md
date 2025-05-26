@@ -8,6 +8,7 @@ classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/wake-windows-0-3.jpeg
+image: /assets/images/blog/wake-windows-0-3.jpeg
 
 ---
 

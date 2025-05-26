@@ -8,6 +8,7 @@ classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/mental-health.jpeg
+image: /assets/images/blog/mental-health.jpeg
 
 ---
 

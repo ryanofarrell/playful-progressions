@@ -8,6 +8,7 @@ classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/changes-as-a-mom.jpeg
+image: /assets/images/blog/changes-as-a-mom.jpeg
 
 ---
 

@@ -8,6 +8,7 @@ classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/sensory-processing-womb.jpeg
+image: /assets/images/blog/sensory-processing-womb.jpeg
 
 ---
 
