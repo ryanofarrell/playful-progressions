@@ -20,7 +20,8 @@
           {% endif %}
           "author": {
             "@type": "Person",
-            "name": {{ page.author | default: site.author | jsonify }}
+            "name": {{ page.author | default: site.author | jsonify }},
+            "url": {{ '/meet-maria.html' | absolute_url | jsonify }}
           },
           "publisher": {
             "@type": "Organization",

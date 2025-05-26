@@ -24,6 +24,7 @@ phone-text: "(470) 219-8076"
 phone-numeric: "+14702198076"
 description: "Learnings from an Occupational Therapist and mother"
 author: "Maria O'Farrell"
+url: "https://www.playfulprogressions.com"
 
 logo: #optional, defaults to site title
   path: /assets/img/logo.avif
