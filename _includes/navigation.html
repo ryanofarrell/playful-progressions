@@ -3,8 +3,8 @@
     <a class="navbar-brand js-scroll-trigger" href="{{ '/' | relative_url }}">
       {%- if site.logo -%}
         <img
-          height="{{ site.logo.height | default: 52 }}"
-          src="{{ site.logo.path | relative_url }}"
+          height="80px"
+          src="{{ site.logo | relative_url }}"
           alt="Playful Progressions Logo" />
       {%- else -%}
         {{ site.title }}

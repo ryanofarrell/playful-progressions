@@ -14,47 +14,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  {% assign page_description = page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 %}
-  <meta name="description" content="{{ page_description }}">
-  <meta name="author" content="{{ page.author | default: site.author }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-
-  {% assign page_title = page.title | default: site.title %}
-  {% if page.title and page.layout != "home" and site.title %}
-    {% assign full_title = page.title | append: " | " | append: site.title %}
-  {% else %}
-    {% assign full_title = page_title %}
-  {% endif %}
-  <title>{{ full_title }}</title>
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <meta property="og:title" content="{{ full_title }}">
-  <meta property="og:description" content="{{ page_description }}">
-  {% assign og_image = page.header.teaser | default: page.header_image | default: site.data.style.masthead_image | default: site.logo.path | default: "/assets/img/default-social-image.jpg" %}
-  <meta property="og:image" content="{{ og_image | absolute_url }}">
-  {% if site.title %}<meta property="og:site_name" content="{{ site.title }}">{% endif %}
-  {% if page.date %}<meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}">{% endif %}
-  {% if page.last_modified_at %}<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
-  {% for tag in page.tags %}<meta property="article:tag" content="{{ tag }}">{% endfor %}
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <meta name="twitter:title" content="{{ full_title }}">
-  <meta name="twitter:description" content="{{ page_description }}">
-  <meta name="twitter:image" content="{{ og_image | absolute_url }}">
-  {% if site.twitter_username %}<meta name="twitter:site" content="@{{ site.twitter_username }}">{% endif %}
-  {% if site.twitter_username %}<meta name="twitter:creator" content="@{{ site.twitter_username }}">{% endif %}
-
+  {% seo %}
 
   <link
     href="{{ 'assets/css/all.min.css' | relative_url }}"
     rel="stylesheet"
     type="text/css">
 
-  <link href="{{ 'assets/css/agency.css' | relative_url }}" rel="stylesheet" /> <link
+  <link href="{{ 'assets/css/agency.css' | relative_url }}" rel="stylesheet" />
+  <link
     rel="preload"
     as="image"
     href="{{ '/assets/img/masthead.avif' | relative_url }}"
@@ -64,19 +32,34 @@
   <link
     rel="apple-touch-icon"
     sizes="180x180"
-    href="{{ '/apple-touch-icon.png' | relative_url }}"> <link
+    href="{{ '/apple-touch-icon.png' | relative_url }}">
+
+  <link
     rel="icon"
     type="image/png"
     sizes="32x32"
-    href="{{ '/favicon-32x32.png' | relative_url }}"> <link
+    href="{{ '/favicon-32x32.png' | relative_url }}">
+  <link
     rel="icon"
     type="image/png"
     sizes="16x16"
-    href="{{ '/favicon-16x16.png' | relative_url }}"> <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}"> <link
+    href="{{ '/favicon-16x16.png' | relative_url }}">
+
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+
+  <link
     rel="mask-icon"
     href="{{ '/safari-pinned-tab.svg' | relative_url }}"
     color="#5bbad5">
+
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
+  {% comment %}
+    If you have a `_includes/head/custom.html` file for any other essential head elements
+    (like custom tracking scripts not covered by GA, or very specific meta tags
+    that jekyll-seo-tag doesn't manage and you absolutely need),
+    you can include it here:
+    {% include head/custom.html %}
+  {% endcomment %}
 </head>

@@ -19,16 +19,15 @@
 #   path: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1920px-Image_created_with_a_mobile_phone.png"
 
 title: "Playful Progressions"
+name: "Playful Progressions"
+publisher: "Playful Progressions"
 email: "info@playfulprogressions.com"
 phone-text: "(470) 219-8076"
 phone-numeric: "+14702198076"
-description: "Learnings from an Occupational Therapist and mother"
+description: "Pediatric Occupational Therapy services with compassion and empathy"
 author: "Maria O'Farrell"
 url: "https://www.playfulprogressions.com"
-
-logo: #optional, defaults to site title
-  path: /assets/img/logo.avif
-  height: 80 #height in px, defaults to 52px
+logo: /assets/img/logo.avif
 
 locale: "en-US" # See available languages in _data/sitetext.yml
 
@@ -45,9 +44,19 @@ email_subject: "Inquiry about Playful Progressions"
 # Instagram URL
 instagram_url: "https://www.instagram.com/playfulprogressions/" # Added Instagram URL
 
+social:
+  name: Playful Progressions
+  links:
+    - https://www.instagram.com/playfulprogressions/ # Your existing Instagram URL
+
 markdown: kramdown
 # Uncomment following line to use Formspree form ID based URL instead of email based URL
 # Details: https://help.formspree.io/hc/en-us/articles/360017735154-How-to-prevent-spam
 # formspree_form_path: "f/a_form_id"
 
 permalink: /blog/:title.html
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
