@@ -87,80 +87,77 @@ team:
 services:
   title: "Services"
   subtitle: "A full suite of pediatric therapy needs"
-  section: services # This section ID might still be useful for the home page link
-  # Detailed list of offerings for the services page
+  section: services
   offerings:
-    - id: "evaluations" # ID for mini-nav link
+    - id: "evaluations"
       title: "OT Evaluations"
-      description: "A comprehensive evaluation to understand your child's unique needs and strengths."
-      type: "tiered" # Indicate a tiered pricing structure
+      description: "A comprehensive evaluation to understand your child's unique needs and strengths." # Ensure this description is filled if it wasn't already
+      type: "tiered"
       tiers:
         - name: "Foundational Evaluation"
-          price: "$250" # Added pricing
+          price: 250 # CHANGED: Numeric
+          # price_unit: "" # Optional: or omit if no unit
           description: "Includes clinical observations, parent interview, and initial recommendations."
-          # Renamed includes for consistency
           standard_includes:
             - Clinical observations
             - Sensory Processing Measure assessment (SPM-2)
             - In-depth intake call with caregiver
             - Initial recommendations
             - Standard written summary of findings
-
         - name: "Comprehensive Evaluation"
-          price: "$299" # Added pricing
-          # Modified description, removed the footnote text
+          price: 299 # CHANGED: Numeric
+          # price_unit: "" # Optional: or omit if no unit
           description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
-          # Added a new field for the footnote text
           footnote: "Recommended if we plan to submit for reimbursement"
-          # Standard items included in both tiers
           standard_includes:
             - Clinical observations
             - Sensory Processing Measure assessment (SPM-2)
             - In-depth intake call with caregiver
             - Initial recommendations
-          # Additional items specific to the comprehensive tier
           additional_includes:
             - Detailed written summary of findings
             - Standardized assesments (PDMS-3 & Beery VMI)
-            - Follow-up consultation to review findings and plan # Removed (+)
+            - Follow-up consultation to review findings and plan
 
     - id: "treatments"
       title: "OT Treatments"
-      # Changed type to render as a single card with bullets
+      description: "Tailored one-on-one occupational therapy sessions designed to address your child's specific goals in their natural environment, fostering skill development through play-based activities and empowering families with effective strategies." # ADDED/IMPROVED Description
       type: "single_treatment_bulleted"
-      # Single price for treatment sessions
-      price: "$175/session"
-      # Restructured description into a list of key details
+      price: 175 # CHANGED: Numeric
+      price_unit: "/session" # ADDED
       details_list:
         - Skilled, individualized occupational therapy treatment
         - Provided in the client's natural environment (home/school)
         - 50-minute treatment sessions
         - Includes 10 minutes of parent education and home programming guidance
         - Sessions available weekly or bi-weekly based on need
-    - id: "other-offerings" # New ID for mini-nav link
+
+    - id: "other-offerings"
       title: "Other Offerings"
-      description: "Additional services designed to support families and children in various contexts."
-      type: "list" # Indicate a simple list structure
+      description: "Additional services for families and children in various contexts, including consultations and specialized play groups." # Ensure/Improve Description
+      type: "list"
       items:
         - name: "Parent Consultation"
-          price: "$99" # Added pricing
+          price: 99 # CHANGED: Numeric
+          # price_unit: "" # Optional: if price is for the defined duration
           duration: "30 minutes"
           format: "Virtual"
           description: "Get strategies for specific known problems and guidance for home programming."
         - name: "School Consultation"
-          price: "$150" # Added pricing
+          price: 150 # CHANGED: Numeric
+          # price_unit: "" # Optional
           duration: "45 minutes"
           format: "On-site or Virtual"
           description: "Educate teachers and school staff on strategies to best support your child's participation and learning in the school environment."
         - name: "Play Group"
-          price: "$40 to attend" # Added pricing
+          price: 40 # CHANGED: Numeric
+          price_unit: " to attend" # ADDED
           duration: "1 per month"
           format: "Local Parks (Atlanta, GA)"
           description: |
             A fun, informal opportunity for parents to network with families of similar-aged children and for kids to engage in play targeting a specific developmental skill each session. Location varies, typically held on weekends.
-          form: true # Flag to indicate this item needs a form
-          form_id: "xyzwelkn" # Placeholder for Play Group Formspree ID
-
+          form: true
+          form_id: "xyzwelkn"
 footer:
   legal: "Privacy Policy"
 
