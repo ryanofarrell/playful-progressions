@@ -3,11 +3,12 @@ layout: post
 title: 5 Ways my OT Practice Changed Since Becoming a Mom
 date: 2024-02-15 08:03:00 -0400
 categories: posts
-excerpt: A lot changed for me after having a child, but the most unexpected changes happened within my practice
+excerpt: How does motherhood transform an OT? An occupational therapist shares 5 profound ways her practice evolved after becoming a mom, offering deeper empathy, clearer answers, and a family-based approach.
 classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/changes-as-a-mom.jpeg
+image: /assets/images/blog/changes-as-a-mom.jpeg
 
 ---
 

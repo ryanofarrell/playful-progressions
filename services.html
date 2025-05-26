@@ -1,11 +1,118 @@
 ---
 layout: default # Use the default layout for standard header/footer
-title: Our Services
-subtitle: Detailed information about our offerings
+title: "Pediatric Occupational Therapy Services"
+description: "Explore expert pediatric occupational therapy services by Playful Progressions, including evaluations, telehealth, and tailored interventions by Maria O'Farrell, OT."
+subtitle: Detailed information about our offerings # Kept from your original front matter
 permalink: /services/
 # Optional: Specify a custom header image for this page
 # header_image: /assets/img/your-services-header-image.avif
+# image: /assets/img/your-preferred-services-page-image.jpg # For jekyll-seo-tag, if you want a specific Open Graph image for this page
 ---
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Occupational Therapy Services Offered by Playful Progressions",
+    "description": "Details of pediatric occupational therapy services provided by Playful Progressions.",
+    "itemListElement": [
+                  {% for offering in site.data.sitetext.services.offerings %}
+        {
+          "@type": "Service",
+          "name": {{ offering.title | jsonify }},
+          "description": {{ offering.description | strip_html | normalize_whitespace | jsonify }},
+          "url": {{ page.url | absolute_url | append: "#" | append: offering.id | jsonify }},
+          "serviceType": "Pediatric Occupational Therapy",
+          "provider": {
+            "@type": "Organization",
+            "name": {{ site.name | jsonify }},
+            "url": {{ site.url | absolute_url | jsonify }},
+            "logo": {{ site.logo | absolute_url | jsonify }},
+            "telephone": {{ site.phone-numeric | jsonify }},
+            "email": {{ site.email | jsonify }}
+          },
+          "areaServed": [
+              {
+              "@type": "City",
+              "name": {{ site.data.sitetext.about.location | jsonify }}
+            }
+            {% for neighborhood in site.data.sitetext.about.neighborhoods %},
+              {
+                "@type": "Place",
+                "name": {{ neighborhood | append: ", " | append: site.data.sitetext.about.location | jsonify }}
+              }
+              {% endfor %}
+            ]{% assign has_offers = false %}{% if offering.tiers or offering.pricing_tiers or offering.items or offering.price %}{% assign has_offers = true %}
+            {% endif %}
+            {% if has_offers %},
+              "offers" : [{% if offering.tiers %}
+                  {% for tier in offering.tiers %}
+                    {
+                      "@type": "Offer",
+                      "name": {{ tier.name | jsonify }},
+                      {% if tier.description and tier.description != "" %}
+                        "description": {{ tier.description | strip_html | normalize_whitespace | jsonify }},{% endif %}"priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": {{ tier.price | default: 0 }},
+                        "priceCurrency": "USD"{% if tier.price_unit and tier.price_unit != "" %},
+                        "unitText": {{ tier.price_unit | strip_html | normalize_whitespace | jsonify }}
+                        {% endif %}
+                      }
+                    }{% unless forloop.last %},
+                    {% endunless %}
+                    {% endfor %}
+                  {% elsif offering.pricing_tiers %}
+                    {% for tier in offering.pricing_tiers %}
+                      {
+                        "@type": "Offer",
+                        "name": {{ tier.volume | jsonify }},
+                        {% if tier.details and tier.details != "" %}
+                          "description": {{ tier.details | strip_html | normalize_whitespace | jsonify }},{% endif %}"priceSpecification": {
+                          "@type": "PriceSpecification",
+                          "price": {{ tier.price | default: 0 }},
+                          "priceCurrency": "USD"{% if tier.price_unit and tier.price_unit != "" %},
+                          "unitText": {{ tier.price_unit | strip_html | normalize_whitespace | jsonify }}
+                          {% endif %}
+                        }
+                      }{% unless forloop.last %},
+                      {% endunless %}
+                      {% endfor %}
+                    {% elsif offering.items %}
+                      {% for item in offering.items %}
+                        {
+                          "@type": "Offer",
+                          "name": {{ item.name | jsonify }},
+                          {% if item.description and item.description != "" %}
+                            "description": {{ item.description | strip_html | normalize_whitespace | jsonify }},{% endif %}{% if item.price %}"priceSpecification" : {
+                            "@type": "PriceSpecification",
+                            "price": {{ item.price | default: 0 }},
+                            "priceCurrency": "USD"{% if item.price_unit and item.price_unit != "" %},
+                            "unitText": {{ item.price_unit | strip_html | normalize_whitespace | jsonify }}
+                            {% endif %}
+                          }
+                          {% endif %}
+                        }{% unless forloop.last %},
+                        {% endunless %}
+                        {% endfor %}
+                      {% elsif offering.price %}
+                        {
+                          "@type": "Offer",
+                          "name": {{ offering.title | jsonify }},
+                          "priceSpecification": {
+                            "@type": "PriceSpecification",
+                            "price": {{ offering.price | default: 0 }},
+                            "priceCurrency": "USD"{% if offering.price_unit and offering.price_unit != "" %},
+                            "unitText": {{ offering.price_unit | strip_html | normalize_whitespace | jsonify }}
+                            {% endif %}
+                          }
+                        }
+                        {% endif %}]
+                      {% endif %}
+                    }{% unless forloop.last %},{% endunless %}
+                  {% endfor %}
+                ]
+              }
+</script>
 
 <section class="page-section first-content-section" id="services-page">
   <div class="container">
@@ -40,11 +147,10 @@ permalink: /services/
                   <div class="col-md-6 mb-4">
                     <div class="service-tier-card">
                       <h4 class="tier-name">{{ tier.name }}</h4>
-                      <p class="price">{{ tier.price }}</p>
+                      <p class="price">${{ tier.price | default: 0 }}{{ tier.price_unit }}</p>
                       <p class="tier-description">{{ tier.description }}</p>
                       <h5>Includes:</h5>
                       <ul class="tier-includes-list">
-                        {% comment %} Loop through standard includes {% endcomment %}
                         {% if tier.standard_includes %}
                           {% for item in tier.standard_includes %}
                             <li>
@@ -53,7 +159,6 @@ permalink: /services/
                             </li>
                           {% endfor %}
                         {% endif %}
-                        {% comment %} Loop through additional includes and style them differently {% endcomment %}
                         {% if tier.additional_includes %}
                           {% for item in tier.additional_includes %}
                             <li class="additional-include">
@@ -63,7 +168,6 @@ permalink: /services/
                           {% endfor %}
                         {% endif %}
                       </ul>
-                      {% comment %} Display footnote if it exists {% endcomment %}
                       {% if tier.footnote %}
                         <p class="tier-footnote text-muted mt-2 mb-0">
                           <small>&#42; {{ tier.footnote }}</small>
@@ -74,13 +178,12 @@ permalink: /services/
                 {% endfor %}
               </div>
             {% elsif offering.type == "volume_pricing" %}
-              {% comment %} This block remains for other potential volume pricing, or you can remove if not needed elsewhere {% endcomment %}
               <div class="row justify-content-center">
                 {% for tier in offering.pricing_tiers %}
                   <div class="col-md-4 mb-4">
                     <div class="service-tier-card pricing-tier-card">
                       <h4 class="tier-name">{{ tier.volume }}</h4>
-                      <p class="price">{{ tier.price }}</p>
+                      <p class="price">${{ tier.price | default: 0 }}{{ tier.price_unit }}</p>
                       {% if tier.details %}
                         <p class="tier-details text-muted">{{ tier.details }}</p>
                       {% endif %}
@@ -90,12 +193,11 @@ permalink: /services/
               </div>
 
             {% elsif offering.type == "single_treatment_bulleted" %}
-              {% comment %} New block for single treatment price with bullet points {% endcomment %}
               <div class="row justify-content-center">
                 <div class="col-md-8 mb-4">
                   <div class="service-tier-card single-treatment-card">
                     <h4 class="tier-name">{{ offering.title }}</h4>
-                    <p class="price">{{ offering.price }}</p>
+                    <p class="price">${{ offering.price | default: 0 }}{{ offering.price_unit }}</p>
                     <h5>Details:</h5>
                     <ul class="tier-includes-list">
                       {% for detail in offering.details_list %}
@@ -115,7 +217,12 @@ permalink: /services/
                   <div class="col-md-6 mb-4">
                     <div class="service-tier-card other-offering-card">
                       <h4 class="tier-name">{{ item.name }}</h4>
-                      <p class="price">{{ item.price }}
+                      <p class="price">
+                        {% if item.price %}
+                          ${{ item.price | default: 0 }}{{ item.price_unit }}
+                        {% else %}
+                          Contact for details
+                        {% endif %}
                         {% if item.duration %}| {{ item.duration }}{% endif %}
                       </p>
                       {% if item.format %}
@@ -123,11 +230,9 @@ permalink: /services/
                       {% endif %}
                       <p class="item-description">{{ item.description | markdownify }}</p>
 
-                      {% comment %} Add Formspree form for Play Group if flagged {% endcomment %}
                       {% if item.form %}
                         <div class="play-group-form-block mt-4">
                           <h5 class="mb-3 text-center">Interested in Play Group?</h5>
-                          {% comment %} Placeholder for success/failure messages {% endcomment %}
                           <div id="playGroupSuccess"></div>
                           <form
                             id="playGroupForm"
@@ -161,12 +266,10 @@ permalink: /services/
                                 class="btn btn-primary btn-sm text-uppercase"
                                 type="submit">Notify Me About Upcoming Play Groups</button>
                             </div>
-                            {% comment %} Hidden field for email subject indicator {% endcomment %}
                             <input
                               type="hidden"
                               name="_subject"
                               value="Play Group Interest - Website Form">
-                            {% comment %} No _next redirect needed if using AJAX {% endcomment %}
                           </form>
                         </div>
                       {% endif %}

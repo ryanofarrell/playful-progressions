@@ -3,11 +3,12 @@ layout: post
 title: The Importance of Tummy Time
 date: 2024-08-10 08:03:00 -0400
 categories: posts
-excerpt: Most parents know that tummy time is important, but many don't know why! Understanding the why behind the action is so important, and will encourage more consistency.
+excerpt: Tummy time is crucial, but do you know all 7 reasons why? This OT deep-dive explains its vital role in oral motor skills, core strength, vision, and more, plus answers your top FAQs for success.
 classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/tummy-time.jpeg
+image: /assets/images/blog/tummy-time.jpeg
 ---
 
 Most new parents have heard of tummy time, and know that their baby should be doing tummy time; however, no one ever explains why tummy time is so important!   In reality, the benefits of tummy time are endless, and can be even more important for babies with tethered oral tissues (TOTs- tongue ties, lip ties, buccal ties).  Here are some of the highlights:

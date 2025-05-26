@@ -3,11 +3,12 @@ layout: post
 title: How to fill Wake Windows 3-6 Months
 date: 2024-04-19 08:03:00 -0400
 categories: posts
-excerpt: Here are some ways to facilitate 3-6 month development!
+excerpt: Mastering wake windows with your 3-6 month old? Discover 8 engaging, OT-approved activities to foster development, from 'rotisserie chicken play' to 'magic baby,' and make the most of this precious stage.
 classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/wake-windows-3-6.jpeg
+image: /assets/images/blog/wake-windows-3-6.jpeg
 
 ---
 

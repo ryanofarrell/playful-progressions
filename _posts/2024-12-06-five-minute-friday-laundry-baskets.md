@@ -3,11 +3,12 @@ layout: post
 title: 5 Minute Friday - Laundry Baskets!
 date: 2024-12-06 08:03:00 -0400
 categories: posts
-excerpt: Creative ways to turn your laundry basket into a fun activity for both you and your little one
+excerpt: That laundry basket is a play goldmine! This 5 Minute Friday reveals how to use it for heavy work, vestibular input, core strengthening, and fine motor fun for your little one. Make chores playful!
 classes: wide
 tag: 5 Minute Friday
 header:
     teaser: /assets/images/blog/5mf-laundry.jpeg
+image: /assets/images/blog/5mf-laundry.jpeg
 
 ---
 

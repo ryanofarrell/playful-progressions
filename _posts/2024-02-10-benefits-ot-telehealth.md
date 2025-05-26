@@ -3,9 +3,10 @@ layout: post
 title: 5 Benefits of Doing Occupational Therapy Through Telehealth
 date: 2024-02-10 08:03:00 -0400
 categories: posts
-excerpt: Prior to 2020, OT via teletherapy was unheard of. We’ve come a long way since then and have uncovered some undeniable benefits to teletherapy along the way.
+excerpt: Is OT telehealth effective? Discover 5 surprising benefits, from unmatched convenience to increased parent education and using your own home environment for tailored therapy. Learn why it's here to stay.
 classes: wide
 tag: Posts
+image: /assets/images/blog/tele-health.jpeg # <-- ADD THIS LINE
 header:
     teaser: /assets/images/blog/tele-health.jpeg
 

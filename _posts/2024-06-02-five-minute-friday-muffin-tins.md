@@ -3,11 +3,12 @@ layout: post
 title: 5 Minute Friday - Muffin Tins!
 date: 2024-06-02 08:03:00 -0400
 categories: posts
-excerpt: Muffin tins are for more than just baking delicious treats!
+excerpt: Grab a muffin tin for your next 5 Minute Friday! Discover how this kitchen staple can boost grasping, scooping, sorting, and even executive functioning skills in babies, toddlers, and big kids.
 classes: wide
 tag: 5 Minute Friday
 header:
     teaser: /assets/images/blog/5mf-muffin.jpeg
+image: /assets/images/blog/5mf-muffin.jpeg
 
 ---
 

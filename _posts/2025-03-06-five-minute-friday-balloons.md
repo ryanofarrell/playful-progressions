@@ -3,11 +3,12 @@ layout: post
 title: 5 Minute Friday - Balloons!
 date: 2025-03-06 08:03:00 -0400
 categories: posts
-excerpt: We love a party vibe! Simple latex balloons are fantastic for endless fun for kids of all ages!
+excerpt: Inflate the fun and development with balloons! This 5 Minute Friday offers playful activities for babies, toddlers, and big kids to enhance core strength, visual tracking, motor skills, and even emotional regulation.
 classes: wide
 tag: 5 Minute Friday
 header:
     teaser: /assets/images/blog/5mf-balloons.jpeg
+image: /assets/images/blog/5mf-balloons.jpeg
 
 ---
 

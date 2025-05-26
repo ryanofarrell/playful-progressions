@@ -3,11 +3,12 @@ layout: post
 title: Why I Chose a Combined Feeding Model (Baby Led Weaning and Purees)
 date: 2024-03-10 08:03:00 -0400
 categories: posts
-excerpt: You may feel pressure to choose one method between baby led weaning and purees, but you do not have to! Both are packed with benefits for you and your baby.
+excerpt: Baby-Led Weaning or purees? Why not both! An OT mom explains the benefits of a combined feeding model for developing jaw strength, utensil skills, and making mealtime flexible and stress-free.
 classes: wide
 tag: Posts
 header:
     teaser: /assets/images/blog/combined-feeding.jpeg
+image: /assets/images/blog/combined-feeding.jpeg
 
 ---
 
