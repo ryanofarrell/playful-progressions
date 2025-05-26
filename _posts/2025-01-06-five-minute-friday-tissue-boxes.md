@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Tissue Boxes!
 date: 2025-01-06 08:03:00 -0400
 categories: posts
-excerpt: Tissue boxes can serve a purpose beyond wiping runny noses!
+excerpt: Don't toss that empty tissue box! Our 5 Minute Friday transforms it into a versatile toy for babies, toddlers, and older kids, perfect for boosting pincer grasp, fine motor precision, and sequencing skills.
 classes: wide
 tag: 5 Minute Friday
 header:

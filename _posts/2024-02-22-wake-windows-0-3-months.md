@@ -3,7 +3,7 @@ layout: post
 title: How to fill Wake Windows 0-3 Months
 date: 2024-02-22 08:03:00 -0400
 categories: posts
-excerpt: You’ve fed them, you’ve burped them, you’ve changed them…now what?!  Here are some ways to fill those small but mighty wake windows in the newborn phase that are beneficial to you and your little one.
+excerpt: "Beyond feeds and changes: Maximize your newborn's (0-3 months) wake windows! Discover 5 OT-recommended activities like infant massage and gentle dances to boost bonding, sensory development, and early motor skills."
 classes: wide
 tag: Posts
 header:

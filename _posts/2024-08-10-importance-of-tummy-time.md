@@ -3,7 +3,7 @@ layout: post
 title: The Importance of Tummy Time
 date: 2024-08-10 08:03:00 -0400
 categories: posts
-excerpt: Most parents know that tummy time is important, but many don't know why! Understanding the why behind the action is so important, and will encourage more consistency.
+excerpt: Tummy time is crucial, but do you know all 7 reasons why? This OT deep-dive explains its vital role in oral motor skills, core strength, vision, and more, plus answers your top FAQs for success.
 classes: wide
 tag: Posts
 header:

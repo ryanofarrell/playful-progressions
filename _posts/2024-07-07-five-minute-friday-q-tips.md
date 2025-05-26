@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Q-Tips!
 date: 2024-07-07 08:03:00 -0400
 categories: posts
-excerpt: Q-tips are a bathroom staple, but can also be used to develop so many skills for kids of all ages!
+excerpt: Unlock fine motor magic with Q-tips! This 5 Minute Friday provides easy, age-specific activities for babies, toddlers, and big kids to develop grasp, pre-writing skills, and letter formation.
 classes: wide
 tag: 5 Minute Friday
 header:

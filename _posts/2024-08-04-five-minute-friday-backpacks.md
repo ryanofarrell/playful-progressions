@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Backpacks!
 date: 2024-08-04 08:03:00 -0400
 categories: posts
-excerpt: Backpacks are not just for school aged kids and are packed with several benefits beyond hauling your stuff!
+excerpt: Back-to-school prep can be play! This 5 Minute Friday uses backpacks to boost zipper skills, proprioception (heavy work), problem-solving, and even pre-dressing skills for various ages.
 classes: wide
 tag: 5 Minute Friday
 header:

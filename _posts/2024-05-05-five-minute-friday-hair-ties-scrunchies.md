@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Hair Ties and Scrunchies!
 date: 2024-05-05 08:03:00 -0400
 categories: posts
-excerpt: Hair ties and scrunchies can be used for a variety of play activities and can be very beneficial!
+excerpt: Unlock developmental play with everyday hair ties & scrunchies! This 5 Minute Friday offers simple activities for babies, toddlers, and older kids to boost core strength, fine motor skills, and problem-solving.
 classes: wide
 tag: 5 Minute Friday
 header:

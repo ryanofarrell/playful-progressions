@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Party Beads!
 date: 2024-03-03 08:03:00 -0400
 categories: posts
-excerpt: Just trying to get through the wake window? Learn how much you can do for your little one with just party beads!
+excerpt: Don't toss those Mardi Gras beads! This 5 Minute Friday reveals how party beads can boost core strength, sensory integration, and even dressing skills for babies and toddlers. Fun, easy, and beneficial!
 classes: wide
 tag: 5 Minute Friday
 header:

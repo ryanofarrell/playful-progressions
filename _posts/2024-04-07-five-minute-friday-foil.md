@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Aluminum Foil!
 date: 2024-04-07 08:03:00 -0400
 categories: posts
-excerpt: Foil can be fun for all ages, and not just in the kitchen!  It is packed with fine motor benefits for the whole family!
+excerpt: Unroll some fun with aluminum foil! This 5 Minute Friday shows how this kitchen staple boosts fine motor skills, bilateral coordination, and sensory processing for babies and kids. Get ready for creative, beneficial play!
 classes: wide
 tag: 5 Minute Friday
 header:

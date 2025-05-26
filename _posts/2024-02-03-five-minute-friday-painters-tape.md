@@ -3,7 +3,7 @@ layout: post
 title: 5 Minute Friday - Painters Tape!
 date: 2024-02-03 08:03:00 -0400
 categories: posts
-excerpt: Just trying to get through the wake window? Learn how much you can do for your little one with just painters tape!
+excerpt: Grab that painter's tape! A simple roll can transform into a fantastic 5 Minute Friday activity to develop your baby's pincer grasp, core strength, and visual-motor skills. Easy setup, big benefits!
 classes: wide
 tag: 5 Minute Friday
 header:
