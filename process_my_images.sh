@@ -1,13 +1,11 @@
 #!/bin/bash
-set -e # Exit immediately if a command exits with a non-zero status.
-set -x # Print commands and their arguments as they are executed.
 
 # --- Configuration ---
 SOURCE_BASE_DIR="assets/images/full-res"
 OUTPUT_BASE_DIR="assets/images/processed"
 
 # --- Image Processing Settings ---
-UNIVERSAL_MAX_WIDTH="1920"
+UNIVERSAL_MAX_WIDTH="1600"
 
 IM_WEBP_QUALITY="75"
 IM_AVIF_QUALITY="60"
@@ -23,7 +21,7 @@ USE_OPTIPNG=false
 USE_PNGQUANT=false
 PNGQUANT_QUALITY="65-80"
 
-DRY_RUN=true # Keep true for initial testing
+DRY_RUN=false # Keep true for initial testing
 # ---------------------
 
 echo "--- Running Bulk Image Conversion Script (Corrected Command Substitution) ---"

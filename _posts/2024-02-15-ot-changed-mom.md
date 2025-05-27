@@ -7,8 +7,8 @@ excerpt: How does motherhood transform an OT? An occupational therapist shares 5
 classes: wide
 tag: Posts
 header:
-    teaser: /assets/images/blog/changes-as-a-mom.jpeg
-image: /assets/images/blog/changes-as-a-mom.jpeg
+    teaser: /assets/images/processed/blog/changes-as-a-mom.jpeg
+image: /assets/images/processed/blog/changes-as-a-mom.jpeg
 
 ---
 

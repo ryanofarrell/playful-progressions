@@ -7,8 +7,8 @@ excerpt: Baby-Led Weaning or purees? Why not both! An OT mom explains the benefi
 classes: wide
 tag: Posts
 header:
-    teaser: /assets/images/blog/combined-feeding.jpeg
-image: /assets/images/blog/combined-feeding.jpeg
+    teaser: /assets/images/processed/blog/combined-feeding.jpeg
+image: /assets/images/processed/blog/combined-feeding.jpeg
 
 ---
 

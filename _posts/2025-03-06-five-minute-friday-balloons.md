@@ -7,8 +7,8 @@ excerpt: Inflate the fun and development with balloons! This 5 Minute Friday off
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-balloons.jpeg
-image: /assets/images/blog/5mf-balloons.jpeg
+    teaser: /assets/images/processed/blog/5mf-balloons.jpeg
+image: /assets/images/processed/blog/5mf-balloons.jpeg
 
 ---
 

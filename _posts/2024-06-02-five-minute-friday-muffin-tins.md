@@ -7,8 +7,8 @@ excerpt: Grab a muffin tin for your next 5 Minute Friday! Discover how this kitc
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-muffin.jpeg
-image: /assets/images/blog/5mf-muffin.jpeg
+    teaser: /assets/images/processed/blog/5mf-muffin.jpeg
+image: /assets/images/processed/blog/5mf-muffin.jpeg
 
 ---
 

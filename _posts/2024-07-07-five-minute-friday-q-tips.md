@@ -7,8 +7,8 @@ excerpt: Unlock fine motor magic with Q-tips! This 5 Minute Friday provides easy
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-qtips.jpeg
-image: /assets/images/blog/5mf-qtips.jpeg
+    teaser: /assets/images/processed/blog/5mf-qtips.jpeg
+image: /assets/images/processed/blog/5mf-qtips.jpeg
 
 ---
 

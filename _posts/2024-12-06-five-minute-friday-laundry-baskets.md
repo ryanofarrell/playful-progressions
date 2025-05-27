@@ -7,8 +7,8 @@ excerpt: That laundry basket is a play goldmine! This 5 Minute Friday reveals ho
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-laundry.jpeg
-image: /assets/images/blog/5mf-laundry.jpeg
+    teaser: /assets/images/processed/blog/5mf-laundry.jpeg
+image: /assets/images/processed/blog/5mf-laundry.jpeg
 
 ---
 

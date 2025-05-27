@@ -7,8 +7,8 @@ excerpt: Back-to-school prep can be play! This 5 Minute Friday uses backpacks to
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-backpack.jpeg
-image: /assets/images/blog/5mf-backpack.jpeg
+    teaser: /assets/images/processed/blog/5mf-backpack.jpeg
+image: /assets/images/processed/blog/5mf-backpack.jpeg
 
 ---
 

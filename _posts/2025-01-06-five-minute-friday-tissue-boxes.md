@@ -7,8 +7,8 @@ excerpt: Don't toss that empty tissue box! Our 5 Minute Friday transforms it int
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-tissue.jpeg
-image: /assets/images/blog/5mf-tissue.jpeg
+    teaser: /assets/images/processed/blog/5mf-tissue.jpeg
+image: /assets/images/processed/blog/5mf-tissue.jpeg
 
 ---
 

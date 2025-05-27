@@ -7,8 +7,8 @@ excerpt: Unlock developmental play with everyday hair ties & scrunchies! This 5 
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-hair-tie.jpeg
-image: /assets/images/blog/5mf-hair-tie.jpeg
+    teaser: /assets/images/processed/blog/5mf-hair-tie.jpeg
+image: /assets/images/processed/blog/5mf-hair-tie.jpeg
 
 ---
 
