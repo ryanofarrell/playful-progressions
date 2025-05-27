@@ -7,8 +7,8 @@ excerpt: Your baking sheet isn't just for cookies! This 5 Minute Friday transfor
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-baking.jpeg
-image: /assets/images/blog/5mf-baking.jpeg
+    teaser: /assets/images/processed/blog/5mf-baking.jpeg
+image: /assets/images/processed/blog/5mf-baking.jpeg
 
 ---
 

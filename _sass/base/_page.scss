@@ -1,4 +1,29 @@
 // Global styling for this template
+
+// Apply scroll-padding-top to the html element
+// This creates an offset from the top of the viewport when scrolling to an anchor.
+// The value should be the height of your fixed navbar.
+
+html {
+  scroll-behavior: smooth; // Ensures smooth scroll for all anchor links (CSS-driven)
+  scroll-padding-top: 110px; // Default for mobile (adjust based on actual mobile navbar height)
+}
+
+@media (min-width: 768px) {
+  // Or your primary desktop breakpoint (e.g., 992px)
+  html {
+    scroll-padding-top: 104px; // For desktop (adjust based on actual desktop navbar height on services page)
+    // I'm using 104px as derived from mini-masthead's top padding.
+    // Your previous 155px might be too large if it's not just the navbar height.
+  }
+
+  /* Keep default padding for all other sections on desktop (including first section on home page) */
+  section {
+    // This 'section' rule seems unrelated to scroll-padding but was in your snippet
+    padding-top: 150px; // Default padding for all sections on desktop
+  }
+}
+
 body {
   overflow-x: hidden;
   @include body-font;
@@ -45,17 +70,7 @@ h6 {
     @include serif-font;
   }
 }
-@media (min-width: 768px) {
-  /* Apply increased padding only to the first section on desktop, AND only on pages with a light background */
-  // body.body-light-background section:first-of-type {
-  //   padding-top: 150px; // Increased padding-top for the first section on light background pages
-  // }
 
-  /* Keep default padding for all other sections on desktop (including first section on home page) */
-  section {
-    padding-top: 150px; // Default padding for all sections on desktop
-  }
-}
 // Highlight color customization
 ::-moz-selection {
   background: $primary;

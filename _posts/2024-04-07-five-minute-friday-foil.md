@@ -7,8 +7,8 @@ excerpt: Unroll some fun with aluminum foil! This 5 Minute Friday shows how this
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-foil.jpeg
-image: /assets/images/blog/5mf-foil.jpeg
+    teaser: /assets/images/processed/blog/5mf-foil.jpeg
+image: /assets/images/processed/blog/5mf-foil.jpeg
 ---
 
 

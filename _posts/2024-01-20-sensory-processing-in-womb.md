@@ -7,8 +7,8 @@ excerpt: Did you know sensory processing begins before birth? An OT explains the
 classes: wide
 tag: Posts
 header:
-    teaser: /assets/images/blog/sensory-processing-womb.jpeg
-image: /assets/images/blog/sensory-processing-womb.jpeg
+    teaser: /assets/images/processed/blog/sensory-processing-womb.jpeg
+image: /assets/images/processed/blog/sensory-processing-womb.jpeg
 
 ---
 

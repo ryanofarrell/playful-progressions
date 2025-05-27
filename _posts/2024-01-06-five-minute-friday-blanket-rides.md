@@ -7,8 +7,8 @@ excerpt: Turn a simple blanket into a powerhouse of developmental fun! Discover 
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-blanket.jpeg
-image: /assets/images/blog/5mf-blanket.jpeg
+    teaser: /assets/images/processed/blog/5mf-blanket.jpeg
+image: /assets/images/processed/blog/5mf-blanket.jpeg
 ---
 
 

@@ -7,8 +7,8 @@ excerpt: Struggling with postpartum mental health? An OT and mom shares 5 action
 classes: wide
 tag: Posts
 header:
-    teaser: /assets/images/blog/mental-health.jpeg
-image: /assets/images/blog/mental-health.jpeg
+    teaser: /assets/images/processed/blog/mental-health.jpeg
+image: /assets/images/processed/blog/mental-health.jpeg
 
 ---
 

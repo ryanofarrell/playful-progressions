@@ -1,6 +1,6 @@
 ---
 layout: default # Use the default layout for standard header/footer
-title: "Pediatric Occupational Therapy Services"
+title: "Pediatric OT Services"
 description: "Explore expert pediatric occupational therapy services by Playful Progressions, including evaluations, telehealth, and tailored interventions by Maria O'Farrell, OT."
 subtitle: Detailed information about our offerings # Kept from your original front matter
 permalink: /services/
@@ -16,7 +16,7 @@ permalink: /services/
     "name": "Occupational Therapy Services Offered by Playful Progressions",
     "description": "Details of pediatric occupational therapy services provided by Playful Progressions.",
     "itemListElement": [
-                  {% for offering in site.data.sitetext.services.offerings %}
+              {% for offering in site.data.sitetext.services.offerings %}
         {
           "@type": "Service",
           "name": {{ offering.title | jsonify }},
@@ -45,73 +45,72 @@ permalink: /services/
             ]{% assign has_offers = false %}{% if offering.tiers or offering.pricing_tiers or offering.items or offering.price %}{% assign has_offers = true %}
             {% endif %}
             {% if has_offers %},
-              "offers" : [{% if offering.tiers %}
-                  {% for tier in offering.tiers %}
+              "offers" : [{% if offering.tiers %}{% for tier in offering.tiers %}
+                {
+                  "@type": "Offer",
+                  "name": {{ tier.name | jsonify }},
+                  {% if tier.description and tier.description != "" %}
+                    "description": {{ tier.description | strip_html | normalize_whitespace | jsonify }},{% endif %}"priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": {{ tier.price | default: 0 }},
+                    "priceCurrency": "USD"{% if tier.price_unit and tier.price_unit != "" %},
+                    "unitText": {{ tier.price_unit | strip_html | normalize_whitespace | jsonify }}
+                    {% endif %}
+                  }
+                }{% unless forloop.last %},
+                {% endunless %}
+                {% endfor %}
+              {% elsif offering.pricing_tiers %}
+                {% for tier in offering.pricing_tiers %}
+                  {
+                    "@type": "Offer",
+                    "name": {{ tier.volume | jsonify }},
+                    {% if tier.details and tier.details != "" %}
+                      "description": {{ tier.details | strip_html | normalize_whitespace | jsonify }},{% endif %}"priceSpecification": {
+                      "@type": "PriceSpecification",
+                      "price": {{ tier.price | default: 0 }},
+                      "priceCurrency": "USD"{% if tier.price_unit and tier.price_unit != "" %},
+                      "unitText": {{ tier.price_unit | strip_html | normalize_whitespace | jsonify }}
+                      {% endif %}
+                    }
+                  }{% unless forloop.last %},
+                  {% endunless %}
+                  {% endfor %}
+                {% elsif offering.items %}
+                  {% for item in offering.items %}
                     {
                       "@type": "Offer",
-                      "name": {{ tier.name | jsonify }},
-                      {% if tier.description and tier.description != "" %}
-                        "description": {{ tier.description | strip_html | normalize_whitespace | jsonify }},{% endif %}"priceSpecification": {
+                      "name": {{ item.name | jsonify }},
+                      {% if item.description and item.description != "" %}
+                        "description": {{ item.description | strip_html | normalize_whitespace | jsonify }},{% endif %}{% if item.price %}"priceSpecification" : {
                         "@type": "PriceSpecification",
-                        "price": {{ tier.price | default: 0 }},
-                        "priceCurrency": "USD"{% if tier.price_unit and tier.price_unit != "" %},
-                        "unitText": {{ tier.price_unit | strip_html | normalize_whitespace | jsonify }}
+                        "price": {{ item.price | default: 0 }},
+                        "priceCurrency": "USD"{% if item.price_unit and item.price_unit != "" %},
+                        "unitText": {{ item.price_unit | strip_html | normalize_whitespace | jsonify }}
                         {% endif %}
                       }
+                      {% endif %}
                     }{% unless forloop.last %},
                     {% endunless %}
                     {% endfor %}
-                  {% elsif offering.pricing_tiers %}
-                    {% for tier in offering.pricing_tiers %}
-                      {
-                        "@type": "Offer",
-                        "name": {{ tier.volume | jsonify }},
-                        {% if tier.details and tier.details != "" %}
-                          "description": {{ tier.details | strip_html | normalize_whitespace | jsonify }},{% endif %}"priceSpecification": {
-                          "@type": "PriceSpecification",
-                          "price": {{ tier.price | default: 0 }},
-                          "priceCurrency": "USD"{% if tier.price_unit and tier.price_unit != "" %},
-                          "unitText": {{ tier.price_unit | strip_html | normalize_whitespace | jsonify }}
-                          {% endif %}
-                        }
-                      }{% unless forloop.last %},
-                      {% endunless %}
-                      {% endfor %}
-                    {% elsif offering.items %}
-                      {% for item in offering.items %}
-                        {
-                          "@type": "Offer",
-                          "name": {{ item.name | jsonify }},
-                          {% if item.description and item.description != "" %}
-                            "description": {{ item.description | strip_html | normalize_whitespace | jsonify }},{% endif %}{% if item.price %}"priceSpecification" : {
-                            "@type": "PriceSpecification",
-                            "price": {{ item.price | default: 0 }},
-                            "priceCurrency": "USD"{% if item.price_unit and item.price_unit != "" %},
-                            "unitText": {{ item.price_unit | strip_html | normalize_whitespace | jsonify }}
-                            {% endif %}
-                          }
-                          {% endif %}
-                        }{% unless forloop.last %},
-                        {% endunless %}
-                        {% endfor %}
-                      {% elsif offering.price %}
-                        {
-                          "@type": "Offer",
-                          "name": {{ offering.title | jsonify }},
-                          "priceSpecification": {
-                            "@type": "PriceSpecification",
-                            "price": {{ offering.price | default: 0 }},
-                            "priceCurrency": "USD"{% if offering.price_unit and offering.price_unit != "" %},
-                            "unitText": {{ offering.price_unit | strip_html | normalize_whitespace | jsonify }}
-                            {% endif %}
-                          }
-                        }
-                        {% endif %}]
-                      {% endif %}
-                    }{% unless forloop.last %},{% endunless %}
-                  {% endfor %}
-                ]
-              }
+                  {% elsif offering.price %}
+                    {
+                      "@type": "Offer",
+                      "name": {{ offering.title | jsonify }},
+                      "priceSpecification": {
+                        "@type": "PriceSpecification",
+                        "price": {{ offering.price | default: 0 }},
+                        "priceCurrency": "USD"{% if offering.price_unit and offering.price_unit != "" %},
+                        "unitText": {{ offering.price_unit | strip_html | normalize_whitespace | jsonify }}
+                        {% endif %}
+                      }
+                    }
+                    {% endif %}]
+                  {% endif %}
+                }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ]
+          }
 </script>
 
 <section class="page-section first-content-section" id="services-page">

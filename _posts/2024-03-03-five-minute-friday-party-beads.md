@@ -7,8 +7,8 @@ excerpt: Don't toss those Mardi Gras beads! This 5 Minute Friday reveals how par
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-beads.jpeg
-image: /assets/images/blog/5mf-beads.jpeg
+    teaser: /assets/images/processed/blog/5mf-beads.jpeg
+image: /assets/images/processed/blog/5mf-beads.jpeg
 ---
 
 

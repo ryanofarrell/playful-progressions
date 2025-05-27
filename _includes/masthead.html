@@ -1,7 +1,7 @@
 <header
 class="masthead position-relative text-center text-white">
   {% comment %} Use the masthead image specified in _config.yml or default {% endcomment %}
-  {% assign masthead_image = site.data.style.masthead_image | default: '/assets/img/masthead.avif' %}
+  {% assign masthead_image = site.data.style.masthead_image | default: '/assets/images/processed/masthead.avif' %}
   <img
     src="{{ masthead_image | relative_url }}"
     alt="{{ site.title | default: 'Website background' }} background"

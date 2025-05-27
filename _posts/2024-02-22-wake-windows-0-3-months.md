@@ -7,8 +7,8 @@ excerpt: "Beyond feeds and changes: Maximize your newborn's (0-3 months) wake wi
 classes: wide
 tag: Posts
 header:
-    teaser: /assets/images/blog/wake-windows-0-3.jpeg
-image: /assets/images/blog/wake-windows-0-3.jpeg
+    teaser: /assets/images/processed/blog/wake-windows-0-3.jpeg
+image: /assets/images/processed/blog/wake-windows-0-3.jpeg
 
 ---
 

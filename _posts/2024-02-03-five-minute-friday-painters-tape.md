@@ -7,8 +7,8 @@ excerpt: Grab that painter's tape! A simple roll can transform into a fantastic 
 classes: wide
 tag: 5 Minute Friday
 header:
-    teaser: /assets/images/blog/5mf-tape.jpeg
-image: /assets/images/blog/5mf-tape.jpeg
+    teaser: /assets/images/processed/blog/5mf-tape.jpeg
+image: /assets/images/processed/blog/5mf-tape.jpeg
 ---
 
 

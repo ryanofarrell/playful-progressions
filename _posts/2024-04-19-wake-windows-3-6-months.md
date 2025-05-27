@@ -7,8 +7,8 @@ excerpt: Mastering wake windows with your 3-6 month old? Discover 8 engaging, OT
 classes: wide
 tag: Posts
 header:
-    teaser: /assets/images/blog/wake-windows-3-6.jpeg
-image: /assets/images/blog/wake-windows-3-6.jpeg
+    teaser: /assets/images/processed/blog/wake-windows-3-6.jpeg
+image: /assets/images/processed/blog/wake-windows-3-6.jpeg
 
 ---
 
