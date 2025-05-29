@@ -1,14 +1,11 @@
+# _data/style.yml
+
 #Color Customization
 primary: "#0B1B41"
 secondary: "#57A4BD"
 action: "#E16473"
 white: "#ffffff"
 black: "#000000"
-
-#Image Customization
-contact-image: "../img/contact.png"
-#Font Awesome icon for portfolio grid when an item is hovered over
-#portfolio-icon: fas fa-expand-arrows-alt fa-3x #default: fas fa-plus fa-3x
 
 # Add custom fonts
 fonts_urls:
