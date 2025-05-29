@@ -9,19 +9,16 @@ black: "#000000"
 
 # Add custom fonts
 fonts_urls:
-  - "https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap"
-  - "https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap"
-  - "https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic&display=swap"
-  - "https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&display=swap"
+  - "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kaushan+Script&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"
 
 preload_fonts:
+  - https://fonts.gstatic.com/s/droidserif/v19/tDbX2oqRg1oM3QBjjcaDkOr4lLz5CwOnSGjW7BA.woff2
+  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2
   - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2
   - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2
   - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2
   - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2
-  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2
   - https://fonts.gstatic.com/s/droidserif/v19/tDbK2oqRg1oM3QBjjcaDkOr4nAfcHi6FRUI.woff2
-  - https://fonts.gstatic.com/s/droidserif/v19/tDbX2oqRg1oM3QBjjcaDkOr4lLz5CwOnSGjW7BA.woff2
   - https://fonts.gstatic.com/s/droidserif/v19/tDbI2oqRg1oM3QBjjcaDkOr9rAXWGQyH.woff2
   - https://fonts.gstatic.com/s/droidserif/v19/tDbV2oqRg1oM3QBjjcaDkOJGiRD7OwGtT0rU.woff2
   - https://fonts.gstatic.com/s/kaushanscript/v18/vm8vdRfvXFLG3OLnsO15WYS5DG72wNJVMJ8br5Y.woff2
