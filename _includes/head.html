@@ -16,6 +16,14 @@
 
   {% seo %}
 
+  <link
+    rel="preload"
+    as="image"
+    href="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
+    type="image/avif"
+    fetchpriority="high">
+
+
   {% for font_woff2_url in site.data.style.preload_fonts %}
     <link
       rel="preload"
@@ -667,12 +675,6 @@
     onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="{{ 'assets/css/all.min.css' | relative_url }}"></noscript>
 
-  <link
-    rel="preload"
-    as="image"
-    href="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
-    type="image/avif"
-    fetchpriority="high">
 
   <link
     rel="apple-touch-icon"
