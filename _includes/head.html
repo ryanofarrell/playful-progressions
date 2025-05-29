@@ -23,6 +23,12 @@
     type="image/avif"
     fetchpriority="high">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin>
+
 
   {% for font_woff2_url in site.data.style.preload_fonts %}
     <link
@@ -52,12 +58,6 @@
     type="font/woff2"
     crossorigin="anonymous">
 
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin>
 
   {% for font_url in site.data.style.fonts_urls %}
     <link href="{{ font_url }}" rel="stylesheet">
