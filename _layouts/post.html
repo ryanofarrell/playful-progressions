@@ -87,8 +87,7 @@
               <h3 class="text-center mb-4">Related Posts
             </h3>
 
-
-              {% comment %} Prepare downcased concepts for the current page. Ensure page.concepts is not nil. {% endcomment %}
+              {% comment %} --- Stage 1: Prepare data for the current page --- {% endcomment %}
               {% assign current_page_concepts_downcased = "" | split: "" %}
               {% if page.concepts %}
                 {% for concept_string in page.concepts %}
@@ -96,45 +95,94 @@
                   {% assign current_page_concepts_downcased = current_page_concepts_downcased | push: downcased_concept_string %}
                 {% endfor %}
               {% endif %}
+              {% assign current_page_singular_tag_downcased = page.tag | downcase %}
+            {% assign current_post_url = page.url %}
 
+              {% comment %} --- Stage 2: Calculate scores and gather candidates --- {% endcomment %}
+              {% assign posts_data_for_sorting = "" | split: "" %}
+              {% assign W_CONCEPTS = 2 %}
+              {% assign W_CATEGORY_MATCH = 1 %}
 
-              {% assign current_post_url = page.url %}
+                {% for post_item in site.posts %}
+                {% if post_item.url == current_post_url %}
+                  {% continue %} {# Skip the current post itself #}
+              {% endif %}
+
+                {% comment %} Prepare downcased concepts for the iterated post_item {% endcomment %}
+                {% assign other_post_concepts_downcased = "" | split: "" %}
+                {% if post_item.concepts %}
+                  {% for concept_string in post_item.concepts %}
+                    {% assign downcased_concept_string = concept_string | downcase %}
+                    {% assign other_post_concepts_downcased = other_post_concepts_downcased | push: downcased_concept_string %}
+                  {% endfor %}
+                {% endif %}
+              {% assign other_post_singular_tag_downcased = post_item.tag | downcase %}
+
+                {% comment %} Calculate common concepts count {% endcomment %}
+                {% assign common_concepts_count = 0 %}
+                {% if current_page_concepts_downcased.size > 0 and other_post_concepts_downcased.size > 0 %}
+                  {% for current_concept in current_page_concepts_downcased %}
+                    {% if other_post_concepts_downcased contains current_concept %}
+                      {% assign common_concepts_count = common_concepts_count | plus: 1 %}
+                    {% endif %}
+                  {% endfor %}
+              {% endif %}
+
+                {% comment %} Calculate category match score {% endcomment %}
+                {% assign category_match_score = 0 %}
+                {% if current_page_singular_tag_downcased == other_post_singular_tag_downcased %}
+                  {% assign category_match_score = W_CATEGORY_MATCH %}
+              {% endif %}
+
+                {% comment %} Calculate total score {% endcomment %}
+                {% assign total_score = 0 %}
+                {% assign concepts_score = common_concepts_count | times: W_CONCEPTS %}
+                {% assign total_score = concepts_score | plus: category_match_score %}
+
+                  {% if total_score > 0 %}
+                  {% comment %} Create a sort key: Score (padded) + Timestamp. Higher score & newer posts come first.
+                                                                                                                   Padding score to 4 digits (0000-9999). Max score assumed < 1000.
+                                                                                                                   If scores can be higher, increase padding.
+                                                                                          {% endcomment %}
+                  {% assign score_padded = total_score | prepend: "0000" | slice: -4, 4 %}
+                  {% assign timestamp = post_item.date | date: "%s" %}
+                  {% capture sort_key %}{{ score_padded }}_{{ timestamp }}{% endcapture %}
+                  {% comment %} Store sort_key and post_item.url for later retrieval.
+                                                                                                                   Format: "sortkey|posturl"
+                                                                                          {% endcomment %}
+                  {% capture post_data_string %}{{ sort_key }}|{{ post_item.url }}{% endcapture %}
+                  {% assign posts_data_for_sorting = posts_data_for_sorting | push: post_data_string %}
+                {% endif %}
+            {% endfor %}
+
+              {% comment %} --- Stage 3: Sort candidates and prepare for display --- {% endcomment %}
+              {% assign sorted_related_posts_data = posts_data_for_sorting | sort | reverse %}
+
+              {% assign related_posts_to_display = "" | split: "" %}
               {% assign related_posts_found = 0 %}
               {% assign max_related_posts = 3 %}
 
-              <div class="row">
-                {% for post in site.posts %}
-                  {% if related_posts_found >= max_related_posts %}
-                    {% break %}
-                  {% endif %}
-
-                  {% if post.url == current_post_url %}
-                    {% continue %}
+              {% for sorted_item_string in sorted_related_posts_data %}
+                {% if related_posts_found >= max_related_posts %}
+                  {% break %}
                 {% endif %}
 
+                {% assign item_parts = sorted_item_string | split: "|" %}
+                {% assign post_url_to_find = item_parts[1] %}
 
-                  {% comment %} Prepare downcased concepts for the other post. Ensure post.concepts is not nil. {% endcomment %}
-                  {% assign other_post_concepts_downcased = "" | split: "" %}
-                  {% if post.concepts %}
-                    {% for concept_string in post.concepts %}
-                      {% assign downcased_concept_string = concept_string | downcase %}
-                      {% assign other_post_concepts_downcased = other_post_concepts_downcased | push: downcased_concept_string %}
-                    {% endfor %}
+                {% for site_post in site.posts %}
+                  {% if site_post.url == post_url_to_find %}
+                    {% assign related_posts_to_display = related_posts_to_display | push: site_post %}
+                    {% assign related_posts_found = related_posts_found | plus: 1 %}
+                    {% break %}
                   {% endif %}
+                {% endfor %}
+              {% endfor %}
 
-                  {% assign common_concepts_count = 0 %}
-                  {% assign temp_common_concepts_array_debug = "" | split: "" %}
-
-                  {% if current_page_concepts_downcased.size > 0 and other_post_concepts_downcased.size > 0 %}
-                    {% for current_concept_item in current_page_concepts_downcased %}
-                      {% if other_post_concepts_downcased contains current_concept_item %}
-                        {% assign common_concepts_count = common_concepts_count | plus: 1 %}
-                        {% assign temp_common_concepts_array_debug = temp_common_concepts_array_debug | push: current_concept_item %}
-                      {% endif %}
-                    {% endfor %}
-                  {% endif %}
-
-                  {% if common_concepts_count > 0 %}
+              {% comment %} --- Stage 4: Display the related posts --- {% endcomment %}
+              <div class="row">
+                {% if related_posts_found > 0 %}
+                  {% for post in related_posts_to_display %}
                     <div class="col-md-6 col-lg-4 mb-4">
                       <div class="blog-card h-100">
                         {% if post.header.teaser %}
@@ -172,14 +220,13 @@
                         </div>
                       </div>
                     </div>
-                    {% assign related_posts_found = related_posts_found | plus: 1 %}
-                  {% endif %}
-                {% endfor %}
+                  {% endfor %}
+                {% else %}
+                  <div class="col-12">
+                    <p class="text-center text-muted">No related posts found.</p>
+                  </div>
+                {% endif %}
               </div>
-
-              {% if related_posts_found == 0 %}
-                <p class="text-center text-muted">No related posts found.</p>
-              {% endif %}
             </div>
           </div>
         </div>
