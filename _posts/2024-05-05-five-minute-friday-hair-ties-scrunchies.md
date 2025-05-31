@@ -6,6 +6,7 @@ categories: posts
 excerpt: Unlock developmental play with everyday hair ties & scrunchies! This 5 Minute Friday offers simple activities for babies, toddlers, and older kids to boost core strength, fine motor skills, and problem-solving.
 classes: wide
 tag: 5 Minute Friday
+concepts: ["fine motor", "core strength", "problem-solving", "dressing skills", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-hair-tie.jpeg
 image: /assets/images/processed/blog/5mf-hair-tie.jpeg

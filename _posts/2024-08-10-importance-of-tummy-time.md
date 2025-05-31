@@ -6,6 +6,7 @@ categories: posts
 excerpt: Tummy time is crucial, but do you know all 7 reasons why? This OT deep-dive explains its vital role in oral motor skills, core strength, vision, and more, plus answers your top FAQs for success.
 classes: wide
 tag: Posts
+concepts: ["tummy time", "infant development", "oral motor", "core strength", "visual development", "reflex integration"]
 header:
     teaser: /assets/images/processed/blog/tummy-time.jpeg
 image: /assets/images/processed/blog/tummy-time.jpeg

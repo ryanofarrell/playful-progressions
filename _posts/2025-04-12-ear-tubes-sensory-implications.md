@@ -4,6 +4,7 @@ title: "Understanding Ear Tubes and Their Sensory Implications for Children"
 date: 2025-04-12 08:03:00 -0400
 categories: posts
 tag: Posts
+concepts: ["ear tubes", "ear infections", "vestibular", "sensory processing", "auditory processing", "motor development"]
 excerpt: "A look at why children get ear tubes, how frequent ear infections affect the vestibular system, and what sensory implications parents should be aware of post-procedure."
 classes: wide
 header:

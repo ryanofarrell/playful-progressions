@@ -6,6 +6,7 @@ categories: posts
 excerpt: Don't toss that empty tissue box! Our 5 Minute Friday transforms it into a versatile toy for babies, toddlers, and older kids, perfect for boosting pincer grasp, fine motor precision, and sequencing skills.
 classes: wide
 tag: 5 Minute Friday
+concepts: ["fine motor", "pincer grasp", "sequencing", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-tissue.jpeg
 image: /assets/images/processed/blog/5mf-tissue.jpeg

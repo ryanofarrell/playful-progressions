@@ -6,6 +6,7 @@ categories: posts
 excerpt: Back-to-school prep can be play! This 5 Minute Friday uses backpacks to boost zipper skills, proprioception (heavy work), problem-solving, and even pre-dressing skills for various ages.
 classes: wide
 tag: 5 Minute Friday
+concepts: ["zipper skills", "heavy work", "proprioception", "organization", "dressing skills"]
 header:
     teaser: /assets/images/processed/blog/5mf-backpack.jpeg
 image: /assets/images/processed/blog/5mf-backpack.jpeg

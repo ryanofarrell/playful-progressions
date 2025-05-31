@@ -4,6 +4,7 @@ title: "Understanding the Main Stages of Gross and Fine Motor Development"
 date: 2025-07-11 09:00:00 -0500 # Assuming a morning publish time and EST for November
 categories: posts
 tag: Posts
+concepts: ["gross motor", "fine motor", "developmental milestones", "pediatric OT", "early intervention"]
 excerpt: "An overview of fine and gross motor skills, key developmental milestones from 0 months to 6 years, and guidance on when to seek intervention if you have concerns about your child's motor development."
 classes: wide
 header:

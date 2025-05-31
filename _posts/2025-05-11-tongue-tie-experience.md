@@ -6,6 +6,7 @@ categories: posts
 tag: Posts
 excerpt: "Maria O'Farrell shares her personal and professional insights on identifying infant tongue ties, the decision-making process for release, and the crucial therapies involved before and after the procedure."
 classes: wide
+concepts: ["tongue tie", "frenectomy", "infant feeding", "oral motor", "bodywork", "collaborative care"]
 header:
   teaser: "/assets/images/processed/blog/tongue-tie-experience.jpeg" 
 image: "/assets/images/processed/blog/tongue-tie-experience.jpeg" 

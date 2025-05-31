@@ -6,6 +6,7 @@ categories: posts
 excerpt: Mastering wake windows with your 3-6 month old? Discover 8 engaging, OT-approved activities to foster development, from 'rotisserie chicken play' to 'magic baby,' and make the most of this precious stage.
 classes: wide
 tag: Posts
+concepts: ["infant activities", "wake windows", "rolling", "tummy time", "visual tracking", "sensory play"]
 header:
     teaser: /assets/images/processed/blog/wake-windows-3-6.jpeg
 image: /assets/images/processed/blog/wake-windows-3-6.jpeg

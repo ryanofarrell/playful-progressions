@@ -6,6 +6,7 @@ categories: posts
 excerpt: Don't toss those Mardi Gras beads! This 5 Minute Friday reveals how party beads can boost core strength, sensory integration, and even dressing skills for babies and toddlers. Fun, easy, and beneficial!
 classes: wide
 tag: 5 Minute Friday
+concepts: ["sensory play", "fine motor", "dressing skills", "pincer grasp", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-beads.jpeg
 image: /assets/images/processed/blog/5mf-beads.jpeg

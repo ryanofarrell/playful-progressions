@@ -6,6 +6,7 @@ categories: posts
 excerpt: "Beyond feeds and changes: Maximize your newborn's (0-3 months) wake windows! Discover 5 OT-recommended activities like infant massage and gentle dances to boost bonding, sensory development, and early motor skills."
 classes: wide
 tag: Posts
+concepts: ["newborn care", "wake windows", "infant massage", "crossing midline", "sensory development", "motor skills"]
 header:
     teaser: /assets/images/processed/blog/wake-windows-0-3.jpeg
 image: /assets/images/processed/blog/wake-windows-0-3.jpeg

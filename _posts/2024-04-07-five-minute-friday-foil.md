@@ -6,6 +6,7 @@ categories: posts
 excerpt: Unroll some fun with aluminum foil! This 5 Minute Friday shows how this kitchen staple boosts fine motor skills, bilateral coordination, and sensory processing for babies and kids. Get ready for creative, beneficial play!
 classes: wide
 tag: 5 Minute Friday
+concepts: ["fine motor", "bilateral coordination", "sensory exploration", "pre-writing", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-foil.jpeg
 image: /assets/images/processed/blog/5mf-foil.jpeg

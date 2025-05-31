@@ -6,6 +6,7 @@ categories: posts
 excerpt: Grab a muffin tin for your next 5 Minute Friday! Discover how this kitchen staple can boost grasping, scooping, sorting, and even executive functioning skills in babies, toddlers, and big kids.
 classes: wide
 tag: 5 Minute Friday
+concepts: ["fine motor", "sorting", "scooping", "executive function", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-muffin.jpeg
 image: /assets/images/processed/blog/5mf-muffin.jpeg

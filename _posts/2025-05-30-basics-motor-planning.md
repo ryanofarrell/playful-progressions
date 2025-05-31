@@ -4,6 +4,7 @@ title: "Basics of Motor Planning: Helping Children Navigate Their World"
 date: 2025-05-30 09:00:00 -0400 # Replace with your desired publication date
 categories: posts
 tag: Posts
+concepts: ["motor planning", "praxis", "body awareness", "tactile processing", "ideation", "executive function"]
 excerpt: "An exploration of motor planning (praxis), its essential components like body awareness, tactile processing, and ideation, and practical ways to support children's development in these areas."
 classes: wide
 header:

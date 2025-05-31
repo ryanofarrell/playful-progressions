@@ -6,6 +6,7 @@ categories: posts
 excerpt: Your baking sheet isn't just for cookies! This 5 Minute Friday transforms it into a versatile play tool for babies, toddlers, and older kids, promoting sensory exploration, fine motor skills, and even core strength.
 classes: wide
 tag: 5 Minute Friday
+concepts: ["sensory play", "fine motor", "core strength", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-baking.jpeg
 image: /assets/images/processed/blog/5mf-baking.jpeg

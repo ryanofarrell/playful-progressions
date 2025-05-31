@@ -6,6 +6,7 @@ categories: posts
 excerpt: Did you know sensory processing begins before birth? An OT explains the fascinating development of primitive senses in the womb and how these lay the foundation for your baby's future motor skills and regulation.
 classes: wide
 tag: Posts
+concepts: ["prenatal development", "sensory processing", "proprioception", "tactile input", "vestibular input", "motor skills"]
 header:
     teaser: /assets/images/processed/blog/sensory-processing-womb.jpeg
 image: /assets/images/processed/blog/sensory-processing-womb.jpeg

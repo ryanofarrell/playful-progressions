@@ -6,6 +6,7 @@ categories: posts
 excerpt: Unlock fine motor magic with Q-tips! This 5 Minute Friday provides easy, age-specific activities for babies, toddlers, and big kids to develop grasp, pre-writing skills, and letter formation.
 classes: wide
 tag: 5 Minute Friday
+concepts: ["fine motor", "grasp development", "pre-writing", "letter formation", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-qtips.jpeg
 image: /assets/images/processed/blog/5mf-qtips.jpeg

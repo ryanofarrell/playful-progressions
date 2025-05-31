@@ -84,11 +84,24 @@
 
             <hr class="mt-5 mb-5">
             <div class="related-posts mb-5">
-              <h3 class="text-center mb-4">Related Posts</h3>
-              {% assign current_post_tags = page.tags | downcase %}
+              <h3 class="text-center mb-4">Related Posts
+            </h3>
+
+
+              {% comment %} Prepare downcased concepts for the current page. Ensure page.concepts is not nil. {% endcomment %}
+              {% assign current_page_concepts_downcased = "" | split: "" %}
+              {% if page.concepts %}
+                {% for concept_string in page.concepts %}
+                  {% assign downcased_concept_string = concept_string | downcase %}
+                  {% assign current_page_concepts_downcased = current_page_concepts_downcased | push: downcased_concept_string %}
+                {% endfor %}
+              {% endif %}
+
+
               {% assign current_post_url = page.url %}
               {% assign related_posts_found = 0 %}
-              {% assign max_related_posts = 5 %}
+              {% assign max_related_posts = 3 %}
+
               <div class="row">
                 {% for post in site.posts %}
                   {% if related_posts_found >= max_related_posts %}
@@ -97,18 +110,31 @@
 
                   {% if post.url == current_post_url %}
                     {% continue %}
+                {% endif %}
+
+
+                  {% comment %} Prepare downcased concepts for the other post. Ensure post.concepts is not nil. {% endcomment %}
+                  {% assign other_post_concepts_downcased = "" | split: "" %}
+                  {% if post.concepts %}
+                    {% for concept_string in post.concepts %}
+                      {% assign downcased_concept_string = concept_string | downcase %}
+                      {% assign other_post_concepts_downcased = other_post_concepts_downcased | push: downcased_concept_string %}
+                    {% endfor %}
                   {% endif %}
 
-                  {% assign other_post_tags = post.tags | downcase %}
-                  {% assign common_tags_count = 0 %}
+                  {% assign common_concepts_count = 0 %}
+                  {% assign temp_common_concepts_array_debug = "" | split: "" %}
 
-                  {% for tag_item in current_post_tags %}
-                    {% if other_post_tags contains tag_item %}
-                      {% assign common_tags_count = common_tags_count | plus: 1 %}
-                    {% endif %}
-                  {% endfor %}
+                  {% if current_page_concepts_downcased.size > 0 and other_post_concepts_downcased.size > 0 %}
+                    {% for current_concept_item in current_page_concepts_downcased %}
+                      {% if other_post_concepts_downcased contains current_concept_item %}
+                        {% assign common_concepts_count = common_concepts_count | plus: 1 %}
+                        {% assign temp_common_concepts_array_debug = temp_common_concepts_array_debug | push: current_concept_item %}
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
 
-                  {% if common_tags_count > 0 %}
+                  {% if common_concepts_count > 0 %}
                     <div class="col-md-6 col-lg-4 mb-4">
                       <div class="blog-card h-100">
                         {% if post.header.teaser %}
@@ -155,7 +181,6 @@
                 <p class="text-center text-muted">No related posts found.</p>
               {% endif %}
             </div>
-
           </div>
         </div>
       </div>

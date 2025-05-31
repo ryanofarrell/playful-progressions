@@ -6,6 +6,7 @@ categories: posts
 excerpt: That laundry basket is a play goldmine! This 5 Minute Friday reveals how to use it for heavy work, vestibular input, core strengthening, and fine motor fun for your little one. Make chores playful!
 classes: wide
 tag: 5 Minute Friday
+concepts: ["heavy work", "vestibular", "core strength", "fine motor", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-laundry.jpeg
 image: /assets/images/processed/blog/5mf-laundry.jpeg

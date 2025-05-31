@@ -6,6 +6,7 @@ categories: posts
 excerpt: Baby-Led Weaning or purees? Why not both! An OT mom explains the benefits of a combined feeding model for developing jaw strength, utensil skills, and making mealtime flexible and stress-free.
 classes: wide
 tag: Posts
+concepts: ["infant feeding", "baby led weaning", "purees", "oral motor", "utensil skills", "mealtime"]
 header:
     teaser: /assets/images/processed/blog/combined-feeding.jpeg
 image: /assets/images/processed/blog/combined-feeding.jpeg

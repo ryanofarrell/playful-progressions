@@ -6,6 +6,7 @@ categories: posts
 excerpt: Grab that painter's tape! A simple roll can transform into a fantastic 5 Minute Friday activity to develop your baby's pincer grasp, core strength, and visual-motor skills. Easy setup, big benefits!
 classes: wide
 tag: 5 Minute Friday
+concepts: ["fine motor", "pincer grasp", "visual-motor integration", "crossing midline", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-tape.jpeg
 image: /assets/images/processed/blog/5mf-tape.jpeg

@@ -6,6 +6,7 @@ categories: posts
 excerpt: Turn a simple blanket into a powerhouse of developmental fun! Discover the surprising benefits of blanket rides for your baby's sensory input, core strength, and bonding in this 5 Minute Friday activity
 classes: wide
 tag: 5 Minute Friday
+concepts: ["vestibular input", "proprioceptive input", "core strength", "bonding", "play ideas"]
 header:
     teaser: /assets/images/processed/blog/5mf-blanket.jpeg
 image: /assets/images/processed/blog/5mf-blanket.jpeg
