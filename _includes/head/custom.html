@@ -1,27 +1,37 @@
-<!-- start custom head snippets -->
-
-<!-- insert favicons. use https://realfavicongenerator.net/ -->
-
-<link
-  rel="apple-touch-icon"
-  sizes="180x180"
-  href="/apple-touch-icon.png">
-<link
-  rel="icon"
-  type="image/png"
-  sizes="32x32"
-  href="/favicon-32x32.png">
-<link
-  rel="icon"
-  type="image/png"
-  sizes="16x16"
-  href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link
-  rel="mask-icon"
-  href="/safari-pinned-tab.svg"
-  color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-
-<!-- end custom head snippets -->
+{%- if page.layout == "post" -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ page.url | relative_url | prepend: site.url }}"
+      },
+      "headline": {{ page.title | jsonify }},
+      {%- if page.excerpt -%}
+        "description": {{ page.excerpt | strip_html | normalize_whitespace | jsonify }},
+      {%- else -%}
+        "description": {{ content | strip_html | truncatewords: 50 | normalize_whitespace | jsonify }},
+        {%- endif -%}
+        {%- if page.header.teaser -%}
+          "image" : "{{ page.header.teaser | relative_url | prepend: site.url }}",
+          {%- endif -%}
+          "datePublished": "{{ page.date | date_to_xmlschema }}",
+          {%- if page.last_modified_at -%}
+            "dateModified" : "{{ page.last_modified_at | date_to_xmlschema }}",
+            {%- endif -%}
+            "author": {
+              "@type": "Person",
+              "name": {{ page.author | default: site.author | jsonify }}
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": {{ site.name | jsonify }},
+              "logo": {
+                "@type": "ImageObject",
+                "url": "{{ site.logo | relative_url | prepend: site.url }}"
+              }
+            }
+          }
+  </script>
+{%- endif -%}
