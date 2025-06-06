@@ -17,21 +17,20 @@
           "image" : "{{ page.header.teaser | relative_url | prepend: site.url }}",
           {%- endif -%}
           "datePublished": "{{ page.date | date_to_xmlschema }}",
-          {%- if page.last_modified_at -%}
-            "dateModified" : "{{ page.last_modified_at | date_to_xmlschema }}",
-            {%- endif -%}
-            "author": {
-              "@type": "Person",
-              "name": {{ page.author | default: site.author | jsonify }}
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": {{ site.name | jsonify }},
-              "logo": {
-                "@type": "ImageObject",
-                "url": "{{ site.logo | relative_url | prepend: site.url }}"
-              }
+          "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+          "author": {
+            "@type": "Person",
+            "name": {{ site.author | jsonify }},
+            "url": "{{ '/meet-maria' | relative_url | prepend: site.url }}"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": {{ site.name | jsonify }},
+            "logo": {
+              "@type": "ImageObject",
+              "url": "{{ site.logo | relative_url | prepend: site.url }}"
             }
           }
+        }
   </script>
 {%- endif -%}
