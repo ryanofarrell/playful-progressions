@@ -23,7 +23,11 @@ permalink: /blog/
     </div>
     <div class="row" id="blog-post-list">
       {% assign sorted_posts = site.posts | sort: "date" | reverse %}
-      {% for post in sorted_posts %}
+        {% for post in sorted_posts %}
+        {% comment %} --- ADDED THIS LINE to skip future posts --- {% endcomment %}
+        {% if post.date > site.time %}
+          {% continue %}{% endif %}
+
         <div class="col-md-6 col-lg-4 mb-4 blog-post-card" data-tags="{% if post.tag %}{{ post.tag | slugify }}{% endif %}">
           <div class="blog-card">
             <a href="{{ post.url | relative_url }}">

@@ -105,7 +105,12 @@
 
                 {% for post_item in site.posts %}
                 {% if post_item.url == current_post_url %}
-                  {% continue %} {# Skip the current post itself #}
+                  {% continue %}
+                {% endif %}
+
+                {% comment %} --- ADDED THIS LINE to skip future posts --- {% endcomment %}
+                {% if post_item.date > site.time %}
+                  {% continue %}
               {% endif %}
 
                 {% comment %} Prepare downcased concepts for the iterated post_item {% endcomment %}
@@ -141,15 +146,13 @@
 
                   {% if total_score > 0 %}
                   {% comment %} Create a sort key: Score (padded) + Timestamp. Higher score & newer posts come first.
-                                                                                                                   Padding score to 4 digits (0000-9999). Max score assumed < 1000.
-                                                                                                                   If scores can be higher, increase padding.
-                                                                                          {% endcomment %}
+                                                                                                                                       Padding score to 4 digits (0000-9999). Max score assumed < 1000.
+                                                                                                                                       If scores can be higher, increase padding.
+                                                                                                            {% endcomment %}
                   {% assign score_padded = total_score | prepend: "0000" | slice: -4, 4 %}
                   {% assign timestamp = post_item.date | date: "%s" %}
                   {% capture sort_key %}{{ score_padded }}_{{ timestamp }}{% endcapture %}
-                  {% comment %} Store sort_key and post_item.url for later retrieval.
-                                                                                                                   Format: "sortkey|posturl"
-                                                                                          {% endcomment %}
+                  {% comment %} Store sort_key and post_item.url for later retrieval. {% endcomment %}
                   {% capture post_data_string %}{{ sort_key }}|{{ post_item.url }}{% endcapture %}
                   {% assign posts_data_for_sorting = posts_data_for_sorting | push: post_data_string %}
                 {% endif %}

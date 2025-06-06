@@ -16,6 +16,11 @@
 
   {% seo %}
 
+  {% comment %} --- ADD THIS BLOCK for SEO --- {% endcomment %}
+  {% if page.date > site.time %}
+    <meta name="robots" content="noindex">
+  {% endif %}
+
   <link
     rel="preload"
     as="image"
