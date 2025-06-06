@@ -39,7 +39,7 @@ permalink: /services/
             {% for neighborhood in site.data.sitetext.about.neighborhoods %},
               {
                 "@type": "Place",
-                "name": {{ neighborhood | append: ", " | append: site.data.sitetext.about.location | jsonify }}
+                "name": {{ neighborhood | append: ", GA" | jsonify }}
               }
               {% endfor %}
             ]{% assign has_offers = false %}{% if offering.tiers or offering.pricing_tiers or offering.items or offering.price %}{% assign has_offers = true %}

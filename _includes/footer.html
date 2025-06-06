@@ -41,5 +41,33 @@
       document.getElementById("footer").style.width = "100%";
     }
       }
-  </script>
-{% endif %}
+  </script>{% endif %}
+{% comment %} PASTE THE NEW SCHEMA CODE HERE {% endcomment %}
+{%- assign sitetext = site.data.sitetext -%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": {{ site.name | jsonify }},
+    "description": {{ sitetext.about.body | strip_html | normalize_whitespace | jsonify }},
+    "url": {{ site.url | jsonify }},
+    "logo": {{ site.logo | prepend: site.url | jsonify }},
+    "telephone": {{ site.phone-numeric | jsonify }},
+    "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Atlanta",
+      "addressRegion": "GA",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      {%- for neighborhood in sitetext.about.neighborhoods -%}
+        {
+          "@type": "City",
+          "name": {{ neighborhood | append: ", GA" | jsonify }}
+        }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+    ],
+    "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"]
+  }
+</script>
