@@ -4,45 +4,41 @@
   style="background-color: white">
   <div class="container">
     <div class="row align-items-center">
+
       <div class="col-md-6">
-        {% comment %} Adjusted column width {% endcomment %}
         <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
+        <a href="{{ '/privacy-policy/' | relative_url }}" class="footer-link">{{ site.data.sitetext.footer.legal | default: "Privacy Policy" }}</a>
       </div>
-      {% comment %} Removed Social Media block {% endcomment %}
-      <div class="col-md-6">
-        {% comment %} Adjusted column width - Removed text-right {% endcomment %}
-        <ul class="list-inline quicklinks">
-          <li class="list-inline-item">
-            <a href="{{ '/privacy-policy/' | relative_url }}" class="footer-privacy-link">{{ site.data.sitetext.footer.legal | default: "Privacy Policy" }}</a>
-          {% comment %} Link to the new privacy policy page - Added class for styling {% endcomment %}
-          </li>
-        {% comment %} Add other quick links here if needed {% endcomment %}
-        {% comment %}
-          <li class="list-inline-item">
-          <a href="#">Terms of Use</a>
-          </li>
-        {% endcomment %}
-        </ul>
+
+      <div class="col-md-6 text-center">
+        <a class="footer-link" href="{{ '/service-areas/' | relative_url }}">
+          <span>Serving Atlanta, GA</span>
+          {% for neighborhood in site.data.sitetext.about.neighborhoods %}
+            <span>
+              | {{ neighborhood }}</span>
+          {% endfor %}
+        </a>
       </div>
+
     </div>
   </div>
 </footer>
-{% comment %} Script for fixing footer position on short pages {% endcomment %}
+
 {% if page.layout == "page" %}
-  {% comment %} This condition might need adjustment based on your layouts {% endcomment %}
   <script>
       fixPageShort();
       function fixPageShort() {
-    if (window.innerHeight > document.body.offsetHeight) {
-      document.getElementById("footer").style.position = "fixed";
-      document.getElementById("footer").style.bottom = 0;
-      document.getElementById("footer").style.right = 0;
-      document.getElementById("footer").style.left = 0;
-      document.getElementById("footer").style.width = "100%";
-    }
+        if (window.innerHeight > document.body.offsetHeight) {
+          document.getElementById("footer").style.position = "fixed";
+          document.getElementById("footer").style.bottom = 0;
+          document.getElementById("footer").style.right = 0;
+          document.getElementById("footer").style.left = 0;
+          document.getElementById("footer").style.width = "100%";
+        }
       }
-  </script>{% endif %}
-{% comment %} PASTE THE NEW SCHEMA CODE HERE {% endcomment %}
+  </script>
+{% endif %}
+
 {%- assign sitetext = site.data.sitetext -%}
 <script type="application/ld+json">
   {
