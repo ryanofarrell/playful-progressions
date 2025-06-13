@@ -1,5 +1,4 @@
 # _data/sitetext.yml
-# Work based on https://github.com/mmistakes/minimal-mistakes/blob/master/_data/ui-text.yml
 header:
   title: Playful Progressions Therapy
   subtitle: Nurturing Development Through Play
@@ -7,22 +6,12 @@ header:
     - label: Contact Maria
       link: "/contact/" # Updated link to the contact page
       class: btn-primary
+
 about:
   section: about
   title: "Pediatric Occupational Therapy"
   subtitle: "Nurturing Development Through Play"
   body: "At Playful Progressions, we believe every child deserves the opportunity to grow, learn, and thrive through the power of play—the most important occupation of childhood! We are dedicated to creating a collaborative approach to therapy, working closely with families and schools to develop personalized strategies tailored to each child's unique needs. By focusing on the child's natural environment—whether at home or school—we ensure meaningful progress that enhances their development and success."
-  location: Atlanta, GA
-  neighborhoods:
-    - Brookhaven
-    - Buckhead
-    - Chamblee
-    - Sandy Springs
-    - Dunwoody
-    - Midtown
-  location_note_pre_link: "Don't see your part of town?"
-  location_note_link_text: "Contact Maria to discuss options!"
-  location_note_link_url: "/contact/" # Make sure this URL matches your contact page URL
   what-we-treat:
     - title: Infants
       items:
@@ -38,6 +27,26 @@ about:
         - Activities of daily living (dressing, feeding, hygiene)
         - Coordination, balance, and motor planning
         - Social skills and emotional regulation
+
+# NEW: Centralized location information for use across the site
+location_info:
+  location: Atlanta, GA
+  neighborhoods:
+    - Brookhaven
+    - Buckhead
+    - Chamblee
+    - Sandy Springs
+    - Dunwoody
+    - Midtown
+  location_note_pre_link: "Don't see your part of town?"
+  location_note_link_text: "Contact Maria to discuss options!"
+  location_note_link_url: "/contact/"
+
+# NEW: Content specific to the Service Areas page
+service_areas_page:
+  title: "Our Service Areas"
+  subtitle: "We provide in-home pediatric occupational therapy services where your child is most comfortable—at home, daycare, or school."
+  intro_paragraph: "Playful Progressions is proud to offer personalized care throughout the North Atlanta area. Our primary service areas include the following neighborhoods:"
 
 testimonial:
   section: testimonial

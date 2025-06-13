@@ -5,18 +5,14 @@
   <div class="container">
     <div class="row align-items-center">
 
-      <div class="col-md-6">
-        <span class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
+      <div class="col-md-6 text-center text-md-left">
+        <span class="copyright d-block">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}</span>
         <a href="{{ '/privacy-policy/' | relative_url }}" class="footer-link">{{ site.data.sitetext.footer.legal | default: "Privacy Policy" }}</a>
       </div>
 
       <div class="col-md-6 text-center">
         <a class="footer-link" href="{{ '/service-areas/' | relative_url }}">
-          <span>Serving Atlanta, GA</span>
-          {% for neighborhood in site.data.sitetext.about.neighborhoods %}
-            <span>
-              | {{ neighborhood }}</span>
-          {% endfor %}
+          Serving {{ site.data.sitetext.about.location }}: {{ site.data.sitetext.about.neighborhoods | join: " | " }}
         </a>
       </div>
 
