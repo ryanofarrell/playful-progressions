@@ -12,7 +12,7 @@
 
       <div class="col-md-6 text-center">
         <a class="footer-link" href="{{ '/service-areas/' | relative_url }}">
-          Serving {{ site.data.sitetext.about.location }}: {{ site.data.sitetext.about.neighborhoods | join: " | " }}
+          Serving {{ site.data.sitetext.location_info.location }}: {{ site.data.sitetext.location_info.neighborhoods | join: " | " }}
         </a>
       </div>
 
@@ -53,7 +53,7 @@
       "addressCountry": "US"
     },
     "areaServed": [
-      {%- for neighborhood in sitetext.about.neighborhoods -%}
+      {%- for neighborhood in sitetext.location_info.neighborhoods -%}
         {
           "@type": "City",
           "name": {{ neighborhood | append: ", GA" | jsonify }}

@@ -1,33 +1,28 @@
 ---
 layout: default
-title: "OT Service Areas in Atlanta | Playful Progressions"
+title: "Occupational Therapy in Atlanta"
 description: "Playful Progressions offers in-home pediatric occupational therapy in Brookhaven, Buckhead, Chamblee, Sandy Springs, Dunwoody, and other North Atlanta neighborhoods."
 permalink: /service-areas/
 ---
 
 <section class="page-section first-content-section" id="service-areas-page">
   <div class="container">
-    <div class="row mb-5">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">{{ site.data.sitetext.service_areas_page.title }}</h2>
-        <h3 class="section-subheading text-muted">{{ site.data.sitetext.service_areas_page.subtitle }}</h3>
-      </div>
-    </div>
-
     <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="large text-muted mb-4">
+      <div class="col-lg-10 text-center">
+
+        <h2 class="section-heading text-uppercase mb-4">{{ site.data.sitetext.service_areas_page.title }}</h2>
+        <h3 class="section-subheading text-muted mb-5">{{ site.data.sitetext.service_areas_page.subtitle }}</h3>
+
+        <div class="large text-muted mb-5">
           <p>{{ site.data.sitetext.service_areas_page.intro_paragraph }}</p>
         </div>
 
-        <div class="row justify-content-center text-center">
-          <div class="col-md-6">
-            <ul class="list-group shadow-sm">
-              {% for neighborhood in site.data.sitetext.location_info.neighborhoods %}
-                <li class="list-group-item">{{ neighborhood }}</li>
-              {% endfor %}
-            </ul>
-          </div>
+        <div class="row justify-content-center">
+          {% for neighborhood in site.data.sitetext.location_info.neighborhoods %}
+            <div class="mx-2 my-2 col-auto topic justify-items-center">
+              {{ neighborhood }}
+            </div>
+          {% endfor %}
         </div>
 
         <div class="text-center mt-5">
@@ -38,6 +33,7 @@ permalink: /service-areas/
             </a>
           </p>
         </div>
+
       </div>
     </div>
   </div>

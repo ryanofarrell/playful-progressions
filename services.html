@@ -34,9 +34,9 @@ permalink: /services/
           "areaServed": [
               {
               "@type": "City",
-              "name": {{ site.data.sitetext.about.location | jsonify }}
+              "name": {{ site.data.sitetext.location_info.location | jsonify }}
             }
-            {% for neighborhood in site.data.sitetext.about.neighborhoods %},
+            {% for neighborhood in site.data.sitetext.location_info.neighborhoods %},
               {
                 "@type": "Place",
                 "name": {{ neighborhood | append: ", GA" | jsonify }}

@@ -1,22 +1,19 @@
-<!-- About -->
 <section class="page-section" id="{{ site.data.sitetext.about.section | default: "about" }}">
   <div class="container">
-    <!-- Section header include -->
     {% include _section_header title=site.data.sitetext.about.title subtitle=site.data.sitetext.about.subtitle %}
     <div class="row">
       <div class="col-lg-8 mx-auto text-center">
         <div class="large text-muted">{{ site.data.sitetext.about.body | markdownify }}</div>
       </div>
     </div>
-    <!-- Location Section -->
     <div class="col text-center mx-auto mt-4" id="location">
       <div class="row my-4 justify-content-center align-items-center">
         <i class="fas fa-map-marker fa-2x mr-4 text-muted" aria-hidden="true"></i>
-        <h2 class="section-subheading mb-0 text-muted">{{ site.data.sitetext.about.location }}</h2>
+        <h2 class="section-subheading mb-0 text-muted">{{ site.data.sitetext.location_info.location }}</h2>
       </div>
       <span class="text-muted" style="font-style: italic;">Services covering:</span>
       <div class="row justify-content-center">
-        {% for hood in site.data.sitetext.about.neighborhoods %}
+        {% for hood in site.data.sitetext.location_info.neighborhoods %}
           <div class="mx-2 my-2 col-auto topic justify-items-center">
             {{ hood }}
           </div>
@@ -24,14 +21,13 @@
       </div>
       <div class="mt-4">
         <p class="text-muted">
-          {{ site.data.sitetext.about.location_note_pre_link }}
-          <a class="text-muted" href="{{ site.data.sitetext.about.location_note_link_url | relative_url }}">
-            {{ site.data.sitetext.about.location_note_link_text }}
+          {{ site.data.sitetext.location_info.location_note_pre_link }}
+          <a class="text-muted" href="{{ site.data.sitetext.location_info.location_note_link_url | relative_url }}">
+            {{ site.data.sitetext.location_info.location_note_link_text }}
           </a>
         </p>
       </div>
     </div>
-    <!-- How we help Section -->
     <div class="col text-center mx-auto mt-7" id="what-we-treat">
       <div class="row my-4 justify-content-center align-items-center">
         <h2 class="section-subheading">Treatment for</h2>
@@ -44,7 +40,6 @@
               {% for item in g.items %}
                 <div class="col-12">
                   <div class="align-items-center d-flex">
-                    <!-- Font Awesome checkbox icon -->
                     <i class="fa fa-check text-muted text-primary" aria-hidden="true"></i>
                     <span class="ml-3 text-muted text-left">{{ item }}</span>
                   </div>
@@ -57,4 +52,3 @@
     </div>
   </div>
 </section>
-<!-- End About -->
