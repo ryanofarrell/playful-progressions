@@ -5,13 +5,13 @@ class="mini-masthead position-relative text-center text-white">
   {% if page_header_image %}
     <img
       src="{{ page_header_image | relative_url }}"
-      alt="{{ page.title | default: site.title }} header background"
+      alt="{{ page.display_title | default: page.title }} header background"
       class="position-absolute w-100 h-100 object-fit-cover mini-masthead-bg"
       loading="eager" />
   {% endif %}
 
   <div class="container position-relative mini-masthead-content">
-    <h1 class="page-title text-uppercase">{{ page.title | default: site.title }}</h1>
+    <h1 class="page-title text-uppercase">{{ page.display_title | default: page.title }}</h1>
     {% if page.subtitle %}
       <h2 class="page-subtitle">{{ page.subtitle }}</h2>
     {% endif %}

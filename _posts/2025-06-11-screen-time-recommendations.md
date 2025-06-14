@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Screen Time Recommendations from a Pediatric OT"
+title: "Screen Time Advice from a Pediatric OT"
 date: 2025-06-11 09:00:00 -0400
 categories: posts
 tag: Posts
