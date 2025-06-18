@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "build": "jekyll build && npx purgecss --config ./purgecss.config.js",
-        "minify:js": "terser assets/js/jqBootstrapValidation.js -o _site/assets/js/jqBootstrapValidation.min.js -c -m"
+        "minify:js": "terser assets/js/jqBootstrapValidation.js -o assets/js/jqBootstrapValidation.min.js -c -m"
     },
     "author": "",
     "license": "ISC",
