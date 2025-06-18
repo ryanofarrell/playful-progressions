@@ -48,3 +48,8 @@ plugins:
   - jekyll-seo-tag
 
 future: true
+
+# SASS
+sass:
+  sass_dir: _sass
+  style: compressed # Minifies CSS output
