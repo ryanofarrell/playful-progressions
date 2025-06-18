@@ -4,11 +4,13 @@
     "description": "Jekyll site with PurgeCSS",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "jekyll build && npx purgecss --config ./purgecss.config.js",
+        "minify:js": "terser assets/js/jqBootstrapValidation.js -o _site/assets/js/jqBootstrapValidation.min.js -c -m"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "purgecss": "^5.0.0"
+        "purgecss": "^5.0.0",
+        "terser": "^5.43.0"
     }
 }

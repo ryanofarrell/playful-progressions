@@ -48,7 +48,7 @@ jobs:
       - name: Build with Jekyll & PurgeCSS 🚀
         # Use the JEKYLL_ENV environment variable to set the environment
         run: |
-          npm install
+          npm run minify:js
           bundle exec jekyll build
           npx purgecss --config ./purgecss.config.js
         env:
