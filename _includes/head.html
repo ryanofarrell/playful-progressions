@@ -79,8 +79,23 @@
   </noscript>
 
 
-  <link rel="stylesheet" href="{{ '/assets/css/agency.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/all.min.css' | relative_url }}">
+  {% comment %} <link rel="stylesheet" href="{{ '/assets/css/agency.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/all.min.css' | relative_url }}"> {% endcomment %}
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/agency.css' | relative_url }}"
+    media="print"
+    onload="this.media='all'">
+  <link
+    rel="stylesheet"
+    href="{{ '/assets/css/all.min.css' | relative_url }}"
+    media="print"
+    onload="this.media='all'">
+
+  <noscript>
+    <link rel="stylesheet" href="{{ '/assets/css/agency.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/all.min.css' | relative_url }}">
+  </noscript>
 
 
   <link
