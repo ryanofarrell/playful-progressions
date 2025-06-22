@@ -1,0 +1,37 @@
+# .aiinclude
+# This file specifies which files and folders to include (+) or exclude (-)
+# when selectively cloning a project.
+# Patterns are regular expressions. Use [\\/] for cross-platform path separators.
+
+# --- INCLUSION PATTERNS ---
++ /\.py$/
++ /\.js$/
++ /\.html$/
++ /\.css$/
++ /\.scss$/
++ /\.json$/
++ /\.md$/
++ /\.yml$/
++ README\.md$
++ src[\\/].*
++ public[\\/].*
++ config[\\/].*
++ scripts[\\/].*
++ _data[\\/].*
++ _includes[\\/].*
++ _layouts[\\/].*
++ _posts[\\/].*
++ _sass[\\/].*
++ assets[\\/].*
+
+
+# --- EXCLUSION PATTERNS ---
+- node_modules[\\/]
+- \.git[\\/]
+- __pycache__[\\/]
+- \.env$
+- \.log$
+- dist[\\/].*
+- build[\\/].*
+- venv[\\/].*
+- assets[\\/]images[\\/].* # Exclude the images subfolder within assets
