@@ -33,5 +33,8 @@
 - \.log$
 - dist[\\/].*
 - build[\\/].*
+- _site[\\/].*
+- .jekyll-cache[\\/].*
 - venv[\\/].*
-- assets[\\/]images[\\/].* # Exclude the images subfolder within assets
+- assets[\\/]images[\\/].*
+- assets[\\/]css[\\/]webfonts[\\/].*
