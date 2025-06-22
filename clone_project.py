@@ -73,7 +73,7 @@ def selective_clone(source_dir, dest_dir, include_patterns, exclude_patterns=Non
         print(f"Error: Source directory '{source_dir}' does not exist.")
         return
 
-    # --- NEW: Remove destination directory if it exists to ensure a clean copy ---
+    # Remove destination directory if it exists to ensure a clean copy
     if os.path.exists(dest_dir):
         print(f"Clearing existing destination directory: '{dest_dir}'...")
         try:
@@ -85,7 +85,7 @@ def selective_clone(source_dir, dest_dir, include_patterns, exclude_patterns=Non
             return
 
     # Create the destination directory
-    os.makedirs(dest_dir, exist_ok=True)  # exist_ok=True is technically redundant here after rmtree but harmless
+    os.makedirs(dest_dir, exist_ok=True)
     print(f"Cloning from '{source_dir}' to '{dest_dir}' with specified includes/excludes...")
 
     # Compile regex patterns for efficiency
@@ -95,17 +95,14 @@ def selective_clone(source_dir, dest_dir, include_patterns, exclude_patterns=Non
     # Helper function to check if an item should be excluded
     def should_exclude(item_name, item_path):
         # Always exclude the destination directory if it's nested within source (prevents infinite loop)
-        # os.path.abspath is crucial here to compare absolute paths
         if os.path.abspath(item_path).startswith(os.path.abspath(dest_dir)):
             return True
 
-        # Check against exclude patterns
+        # Check against exclude patterns (by item name or relative path)
         for pattern in compiled_exclude_patterns:
-            # Check item name directly
             if pattern.search(item_name):
                 print(f"DEBUG:     EXCLUDING '{item_name}' (matched name pattern: {pattern.pattern})")
                 return True
-            # Check relative path from source_dir for patterns like 'node_modules/'
             relative_path = os.path.relpath(item_path, source_dir)
             if pattern.search(relative_path):
                 print(f"DEBUG:     EXCLUDING '{relative_path}' (matched path pattern: {pattern.pattern})")
@@ -115,16 +112,14 @@ def selective_clone(source_dir, dest_dir, include_patterns, exclude_patterns=Non
     # Helper function to check if an item should be included
     def should_include(item_name, item_path):
         # If no include patterns are specified, everything is included by default,
-        # unless it's explicitly excluded by should_exclude.
+        # unless it's explicitly excluded (handled by should_exclude).
         if not compiled_include_patterns:
             return True
 
-        # Check against include patterns
+        # Check against include patterns (by item name or relative path)
         for pattern in compiled_include_patterns:
-            # Check item name directly
             if pattern.search(item_name):
                 return True
-            # Check relative path from source_dir
             relative_path = os.path.relpath(item_path, source_dir)
             if pattern.search(relative_path):
                 return True
@@ -139,38 +134,44 @@ def selective_clone(source_dir, dest_dir, include_patterns, exclude_patterns=Non
         print(f"\nDEBUG: Currently at directory: {root}")
         print(f"DEBUG: Directories found: {dirs}")
 
-        # --- Prune directories for traversal based on exclusion ---
-        # Create a new list for dirs that should be traversed
-        dirs_to_remove_from_traversal = []  # Collect names to remove later
-        for d_name in list(dirs):  # Iterate over a copy to allow modification of 'dirs'
+        # --- Process directories for traversal and creation ---
+        # We'll build a new list of directories for os.walk to traverse,
+        # ensuring excluded directories are removed.
+        new_dirs_for_walk = []
+        for d_name in list(dirs):  # Iterate over a copy to safely modify 'dirs'
             dir_path = os.path.join(root, d_name)
-            print(f"DEBUG:   Considering directory for exclusion/inclusion: '{d_name}' (Full path: '{dir_path}')")
-            if should_exclude(d_name, dir_path):
-                # If a directory is excluded, do not process its contents or traverse into it.
-                # Mark it for removal from 'dirs' list so os.walk does not visit it.
-                dirs_to_remove_from_traversal.append(d_name)
-            else:
-                # If a directory is NOT excluded, decide if it should be created in the destination.
-                # It should be created if it's explicitly included OR if any of its files might be included.
-                # For simplicity, we just create the *parent* structure for files.
-                # Empty directories that are only included but have no included files will also be created.
-                if should_include(d_name, dir_path):
-                    os.makedirs(os.path.join(current_dest_subdir, d_name), exist_ok=True)
-                    print(
-                        f"DEBUG:     CREATED destination directory: '{os.path.join(relative_path_from_source, d_name)}'"
-                    )
+            print(f"DEBUG:   Considering directory: '{d_name}' (Full path: '{dir_path}')")
 
-        # Now, modify 'dirs' in-place to prune the traversal,
-        # after we've processed all directories at this level for creation.
-        for d_remove in dirs_to_remove_from_traversal:
-            if d_remove in dirs:  # Ensure it's still there before removing
-                dirs.remove(d_remove)
+            # EXCLUSION HAS ABSOLUTE PRECEDENCE
+            if should_exclude(d_name, dir_path):
+                print(f"DEBUG:     EXCLUDING directory '{d_name}' from traversal and creation.")
+                # This directory will not be added to new_dirs_for_walk,
+                # effectively pruning it from os.walk's future traversal.
+                continue  # Skip all further processing for this directory
+
+            # If not excluded, then consider it for inclusion and traversal
+            new_dirs_for_walk.append(d_name)  # Add to list for os.walk's next iteration
+
+            # If this non-excluded directory is also explicitly included, create it now.
+            # Files will ensure their parent directories are created later, so this
+            # primarily ensures explicitly included *empty* directories are copied.
+            if should_include(d_name, dir_path):
+                dest_dir_path = os.path.join(current_dest_subdir, d_name)
+                os.makedirs(dest_dir_path, exist_ok=True)
+                print(f"DEBUG:     CREATED destination directory: '{os.path.join(relative_path_from_source, d_name)}'")
+            else:
+                print(
+                    f"DEBUG:     SKIPPING creation of directory (not explicitly included, but may contain included files): '{d_name}'"
+                )
+
+        # Update the 'dirs' list in-place to control os.walk's traversal
+        dirs[:] = new_dirs_for_walk
 
         # --- Process files ---
         for file_name in files:
             file_path = os.path.join(root, file_name)
             dest_file_path = os.path.join(current_dest_subdir, file_name)
-            print(f"DEBUG:   Considering file for exclusion/inclusion: '{file_name}' (Full path: '{file_path}')")
+            print(f"DEBUG:   Considering file: '{file_name}' (Full path: '{file_path}')")
 
             # Exclusion has higher priority than inclusion
             if should_exclude(file_name, file_path):
@@ -238,7 +239,9 @@ if __name__ == "__main__":
         # Add assets folder and its subfolders for testing specific scenario
         os.makedirs(os.path.join(DUMMY_SOURCE_FOLDER, "assets", "css"), exist_ok=True)
         os.makedirs(os.path.join(DUMMY_SOURCE_FOLDER, "assets", "js"), exist_ok=True)
-        os.makedirs(os.path.join(DUMMY_SOURCE_FOLDER, "assets", "images"), exist_ok=True)
+        os.makedirs(
+            os.path.join(DUMMY_SOURCE_FOLDER, "assets", "images"), exist_ok=True
+        )  # This should now not be copied if excluded
         os.makedirs(
             os.path.join(DUMMY_SOURCE_FOLDER, "assets", "images", "full-res", "blog"), exist_ok=True
         )  # Nested for testing
@@ -302,7 +305,7 @@ if __name__ == "__main__":
             f.write("MIT License")
         with open(os.path.join(DUMMY_SOURCE_FOLDER, "apple-touch-icon.png"), "w") as f:
             f.write("png data")
-        with open(os.path.join(DUMPH_SOURCE_FOLDER, "privacy-policy.html"), "w") as f:
+        with open(os.path.join(DUMMY_SOURCE_FOLDER, "privacy-policy.html"), "w") as f:
             f.write("html data")
         with open(os.path.join(DUMMY_SOURCE_FOLDER, "contact.html"), "w") as f:
             f.write("html data")
