@@ -3,7 +3,12 @@ class="masthead position-relative text-center text-white">
   {% comment %} Use the masthead image specified in _config.yml or default {% endcomment %}
   {% assign masthead_image = site.data.style.masthead_image | default: '/assets/images/processed/masthead.avif' %}
   <img
-    src="{{ masthead_image | relative_url }}"
+    src="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
+    srcset="{{ '/assets/images/processed/masthead-480.avif' | relative_url }} 480w,
+          {{ '/assets/images/processed/masthead-800.avif' | relative_url }} 800w,
+          {{ '/assets/images/processed/masthead-1200.avif' | relative_url }} 1200w,
+          {{ '/assets/images/processed/masthead.avif' | relative_url }} 1600w"
+    sizes="100vw"
     alt="{{ site.title | default: 'Website background' }} background"
     class="position-absolute w-100 h-100 object-fit-cover masthead-bg"
     fetchpriority="high"
