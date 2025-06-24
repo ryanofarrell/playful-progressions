@@ -7,30 +7,12 @@ action: "#E16473"
 white: "#ffffff"
 black: "#000000"
 
-# Add custom fonts
-fonts_urls:
-  - "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kaushan+Script&family=Droid+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100;300;400;700&display=swap"
-
-preload_fonts:
-  - https://fonts.gstatic.com/s/droidserif/v19/tDbX2oqRg1oM3QBjjcaDkOr4lLz5CwOnSGjW7BA.woff2
-  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2
-  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2
-  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2
-  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2
-  - https://fonts.gstatic.com/s/montserrat/v29/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2
-  - https://fonts.gstatic.com/s/droidserif/v19/tDbK2oqRg1oM3QBjjcaDkOr4nAfcHi6FRUI.woff2
-  - https://fonts.gstatic.com/s/droidserif/v19/tDbI2oqRg1oM3QBjjcaDkOr9rAXWGQyH.woff2
-  - https://fonts.gstatic.com/s/droidserif/v19/tDbV2oqRg1oM3QBjjcaDkOJGiRD7OwGtT0rU.woff2
-  - https://fonts.gstatic.com/s/kaushanscript/v18/vm8vdRfvXFLG3OLnsO15WYS5DG72wNJVMJ8br5Y.woff2
-  - https://fonts.gstatic.com/s/kaushanscript/v18/vm8vdRfvXFLG3OLnsO15WYS5DG74wNJVMJ8b.woff2
-
-# Set custom fonts
+# Set custom fonts that will be self-hosted
+# The names here should match the 'font-family' in your new _fonts.scss file.
 fonts:
   - name: "Montserrat"
     for: "heading"
-  - name: "Kaushan Script"
-    for: "script"
-  - name: "Droid Serif"
+  - name: "Merriweather"
     for: "serif"
   - name: "Roboto Slab"
     for: "body"

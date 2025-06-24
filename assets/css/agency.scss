@@ -2,44 +2,43 @@
 ---
 @charset "utf-8";
 
-// 1. Core variables and mixins (these need to be available for both Bootstrap overrides and your custom styles)
-@import "base/_variables";
-@import "base/custom_utilities"; // If these utilities might be used by Bootstrap overrides or your base, keep them early
+// =============================================================================
+// 1. Core Imports: Variables, mixins, and custom functions.
+// These are foundational and must be available to everything that follows.
+// =============================================================================
+@import "base/variables";
+@import "base/custom_utilities";
 @import "base/mixins.scss";
-
-// 2. Import Bootstrap (or any other third-party CSS frameworks)
-@import "bootstrap.min.css"; // Import Bootstrap styles FIRST
-
-// 3. Custom color definitions and functions (can come after variables but before your components/layout that use them)
-//    Your custom color variables ($primary, $secondary, etc.) are defined here in your file,
-//    which is fine if they are intended to override Bootstrap's default theme colors *if Bootstrap SCSS variables were being used*.
-//    However, since you're importing compiled bootstrap.min.css, these $primary variables won't directly affect Bootstrap's compiled classes
-//    unless Bootstrap's CSS uses CSS variables (which v4.3.1 does to some extent with :root variables like --blue, --primary).
-//    Your custom classes (e.g., .btn-primary that *you define*) will use these.
+@import "base/fonts";
 
 @function custom-lighten($color, $amount) {
-  // Extract the RGB values from the color
   $red: red($color);
   $green: green($color);
   $blue: blue($color);
-
-  // Lighten the color by adjusting its brightness
   $lightened-color: rgb($red + $amount, $green + $amount, $blue + $amount);
-
   @return $lightened-color;
 }
 
 @function custom-opacity($color, $opacity) {
   @if $opacity < 0 or $opacity > 1 {
     @warn "Opacity value should be between 0 and 1. Using 1 as the default.";
-    $opacity: 1; // Default opacity if an invalid value is provided
+    $opacity: 1;
   }
-
   @return rgba($color, $opacity);
 }
 
+// =============================================================================
+// 2. Vendor Stylesheets: Third-party frameworks and libraries.
+// =============================================================================
+@import "bootstrap.min.css"; // Import Bootstrap styles
+@import "all.min.css";       // ADD THIS LINE: Import Font Awesome styles
 
-// Custom colors
+// =============================================================================
+// 3. Custom Overrides and Definitions
+// Your site-specific variables, colors, and font definitions.
+// =============================================================================
+
+// Custom colors that use your functions and Jekyll data
 $primary: {{ site.data.style.primary | default: "#E16473" }} !default;
 $lightened-primary: custom-lighten($primary, 30);
 $secondary: {{ site.data.style.secondary | default: "#fff" }} !default;
@@ -52,21 +51,24 @@ $black: {{ site.data.style.black | default: "#000000" }} !default;
 $header-image: "/assets/img/masthead.avif";
 $contact-image: "{{ site.data.style.contact-image }}";
 
-// 4. Your custom base styles, components, and layout files
-// These will now correctly override or extend Bootstrap's styles.
-@import "base/page.scss"; // Your base typography, page defaults
-
-// Custom Fonts (Sass mixin definitions - order here is less critical as long as they are defined before use)
+// Custom Font Mixins
 {% if site.data.style.fonts %}
   {% for font in site.data.style.fonts %}
     @mixin {{font.for}}-font {
       font-family: "{{ font.name }}", -apple-system, BlinkMacSystemFont, "Segoe UI",
       Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-      font-display: swap
+      font-display: swap;
     }
   {% endfor %}
 {% endif %}
+
+// =============================================================================
+// 4. Your Custom Styles: Components and Layouts
+// This is the rest of your site's styling. It comes last so it can
+// override anything from Bootstrap or Font Awesome.
+// =============================================================================
+@import "base/page.scss";
 
 // Components
 @import "components/buttons.scss";
@@ -87,6 +89,5 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/_about.scss";
 @import "layout/_mini_masthead.scss";
 @import "layout/_blog.scss";
-@import "layout/_services-page.scss"; // Import the new services page styles
+@import "layout/_services-page.scss";
 @import "layout/_contact-page.scss";
-

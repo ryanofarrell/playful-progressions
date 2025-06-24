@@ -39,7 +39,7 @@
   /* Brand/Logo styles (consistent with original) */
   .navbar-brand {
     color: $primary; /* Default: primary brand color */
-    @include script-font;
+    @include heading-font;
     transition: all 0.3s; /* Smooth brand transition */
     &.active,
     &:active,
