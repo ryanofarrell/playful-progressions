@@ -5,3 +5,10 @@
         // box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 }
+
+// _sass/layout/_about.scss
+
+// More specific override to win the !important war on .text-muted
+#what-we-treat .card .text-muted {
+    color: $gray-700 !important; // Use a dark gray and !important
+}
