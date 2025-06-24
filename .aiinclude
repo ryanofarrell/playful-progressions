@@ -35,24 +35,13 @@
 + ^GeminiConfig\.json$ # Example for a specific config file for Gemini
 
 # Include common source directories and their contents
-+ src[\\/].*
-+ public[\\/].*
-+ assets[\\/].* # Include the assets folder and everything inside it
-+ components[\\/].*
-+ utils[\\/].*
-+ server[\\/].*
-+ client[\\/].*
-+ api[\\/].*
-+ schemas[\\/].*
-+ models[\\/].*
-+ tests[\\/].*
-+ scripts[\\/].*
-+ config[\\/].*
 + _data[\\/].*
 + _includes[\\/].*
 + _layouts[\\/].*
 + _posts[\\/].*
 + _sass[\\/].*
++ .github[\\/].*
++ assets[\\/].*
 
 
 # --- EXCLUSION PATTERNS ---
