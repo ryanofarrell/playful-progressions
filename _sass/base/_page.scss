@@ -44,30 +44,22 @@ a {
   color: $primary !important;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 700;
-  @include heading-font;
-}
-
 .page-section {
   padding-top: 100px;
   h2.section-heading {
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 15px;
+    font-weight: 700; // Ensure heading is bold
+    @include heading-font; // Apply heading font
   }
   h3.section-subheading {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 400; // Subheadings are typically not bold
     font-style: italic;
     margin-bottom: 40px;
     text-transform: none;
-    @include serif-font;
+    @include serif-font; // Apply the serif font (Merriweather)
   }
 }
 
@@ -97,4 +89,20 @@ img::-moz-selection {
   @media only screen and (max-width: 991px) {
     padding-top: 100px;
   }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  @include heading-font;
+}
+
+// ADD THIS AT THE END OF THE FILE to fix card header bolding
+
+#what-we-treat .card .h4 {
+  font-weight: 700 !important;
 }
