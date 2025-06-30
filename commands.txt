@@ -11,3 +11,7 @@ kill <pid>
 bundle install
 
 find ./assets/images/ -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" -o -iname "*.avif" \) -exec magick identify -format "%d/%f: Format: %m, Dimensions: %wx%h, Size: %b\n" {} \;
+
+./clone_project.py . gemini
+
+./combine_files.sh
