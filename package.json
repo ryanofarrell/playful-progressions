@@ -5,11 +5,13 @@
     "main": "index.js",
     "scripts": {
         "build": "jekyll build && npx purgecss --config ./purgecss.config.js",
-        "minify:js": "terser assets/js/jqBootstrapValidation.js -o assets/js/jqBootstrapValidation.min.js -c -m"
+        "minify:js": "terser assets/js/jqBootstrapValidation.js -o assets/js/jqBootstrapValidation.min.js -c -m",
+        "critical:css": "critical _site/index.html --base _site/ > _includes/critical.css"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
+        "critical": "^7.2.1",
         "purgecss": "^5.0.0",
         "terser": "^5.43.0"
     }
