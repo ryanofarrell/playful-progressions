@@ -26,7 +26,7 @@ fonts:
 
 nav:
   - title: "Meet Maria" # Add this new entry
-    url: "/meet-maria.html" # Link to the new Meet Maria page
+    url: "/meet-maria/" # Link to the new Meet Maria page
   - title: "Services"
     url: "/services/"
     section: services
@@ -859,11 +859,15 @@ class="masthead position-relative text-center text-white">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="{{ '/' | relative_url }}">
       {%- if site.logo -%}
-        <img
-          height="80px"
-          width="135px"
-          src="{{ site.logo | relative_url }}"
-          alt="Playful Progressions Logo" />
+        <picture>
+          <source srcset="{{ '/assets/images/processed/logo-nav.avif' | relative_url }}" type="image/avif">
+          <source srcset="{{ '/assets/images/processed/logo-nav.webp' | relative_url }}" type="image/webp">
+          <img
+            height="80px"
+            width="135px"
+            src="{{ '/assets/images/processed/logo-nav.png' | relative_url }}"
+            alt="Playful Progressions Logo" />
+        </picture>
       {%- else -%}
         {{ site.title }}
       {%- endif -%}
@@ -1310,47 +1314,64 @@ layout: default
 <!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
+  {%- comment -%} Conditionally add the preload link for the masthead image {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <link
+      rel="preload"
+      as="image"
+      href="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
+      imagesrcset="{{ '/assets/images/processed/masthead-480.avif' | relative_url }} 480w,
+                   {{ '/assets/images/processed/masthead-800.avif' | relative_url }} 800w,
+                   {{ '/assets/images/processed/masthead-1200.avif' | relative_url }} 1200w,
+                   {{ '/assets/images/processed/masthead.avif' | relative_url }} 1600w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+  {% endif %}
+
   {% include head.html %}
 
-    {% comment %} Add body class for styling based on background {% endcomment %}
-    {% if page.layout == "home" %}
-      <body id="page-top">
-    {% else %}
-      <body id="page-top" class="body-light-background">
-    {% endif %}
+  {%- comment -%} Add body class for styling based on background {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <body id="page-top">
+  {% else %}
+    <body id="page-top" class="body-light-background">
+  {% endif %}
 
-    {% include navigation.html %}
+  {%- comment -%} Conditionally add the IntersectionObserver sentinel ONLY on the homepage {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <div id="navbar-sentinel" style="position: absolute; top: 100px;"></div>
+  {% endif %}
 
-    {% comment %} Include masthead on home page, mini-masthead on other pages {% endcomment %}
-    {% if page.layout == "home" %}
-      {% include masthead.html %}
-    {% else %}
-      {% include mini-masthead.html %}
-    {% endif %}
+  {% include navigation.html %}
 
+  {%- comment -%} Include masthead on home page, mini-masthead on other pages {%- endcomment -%}
+  {% if page.layout == "home" %}
+    {% include masthead.html %}
+  {% else %}
+    {% include mini-masthead.html %}
+  {% endif %}
 
-    {{ content }}
+  {{ content }}
 
-    {% include footer.html %}
+  {% include footer.html %}
 
-    <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
 
-    {% comment %} Load agency.min.js only on the home page (for shrink effect, etc.) {% endcomment %}
-    {% if page.url == "/" %}
-      <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
-    {% endif %}
+  {%- comment -%} Load agency.min.js only on the home page (for shrink effect, etc.) {%- endcomment -%}
+  {% if page.url == "/" %}
+    <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
+  {% endif %}
 
-    {% comment %} Include custom script for Play Group form handling (Depends on jQuery and Validation) {% endcomment %}
-    <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
+  {%- comment -%} Include custom script for Play Group form handling {%- endcomment -%}
+  <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
 
-
-  </body>
+</body>
 </html>
-
 --- END OF FILE: ./_layouts/default.html ---
 
 
@@ -3284,11 +3305,15 @@ class="masthead position-relative text-center text-white">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="{{ '/' | relative_url }}">
       {%- if site.logo -%}
-        <img
-          height="80px"
-          width="135px"
-          src="{{ site.logo | relative_url }}"
-          alt="Playful Progressions Logo" />
+        <picture>
+          <source srcset="{{ '/assets/images/processed/logo-nav.avif' | relative_url }}" type="image/avif">
+          <source srcset="{{ '/assets/images/processed/logo-nav.webp' | relative_url }}" type="image/webp">
+          <img
+            height="80px"
+            width="135px"
+            src="{{ '/assets/images/processed/logo-nav.png' | relative_url }}"
+            alt="Playful Progressions Logo" />
+        </picture>
       {%- else -%}
         {{ site.title }}
       {%- endif -%}
@@ -3509,7 +3534,7 @@ layout: default
 title: "Meet Maria O'Farrell, Pediatric OT in Atlanta"
 display_title: "Meet Maria O'Farrell" # CHANGED
 description: "Meet Maria O'Farrell, the experienced pediatric occupational therapist behind Playful Progressions. Learn about her qualifications, approach, and dedication to child development."
-permalink: /meet-maria.html
+permalink: /meet-maria/
 ---
 <section class="page-section">
   <div class="container">
@@ -5126,11 +5151,16 @@ permalink: /404.html
       <div class="col-md-9 col-lg-7">
 
         {%- if site.logo -%}
-          <img
-            height="120"
-            src="{{ site.logo | relative_url }}"
-            alt="{{ site.title }} Logo"
-            class="mb-4" /> {%- else -%}
+          <picture>
+            <source srcset="{{ '/assets/images/processed/logo-404.avif' | relative_url }}" type="image/avif">
+            <source srcset="{{ '/assets/images/processed/logo-404.webp' | relative_url }}" type="image/webp">
+            <img
+              height="120"
+              src="{{ '/assets/images/processed/logo-404.png' | relative_url }}"
+              alt="{{ site.title }} Logo"
+              class="mb-4" />
+          </picture>
+        {%- else -%}
           <h1 class="section-heading text-uppercase">{{ site.title }}</h1>
         {%- endif -%}
 
@@ -5689,47 +5719,64 @@ layout: default
 <!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
+  {%- comment -%} Conditionally add the preload link for the masthead image {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <link
+      rel="preload"
+      as="image"
+      href="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
+      imagesrcset="{{ '/assets/images/processed/masthead-480.avif' | relative_url }} 480w,
+                   {{ '/assets/images/processed/masthead-800.avif' | relative_url }} 800w,
+                   {{ '/assets/images/processed/masthead-1200.avif' | relative_url }} 1200w,
+                   {{ '/assets/images/processed/masthead.avif' | relative_url }} 1600w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+  {% endif %}
+
   {% include head.html %}
 
-    {% comment %} Add body class for styling based on background {% endcomment %}
-    {% if page.layout == "home" %}
-      <body id="page-top">
-    {% else %}
-      <body id="page-top" class="body-light-background">
-    {% endif %}
+  {%- comment -%} Add body class for styling based on background {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <body id="page-top">
+  {% else %}
+    <body id="page-top" class="body-light-background">
+  {% endif %}
 
-    {% include navigation.html %}
+  {%- comment -%} Conditionally add the IntersectionObserver sentinel ONLY on the homepage {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <div id="navbar-sentinel" style="position: absolute; top: 100px;"></div>
+  {% endif %}
 
-    {% comment %} Include masthead on home page, mini-masthead on other pages {% endcomment %}
-    {% if page.layout == "home" %}
-      {% include masthead.html %}
-    {% else %}
-      {% include mini-masthead.html %}
-    {% endif %}
+  {% include navigation.html %}
 
+  {%- comment -%} Include masthead on home page, mini-masthead on other pages {%- endcomment -%}
+  {% if page.layout == "home" %}
+    {% include masthead.html %}
+  {% else %}
+    {% include mini-masthead.html %}
+  {% endif %}
 
-    {{ content }}
+  {{ content }}
 
-    {% include footer.html %}
+  {% include footer.html %}
 
-    <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
 
-    {% comment %} Load agency.min.js only on the home page (for shrink effect, etc.) {% endcomment %}
-    {% if page.url == "/" %}
-      <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
-    {% endif %}
+  {%- comment -%} Load agency.min.js only on the home page (for shrink effect, etc.) {%- endcomment -%}
+  {% if page.url == "/" %}
+    <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
+  {% endif %}
 
-    {% comment %} Include custom script for Play Group form handling (Depends on jQuery and Validation) {% endcomment %}
-    <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
+  {%- comment -%} Include custom script for Play Group form handling {%- endcomment -%}
+  <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
 
-
-  </body>
+</body>
 </html>
-
 --- END OF FILE: ./_layouts/default.html ---
 
 
@@ -12329,6 +12376,8 @@ find ./assets/images/ -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.
 ./clone_project.py . gemini
 
 ./combine_files.sh
+
+bundle exec jekyll run critical:css
 --- END OF FILE: ./commands.txt ---
 
 
@@ -12360,7 +12409,7 @@ fonts:
 
 nav:
   - title: "Meet Maria" # Add this new entry
-    url: "/meet-maria.html" # Link to the new Meet Maria page
+    url: "/meet-maria/" # Link to the new Meet Maria page
   - title: "Services"
     url: "/services/"
     section: services
@@ -12973,14 +13022,10 @@ permalink: /services/
 
 --- START OF FILE: ./assets/js/agency.min.js ---
 
-/*!
- * Start Bootstrap - Agency v5.2.2 (https://startbootstrap.com/template-overviews/agency)
- * Copyright 2013-2019 Start Bootstrap
- * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
- */
-
 !(function (e) {
   "use strict";
+
+  // Smooth scroll for anchor links (remains the same)
   e('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
     if (
       location.pathname.replace(/^\//, "") ==
@@ -12998,17 +13043,34 @@ permalink: /services/
           !1
         );
     }
-  }),
-    e(".js-scroll-trigger").click(function () {
-      e(".navbar-collapse").collapse("hide");
-    }),
-    e("body").scrollspy({ target: "#mainNav", offset: 56 });
-  function a() {
-    100 < e("#mainNav").offset().top
-      ? e("#mainNav").addClass("navbar-shrink")
-      : e("#mainNav").removeClass("navbar-shrink");
+  });
+
+  // Closes responsive menu when a scroll trigger link is clicked (remains the same)
+  e(".js-scroll-trigger").click(function () {
+    e(".navbar-collapse").collapse("hide");
+  });
+
+  // Activate scrollspy to add active class to navbar items on scroll (remains the same)
+  e("body").scrollspy({ target: "#mainNav", offset: 56 });
+
+  // --- NEW: IntersectionObserver for Navbar Shrink ---
+  var sentinel = document.querySelector("#navbar-sentinel");
+  var mainNav = document.querySelector("#mainNav");
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      if (entries[0].isIntersecting) {
+        mainNav.classList.remove("navbar-shrink");
+      } else {
+        mainNav.classList.add("navbar-shrink");
+      }
+    },
+    { threshold: [0] }
+  );
+
+  if (sentinel) {
+    observer.observe(sentinel);
   }
-  a(), e(window).scroll(a);
 })(jQuery);
 
 --- END OF FILE: ./assets/js/agency.min.js ---

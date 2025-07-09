@@ -6,9 +6,10 @@
           <source srcset="{{ '/assets/images/processed/logo-nav.avif' | relative_url }}" type="image/avif">
           <source srcset="{{ '/assets/images/processed/logo-nav.webp' | relative_url }}" type="image/webp">
           <img
-            height="80px"
-            width="135px"
+            height="80"
+            width="135"
             src="{{ '/assets/images/processed/logo-nav.png' | relative_url }}"
+            srcset="{{ '/assets/images/processed/logo-nav.png' | relative_url }} 1x, {{ '/assets/images/processed/logo-nav-2x.png' | relative_url }} 2x"
             alt="Playful Progressions Logo" />
         </picture>
       {%- else -%}
