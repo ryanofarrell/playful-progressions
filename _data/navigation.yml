@@ -1,6 +1,6 @@
 nav:
   - title: "Meet Maria" # Add this new entry
-    url: "/meet-maria.html" # Link to the new Meet Maria page
+    url: "/meet-maria/" # Link to the new Meet Maria page
   - title: "Services"
     url: "/services/"
     section: services

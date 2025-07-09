@@ -2,11 +2,15 @@
   <div class="container">
     <a class="navbar-brand js-scroll-trigger" href="{{ '/' | relative_url }}">
       {%- if site.logo -%}
-        <img
-          height="80px"
-          width="135px"
-          src="{{ site.logo | relative_url }}"
-          alt="Playful Progressions Logo" />
+        <picture>
+          <source srcset="{{ '/assets/images/processed/logo-nav.avif' | relative_url }}" type="image/avif">
+          <source srcset="{{ '/assets/images/processed/logo-nav.webp' | relative_url }}" type="image/webp">
+          <img
+            height="80px"
+            width="135px"
+            src="{{ '/assets/images/processed/logo-nav.png' | relative_url }}"
+            alt="Playful Progressions Logo" />
+        </picture>
       {%- else -%}
         {{ site.title }}
       {%- endif -%}
