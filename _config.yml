@@ -11,7 +11,7 @@ author: "Maria O'Farrell"
 url: "https://www.playfulprogressions.com"
 baseurl: "" # Add this line
 repository: ryanofarrell/playful-progressions
-logo: /assets/images/processed/logo.avif
+logo: /assets/images/full-res/logo.svg
 
 locale: "en-US" # See available languages in _data/sitetext.yml
 

@@ -10,21 +10,14 @@ permalink: /404.html
       <div class="col-md-9 col-lg-7">
 
         {%- if site.logo -%}
-          <picture>
-            <source srcset="{{ '/assets/images/processed/logo-404.avif' | relative_url }}" type="image/avif">
-            <source srcset="{{ '/assets/images/processed/logo-404.webp' | relative_url }}" type="image/webp">
-            <img
-              height="120"
-              width="203"
-              src="{{ '/assets/images/processed/logo-404.png' | relative_url }}"
-              srcset="{{ '/assets/images/processed/logo-404.png' | relative_url }} 1x, {{ '/assets/images/processed/logo-404-2x.png' | relative_url }} 2x"
-              alt="{{ site.title }} Logo"
-              class="mb-4" />
-          </picture>
+          <img
+            height="120"
+            src="{{ '/assets/images/full-res/logo.svg' | relative_url }}"
+            alt="{{ site.title }} Logo"
+            class="mb-4" />
         {%- else -%}
           <h1 class="section-heading text-uppercase">{{ site.title }}</h1>
         {%- endif -%}
-
         <h2 class="section-heading text-uppercase mt-3">404 - Page Not Found</h2>
         <h3 class="section-subheading text-muted mb-5">
           Sorry, the page you were looking for could not be found. It might have been moved or removed.
