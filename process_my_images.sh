@@ -24,7 +24,19 @@ PNGQUANT_QUALITY="65-80"
 DRY_RUN=false # Keep true for initial testing
 # ---------------------
 
-echo "--- Running Bulk Image Conversion Script (Corrected Command Substitution) ---"
+# --- Helper function to get file size reliably on both macOS and Linux ---
+get_size() {
+    if [[ "$(uname -s)" == "Darwin" ]]; then
+        # macOS stat command
+        stat -f %z "$1"
+    else
+        # Linux stat command
+        stat -c %s "$1"
+    fi
+}
+# --- End of Helper function ---
+
+echo "--- Running Bulk Image Conversion Script ---"
 echo "Source Dir: $SOURCE_BASE_DIR"
 echo "Output Dir: $OUTPUT_BASE_DIR"
 echo "Universal Max Width: $UNIVERSAL_MAX_WIDTH"
@@ -51,10 +63,10 @@ fi
 
 find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
     relative_image_path="${source_image_path#$SOURCE_BASE_DIR/}"
-    image_subdir=$(dirname "$relative_image_path") # CORRECTED
-    filename=$(basename "$source_image_path")     # CORRECTED
+    image_subdir=$(dirname "$relative_image_path")
+    filename=$(basename "$source_image_path")
     base_name="${filename%.*}"
-    extension_lower=$(echo "${filename##*.}" | tr '[:upper:]' '[:lower:]') # CORRECTED
+    extension_lower=$(echo "${filename##*.}" | tr '[:upper:]' '[:lower:]')
 
     current_output_dir="$OUTPUT_BASE_DIR"
     if [ "$image_subdir" != "." ] && [ "$image_subdir" != "$SOURCE_BASE_DIR" ]; then
@@ -131,7 +143,7 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
         fallback_command_action="Creating JPEG fallback"
     elif [[ "$extension_lower" == "png" ]]; then
         if [ "$DRY_RUN" = false ]; then
-            if [ "$effective_source_for_conversion" != "$fallback_output_path" ]; then # Avoid copying onto itself if no resize happened
+            if [ "$effective_source_for_conversion" != "$fallback_output_path" ]; then
                  cp "$effective_source_for_conversion" "$fallback_output_path"
             fi
             echo "  -> Copied/prepared $fallback_output_path for PNG optimization"
@@ -157,6 +169,16 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
             echo "  $fallback_command_action..."
             if eval "$fallback_command"; then
                 echo "  -> Fallback $fallback_output_path processed"
+                
+                # *** ADDED LOGIC: Conditionally remove the WebP if the optimized PNG is smaller ***
+                if [[ "$extension_lower" == "png" ]] && [ -f "$webp_output_path" ] && [ -f "$fallback_output_path" ]; then
+                    if [ "$(get_size "$fallback_output_path")" -lt "$(get_size "$webp_output_path")" ]; then
+                        echo "  -> Optimized PNG is smaller than WebP. Removing WebP: $webp_output_path"
+                        rm "$webp_output_path"
+                    fi
+                fi
+                # *** END OF ADDED LOGIC ***
+
             else
                 echo "  -> Failed: $fallback_command_action" >&2
             fi
