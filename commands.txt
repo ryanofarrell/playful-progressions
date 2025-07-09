@@ -15,3 +15,5 @@ find ./assets/images/ -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.
 ./clone_project.py . gemini
 
 ./combine_files.sh
+
+bundle exec jekyll run critical:css
