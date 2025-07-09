@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
-  {%- comment -%} Add the preload link here, inside the conditional block {%- endcomment -%}
+  {%- comment -%} Conditionally add the preload link for the masthead image {%- endcomment -%}
   {% if page.layout == "home" %}
     <link
       rel="preload"
@@ -18,41 +18,44 @@
 
   {% include head.html %}
 
-    {% comment %} Add body class for styling based on background {% endcomment %}
-    {% if page.layout == "home" %}
-      <body id="page-top">
-    {% else %}
-      <body id="page-top" class="body-light-background">
-    {% endif %}
+  {%- comment -%} Add body class for styling based on background {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <body id="page-top">
+  {% else %}
+    <body id="page-top" class="body-light-background">
+  {% endif %}
 
-    {% include navigation.html %}
+  {%- comment -%} Conditionally add the IntersectionObserver sentinel ONLY on the homepage {%- endcomment -%}
+  {% if page.layout == "home" %}
+    <div id="navbar-sentinel" style="position: absolute; top: 100px;"></div>
+  {% endif %}
 
-    {% comment %} Include masthead on home page, mini-masthead on other pages {% endcomment %}
-    {% if page.layout == "home" %}
-      {% include masthead.html %}
-    {% else %}
-      {% include mini-masthead.html %}
-    {% endif %}
+  {% include navigation.html %}
 
+  {%- comment -%} Include masthead on home page, mini-masthead on other pages {%- endcomment -%}
+  {% if page.layout == "home" %}
+    {% include masthead.html %}
+  {% else %}
+    {% include mini-masthead.html %}
+  {% endif %}
 
-    {{ content }}
+  {{ content }}
 
-    {% include footer.html %}
+  {% include footer.html %}
 
-    <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
+  <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
 
-    {% comment %} Load agency.min.js only on the home page (for shrink effect, etc.) {% endcomment %}
-    {% if page.url == "/" %}
-      <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
-    {% endif %}
+  {%- comment -%} Load agency.min.js only on the home page (for shrink effect, etc.) {%- endcomment -%}
+  {% if page.url == "/" %}
+    <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
+  {% endif %}
 
-    {% comment %} Include custom script for Play Group form handling (Depends on jQuery and Validation) {% endcomment %}
-    <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
+  {%- comment -%} Include custom script for Play Group form handling {%- endcomment -%}
+  <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
 
-
-  </body>
+</body>
 </html>
