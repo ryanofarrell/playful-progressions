@@ -10,11 +10,16 @@ permalink: /404.html
       <div class="col-md-9 col-lg-7">
 
         {%- if site.logo -%}
-          <img
-            height="120"
-            src="{{ site.logo | relative_url }}"
-            alt="{{ site.title }} Logo"
-            class="mb-4" /> {%- else -%}
+          <picture>
+            <source srcset="{{ '/assets/images/processed/logo-404.avif' | relative_url }}" type="image/avif">
+            <source srcset="{{ '/assets/images/processed/logo-404.webp' | relative_url }}" type="image/webp">
+            <img
+              height="120"
+              src="{{ '/assets/images/processed/logo-404.png' | relative_url }}"
+              alt="{{ site.title }} Logo"
+              class="mb-4" />
+          </picture>
+        {%- else -%}
           <h1 class="section-heading text-uppercase">{{ site.title }}</h1>
         {%- endif -%}
 
