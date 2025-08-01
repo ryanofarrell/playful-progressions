@@ -20,7 +20,7 @@
 
     .blog-card-img {
         width: 100%;
-        height: 150px; /* Fixed height for images (adjust as needed) */
+        height: 200px; /* Increased height for better aspect ratio */
         object-fit: cover; /* Cover the area without distorting aspect ratio */
     }
 
@@ -52,15 +52,6 @@
 
             .badge {
                 vertical-align: middle; /* Align badge nicely with text */
-                // Base badge styles - Bootstrap's badge-pill class provides most of this
-                // padding: .3em .6em;
-                // border-radius: .25rem;
-                // font-weight: 700;
-                // line-height: 1;
-                // text-align: center;
-                // white-space: nowrap;
-                // vertical-align: baseline;
-                // display: inline-block;
             }
 
             // Styles for individual tag badge colors
@@ -101,15 +92,10 @@
     }
 
     // Style for filter buttons that are NOT active when any filter *is* active
-    // This requires JavaScript to add a class (e.g., 'filter-active') to the container
     #blog-filters.filter-active & {
         &.btn-filter:not(.active):not(.btn-outline-primary) {
             /* Target non-active tag buttons */
             opacity: 0.5; /* Grey out effect */
-            // You might also override colors explicitly if needed, e.g.:
-            // color: $gray-600 !important;
-            // border-color: $gray-300 !important;
-            // background-color: transparent !important;
         }
     }
 }
@@ -118,8 +104,6 @@
 
 .post-content {
     /* Styling for the article container */
-    /* Inherits padding from .page-section */
-
     .post-header {
         /* Styling for the header area above post content */
         margin-bottom: 30px; /* Add space below header */
@@ -157,7 +141,6 @@
 
     .post-body {
         /* Styling for the main post content area */
-        /* Add typography styles here */
         h1,
         h2,
         h3,
@@ -180,6 +163,23 @@
             display: block; /* Prevent extra space below images */
             margin: 1em auto; /* Center images within content */
         }
-        /* Add styles for lists, blockquotes, code, etc. */
     }
 }
+
+// --- START: ACCESSIBILITY FIXES ---
+
+// Fix contrast on the "Posts" tag badge
+.badge-tag-posts {
+    color: $gray-900; // Use dark text on the light pink background for better contrast
+}
+
+// Ensure filter buttons have sufficient contrast on hover/active states
+.btn-filter {
+    &.btn-outline-primary.active,
+    &.btn-outline-primary:hover {
+        color: white !important;
+        background-color: $primary !important;
+    }
+}
+
+// --- END: ACCESSIBILITY FIXES ---

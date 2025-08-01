@@ -27,11 +27,9 @@ DRY_RUN=false # Keep true for initial testing
 # --- Helper function to get file size reliably on both macOS and Linux ---
 get_size() {
     if [[ "$(uname -s)" == "Darwin" ]]; then
-        # macOS stat command
-        stat -f %z "$1"
+        stat -f %z "$1" # macOS stat command
     else
-        # Linux stat command
-        stat -c %s "$1"
+        stat -c %s "$1" # Linux stat command
     fi
 }
 # --- End of Helper function ---
@@ -61,6 +59,7 @@ if [ "$USE_PNGQUANT" = true ] && ! command -v pngquant &>/dev/null; then
     USE_PNGQUANT=false
 fi
 
+
 find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
     relative_image_path="${source_image_path#$SOURCE_BASE_DIR/}"
     image_subdir=$(dirname "$relative_image_path")
@@ -76,124 +75,72 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
     if [ ! -d "$current_output_dir" ]; then
         if [ "$DRY_RUN" = false ]; then
             mkdir -p "$current_output_dir"
-        else
-            echo "  Would create directory: $current_output_dir"
         fi
     fi
-
-    temp_resized_image_path="${current_output_dir}/${base_name}_resized_temp.$extension_lower"
-    webp_output_path="${current_output_dir}/${base_name}.webp"
-    avif_output_path="${current_output_dir}/${base_name}.avif"
-    fallback_output_path="${current_output_dir}/${base_name}.$extension_lower"
 
     echo
     echo "Processing $source_image_path..."
-    echo "  Outputting to $current_output_dir"
 
-    resize_command="magick \"$source_image_path\" -resize '${UNIVERSAL_MAX_WIDTH}>' \"$temp_resized_image_path\""
-    effective_source_for_conversion="$source_image_path"
+    # --- START: NEW LOGIC FOR BLOG-SPECIFIC RESIZING ---
+    if [[ "$relative_image_path" == blog/* ]]; then
+        echo "  -> Blog image detected. Generating responsive sizes..."
+        for width in 400 800; do
+            local_avif_path="${current_output_dir}/${base_name}-${width}.avif"
+            local_webp_path="${current_output_dir}/${base_name}-${width}.webp"
+            local_fallback_path="${current_output_dir}/${base_name}-${width}.${extension_lower}"
 
-    if [ "$DRY_RUN" = true ]; then
-        echo "  Would resize: $resize_command"
-    else
-        echo "  Resizing to max width $UNIVERSAL_MAX_WIDTH (if larger)..."
-        if magick "$source_image_path" -resize "${UNIVERSAL_MAX_WIDTH}>" "$temp_resized_image_path"; then
-            echo "  -> Resized temp file: $temp_resized_image_path"
-            effective_source_for_conversion="$temp_resized_image_path"
-        else
-            echo "  -> Failed to resize or image is smaller. Copying original to temp location for processing." >&2
-            cp "$source_image_path" "$temp_resized_image_path"
-            effective_source_for_conversion="$temp_resized_image_path"
-        fi
-    fi
+            echo "     - Creating versions for ${width}px width..."
 
-    if [ "$USE_CWEBP" = true ] && command -v cwebp &>/dev/null; then
-        webp_command="cwebp \"$effective_source_for_conversion\" -size $CWEBP_TARGET_SIZE_BYTES -q $CWEBP_QUALITY -o \"$webp_output_path\""
-    else
-        webp_command="magick \"$effective_source_for_conversion\" -quality $IM_WEBP_QUALITY \"$webp_output_path\""
-    fi
-    if [ "$DRY_RUN" = true ]; then
-        echo "  Would create WebP: $webp_command"
-    else
-        echo "  Creating WebP..."
-        if eval "$webp_command"; then
-            echo "  -> Created $webp_output_path"
-        else
-            echo "  -> Failed to create $webp_output_path" >&2
-        fi
-    fi
+            # Create AVIF, WebP, and Fallback for the current size
+            avif_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $IM_AVIF_QUALITY \"$local_avif_path\""
+            webp_resize_cmd="magick \"$source_image_path\" -resize '${width}>' -quality $IM_WEBP_QUALITY \"$local_webp_path\""
+            fallback_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $JPEG_FALLBACK_QUALITY \"$local_fallback_path\""
 
-    avif_command="magick \"$effective_source_for_conversion\" +profile \"*\" -quality $IM_AVIF_QUALITY \"$avif_output_path\""
-    if [ "$DRY_RUN" = true ]; then
-        echo "  Would create AVIF: $avif_command"
-    else
-        echo "  Creating AVIF..."
-        if eval "$avif_command"; then
-            echo "  -> Created $avif_output_path"
-        else
-            echo "  -> Failed to create $avif_output_path" >&2
-        fi
-    fi
-
-    fallback_command_action=""
-    fallback_command=""
-
-    if [[ "$extension_lower" =~ ^(jpg|jpeg)$ ]]; then
-        fallback_command="magick \"$effective_source_for_conversion\" +profile \"*\" -define jpeg:extent=${JPEG_FALLBACK_TARGET_SIZE_KB}KB -quality $JPEG_FALLBACK_QUALITY \"$fallback_output_path\""
-        fallback_command_action="Creating JPEG fallback"
-    elif [[ "$extension_lower" == "png" ]]; then
-        if [ "$DRY_RUN" = false ]; then
-            if [ "$effective_source_for_conversion" != "$fallback_output_path" ]; then
-                 cp "$effective_source_for_conversion" "$fallback_output_path"
-            fi
-            echo "  -> Copied/prepared $fallback_output_path for PNG optimization"
-        else
-            echo "  Would copy/prepare $effective_source_for_conversion to $fallback_output_path for PNG optimization"
-        fi
-        
-        if [ "$USE_PNGQUANT" = true ] && command -v pngquant &>/dev/null; then
-            fallback_command="pngquant --force --skip-if-larger --quality=$PNGQUANT_QUALITY --output \"$fallback_output_path\" \"$fallback_output_path\""
-            fallback_command_action="Optimizing PNG with pngquant"
-        elif [ "$USE_OPTIPNG" = true ] && command -v optipng &>/dev/null; then
-            fallback_command="optipng -o2 \"$fallback_output_path\""
-            fallback_command_action="Optimizing PNG with optipng"
-        else
-            fallback_command_action="Skipping further PNG optimization (no tool or not enabled for PNG)"
-        fi
-    fi
-
-    if [ -n "$fallback_command" ]; then
-        if [ "$DRY_RUN" = true ]; then
-            echo "  Would perform: $fallback_command_action: $fallback_command"
-        else
-            echo "  $fallback_command_action..."
-            if eval "$fallback_command"; then
-                echo "  -> Fallback $fallback_output_path processed"
-                
-                # *** ADDED LOGIC: Conditionally remove the WebP if the optimized PNG is smaller ***
-                if [[ "$extension_lower" == "png" ]] && [ -f "$webp_output_path" ] && [ -f "$fallback_output_path" ]; then
-                    if [ "$(get_size "$fallback_output_path")" -lt "$(get_size "$webp_output_path")" ]; then
-                        echo "  -> Optimized PNG is smaller than WebP. Removing WebP: $webp_output_path"
-                        rm "$webp_output_path"
-                    fi
-                fi
-                # *** END OF ADDED LOGIC ***
-
+            if [ "$DRY_RUN" = false ]; then
+                eval "$avif_resize_cmd"
+                eval "$webp_resize_cmd"
+                eval "$fallback_resize_cmd"
             else
-                echo "  -> Failed: $fallback_command_action" >&2
+                echo "       - Would run: $avif_resize_cmd"
+                echo "       - Would run: $webp_resize_cmd"
+                echo "       - Would run: $fallback_resize_cmd"
             fi
+        done
+    fi
+    # --- END: NEW LOGIC ---
+
+    # --- Standard processing for the largest (1600px max) version ---
+    echo "  -> Generating max-width ($UNIVERSAL_MAX_WIDTH px) versions..."
+    
+    # Define paths for the max-width version
+    avif_output_path="${current_output_dir}/${base_name}.avif"
+    webp_output_path="${current_output_dir}/${base_name}.webp"
+    fallback_output_path="${current_output_dir}/${base_name}.${extension_lower}"
+    
+    # Use a temporary file for resizing to avoid re-reading the large original
+    temp_resized_image_path="${current_output_dir}/${base_name}_resized_temp.$extension_lower"
+    magick "$source_image_path" -resize "${UNIVERSAL_MAX_WIDTH}>" "$temp_resized_image_path"
+    
+    # Generate formats from the resized temporary file
+    magick "$temp_resized_image_path" +profile "*" -quality $IM_AVIF_QUALITY "$avif_output_path"
+    magick "$temp_resized_image_path" -quality $IM_WEBP_QUALITY "$webp_output_path"
+    
+    # Handle original fallback (JPEG or PNG)
+    if [[ "$extension_lower" =~ ^(jpg|jpeg)$ ]]; then
+        magick "$temp_resized_image_path" +profile "*" -define jpeg:extent=${JPEG_FALLBACK_TARGET_SIZE_KB}KB -quality $JPEG_FALLBACK_QUALITY "$fallback_output_path"
+    elif [[ "$extension_lower" == "png" ]]; then
+        cp "$temp_resized_image_path" "$fallback_output_path"
+        if [ "$USE_PNGQUANT" = true ] && command -v pngquant &>/dev/null; then
+            pngquant --force --skip-if-larger --quality=$PNGQUANT_QUALITY --output "$fallback_output_path" "$fallback_output_path"
         fi
-    elif [ -n "$fallback_command_action" ]; then 
-        echo "  $fallback_command_action"
     fi
     
-    if [ "$DRY_RUN" = false ] && [ "$effective_source_for_conversion" == "$temp_resized_image_path" ] && [ -f "$temp_resized_image_path" ]; then
-      if [ "$temp_resized_image_path" != "$fallback_output_path" ] || [ "$source_image_path" != "$effective_source_for_conversion" ]; then
-        rm "$temp_resized_image_path"
-        echo "  -> Cleaned up temporary file: $temp_resized_image_path"
-      fi
-    fi
+    # Clean up the temporary file
+    rm "$temp_resized_image_path"
+    
+    echo "  -> Max-width versions created."
     echo "---"
+
 done
 
 echo "Bulk image conversion script finished."
