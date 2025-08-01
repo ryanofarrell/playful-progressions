@@ -11,12 +11,13 @@
         "critical:home": "critical _site/index.html --base _site/ > _tmp/critical-home.css",
         "critical:contact": "critical _site/contact/index.html --base _site/ > _tmp/critical-contact.css",
         "critical:repath": "find ./_tmp -type f -name '*.css' -exec sed -i.bak 's|url(../assets|url(/assets|g; s|url(assets|url(/assets|g; s|url(\"../assets|url(\"/assets|g; s|url(\"assets|url(\"/assets|g' {} +",
-        "critical:combine": "cat _tmp/*.css | sort | uniq > _includes/critical.css && rm -rf _tmp"
+        "critical:combine": "cat _tmp/*.css | csso > _includes/critical.css && rm -rf _tmp"
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "critical": "^7.2.1",
+        "csso-cli": "^4.0.2",
         "npm-run-all": "^4.1.5",
         "purgecss": "^5.0.0",
         "terser": "^5.43.0"
