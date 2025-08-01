@@ -10,7 +10,7 @@
         "critical:prepare": "mkdir -p _tmp",
         "critical:home": "critical _site/index.html --base _site/ > _tmp/critical-home.css",
         "critical:contact": "critical _site/contact/index.html --base _site/ > _tmp/critical-contact.css",
-        "critical:repath": "find ./_tmp -type f -name '*.css' -exec sed -i.bak 's|../assets/fonts/|/assets/fonts/|g; s|\\\"assets/fonts/|\\\"/assets/fonts/|g' {} +",
+        "critical:repath": "find ./_tmp -type f -name '*.css' -exec sed -i.bak 's|url(../assets|url(/assets|g; s|url(assets|url(/assets|g; s|url(\"../assets|url(\"/assets|g; s|url(\"assets|url(\"/assets|g' {} +",
         "critical:combine": "cat _tmp/*.css | sort | uniq > _includes/critical.css && rm -rf _tmp"
     },
     "author": "",
