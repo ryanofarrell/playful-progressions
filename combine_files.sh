@@ -8,18 +8,22 @@
 # --- Configuration ---
 # 1. Add paths to search. For recursive search, use specific folders.
 #    To search ONLY the root directory (non-recursively), set this to: SEARCH_DIRS=("./")
-SEARCH_DIRS=("./_data" "./_includes" "./_layouts" "./_posts" "./_sass" "./.github" ".")
+SEARCH_DIRS=(".")
 
 # 2. List of directory names to EXCLUDE during a recursive search.
 #    This is ignored for a root-only search.
-EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site")
+EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".github" ".sass-cache" ".jekyll-cache" ".vscode")
 
 # 3. The name of the final combined file.
 OUTPUT_FILE="combined_output_recursive.txt"
 
 # 4. List of file extensions to INCLUDE in the combination.
 FILE_EXTENSIONS=(".md" ".txt" ".py" ".html" ".css" ".js" ".json" ".xml" ".sh" ".yml")
+
+# 5. List of specific filenames to EXCLUDE.
+EXCLUDE_FILES=("bootstrap.bundle.min.js" "bootstrap.min.js" "jquery.min.js" "jquery.slim.min.js")
 # --- End of Configuration ---
+
 
 # --- Helper Function ---
 # This function handles writing a file's content to the output file.
@@ -59,6 +63,8 @@ if [ ${#SEARCH_DIRS[@]} -eq 1 ] && [ "${SEARCH_DIRS[0]}" == "./" ]; then
   # --- Non-Recursive (Root Directory Only) ---
   echo "Starting non-recursive search in the root directory..."
   for item in *; do
+    # Add this check to skip excluded files
+    [[ " ${EXCLUDE_FILES[@]} " =~ " ${item} " ]] && continue
     # Check if the item is a file (and not a directory).
     if [ -f "$item" ]; then
       # Check if the file has one of the desired extensions.
@@ -88,6 +94,11 @@ else
   for dir in "${EXCLUDE_DIRS[@]}"; do
     find_command+=(-path "*/$dir" -prune -o)
   done
+  # --- ADD THIS BLOCK TO EXCLUDE SPECIFIC FILES ---
+  for filename in "${EXCLUDE_FILES[@]}"; do
+    find_command+=(-not -name "$filename")
+  done
+  # --- END OF NEW BLOCK ---
   find_command+=(-type f \()
   find_command+=("${ext_args[@]}")
   find_command+=(\) -print0)
