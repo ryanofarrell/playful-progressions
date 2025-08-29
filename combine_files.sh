@@ -12,13 +12,13 @@ SEARCH_DIRS=(".")
 
 # 2. List of directory names to EXCLUDE during a recursive search.
 #    This is ignored for a root-only search.
-EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".github" ".sass-cache" ".jekyll-cache" ".vscode")
+EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".sass-cache" ".jekyll-cache" ".vscode")
 
 # 3. The name of the final combined file.
 OUTPUT_FILE="combined_output_recursive.txt"
 
 # 4. List of file extensions to INCLUDE in the combination.
-FILE_EXTENSIONS=(".md" ".txt" ".py" ".html" ".css" ".js" ".json" ".xml" ".sh" ".yml")
+FILE_EXTENSIONS=(".md" ".txt" ".py" ".html" ".css" ".js" ".json" ".xml" ".sh" ".yml" ".sass" ".scss")
 
 # 5. List of specific filenames to EXCLUDE.
 EXCLUDE_FILES=("bootstrap.bundle.min.js" "bootstrap.min.js" "jquery.min.js" "jquery.slim.min.js" "package-lock.json")
