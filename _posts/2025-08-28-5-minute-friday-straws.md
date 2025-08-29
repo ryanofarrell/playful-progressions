@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 5 Minute Friday - Straws!
-date: 2025-08-29 08:03:00 -0400
+date: 2025-08-28 08:03:00 -0400
 categories: posts
 excerpt: "Grab a straw! This 5 Minute Friday shows how this simple item can boost oral motor skills, fine motor coordination, pre-writing development, and sensory regulation for babies, toddlers, and big kids."
 classes: wide
@@ -11,8 +11,6 @@ header:
     teaser: /assets/images/processed/blog/5mf-straws.jpeg
 image: /assets/images/processed/blog/5mf-straws.jpeg
 ---
-
-Welcome to 5 minute friday where I show you how to use simple household items for meaningful playbased activities for all ages, that take less than 5 minutes to set up. This week its straws! Head to my blog to see more and to identify the developmental benefits of each activity.
 
 Straws are such a great go-to that I always carry in my therapy bag! They’re inexpensive, versatile, and effective for all ages! Here are a few things you can entertain your kiddos with using straws!
 
