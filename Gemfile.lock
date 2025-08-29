@@ -94,7 +94,6 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
-    logger (1.7.0)
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -165,12 +164,12 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 4.3)
-  jekyll-feed (~> 0.17.0)
-  jekyll-include-cache (~> 0.2.1)
-  jekyll-seo-tag (~> 2.8.0)
-  jekyll-sitemap (~> 1.4.0)
-  logger
-  webrick (~> 1.7)
+  jekyll-feed
+  jekyll-include-cache
+  jekyll-sass-converter (~> 3.0)
+  jekyll-seo-tag
+  jekyll-sitemap
+  webrick
 
 BUNDLED WITH
    2.6.9

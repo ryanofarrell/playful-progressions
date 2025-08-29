@@ -42,7 +42,7 @@ jobs:
       - name: Setup Ruby and Jekyll 💎
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.1" # Or your required Ruby version
+          ruby-version: "3.2" # Or your required Ruby version
           bundler-cache: true # Caches gems for faster builds
 
       - name: Build with Jekyll & PurgeCSS 🚀

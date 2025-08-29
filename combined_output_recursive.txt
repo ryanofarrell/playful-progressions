@@ -1252,6 +1252,58 @@ With back to school just around the corner, it's a great time to use that new ba
 --- END OF FILE: ./_posts/2024-08-04-five-minute-friday-backpacks.md ---
 
 
+--- START OF FILE: ./_posts/2025-08-28-5-minute-friday-straws.md ---
+
+---
+layout: post
+title: 5 Minute Friday - Straws!
+date: 2025-08-28 08:03:00 -0400
+categories: posts
+excerpt: "Grab a straw! This 5 Minute Friday shows how this simple item can boost oral motor skills, fine motor coordination, pre-writing development, and sensory regulation for babies, toddlers, and big kids."
+classes: wide
+tag: 5 Minute Friday
+concepts: ["oral motor", "fine motor", "scissor skills", "sensory play", "visual-motor integration", "bilateral coordination", "play ideas"]
+header:
+    teaser: /assets/images/processed/blog/5mf-straws.jpeg
+image: /assets/images/processed/blog/5mf-straws.jpeg
+---
+
+Straws are such a great go-to that I always carry in my therapy bag! They’re inexpensive, versatile, and effective for all ages! Here are a few things you can entertain your kiddos with using straws!
+
+### Did you know that babies can start drinking from a straw cup early?
+
+Introducing a straw cup when starting solids is a great way to support oral motor development and begin water intake alongside food. One of my favorites for beginners is the **Honey Bear Cup** 🐻. It has a flexible straw and a squeezable bottle, making it easier for little ones to learn how to drink from a straw.
+
+I also love using silicone straws as teethers. Their long, stick-like design is perfect for mouthing and helps babies build jaw strength. You can even add a thin layer of nut butter (like peanut butter for early allergen introduction) or a bit of puree to encourage tongue lateralization—an important skill for feeding.
+
+### Straws for Toddlers
+
+Straws aren’t just for drinking—they’re versatile therapy tools too!
+
+*   **✂️ Scissor practice:** Plastic straws are the perfect size and firmness for learning to snip. After cutting, the pieces can be used for stringing activities that build fine motor coordination, bilateral coordination, and visual motor skills.
+
+*   **🔺 Shape building:** Those cut pieces can also be arranged into shapes, letters, or numbers for a fun, multisensory approach to pre-writing.
+
+*   **💨 Oral motor play:** Place a cotton ball on the floor and have a race by blowing it with a straw. Add crawling into the mix, and you’ve got a great reflex integration activity too!
+
+*   **🔧 Fine motor strengthening:** Try bending a straw into makeshift tongs—kids love the novelty, and it’s great for grasp development.
+
+### Straws for Bigger Kids
+
+Straws continue to be useful as children grow:
+
+*   **🌬️ Bubble mountain:** Fill a bowl with water and a drop of soap, then blow through a straw to make a mountain of bubbles (just remind your child not to sip!). This activity strengthens oral motor skills, supports deep breathing for regulation, and encourages visual gaze.
+
+*   **👀 Eye-hand coordination:** Hold a straw in your mouth, focus on the tip, and place small objects (like toothpicks) inside. This challenges both fine motor control and oculomotor skills, specifically convergence.
+
+*   **🥤 Sensory support:** For sensory seekers, try sipping thick liquids (like smoothies or milkshakes) through a straw, or use a thinner straw (like a coffee stirrer) for water. Both options provide oral sensory input that can be calming and organizing.
+
+### Final Thought
+
+Straws are inexpensive, versatile, and easy to find—so grab a pack on your next trip to the dollar store and enjoy all the fun (and skill-building) they have to offer!
+--- END OF FILE: ./_posts/2025-08-28-5-minute-friday-straws.md ---
+
+
 --- START OF FILE: ./_posts/2024-02-15-ot-changed-mom.md ---
 
 ---
@@ -1464,60 +1516,6 @@ It’s hard to believe that almost three years ago we were ‘forced’ to switc
 5. **Maximizing Time** - Providing teletherapy services also maximizes the time spent engaging in therapeutic activity. We are able to cut out transitions into sessions including unplanned bathroom breaks. We can eliminate transition time out of the session and the possibility of taking a little too long to make the ever important choice on a flavor of lollipop. Teletherapy allows us to focus on direct targeted intervention for the duration of the session.
 
 --- END OF FILE: ./_posts/2024-02-10-benefits-ot-telehealth.md ---
-
-
---- START OF FILE: ./_posts/2025-08-25-5-minute-friday-straws.md ---
-
----
-layout: post
-title: 5 Minute Friday - Straws!
-date: 2025-08-29 08:03:00 -0400
-categories: posts
-excerpt: "Grab a straw! This 5 Minute Friday shows how this simple item can boost oral motor skills, fine motor coordination, pre-writing development, and sensory regulation for babies, toddlers, and big kids."
-classes: wide
-tag: 5 Minute Friday
-concepts: ["oral motor", "fine motor", "scissor skills", "sensory play", "visual-motor integration", "bilateral coordination", "play ideas"]
-header:
-    teaser: /assets/images/processed/blog/5mf-straws.jpeg
-image: /assets/images/processed/blog/5mf-straws.jpeg
----
-
-Welcome to 5 minute friday where I show you how to use simple household items for meaningful playbased activities for all ages, that take less than 5 minutes to set up. This week its straws! Head to my blog to see more and to identify the developmental benefits of each activity.
-
-Straws are such a great go-to that I always carry in my therapy bag! They’re inexpensive, versatile, and effective for all ages! Here are a few things you can entertain your kiddos with using straws!
-
-### Did you know that babies can start drinking from a straw cup early?
-
-Introducing a straw cup when starting solids is a great way to support oral motor development and begin water intake alongside food. One of my favorites for beginners is the **Honey Bear Cup** 🐻. It has a flexible straw and a squeezable bottle, making it easier for little ones to learn how to drink from a straw.
-
-I also love using silicone straws as teethers. Their long, stick-like design is perfect for mouthing and helps babies build jaw strength. You can even add a thin layer of nut butter (like peanut butter for early allergen introduction) or a bit of puree to encourage tongue lateralization—an important skill for feeding.
-
-### Straws for Toddlers
-
-Straws aren’t just for drinking—they’re versatile therapy tools too!
-
-*   **✂️ Scissor practice:** Plastic straws are the perfect size and firmness for learning to snip. After cutting, the pieces can be used for stringing activities that build fine motor coordination, bilateral coordination, and visual motor skills.
-
-*   **🔺 Shape building:** Those cut pieces can also be arranged into shapes, letters, or numbers for a fun, multisensory approach to pre-writing.
-
-*   **💨 Oral motor play:** Place a cotton ball on the floor and have a race by blowing it with a straw. Add crawling into the mix, and you’ve got a great reflex integration activity too!
-
-*   **🔧 Fine motor strengthening:** Try bending a straw into makeshift tongs—kids love the novelty, and it’s great for grasp development.
-
-### Straws for Bigger Kids
-
-Straws continue to be useful as children grow:
-
-*   **🌬️ Bubble mountain:** Fill a bowl with water and a drop of soap, then blow through a straw to make a mountain of bubbles (just remind your child not to sip!). This activity strengthens oral motor skills, supports deep breathing for regulation, and encourages visual gaze.
-
-*   **👀 Eye-hand coordination:** Hold a straw in your mouth, focus on the tip, and place small objects (like toothpicks) inside. This challenges both fine motor control and oculomotor skills, specifically convergence.
-
-*   **🥤 Sensory support:** For sensory seekers, try sipping thick liquids (like smoothies or milkshakes) through a straw, or use a thinner straw (like a coffee stirrer) for water. Both options provide oral sensory input that can be calming and organizing.
-
-### Final Thought
-
-Straws are inexpensive, versatile, and easy to find—so grab a pack on your next trip to the dollar store and enjoy all the fun (and skill-building) they have to offer!
---- END OF FILE: ./_posts/2025-08-25-5-minute-friday-straws.md ---
 
 
 --- START OF FILE: ./_posts/2025-06-06-five-minute-friday-sponges.md ---
@@ -5239,8 +5237,6 @@ header.masthead {
 --- START OF FILE: ./_sass/components/_buttons.scss ---
 
 // Button Styles
-@use "sass:color";
-
 .btn {
   @include heading-font;
   font-weight: 700;
@@ -5268,8 +5264,8 @@ header.masthead {
   &:active,
   &:focus,
   &:hover {
-    background-color: color.adjust($primary, $lightness: -7.5%) !important;
-    border-color: color.adjust($primary, $lightness: -7.5%) !important;
+    background-color: darken($primary, 7.5%) !important;
+    border-color: darken($primary, 7.5%) !important;
     color: white;
   }
   &:active,
@@ -5283,8 +5279,8 @@ header.masthead {
   &:active,
   &:focus,
   &:hover {
-    background-color: color.adjust($secondary, $lightness: -7.5%) !important;
-    border-color: color.adjust($secondary, $lightness: -7.5%) !important;
+    background-color: darken($secondary, 7.5%) !important;
+    border-color: darken($secondary, 7.5%) !important;
     color: white;
   }
   &:active,
@@ -5298,8 +5294,8 @@ header.masthead {
   &:active,
   &:focus,
   &:hover {
-    background-color: color.adjust($action, $lightness: -7.5%) !important;
-    border-color: color.adjust($action, $lightness: -7.5%) !important;
+    background-color: darken($action, 7.5%) !important;
+    border-color: darken($action, 7.5%) !important;
     color: white;
   }
   &:active,
@@ -5442,8 +5438,6 @@ header.masthead {
 
 // Variables
 
-@use "sass:map";
-
 // Restated Bootstrap Variables
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -5483,7 +5477,7 @@ $sizes: (
   400px: 400px
 );
 
-$spacers: map.merge(
+$spacers: map-merge(
   (
     6: (
       $spacer * 4
@@ -5864,7 +5858,7 @@ p {
 a {
   color: $primary;
   &:hover {
-    color: color.adjust($primary, $lightness: -10%);
+    color: darken($primary, 10%);
   }
 }
 
@@ -6236,56 +6230,97 @@ permalink: /services/
 
 ---
 ---
+@charset "utf-8";
 
-// assets/css/agency.scss
+// =============================================================================
+// 1. Core Imports: Variables, mixins, and custom functions.
+// These are foundational and must be available to everything that follows.
+// =============================================================================
+@import "base/variables";
+@import "base/custom_utilities";
+@import "base/mixins.scss";
+@import "base/fonts";
 
-// Rule 1: All @use rules MUST be at the very top of the file.
-// This loads the color and map modules for use in other files.
-@use "sass:color";
-@use "sass:map";
-
-// Now, load the Bootstrap framework. Since it's a partial in _sass,
-// we refer to it without the underscore and extension.
-@use "bootstrap.min";
-
-// Load all your variable overrides and custom components.
-// The `as *` makes variables and mixins globally available without a namespace.
-@use "base/variables" as *;
-@use "base/custom_utilities" as *;
-@use "base/mixins" as *;
-@use "base/fonts" as *;
-
-// Now, load the rest of your site's styles.
-@use "layout/page";
-@use "layout/navbar";
-@use "layout/masthead";
-@use "layout/services";
-@use "layout/portfolio";
-@use "layout/timeline";
-@use "layout/team";
-@use "layout/contact";
-@use "layout/footer";
-@use "components/buttons";
-@use "components/cards";
-@use "components/topics";
-@use "components/blog";
-@use "components/privacy";
-@use "components/faq";
-@use "components/services";
-
-// Rule 2: Any custom functions or direct CSS rules go AFTER all @use rules.
 @function custom-lighten($color, $amount) {
-  $red: color.channel($color, "red");
-  $green: color.channel($color, "green");
-  $blue: color.channel($color, "blue");
-
-  $red: $red + ($red * $amount);
-  $green: $green + ($green * $amount);
-  $blue: $blue + ($blue * $amount);
-
-  @return rgb($red, $green, $blue);
+  $red: red($color);
+  $green: green($color);
+  $blue: blue($color);
+  $lightened-color: rgb($red + $amount, $green + $amount, $blue + $amount);
+  @return $lightened-color;
 }
 
+@function custom-opacity($color, $opacity) {
+  @if $opacity < 0 or $opacity > 1 {
+    @warn "Opacity value should be between 0 and 1. Using 1 as the default.";
+    $opacity: 1;
+  }
+  @return rgba($color, $opacity);
+}
+
+// =============================================================================
+// 2. Vendor Stylesheets: Third-party frameworks and libraries.
+// =============================================================================
+@import "bootstrap.min"; // Import Bootstrap styles
+@import "all.min";
+
+// =============================================================================
+// 3. Custom Overrides and Definitions
+// Your site-specific variables, colors, and font definitions.
+// =============================================================================
+
+// Custom colors that use your functions and Jekyll data
+$primary: {{ site.data.style.primary | default: "#E16473" }} !default;
+$lightened-primary: custom-lighten($primary, 30);
+$secondary: {{ site.data.style.secondary | default: "#fff" }} !default;
+$lightened-secondary: custom-opacity($secondary, 0.2);
+$action: {{ site.data.style.action | default: "#fff" }} !default;
+$white: {{ site.data.style.white | default: "#fff" }} !default;
+$black: {{ site.data.style.black | default: "#000000" }} !default;
+
+// Custom Images
+$header-image: "/assets/img/masthead.avif";
+$contact-image: "{{ site.data.style.contact-image }}";
+
+// Custom Font Mixins
+{% if site.data.style.fonts %}
+  {% for font in site.data.style.fonts %}
+    @mixin {{font.for}}-font {
+      font-family: "{{ font.name }}", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-display: swap;
+    }
+  {% endfor %}
+{% endif %}
+
+// =============================================================================
+// 4. Your Custom Styles: Components and Layouts
+// This is the rest of your site's styling. It comes last so it can
+// override anything from Bootstrap or Font Awesome.
+// =============================================================================
+@import "base/page.scss";
+
+// Components
+@import "components/buttons.scss";
+@import "components/navbar.scss";
+@import "components/client-scroll.scss";
+@import "components/_blog-filter.scss";
+
+// Layout
+@import "layout/masthead.scss";
+@import "layout/services.scss";
+@import "layout/training.scss";
+@import "layout/portfolio.scss";
+@import "layout/timeline.scss";
+@import "layout/team.scss";
+@import "layout/contact.scss";
+@import "layout/footer.scss";
+@import "layout/_testimonial.scss";
+@import "layout/_about.scss";
+@import "layout/_mini_masthead.scss";
+@import "layout/_blog.scss";
+@import "layout/_services-page.scss";
+@import "layout/_contact-page.scss";
 --- END OF FILE: ./assets/css/agency.scss ---
 
 
