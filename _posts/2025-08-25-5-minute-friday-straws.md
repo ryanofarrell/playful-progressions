@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 5 Minute Friday - Straws!
-date: 2025-09-05 08:03:00 -0400
+date: 2025-08-29 08:03:00 -0400
 categories: posts
 excerpt: "Grab a straw! This 5 Minute Friday shows how this simple item can boost oral motor skills, fine motor coordination, pre-writing development, and sensory regulation for babies, toddlers, and big kids."
 classes: wide
