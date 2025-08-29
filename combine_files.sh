@@ -21,7 +21,7 @@ OUTPUT_FILE="combined_output_recursive.txt"
 FILE_EXTENSIONS=(".md" ".txt" ".py" ".html" ".css" ".js" ".json" ".xml" ".sh" ".yml")
 
 # 5. List of specific filenames to EXCLUDE.
-EXCLUDE_FILES=("bootstrap.bundle.min.js" "bootstrap.min.js" "jquery.min.js" "jquery.slim.min.js")
+EXCLUDE_FILES=("bootstrap.bundle.min.js" "bootstrap.min.js" "jquery.min.js" "jquery.slim.min.js" "package-lock.json")
 # --- End of Configuration ---
 
 
