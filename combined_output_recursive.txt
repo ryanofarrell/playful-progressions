@@ -50,7 +50,7 @@ class="mini-masthead position-relative text-center text-white">
         <div class="large text-muted">
           {{ site.data.sitetext.team.short_bio | markdownify }}
         </div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger mt-3" href="{{ '/meet-maria.html' | relative_url }}">Read More About Maria</a>
+        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger mt-3" href="{{ '/meet-maria/' | relative_url }}">Read More About Maria</a>
       </div>
     </div>
   {% comment %} Remove the detailed subtext and training sections from the home page {% endcomment %}
@@ -2076,6 +2076,81 @@ Get your kiddos involved in the kitchen action and watch their sensory motor ski
 --- END OF FILE: ./_posts/2025-02-06-five-minute-friday-baking-sheets.md ---
 
 
+--- START OF FILE: ./_posts/2025-12-08-gift-guide-2025.md ---
+
+---
+layout: post
+title: "OT Approved! 2025 Holiday Gift Guide"
+date: 2025-12-08 08:00:00 -0500
+categories: posts
+tag: Posts
+excerpt: "Tis the season! A pediatric OT shares a curated list of toys and games that allow kids to work on sensory, emotional regulation, fine motor, gross motor, and visual skills while having fun."
+classes: wide
+concepts: ["gift guide", "sensory toys", "fine motor", "gross motor", "emotional regulation", "visual skills"]
+header:
+  teaser: /assets/images/processed/blog/25-gift-guide.jpeg
+image: /assets/images/processed/blog/25-gift-guide.jpeg
+---
+
+Tis the season! Holiday shopping is upon us! If you’re like me, you feel like your kids have more than enough. Why not give them toys and games that allow them to work on their OT goals!? See my list with links below:
+
+## Holiday Gifts for Sensory Seekers
+
+*   **[Pea Pod Sensory Chair](https://a.co/d/c9zeX5Q){:target="_blank"}** - Provides deep pressure input for regulation. The perfect addition to bedtime calming activities.
+*   **[Weighted Lap Animal](https://a.co/d/j2mEynX){:target="_blank"}** - Provides regulating input for calming during still moments.
+*   **[Sensory Body Sock](https://a.co/d/b1iAJVk){:target="_blank"}** - Provides tactile and proprioceptive feedback to increase regulation and body awareness.
+*   **[TalkTools Jiggler](https://a.co/d/ixSpXxO){:target="_blank"}** - Vibrating oral tool to provide oral stimulation for oral seekers and increase sensory awareness.
+*   **[Sensory Spinning Chair](https://a.co/d/0dXYBjF){:target="_blank"}** - Provides rotary vestibular input in your own home. Be sure to spin both ways and use under the guidance of an OT. Too much rotary input can be overwhelming!
+*   **[Liquid Motion Visual Toy](https://a.co/d/icutMoG){:target="_blank"}** - Perfect for visual seekers who need to focus in one area. One of my favorite additions to a sensory safe space.
+*   **[Play-Doh Variety Pack](https://a.co/d/6GTddGG){:target="_blank"}** - Includes varying types of scented slime, foam, and dough for tactile seekers.
+*   **[Mini Trampoline](https://a.co/d/5Skgwv2){:target="_blank"}** - Great for indoor and outdoor use to provide proprioceptive and vestibular input; this makes an amazing alerting activity to add to your sensory diet!
+
+## Holiday Gifts for Emotional Regulation
+
+*   **[Calm Down Tent](https://a.co/d/iG64UNl){:target="_blank"}** - For a calm down corner or sensory safe space.
+*   **[The Color Monster](https://a.co/d/b6xZcLE){:target="_blank"}** - Book to help identify emotions.
+*   **[Roll With It](https://a.co/d/fYughr3){:target="_blank"}** - Emotional Regulation board game focusing on identifying emotions and developing an emotional regulation toolkit.
+*   **[Lovevery Emotions Book Set](https://lovevery.com/products/emotion-book-set){:target="_blank"}** - Identify emotions using thoughtful stories.
+*   **[Spike Bubble Blower](https://a.co/d/8QNFuwL){:target="_blank"}** - Encourages deep breathing for emotional regulation alongside satisfying visual input.
+*   **[Expanding Ball](https://a.co/d/3o2qoVC){:target="_blank"}** - Use the ball for a visual guide to deep breathing.
+*   **[Mr. Potato Head](https://a.co/d/8LPiF8T){:target="_blank"}** - Build Mr. Potato head with various eyes and mouths to showcase and discuss different emotions.
+*   **[Inside Out Busy Book](https://a.co/d/adG2Obb){:target="_blank"}** - Watch Inside Out and allow your child to play out the emotions with characters they know and love!
+
+## Holiday Gifts for Fine Motor Skills
+
+*   **[Push Peel Sensory Fidget](https://a.co/d/7NAOSxV){:target="_blank"}** - Problem solving, fine motor precision, bilateral coordination, and sensory regulation in one cool toy!
+*   **[Lite-Brite](https://a.co/d/7YbhDHL){:target="_blank"}** - My favorite retro toy to focus on fine motor precision and develop grasping skills.
+*   **[Wiggly Worms](https://a.co/d/0fG1Yv3){:target="_blank"}** - Easily the most popular game in my therapy bag, great for a wide variety of ages (3-10).
+*   **[Clip Connect Building Blocks](https://a.co/d/aDkAG7k){:target="_blank"}** - Interlocking blocks great for developing constructive play skills and fine motor skills.
+*   **[Squigz](https://a.co/d/fynOXGx){:target="_blank"}** - The possibilities are endless with Squigz; developing fine motor skills, bilateral coordination skills, and a sensory piece make these so fun!
+*   **[On The Go Chalkboard](https://a.co/d/22PlgFe){:target="_blank"}** - Add this to your car/restaurant kit! I love using small chalk when practicing pre-writing and writing skills because it provides increased feedback. This also includes magnets and a whiteboard for added fine motor fun!
+*   **[Kumon Let's Fold Workbook](https://a.co/d/09RrHHM){:target="_blank"}** - Folding is a foundational skill. This workbook provides fun folding activities for practice using both hands together and with precision.
+*   **[Marble Run](https://a.co/d/0dETCBo){:target="_blank"}** - Marble runs are some of my favorite toys. They are amazing for constructive play, problem solving, fine motor skills, bilateral coordination skills, and grading force for kiddos with difficulty with sensory processing skills.
+
+## Holiday Gifts for Gross Motor Skills
+
+*   **[Stepping Stones and Balance Beam Kit](https://a.co/d/igAurVl){:target="_blank"}** - One of my favorite treatment tools to target balance, coordination, and auditory processing skills with a listening game. No obstacle course is complete without this!
+*   **[Playground Ball](https://a.co/d/2E46jcS){:target="_blank"}** - A simple ball is a great gift with endless possibilities.
+*   **[4-in-1 Toy](https://a.co/d/isCyG9K){:target="_blank"}** - Ring toss, rocket launcher, jumping, and baseball in one cool toy! You can easily grade up or down for your child’s skill level.
+*   **[Peanut Ball](https://a.co/d/0n8XhaZ){:target="_blank"}** - I love this for developing core strength, upper extremity strength, and providing alternative seating. It is always my recommendation before yoga balls because it is closer to the ground and a little safer for busy families.
+*   **[Cones, Rings and Bean Bag Set](https://a.co/d/ggFnTwq){:target="_blank"}** - I never take my rings, cones, and bean bags out of my treatment bag; they are a must have! Bonus because this includes a “Hippity Hop” toy for extra strengthening and sensory processing skills.
+*   **[Scooter Board](https://a.co/d/bpuZaIc){:target="_blank"}** - Use this scooter board for core and upper extremity strengthening, vestibular and proprioceptive processing skills.
+*   **[Climbing Toys](https://a.co/d/3Baoqs3){:target="_blank"}** - Age appropriate climbing toys are a great “big ticket” item.
+*   **[Pop-Up Tunnel](https://a.co/d/gS0p3Ht){:target="_blank"}** - Crawling is beneficial at any age! Add this for your toddler or big kid as part of a fun obstacle course.
+
+## Holiday Gifts for Visual Skills
+
+*   **[Spot It](https://a.co/d/2slsPux){:target="_blank"}** - This is a great game for on the go! The perfect stocking stuffer!
+*   **[Rush Hour](https://a.co/d/5OuPbGY){:target="_blank"}** - Great for visual spatial skills, kids working on oculomotor skills and near point copying, with an added bonus for problem solving.
+*   **[Zippy](https://a.co/d/iB154ui){:target="_blank"}** - Visual brain game great for addressing visual perceptual skills and working memory.
+*   **[I Spy Books](https://a.co/d/b7Vc07q){:target="_blank"}** - A classic for developing visual figure ground.
+*   **[Kanoodle](https://a.co/d/9Cwg1yj){:target="_blank"}** - One of my favorite visual spatial and visual memory games.
+*   **[Q-Bitz](https://a.co/d/4UeSYHt){:target="_blank"}** - Pattern recognition and construction game. I love this for developing visual spatial skills.
+*   **[Blink](https://a.co/d/gBd0lLJ){:target="_blank"}** - Card game that addresses visual memory, form constancy, and visual processing skills.
+*   **[Block Puzzle](https://a.co/d/hIlbcHM){:target="_blank"}** - Develop visual spatial skills, problem solving skills, and form constancy by recreating block designs as pictured.
+--- END OF FILE: ./_posts/2025-12-08-gift-guide-2025.md ---
+
+
 --- START OF FILE: ./_posts/2024-04-19-wake-windows-3-6-months.md ---
 
 ---
@@ -2384,6 +2459,90 @@ Enjoy this activity through the many stages of childhood! As parents, we can hav
 
 
 --- END OF FILE: ./_posts/2024-03-03-five-minute-friday-party-beads.md ---
+
+
+--- START OF FILE: ./_posts/2026-01-29-indoor-play-areas-atlanta.md ---
+
+---
+layout: post
+title: "5 Indoor Play Areas in Atlanta to Enjoy (When It’s Just Too Cold Outside)"
+date: 2026-01-29 08:00:00 -0500
+categories: posts
+tag: Posts
+excerpt: "Too cold to play outside? An Atlanta pediatric OT shares her top 5 indoor play spots for burning energy, building motor skills, and keeping kids regulated during winter."
+classes: wide
+concepts: ["sensory play", "gross motor", "regulation", "Atlanta activities", "motor planning", "heavy work"]
+header:
+  teaser: /assets/images/processed/blog/indoor-play-atlanta.jpeg
+image: /assets/images/processed/blog/indoor-play-atlanta.jpeg
+---
+
+I’m a big believer in outdoor play—for the sensory input, the fresh air, and the endless opportunities for movement. That said, I did not move to Atlanta to experience weeks of subfreezing temperatures. When it’s cold, dark, and everyone is bouncing off the walls, staying home with two young children who need movement to regulate is… not the vibe.
+
+When we absolutely have to get out of the house, these are our five favorite indoor go-tos for cold days—places where kids can move their bodies and parents can breathe.
+
+## 1. HippoHopp | Brookhaven
+
+[HippoHopp](https://hippohopp.com/){:target="_blank"} is a staple for indoor play in Atlanta. With multiple bouncy houses, a large climbing structure, and a thoughtfully designed toddler area, this space works well for a wide range of ages. Parents can relax in seating areas or jump in and play alongside their kids (which mine always request).
+
+From an OT perspective, Hippo Hopp provides excellent opportunities for **proprioceptive input**, **vestibular movement**, and **motor planning**. On busy days, the environment can feel overstimulating, but the staff is incredibly accommodating and often able to provide quieter space when party rooms are not in use.
+
+**OT Tips:**
+*   **Take Breaks:** Encourage your child to take movement breaks between bouncy houses to avoid sensory overload.
+*   **Goal-Oriented Play:** Encourage goal-oriented play, such as creating an obstacle course in the big play area to reduce sensory overload.
+*   **Regulation:** Use deep pressure (tight hugs, squeezes, or wall pushes) before leaving or frequently throughout the experience to support regulation.
+*   **Timing:** Visit during off-peak hours if your child is sensitive to noise or crowds.
+
+## 2. Atlanta History Center | Buckhead
+
+The [Atlanta History Center](https://www.atlantahistorycenter.com/){:target="_blank"} features a newer child-friendly play area that offers something for nearly every age. Toddlers can explore giant foam blocks and open-ended play, while older children engage in multisensory exhibits—including a slide my daughter still talks about.
+
+One of my favorite features is the cozy reading nook, which provides a natural sensory break. The craft area is always stocked with coloring, cutting, and fine motor activities, and the museum exhibits themselves offer a calm, low-stim environment that balances out higher-energy play.
+
+**OT Tips:**
+*   **Pacing:** Alternate between active play and quiet spaces to help your child stay regulated longer.
+*   **Fine Motor Skills:** Encourage bilateral coordination during crafts (cutting, tearing, gluing).
+*   **Heavy Work:** Use museum walking as "heavy work" by carrying bags or helping push doors open.
+
+## 3. Fernbank Museum | Druid Hills
+
+[Fernbank](https://www.fernbankmuseum.org/){:target="_blank"} is a dream for kids who love dinosaurs, climbing, and hands-on learning. The large fossil exhibits immediately capture attention, while upstairs areas offer crafts, tangram puzzles, and a STEAM lab with microscopes and experiments.
+
+The children’s area, **NatureQuest**, is where we spend most of our time. Rope bridges, climbing structures, slides, live animals, and interactive environments provide rich sensory and motor experiences. When it’s time to calm down, the exhibits outside the children’s area are quiet, dimly lit, and perfect for regulation. If weather allows, WildWoods and the Canopy Walk are worth bundling up for.
+
+**OT Tips:**
+*   **Strengthening:** Encourage climbing up slides or ladders to build strength and motor planning skills.
+*   **Regulation Breaks:** Use the quiet exhibits as a built-in regulation break when the play area gets too loud.
+*   **Body Awareness:** Practice body awareness by talking through where feet and hands go on rope bridges. If your child experiences gravitational insecurity, use deep pressure to regulate before and after exploring.
+
+## 4. The Alliance Theatre | Midtown
+
+The [Alliance Theatre](https://alliancetheatre.org/){:target="_blank"} recently opened PNC PlaySpace, a free indoor play experience for children ages 0–5. The current exhibit, *Bossa Nova Baby*, immerses children in a sensory-rich Brazilian rainforest environment designed for movement, exploration, and engagement.
+
+Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. These shows are intentionally designed for young audiences—movement is encouraged, seating is flexible, and children are invited to experience theater with their whole bodies. (Yes, this OT fully supports that.) I’ve even recommended their dinosaur show to feeding clients for its thoughtful exploration of sitting at the dinner table.
+
+**OT Tips:**
+*   **Child-Led Play:** Let children explore the space at their own pace—there’s no “right” way to play.
+*   **Active Sitting:** Use performances to practice sitting with movement (wiggles are allowed!).
+*   **Transitions:** Pair shows with PlaySpace time to meet sensory needs before sitting for a show.
+
+## 5. Kids Empire | Chamblee
+
+[Kids Empire](https://www.kidsempire.com/park/plaza-fiesta){:target="_blank"} is a large indoor play space offering climbing, sliding, biking, dancing, and opportunities for safe risk-taking. The toddler area includes a big ball pit that provides excellent proprioceptive and tactile input, along with climbing and crawling challenges.
+
+For children who become overwhelmed in busy environments, the space underneath the main play structure offers a calmer setting with oversized blocks and quieter play opportunities.
+
+**OT Tips:**
+*   **Body Listening:** Encourage children to notice when their bodies need a break.
+*   **Balance:** Alternate high-energy play with building or quiet zones.
+*   **Transitions:** Use transitions (snack, water, deep pressure) to support regulation before leaving.
+
+## Final Thoughts from a Mom (and OT)
+
+Winter can be tough, especially when your kids need movement to function. These indoor play spaces around Atlanta offer meaningful sensory experiences, opportunities for motor development, and ways for families to get out of the house without completely melting down.
+
+I hope this list helps you make it through the colder months while building memories and regulation skills that last beyond the winter!
+--- END OF FILE: ./_posts/2026-01-29-indoor-play-areas-atlanta.md ---
 
 
 --- START OF FILE: ./_posts/2025-06-27-five-minute-friday-chip-clips.md ---
