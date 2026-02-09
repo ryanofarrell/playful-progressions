@@ -31,7 +31,9 @@ $(function () {
       }
 
       $this = $("#sendMessageButton");
+      var originalButtonText = $this.html();
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      $this.html("<i class='fas fa-spinner fa-spin'></i> Sending...");
 
       // Perform AJAX POST request to the Formspree endpoint
       $.ajax({
@@ -116,6 +118,7 @@ $(function () {
         complete: function () {
           setTimeout(function () {
             $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+            $this.html(originalButtonText);
           }, 1000); // Re-enable after 1 second
         },
       });
