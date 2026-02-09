@@ -26,7 +26,7 @@ $(function () {
         firstName = name.split(" ").slice(0, -1).join(" ");
       }
 
-      $this = $("#sendPlayGroupMessageButton");
+      var $this = $("#sendPlayGroupMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
 
       // Perform AJAX POST request to the Formspree endpoint
