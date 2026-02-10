@@ -46,8 +46,12 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
 
-future: true
+paginate: 12
+paginate_path: "/blog/page:num/"
+
+future: false
 
 # SASS
 sass:
