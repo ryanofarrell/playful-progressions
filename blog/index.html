@@ -3,7 +3,6 @@ layout: default
 title: "Pediatric OT Blog"
 description: "Explore the Playful Progressions blog for expert articles on child development, occupational therapy activities, and parenting tips from pediatric OT Maria O'Farrell."
 subtitle: Latest posts and articles
-permalink: /blog/
 ---
 
 <section class="page-section" id="blog">
@@ -22,7 +21,7 @@ permalink: /blog/
       </div>
     </div>
     <div class="row" id="blog-post-list">
-        {% for post in paginator.posts %}
+      {% for post in paginator.posts %}
         <div class="col-md-6 col-lg-4 mb-4 blog-post-card" data-tags="{% if post.tag %}{{ post.tag | slugify }}{% endif %}">
           <div class="blog-card">
             <a href="{{ post.url | relative_url }}">
