@@ -12,7 +12,7 @@ SEARCH_DIRS=(".")
 
 # 2. List of directory names to EXCLUDE during a recursive search.
 #    This is ignored for a root-only search.
-EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".sass-cache" ".jekyll-cache" ".vscode")
+EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".sass-cache" ".jekyll-cache" ".vscode" "vendor")
 
 # 3. The name of the final combined file.
 OUTPUT_FILE="combined_output_recursive.txt"
