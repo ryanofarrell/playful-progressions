@@ -31,7 +31,9 @@ $(function () {
       }
 
       var $this = $("#sendMessageButton");
+      var originalButtonText = $this.html();
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      $this.html("<i class='fas fa-spinner fa-spin'></i> Sending...");
 
       // Perform AJAX POST request to the Formspree endpoint
       $.ajax({
@@ -57,11 +59,11 @@ $(function () {
             $("#success").html("<div class='alert alert-success'>");
             $("#success > .alert-success")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#success > .alert-success").append(
-              "<strong>Your message has been sent. </strong>"
+              "<strong>Your message has been sent. </strong>",
             );
             $("#success > .alert-success").append("</div>");
             // Clear all fields
@@ -73,15 +75,15 @@ $(function () {
             $("#success").html("<div class='alert alert-danger'>");
             $("#success > .alert-danger")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#success > .alert-danger").append(
               $("<strong>").text(
                 "Sorry " +
                   firstName +
-                  ", there was an issue sending your message. Please try again later or contact us directly!"
-              )
+                  ", there was an issue sending your message. Please try again later or contact us directly!",
+              ),
             );
             $("#success > .alert-danger").append("</div>");
           }
@@ -93,30 +95,29 @@ $(function () {
             "Form submission error:",
             textStatus,
             errorThrown,
-            jqXHR
+            jqXHR,
           ); // Log error details
           // Fail message
           $("#success").html("<div class='alert alert-danger'>");
           $("#success > .alert-danger")
             .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
             )
             .append("</button>");
           $("#success > .alert-danger").append(
             $("<strong>").text(
               "Sorry " +
                 firstName +
-                ", it seems that my mail server is not responding or there was a network issue. Please try again later!"
-            )
+                ", it seems that my mail server is not responding or there was a network issue. Please try again later!",
+            ),
           );
           $("#success > .alert-danger").append("</div>");
           // No reset here, let user see their input to try again
         },
 
         complete: function () {
-          setTimeout(function () {
-            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-          }, 1000); // Re-enable after 1 second
+          $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+          $this.html(originalButtonText);
         },
       });
     },
