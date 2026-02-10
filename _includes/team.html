@@ -7,11 +7,51 @@
       {% if maria %}
         <div class="col-sm-4">
           <div class="team-member">
-            <img
-              class="mx-auto rounded-circle"
-              src="{{ maria.image | relative_url }}"
-              alt="{{ maria.name }}"
-              loading="lazy" />
+            {% assign img_src = maria.image %}
+            {% assign parts = img_src | split: "." %}
+            {% assign parts_size = parts.size %}
+            {% assign base_parts_size = parts_size | minus: 1 %}
+            {% if base_parts_size > 0 %}
+              {% assign img_base = parts | slice: 0, base_parts_size | join: "." %}
+            {% else %}
+              {% assign img_base = img_src %}
+            {% endif %}
+
+            {% assign avif_path = img_base | append: ".avif" %}
+            {% assign webp_path = img_base | append: ".webp" %}
+            {% assign jpg_path = img_base | append: ".jpg" %}
+            {% assign jpeg_path = img_base | append: ".jpeg" %}
+            {% assign png_path = img_base | append: ".png" %}
+
+            {% assign avif_file = site.static_files | where: "path", avif_path | first %}
+            {% assign webp_file = site.static_files | where: "path", webp_path | first %}
+            {% assign jpg_file = site.static_files | where: "path", jpg_path | first %}
+            {% assign jpeg_file = site.static_files | where: "path", jpeg_path | first %}
+            {% assign png_file = site.static_files | where: "path", png_path | first %}
+
+            {% assign fallback_src = img_src %}
+            {% if jpg_file %}
+              {% assign fallback_src = jpg_path %}
+            {% elsif jpeg_file %}
+              {% assign fallback_src = jpeg_path %}
+            {% elsif png_file %}
+              {% assign fallback_src = png_path %}
+            {% endif %}
+
+            <picture>
+              {% if avif_file %}
+              <source srcset="{{ avif_path | relative_url }}" type="image/avif">
+              {% endif %}
+              {% if webp_file %}
+              <source srcset="{{ webp_path | relative_url }}" type="image/webp">
+              {% endif %}
+              <img
+                class="mx-auto rounded-circle"
+                src="{{ fallback_src | relative_url }}"
+                alt="{{ maria.name }}"
+                loading="lazy"
+                decoding="async" />
+            </picture>
             <h4>{{ maria.name }}</h4>
             <p class="text-muted">{{ maria.role }}</p>
           </div>
