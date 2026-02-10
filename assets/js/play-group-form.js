@@ -26,7 +26,7 @@ $(function () {
         firstName = name.split(" ").slice(0, -1).join(" ");
       }
 
-      $this = $("#sendPlayGroupMessageButton");
+      var $this = $("#sendPlayGroupMessageButton");
       var originalButtonText = $this.html();
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $this.html("<i class='fas fa-spinner fa-spin'></i> Sending...");
@@ -52,11 +52,11 @@ $(function () {
             $("#playGroupSuccess").html("<div class='alert alert-success'>");
             $("#playGroupSuccess > .alert-success")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#playGroupSuccess > .alert-success").append(
-              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>"
+              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>",
             ); // Custom success message
             $("#playGroupSuccess > .alert-success").append("</div>");
             // Clear all fields
@@ -66,15 +66,15 @@ $(function () {
             $("#playGroupSuccess").html("<div class='alert alert-danger'>");
             $("#playGroupSuccess > .alert-danger")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#playGroupSuccess > .alert-danger").append(
               $("<strong>").text(
                 "Sorry " +
                   firstName +
-                  ", there was an issue submitting your interest. Please try again later!"
-              )
+                  ", there was an issue submitting your interest. Please try again later!",
+              ),
             );
             $("#playGroupSuccess > .alert-danger").append("</div>");
           }
@@ -86,21 +86,21 @@ $(function () {
             "Play Group form submission error:",
             textStatus,
             errorThrown,
-            jqXHR
+            jqXHR,
           );
           // Fail message
           $("#playGroupSuccess").html("<div class='alert alert-danger'>");
           $("#playGroupSuccess > .alert-danger")
             .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
             )
             .append("</button>");
           $("#playGroupSuccess > .alert-danger").append(
             $("<strong>").text(
               "Sorry " +
                 firstName +
-                ", it seems there was a problem submitting your interest. Please try again later!"
-            )
+                ", it seems there was a problem submitting your interest. Please try again later!",
+            ),
           );
           $("#playGroupSuccess > .alert-danger").append("</div>");
         },
