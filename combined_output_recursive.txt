@@ -335,18 +335,6 @@ class="masthead position-relative text-center text-white">
 
   <link
     rel="preload"
-    href="{{ '/assets/css/webfonts/fa-solid-900.woff2' | relative_url }}"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous">
-  <link
-    rel="preload"
-    href="{{ '/assets/css/webfonts/fa-brands-400.woff2' | relative_url }}"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous">
-  <link
-    rel="preload"
     href="{{ '/assets/css/webfonts/fa-regular-400.woff2' | relative_url }}"
     as="font"
     type="font/woff2"
@@ -648,7 +636,7 @@ SEARCH_DIRS=(".")
 
 # 2. List of directory names to EXCLUDE during a recursive search.
 #    This is ignored for a root-only search.
-EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".sass-cache" ".jekyll-cache" ".vscode")
+EXCLUDE_DIRS=("node_modules" ".git" "dist" "build" "venv" "_site" ".sass-cache" ".jekyll-cache" ".vscode" "vendor")
 
 # 3. The name of the final combined file.
 OUTPUT_FILE="combined_output_recursive.txt"
@@ -960,6 +948,7 @@ permalink: /privacy-policy/
 ---
 layout: default # Use the default layout
 title: "Contact an Atlanta Pediatric OT"
+include_contact_form: true
 display_title: "Contact Us"
 description: "Contact Maria O'Farrell at Playful Progressions for pediatric occupational therapy services, consultations, or to schedule an evaluation. We're here to help."
 subtitle: Get in touch with Playful Progressions
@@ -3290,8 +3279,6 @@ echo "Bulk image conversion script finished."
     <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
     <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
     <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/jqBootstrapValidation.js' | relative_url }}" defer></script>
-    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
     <script src="{{ 'assets/js/agency.min.js' | relative_url }}" defer></script>
     {% if site.data.style.search_engine_js %}
       <script src="{{ site.data.style.search_engine_js | relative_url }}" defer></script>
@@ -3430,8 +3417,14 @@ layout: default
   <script src="{{ 'assets/js/jquery.min.js' | relative_url }}" defer></script>
   <script src="{{ 'assets/js/bootstrap.bundle.min.js' | relative_url }}" defer></script>
   <script src="{{ 'assets/js/jquery.easing.min.js' | relative_url }}" defer></script>
-  <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
-  <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+
+  {% if page.include_contact_form or page.include_play_group_form %}
+    <script src="{{ 'assets/js/jqBootstrapValidation.min.js' | relative_url }}" defer></script>
+  {% endif %}
+
+  {% if page.include_contact_form %}
+    <script src="{{ 'assets/js/contact_me.js' | relative_url }}" defer></script>
+  {% endif %}
 
   {%- comment -%} Load agency.min.js only on the home page (for shrink effect, etc.) {%- endcomment -%}
   {% if page.url == "/" %}
@@ -3439,7 +3432,9 @@ layout: default
   {% endif %}
 
   {%- comment -%} Include custom script for Play Group form handling {%- endcomment -%}
-  <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
+  {% if page.include_play_group_form %}
+    <script src="{{ 'assets/js/play-group-form.js' | relative_url }}" defer></script>
+  {% endif %}
 
 </body>
 </html>
@@ -3466,6 +3461,15 @@ layout: default
 
 </html>
 --- END OF FILE: ./_layouts/minimal.html ---
+
+
+--- START OF FILE: ./.Jules/palette.md ---
+
+## 2026-02-09 - Loading State for Formspree Forms
+**Learning:** Adding a visual loading state (spinner + text change) to Formspree forms significantly improves feedback during the async submission process, which can otherwise feel unresponsive.
+**Action:** Apply this pattern (spinner icon + text update + disable button) to all async form submissions in Jekyll/jQuery sites.
+
+--- END OF FILE: ./.Jules/palette.md ---
 
 
 --- START OF FILE: ./package.json ---
@@ -5525,6 +5529,13 @@ header.masthead {
   &:focus {
     box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
   }
+  &:disabled,
+  &.disabled {
+    background-color: lighten($primary, 15%);
+    border-color: lighten($primary, 15%);
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
 }
 .btn-secondary {
   background-color: $secondary;
@@ -6190,6 +6201,7 @@ h6 {
 ---
 layout: default # Use the default layout for standard header/footer
 title: "Pediatric OT Services & Evaluations in Atlanta"
+include_play_group_form: true
 display_title: "Our Services"
 description: "Explore expert pediatric OT services in Atlanta. Playful Progressions offers evaluations, telehealth, and tailored interventions in Brookhaven, Buckhead, and more."
 subtitle: Detailed information about our offerings # Kept from your original front matter
@@ -7772,8 +7784,10 @@ $(function () {
         firstName = name.split(" ").slice(0, -1).join(" ");
       }
 
-      $this = $("#sendMessageButton");
+      var $this = $("#sendMessageButton");
+      var originalButtonText = $this.html();
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      $this.html("<i class='fas fa-spinner fa-spin'></i> Sending...");
 
       // Perform AJAX POST request to the Formspree endpoint
       $.ajax({
@@ -7799,11 +7813,11 @@ $(function () {
             $("#success").html("<div class='alert alert-success'>");
             $("#success > .alert-success")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#success > .alert-success").append(
-              "<strong>Your message has been sent. </strong>"
+              "<strong>Your message has been sent. </strong>",
             );
             $("#success > .alert-success").append("</div>");
             // Clear all fields
@@ -7815,15 +7829,15 @@ $(function () {
             $("#success").html("<div class='alert alert-danger'>");
             $("#success > .alert-danger")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#success > .alert-danger").append(
               $("<strong>").text(
                 "Sorry " +
                   firstName +
-                  ", there was an issue sending your message. Please try again later or contact us directly!"
-              )
+                  ", there was an issue sending your message. Please try again later or contact us directly!",
+              ),
             );
             $("#success > .alert-danger").append("</div>");
           }
@@ -7835,30 +7849,29 @@ $(function () {
             "Form submission error:",
             textStatus,
             errorThrown,
-            jqXHR
+            jqXHR,
           ); // Log error details
           // Fail message
           $("#success").html("<div class='alert alert-danger'>");
           $("#success > .alert-danger")
             .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
             )
             .append("</button>");
           $("#success > .alert-danger").append(
             $("<strong>").text(
               "Sorry " +
                 firstName +
-                ", it seems that my mail server is not responding or there was a network issue. Please try again later!"
-            )
+                ", it seems that my mail server is not responding or there was a network issue. Please try again later!",
+            ),
           );
           $("#success > .alert-danger").append("</div>");
           // No reset here, let user see their input to try again
         },
 
         complete: function () {
-          setTimeout(function () {
-            $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
-          }, 1000); // Re-enable after 1 second
+          $this.prop("disabled", false); // Re-enable submit button when AJAX call is complete
+          $this.html(originalButtonText);
         },
       });
     },
@@ -7961,8 +7974,10 @@ $(function () {
         firstName = name.split(" ").slice(0, -1).join(" ");
       }
 
-      $this = $("#sendPlayGroupMessageButton");
+      var $this = $("#sendPlayGroupMessageButton");
+      var originalButtonText = $this.html();
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      $this.html("<i class='fas fa-spinner fa-spin'></i> Sending...");
 
       // Perform AJAX POST request to the Formspree endpoint
       $.ajax({
@@ -7985,11 +8000,11 @@ $(function () {
             $("#playGroupSuccess").html("<div class='alert alert-success'>");
             $("#playGroupSuccess > .alert-success")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#playGroupSuccess > .alert-success").append(
-              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>"
+              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>",
             ); // Custom success message
             $("#playGroupSuccess > .alert-success").append("</div>");
             // Clear all fields
@@ -7999,15 +8014,15 @@ $(function () {
             $("#playGroupSuccess").html("<div class='alert alert-danger'>");
             $("#playGroupSuccess > .alert-danger")
               .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
               )
               .append("</button>");
             $("#playGroupSuccess > .alert-danger").append(
               $("<strong>").text(
                 "Sorry " +
                   firstName +
-                  ", there was an issue submitting your interest. Please try again later!"
-              )
+                  ", there was an issue submitting your interest. Please try again later!",
+              ),
             );
             $("#playGroupSuccess > .alert-danger").append("</div>");
           }
@@ -8019,29 +8034,28 @@ $(function () {
             "Play Group form submission error:",
             textStatus,
             errorThrown,
-            jqXHR
+            jqXHR,
           );
           // Fail message
           $("#playGroupSuccess").html("<div class='alert alert-danger'>");
           $("#playGroupSuccess > .alert-danger")
             .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;"
+              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
             )
             .append("</button>");
           $("#playGroupSuccess > .alert-danger").append(
             $("<strong>").text(
               "Sorry " +
                 firstName +
-                ", it seems there was a problem submitting your interest. Please try again later!"
-            )
+                ", it seems there was a problem submitting your interest. Please try again later!",
+            ),
           );
           $("#playGroupSuccess > .alert-danger").append("</div>");
         },
 
         complete: function () {
-          setTimeout(function () {
-            $this.prop("disabled", false); // Re-enable submit button
-          }, 1000); // Re-enable after 1 second
+          $this.prop("disabled", false); // Re-enable submit button
+          $this.html(originalButtonText);
         },
       });
     },
