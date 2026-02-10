@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{ site.locale | slice: 0,2 | default: "en" }}">
 
-  {%- comment -%} Conditionally add the preload link for the masthead image {%- endcomment -%}
-  {% if page.layout == "home" %}
-    <link
-      rel="preload"
-      as="image"
-      href="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
-      imagesrcset="{{ '/assets/images/processed/masthead-480.avif' | relative_url }} 480w,
-                   {{ '/assets/images/processed/masthead-800.avif' | relative_url }} 800w,
-                   {{ '/assets/images/processed/masthead-1200.avif' | relative_url }} 1200w,
-                   {{ '/assets/images/processed/masthead.avif' | relative_url }} 1600w"
-      imagesizes="100vw"
-      fetchpriority="high"
-    />
-  {% endif %}
-
   {% include head.html %}
 
   {%- comment -%} Add body class for styling based on background {%- endcomment -%}
