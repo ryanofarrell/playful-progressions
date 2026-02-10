@@ -10,6 +10,8 @@
     <body id="page-top" class="body-light-background">
   {% endif %}
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   {%- comment -%} Conditionally add the IntersectionObserver sentinel ONLY on the homepage {%- endcomment -%}
   {% if page.layout == "home" %}
     <div id="navbar-sentinel" style="position: absolute; top: 100px;"></div>
@@ -24,7 +26,9 @@
     {% include mini-masthead.html %}
   {% endif %}
 
-  {{ content }}
+  <main id="main-content">
+    {{ content }}
+  </main>
 
   {% include footer.html %}
 

@@ -75,6 +75,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "components/navbar.scss";
 @import "components/client-scroll.scss";
 @import "components/_blog-filter.scss";
+@import "components/skip-link";
 
 // Layout
 @import "layout/masthead.scss";
