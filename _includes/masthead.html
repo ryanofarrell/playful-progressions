@@ -1,21 +1,30 @@
-<header
-class="masthead position-relative text-center text-white">
-  {% comment %} Use the masthead image specified in _config.yml or default {% endcomment %}
+<header class="masthead position-relative text-center text-white">
   {% assign masthead_image = site.data.style.masthead_image | default: '/assets/images/processed/masthead.avif' %}
-  <img
-    src="{{ '/assets/images/processed/masthead.avif' | relative_url }}"
-    srcset="{{ '/assets/images/processed/masthead-480.avif' | relative_url }} 480w,
-          {{ '/assets/images/processed/masthead-800.avif' | relative_url }} 800w,
-          {{ '/assets/images/processed/masthead-1200.avif' | relative_url }} 1200w,
-          {{ '/assets/images/processed/masthead.avif' | relative_url }} 1600w"
-    sizes="100vw"
-    alt="{{ site.title | default: 'Website background' }} background"
-    class="position-absolute w-100 h-100 object-fit-cover masthead-bg"
-    fetchpriority="high"
-    decoding="async"
-    loading="eager"
-    width="1600"
-    height="900" />
+  {% assign img_base = masthead_image | split: "." | first %}
+
+  <picture>
+    <source
+      srcset="{{ img_base | append: '-400.avif' | relative_url }} 400w, 
+              {{ img_base | append: '-800.avif' | relative_url }} 800w, 
+              {{ img_base | append: '.avif' | relative_url }} 1600w"
+      sizes="100vw"
+      type="image/avif">
+    <source
+      srcset="{{ img_base | append: '-400.webp' | relative_url }} 400w, 
+              {{ img_base | append: '-800.webp' | relative_url }} 800w, 
+              {{ img_base | append: '.webp' | relative_url }} 1600w"
+      sizes="100vw"
+      type="image/webp">
+    <img
+      src="{{ masthead_image | relative_url }}"
+      alt="{{ site.title | default: 'Website background' }} background"
+      class="position-absolute w-100 h-100 object-fit-cover masthead-bg"
+      fetchpriority="high"
+      decoding="async"
+      loading="eager"
+      width="1600"
+      height="900" />
+  </picture>
 
   <div class="container position-relative masthead-content">
     <div class="intro-text">

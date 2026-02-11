@@ -1,5 +1,61 @@
 <figure class="{{ include.class }}">
-  <img src="{{ include.image_path | relative_url }}" alt="{% if include.alt %}{{ include.alt }}{% endif %}">
+  {% assign img_src = include.image_path %}
+  {% assign parts = img_src | split: "." %}
+  {% assign parts_size = parts.size %}
+  {% assign base_parts_size = parts_size | minus: 1 %}
+  {% if base_parts_size > 0 %}
+    {% assign img_base = parts | slice: 0, base_parts_size | join: "." %}
+  {% else %}
+    {% assign img_base = img_src %}
+  {% endif %}
+
+  {% comment %} Check for AVIF {% endcomment %}
+  {% assign avif_path = img_base | append: ".avif" %}
+  {% assign avif_file = site.static_files | where: "path", avif_path | first %}
+
+  {% comment %} Check for WebP {% endcomment %}
+  {% assign webp_path = img_base | append: ".webp" %}
+  {% assign webp_file = site.static_files | where: "path", webp_path | first %}
+
+  {% comment %} Check for responsive versions universally {% endcomment %}
+  {% assign avif_800_path = img_base | append: "-800.avif" %}
+  {% assign avif_400_path = img_base | append: "-400.avif" %}
+  {% assign webp_800_path = img_base | append: "-800.webp" %}
+  {% assign webp_400_path = img_base | append: "-400.webp" %}
+
+  {% comment %} 
+    We no longer check 'is_blog'. 
+    We simply check if the generated files actually exist in the site build.
+  {% endcomment %}
+  {% assign avif_800_file = site.static_files | where: "path", avif_800_path | first %}
+  {% assign avif_400_file = site.static_files | where: "path", avif_400_path | first %}
+  {% assign webp_800_file = site.static_files | where: "path", webp_800_path | first %}
+  {% assign webp_400_file = site.static_files | where: "path", webp_400_path | first %}
+
+  {% if avif_file or webp_file %}
+    <picture>
+      {% if avif_file %}
+        {% if avif_800_file and avif_400_file %}
+             <source srcset="{{ avif_400_path | relative_url }} 400w, {{ avif_800_path | relative_url }} 800w, {{ avif_path | relative_url }} 1600w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 100vw" type="image/avif">
+        {% else %}
+             <source srcset="{{ avif_path | relative_url }}" type="image/avif">
+        {% endif %}
+      {% endif %}
+
+      {% if webp_file %}
+         {% if webp_800_file and webp_400_file %}
+             <source srcset="{{ webp_400_path | relative_url }} 400w, {{ webp_800_path | relative_url }} 800w, {{ webp_path | relative_url }} 1600w" sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 100vw" type="image/webp">
+        {% else %}
+             <source srcset="{{ webp_path | relative_url }}" type="image/webp">
+        {% endif %}
+      {% endif %}
+
+      <img src="{{ img_src | relative_url }}" alt="{% if include.alt %}{{ include.alt }}{% endif %}" loading="lazy" decoding="async">
+    </picture>
+  {% else %}
+    <img src="{{ img_src | relative_url }}" alt="{% if include.alt %}{{ include.alt }}{% endif %}" loading="lazy" decoding="async">
+  {% endif %}
+
   {%- if include.caption -%}
     <figcaption align="center">
       {{ include.caption | markdownify | remove: "<p>" | remove: "</p>" }}

@@ -21,7 +21,7 @@ USE_OPTIPNG=false
 USE_PNGQUANT=true
 PNGQUANT_QUALITY="65-80"
 
-DRY_RUN=false # Keep true for initial testing
+DRY_RUN=false 
 # ---------------------
 
 # --- Helper function to get file size reliably on both macOS and Linux ---
@@ -58,9 +58,8 @@ if [ "$USE_PNGQUANT" = true ] && ! command -v pngquant &>/dev/null; then
     echo "Warning: pngquant command not found, USE_PNGQUANT is true. Skipping pngquant." >&2
     USE_PNGQUANT=false
 fi
-
-
-find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
+# Find command updated to include webp and match common extensions
+find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
     relative_image_path="${source_image_path#$SOURCE_BASE_DIR/}"
     image_subdir=$(dirname "$relative_image_path")
     filename=$(basename "$source_image_path")
@@ -81,51 +80,40 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
     echo
     echo "Processing $source_image_path..."
 
-    # --- START: NEW LOGIC FOR BLOG-SPECIFIC RESIZING ---
-    if [[ "$relative_image_path" == blog/* ]]; then
-        echo "  -> Blog image detected. Generating responsive sizes..."
-        for width in 400 800; do
-            local_avif_path="${current_output_dir}/${base_name}-${width}.avif"
-            local_webp_path="${current_output_dir}/${base_name}-${width}.webp"
-            local_fallback_path="${current_output_dir}/${base_name}-${width}.${extension_lower}"
+    # --- UPDATED: Universal Responsive Generation ---
+    # We generate 400 and 800 widths for ALL images now, not just blog
+    echo "  -> Generating responsive sizes (400px, 800px)..."
+    for width in 400 800; do
+        local_avif_path="${current_output_dir}/${base_name}-${width}.avif"
+        local_webp_path="${current_output_dir}/${base_name}-${width}.webp"
+        
+        # Optional: Generate a small JPG/PNG fallback if needed, but usually WebP/AVIF is enough for srcset
+        # local_fallback_path="${current_output_dir}/${base_name}-${width}.${extension_lower}"
 
-            echo "     - Creating versions for ${width}px width..."
+        # Create AVIF and WebP for the current size
+        # We use > to ensure we don't upscale small images
+        avif_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $IM_AVIF_QUALITY \"$local_avif_path\""
+        webp_resize_cmd="magick \"$source_image_path\" -resize '${width}>' -quality $IM_WEBP_QUALITY \"$local_webp_path\""
 
-            # Create AVIF, WebP, and Fallback for the current size
-            avif_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $IM_AVIF_QUALITY \"$local_avif_path\""
-            webp_resize_cmd="magick \"$source_image_path\" -resize '${width}>' -quality $IM_WEBP_QUALITY \"$local_webp_path\""
-            fallback_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $JPEG_FALLBACK_QUALITY \"$local_fallback_path\""
-
-            if [ "$DRY_RUN" = false ]; then
-                eval "$avif_resize_cmd"
-                eval "$webp_resize_cmd"
-                eval "$fallback_resize_cmd"
-            else
-                echo "       - Would run: $avif_resize_cmd"
-                echo "       - Would run: $webp_resize_cmd"
-                echo "       - Would run: $fallback_resize_cmd"
-            fi
-        done
-    fi
+        if [ "$DRY_RUN" = false ]; then
+            eval "$avif_resize_cmd"
+            eval "$webp_resize_cmd"
+        fi
+    done
     # --- END: NEW LOGIC ---
 
     # --- Standard processing for the largest (1600px max) version ---
     echo "  -> Generating max-width ($UNIVERSAL_MAX_WIDTH px) versions..."
     
-    # Define paths for the max-width version
     avif_output_path="${current_output_dir}/${base_name}.avif"
     webp_output_path="${current_output_dir}/${base_name}.webp"
     fallback_output_path="${current_output_dir}/${base_name}.${extension_lower}"
     
-    # Use a temporary file for resizing to avoid re-reading the large original
     temp_resized_image_path="${current_output_dir}/${base_name}_resized_temp.$extension_lower"
     magick "$source_image_path" -resize "${UNIVERSAL_MAX_WIDTH}>" "$temp_resized_image_path"
-    
-    # Generate formats from the resized temporary file
     magick "$temp_resized_image_path" +profile "*" -quality $IM_AVIF_QUALITY "$avif_output_path"
-    magick "$temp_resized_image_path" -quality $IM_WEBP_QUALITY "$webp_output_path"
+    magick "$temp_resized_image_path" +profile "*" -quality $IM_WEBP_QUALITY "$webp_output_path"
     
-    # Handle original fallback (JPEG or PNG)
     if [[ "$extension_lower" =~ ^(jpg|jpeg)$ ]]; then
         magick "$temp_resized_image_path" +profile "*" -define jpeg:extent=${JPEG_FALLBACK_TARGET_SIZE_KB}KB -quality $JPEG_FALLBACK_QUALITY "$fallback_output_path"
     elif [[ "$extension_lower" == "png" ]]; then
@@ -135,10 +123,9 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
         fi
     fi
     
-    # Clean up the temporary file
     rm "$temp_resized_image_path"
     
-    echo "  -> Max-width versions created."
+    echo "  -> Processing complete for $filename"
     echo "---"
 
 done
