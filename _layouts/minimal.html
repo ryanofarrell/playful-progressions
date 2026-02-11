@@ -6,7 +6,11 @@
   {% comment %} Add body class for styling based on background {% endcomment %}
   <body class="body-light-background">
 
-    {{ content }}
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <main id="main-content">
+      {{ content }}
+    </main>
 
   {% comment %}
     Optionally include minimal scripts here if needed for the 404 page,
