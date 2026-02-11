@@ -33,11 +33,51 @@ class="mini-masthead position-relative text-center text-white">
       {% if maria %}
         <div class="col-sm-4">
           <div class="team-member">
-            <img
-              class="mx-auto rounded-circle"
-              src="{{ maria.image | relative_url }}"
-              alt="{{ maria.name }}"
-              loading="lazy" />
+            {% assign img_src = maria.image %}
+            {% assign parts = img_src | split: "." %}
+            {% assign parts_size = parts.size %}
+            {% assign base_parts_size = parts_size | minus: 1 %}
+            {% if base_parts_size > 0 %}
+              {% assign img_base = parts | slice: 0, base_parts_size | join: "." %}
+            {% else %}
+              {% assign img_base = img_src %}
+            {% endif %}
+
+            {% assign avif_path = img_base | append: ".avif" %}
+            {% assign webp_path = img_base | append: ".webp" %}
+            {% assign jpg_path = img_base | append: ".jpg" %}
+            {% assign jpeg_path = img_base | append: ".jpeg" %}
+            {% assign png_path = img_base | append: ".png" %}
+
+            {% assign avif_file = site.static_files | where: "path", avif_path | first %}
+            {% assign webp_file = site.static_files | where: "path", webp_path | first %}
+            {% assign jpg_file = site.static_files | where: "path", jpg_path | first %}
+            {% assign jpeg_file = site.static_files | where: "path", jpeg_path | first %}
+            {% assign png_file = site.static_files | where: "path", png_path | first %}
+
+            {% assign fallback_src = img_src %}
+            {% if jpg_file %}
+              {% assign fallback_src = jpg_path %}
+            {% elsif jpeg_file %}
+              {% assign fallback_src = jpeg_path %}
+            {% elsif png_file %}
+              {% assign fallback_src = png_path %}
+            {% endif %}
+
+            <picture>
+              {% if avif_file %}
+              <source srcset="{{ avif_path | relative_url }}" type="image/avif">
+              {% endif %}
+              {% if webp_file %}
+              <source srcset="{{ webp_path | relative_url }}" type="image/webp">
+              {% endif %}
+              <img
+                class="mx-auto rounded-circle"
+                src="{{ fallback_src | relative_url }}"
+                alt="{{ maria.name }}"
+                loading="lazy"
+                decoding="async" />
+            </picture>
             <h4>{{ maria.name }}</h4>
             <p class="text-muted">{{ maria.role }}</p>
           </div>
@@ -799,6 +839,16 @@ permalink: /meet-maria/
             </div>
           </div>
         {% endif %}
+
+        <div class="row mt-5">
+          <div class="col-lg-8 mx-auto text-center">
+            <div class="bg-light p-5 rounded">
+              <h3 class="section-heading mb-3">Ready to Work with Maria?</h3>
+              <p class="text-muted mb-4">Discover how her personalized approach can support your child's growth and development.</p>
+              <a class="btn btn-primary btn-xl text-uppercase" href="{{ '/services/' | relative_url }}">View Services</a>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -2380,15 +2430,15 @@ header:
 image: /assets/images/processed/blog/indoor-play-atlanta.jpeg
 ---
 
-I’m a big believer in outdoor play—for the sensory input, the fresh air, and the endless opportunities for movement. That said, I did not move to Atlanta to experience weeks of subfreezing temperatures. When it’s cold, dark, and everyone is bouncing off the walls, staying home with two young children who need movement to regulate is… not the vibe.
+I’m a big believer in outdoor play—for the sensory input, the fresh air, and the endless opportunities for movement. That said, I did not move to Atlanta to experience weeks of subfreezing temperatures. When it’s cold, dark, and everyone is bouncing off the walls, staying home with two young children who need movement to [regulate](/services/#treatments) is… not the vibe.
 
 When we absolutely have to get out of the house, these are our five favorite indoor go-tos for cold days—places where kids can move their bodies and parents can breathe.
 
-## 1. HippoHopp | Brookhaven
+## 1. HippoHopp | [Brookhaven](/service-areas/)
 
 [HippoHopp](https://hippohopp.com/){:target="_blank"} is a staple for indoor play in Atlanta. With multiple bouncy houses, a large climbing structure, and a thoughtfully designed toddler area, this space works well for a wide range of ages. Parents can relax in seating areas or jump in and play alongside their kids (which mine always request).
 
-From an OT perspective, Hippo Hopp provides excellent opportunities for **proprioceptive input**, **vestibular movement**, and **motor planning**. On busy days, the environment can feel overstimulating, but the staff is incredibly accommodating and often able to provide quieter space when party rooms are not in use.
+From an OT perspective, Hippo Hopp provides excellent opportunities for **[proprioceptive input](/services/#treatments)**, **[vestibular movement](/services/#treatments)**, and **[motor planning](/services/#treatments)**. On busy days, the environment can feel overstimulating, but the staff is incredibly accommodating and often able to provide quieter space when party rooms are not in use.
 
 **OT Tips:**
 *   **Take Breaks:** Encourage your child to take movement breaks between bouncy houses to avoid sensory overload.
@@ -2396,7 +2446,7 @@ From an OT perspective, Hippo Hopp provides excellent opportunities for **propri
 *   **Regulation:** Use deep pressure (tight hugs, squeezes, or wall pushes) before leaving or frequently throughout the experience to support regulation.
 *   **Timing:** Visit during off-peak hours if your child is sensitive to noise or crowds.
 
-## 2. Atlanta History Center | Buckhead
+## 2. Atlanta History Center | [Buckhead](/service-areas/)
 
 The [Atlanta History Center](https://www.atlantahistorycenter.com/){:target="_blank"} features a newer child-friendly play area that offers something for nearly every age. Toddlers can explore giant foam blocks and open-ended play, while older children engage in multisensory exhibits—including a slide my daughter still talks about.
 
@@ -2418,18 +2468,18 @@ The children’s area, **NatureQuest**, is where we spend most of our time. Rope
 *   **Regulation Breaks:** Use the quiet exhibits as a built-in regulation break when the play area gets too loud.
 *   **Body Awareness:** Practice body awareness by talking through where feet and hands go on rope bridges. If your child experiences gravitational insecurity, use deep pressure to regulate before and after exploring.
 
-## 4. The Alliance Theatre | Midtown
+## 4. The Alliance Theatre | [Midtown](/service-areas/)
 
 The [Alliance Theatre](https://alliancetheatre.org/){:target="_blank"} recently opened PNC PlaySpace, a free indoor play experience for children ages 0–5. The current exhibit, *Bossa Nova Baby*, immerses children in a sensory-rich Brazilian rainforest environment designed for movement, exploration, and engagement.
 
-Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. These shows are intentionally designed for young audiences—movement is encouraged, seating is flexible, and children are invited to experience theater with their whole bodies. (Yes, this OT fully supports that.) I’ve even recommended their dinosaur show to feeding clients for its thoughtful exploration of sitting at the dinner table.
+Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. These shows are intentionally designed for young audiences—movement is encouraged, seating is flexible, and children are invited to experience theater with their whole bodies. (Yes, this OT fully supports that.) I’ve even recommended their dinosaur show to [feeding clients](/services/#treatments) for its thoughtful exploration of sitting at the dinner table.
 
 **OT Tips:**
 *   **Child-Led Play:** Let children explore the space at their own pace—there’s no “right” way to play.
 *   **Active Sitting:** Use performances to practice sitting with movement (wiggles are allowed!).
 *   **Transitions:** Pair shows with PlaySpace time to meet sensory needs before sitting for a show.
 
-## 5. Kids Empire | Chamblee
+## 5. Kids Empire | [Chamblee](/service-areas/)
 
 [Kids Empire](https://www.kidsempire.com/park/plaza-fiesta){:target="_blank"} is a large indoor play space offering climbing, sliding, biking, dancing, and opportunities for safe risk-taking. The toddler area includes a big ball pit that provides excellent proprioceptive and tactile input, along with climbing and crawling challenges.
 
@@ -2742,6 +2792,55 @@ Most importantly, avoid shaming your child. Meet them with encouragement and und
 --- END OF FILE: ./_posts/2025-09-21-back-to-school-regression.md ---
 
 
+--- START OF FILE: ./verify_images.py ---
+
+from playwright.sync_api import sync_playwright
+import os
+
+def run():
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+
+        # Verify Home Page Team Section
+        print("Navigating to Home Page...")
+        page.goto("file:///app/_site/index.html")
+
+        # Wait for team section
+        team_section = page.locator("#team")
+        if team_section.count() > 0:
+            team_section.scroll_into_view_if_needed()
+            page.wait_for_timeout(1000) # Give time for lazy loading
+
+            print("Taking screenshot of team section...")
+            team_section.screenshot(path="verification_team.png")
+        else:
+            print("Team section not found!")
+
+        # Verify Gift Guide Post
+        print("Navigating to Gift Guide Post...")
+        page.goto("file:///app/_site/blog/gift-guide-2024.html")
+
+        # Find a figure
+        figures = page.locator("figure")
+        count = figures.count()
+        print(f"Found {count} figures")
+
+        if count > 0:
+            # Capture the first few figures
+            for i in range(min(3, count)):
+                fig = figures.nth(i)
+                fig.scroll_into_view_if_needed()
+                page.wait_for_timeout(500)
+                fig.screenshot(path=f"verification_figure_{i}.png")
+
+        browser.close()
+
+if __name__ == "__main__":
+    run()
+--- END OF FILE: ./verify_images.py ---
+
+
 --- START OF FILE: ./404.html ---
 
 ---
@@ -2822,7 +2921,7 @@ USE_OPTIPNG=false
 USE_PNGQUANT=true
 PNGQUANT_QUALITY="65-80"
 
-DRY_RUN=false # Keep true for initial testing
+DRY_RUN=false 
 # ---------------------
 
 # --- Helper function to get file size reliably on both macOS and Linux ---
@@ -2859,9 +2958,8 @@ if [ "$USE_PNGQUANT" = true ] && ! command -v pngquant &>/dev/null; then
     echo "Warning: pngquant command not found, USE_PNGQUANT is true. Skipping pngquant." >&2
     USE_PNGQUANT=false
 fi
-
-
-find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
+# Find command updated to include webp and match common extensions
+find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
     relative_image_path="${source_image_path#$SOURCE_BASE_DIR/}"
     image_subdir=$(dirname "$relative_image_path")
     filename=$(basename "$source_image_path")
@@ -2882,51 +2980,41 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
     echo
     echo "Processing $source_image_path..."
 
-    # --- START: NEW LOGIC FOR BLOG-SPECIFIC RESIZING ---
-    if [[ "$relative_image_path" == blog/* ]]; then
-        echo "  -> Blog image detected. Generating responsive sizes..."
-        for width in 400 800; do
-            local_avif_path="${current_output_dir}/${base_name}-${width}.avif"
-            local_webp_path="${current_output_dir}/${base_name}-${width}.webp"
-            local_fallback_path="${current_output_dir}/${base_name}-${width}.${extension_lower}"
+    # --- UPDATED: Universal Responsive Generation ---
+    # We generate 400 and 800 widths for ALL images now, not just blog
+    echo "  -> Generating responsive sizes (400px, 800px)..."
+    for width in 400 800; do
+        local_avif_path="${current_output_dir}/${base_name}-${width}.avif"
+        local_webp_path="${current_output_dir}/${base_name}-${width}.webp"
+        
+        # Optional: Generate a small JPG/PNG fallback if needed, but usually WebP/AVIF is enough for srcset
+        # local_fallback_path="${current_output_dir}/${base_name}-${width}.${extension_lower}"
 
-            echo "     - Creating versions for ${width}px width..."
+        # Create AVIF and WebP for the current size
+        # We use > to ensure we don't upscale small images
+        avif_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $IM_AVIF_QUALITY \"$local_avif_path\""
+        webp_resize_cmd="magick \"$source_image_path\" -resize '${width}>' -quality $IM_WEBP_QUALITY \"$local_webp_path\""
 
-            # Create AVIF, WebP, and Fallback for the current size
-            avif_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $IM_AVIF_QUALITY \"$local_avif_path\""
-            webp_resize_cmd="magick \"$source_image_path\" -resize '${width}>' -quality $IM_WEBP_QUALITY \"$local_webp_path\""
-            fallback_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $JPEG_FALLBACK_QUALITY \"$local_fallback_path\""
-
-            if [ "$DRY_RUN" = false ]; then
-                eval "$avif_resize_cmd"
-                eval "$webp_resize_cmd"
-                eval "$fallback_resize_cmd"
-            else
-                echo "       - Would run: $avif_resize_cmd"
-                echo "       - Would run: $webp_resize_cmd"
-                echo "       - Would run: $fallback_resize_cmd"
-            fi
-        done
-    fi
+        if [ "$DRY_RUN" = false ]; then
+            eval "$avif_resize_cmd"
+            eval "$webp_resize_cmd"
+        fi
+    done
     # --- END: NEW LOGIC ---
 
     # --- Standard processing for the largest (1600px max) version ---
     echo "  -> Generating max-width ($UNIVERSAL_MAX_WIDTH px) versions..."
     
-    # Define paths for the max-width version
     avif_output_path="${current_output_dir}/${base_name}.avif"
     webp_output_path="${current_output_dir}/${base_name}.webp"
     fallback_output_path="${current_output_dir}/${base_name}.${extension_lower}"
     
-    # Use a temporary file for resizing to avoid re-reading the large original
     temp_resized_image_path="${current_output_dir}/${base_name}_resized_temp.$extension_lower"
     magick "$source_image_path" -resize "${UNIVERSAL_MAX_WIDTH}>" "$temp_resized_image_path"
     
-    # Generate formats from the resized temporary file
     magick "$temp_resized_image_path" +profile "*" -quality $IM_AVIF_QUALITY "$avif_output_path"
     magick "$temp_resized_image_path" -quality $IM_WEBP_QUALITY "$webp_output_path"
     
-    # Handle original fallback (JPEG or PNG)
     if [[ "$extension_lower" =~ ^(jpg|jpeg)$ ]]; then
         magick "$temp_resized_image_path" +profile "*" -define jpeg:extent=${JPEG_FALLBACK_TARGET_SIZE_KB}KB -quality $JPEG_FALLBACK_QUALITY "$fallback_output_path"
     elif [[ "$extension_lower" == "png" ]]; then
@@ -2936,10 +3024,9 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
         fi
     fi
     
-    # Clean up the temporary file
     rm "$temp_resized_image_path"
     
-    echo "  -> Max-width versions created."
+    echo "  -> Processing complete for $filename"
     echo "---"
 
 done
@@ -2957,9 +3044,12 @@ echo "Bulk image conversion script finished."
 
   <body id="page-top" class="body-light-background">
 
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
     {% include navigation.html %}
 
-    <article class="post-content page-section">
+    <main id="main-content">
+      <article class="post-content page-section">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
@@ -3182,7 +3272,8 @@ echo "Bulk image conversion script finished."
           </div>
         </div>
       </div>
-    </article>
+      </article>
+    </main>
 
     {% include footer.html %}
 
@@ -3291,6 +3382,8 @@ layout: default
     <body id="page-top" class="body-light-background">
   {% endif %}
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   {%- comment -%} Conditionally add the IntersectionObserver sentinel ONLY on the homepage {%- endcomment -%}
   {% if page.layout == "home" %}
     <div id="navbar-sentinel" style="position: absolute; top: 100px;"></div>
@@ -3305,7 +3398,9 @@ layout: default
     {% include mini-masthead.html %}
   {% endif %}
 
-  {{ content }}
+  <main id="main-content">
+    {{ content }}
+  </main>
 
   {% include footer.html %}
 
@@ -3346,7 +3441,11 @@ layout: default
   {% comment %} Add body class for styling based on background {% endcomment %}
   <body class="body-light-background">
 
-    {{ content }}
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <main id="main-content">
+      {{ content }}
+    </main>
 
   {% comment %}
     Optionally include minimal scripts here if needed for the 404 page,
@@ -3365,7 +3464,6 @@ layout: default
 title: "Pediatric OT Blog"
 description: "Explore the Playful Progressions blog for expert articles on child development, occupational therapy activities, and parenting tips from pediatric OT Maria O'Farrell."
 subtitle: Latest posts and articles
-permalink: /blog/
 ---
 
 <section class="page-section" id="blog">
@@ -3384,7 +3482,7 @@ permalink: /blog/
       </div>
     </div>
     <div class="row" id="blog-post-list">
-        {% for post in paginator.posts %}
+      {% for post in paginator.posts %}
         <div class="col-md-6 col-lg-4 mb-4 blog-post-card" data-tags="{% if post.tag %}{{ post.tag | slugify }}{% endif %}">
           <div class="blog-card">
             <a href="{{ post.url | relative_url }}">
@@ -3502,6 +3600,10 @@ permalink: /blog/
 ## 2026-02-09 - Loading State for Formspree Forms
 **Learning:** Adding a visual loading state (spinner + text change) to Formspree forms significantly improves feedback during the async submission process, which can otherwise feel unresponsive.
 **Action:** Apply this pattern (spinner icon + text update + disable button) to all async form submissions in Jekyll/jQuery sites.
+
+## 2026-02-12 - Skip to Main Content Link
+**Learning:** Keyboard users and screen reader users need a way to bypass repetitive navigation menus to access the main content quickly. A "Skip to main content" link is a critical accessibility requirement.
+**Action:** Implemented a visible-on-focus skip link using a custom `.skip-link` component and `<main id="main-content">` wrapper in `_layouts/default.html`. This pattern should be standard for all layouts.
 
 --- END OF FILE: ./.Jules/palette.md ---
 
@@ -5529,6 +5631,33 @@ header.masthead {
 --- END OF FILE: ./_sass/components/_navbar.scss ---
 
 
+--- START OF FILE: ./_sass/components/_skip-link.scss ---
+
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 0;
+  z-index: 9999;
+  padding: 1rem;
+  background-color: $white;
+  color: $primary;
+  text-decoration: none;
+  border: 1px solid $primary;
+
+  &:focus {
+    top: 0;
+    left: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+--- END OF FILE: ./_sass/components/_skip-link.scss ---
+
+
 --- START OF FILE: ./_sass/components/_buttons.scss ---
 
 // Button Styles
@@ -6524,6 +6653,16 @@ permalink: /services/
       </section>
     {% endfor %}
 
+    <div class="row mt-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <div class="bg-light p-5 rounded">
+          <h2 class="section-heading mb-3">Not Sure Where to Begin?</h2>
+          <p class="text-muted mb-4">Every child is unique. If you're unsure which service is right for you, let's chat about your specific needs.</p>
+          <a class="btn btn-primary btn-xl text-uppercase" href="{{ '/contact/' | relative_url }}">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 --- END OF FILE: ./services.html ---
@@ -6608,6 +6747,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "components/navbar.scss";
 @import "components/client-scroll.scss";
 @import "components/_blog-filter.scss";
+@import "components/skip-link";
 
 // Layout
 @import "layout/masthead.scss";
@@ -8121,6 +8261,85 @@ $(function () {
 --- END OF FILE: ./assets/js/jqBootstrapValidation.min.js ---
 
 
+--- START OF FILE: ./verify_images_server.py ---
+
+import subprocess
+import time
+import os
+import signal
+from playwright.sync_api import sync_playwright
+
+def run():
+    # Start HTTP server
+    print("Starting HTTP server...")
+    server_process = subprocess.Popen(
+        ["python3", "-m", "http.server", "8000", "--directory", "_site"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL
+    )
+
+    try:
+        time.sleep(2) # Wait for server to start
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            page = browser.new_page()
+
+            # Verify Home Page Team Section
+            print("Navigating to Home Page...")
+            # Navigate to root, which serves index.html by default
+            response = page.goto("http://localhost:8000/")
+            if not response.ok:
+                print(f"Failed to load home page: {response.status}")
+
+            # Wait for team section
+            team_section = page.locator("#team")
+            if team_section.count() > 0:
+                team_section.scroll_into_view_if_needed()
+                page.wait_for_timeout(2000) # Give extra time for lazy loading
+
+                print("Taking screenshot of team section...")
+                team_section.screenshot(path="verification_team.png")
+            else:
+                print("Team section not found!")
+
+            # Verify Gift Guide Post
+            print("Navigating to Gift Guide Post...")
+            # Note: The path depends on permalink structure. Earlier grep showed _site/blog/gift-guide-2024.html
+            response = page.goto("http://localhost:8000/blog/gift-guide-2024.html")
+            if not response.ok:
+                print(f"Failed to load blog post: {response.status}")
+                # Try directory index if html extension is stripped
+                response = page.goto("http://localhost:8000/blog/gift-guide-2024/")
+
+            # Find a figure
+            figures = page.locator("figure")
+            count = figures.count()
+            print(f"Found {count} figures")
+
+            if count > 0:
+                # Capture the first few figures
+                for i in range(min(3, count)):
+                    fig = figures.nth(i)
+                    fig.scroll_into_view_if_needed()
+                    page.wait_for_timeout(1000)
+                    fig.screenshot(path=f"verification_figure_{i}.png")
+
+            browser.close()
+
+    finally:
+        print("Stopping HTTP server...")
+        server_process.terminate()
+        try:
+            server_process.wait(timeout=5)
+        except subprocess.TimeoutExpired:
+            server_process.kill()
+
+if __name__ == "__main__":
+    run()
+--- END OF FILE: ./verify_images_server.py ---
+
+
 --- START OF FILE: ./faq.html ---
 
 ---
@@ -8154,6 +8373,16 @@ permalink: /faq/
         {% endfor %}
 
       {% comment %} Add more FAQ items here as needed in the data file {% endcomment %}
+
+      <div class="row mt-5">
+        <div class="col-lg-8 mx-auto text-center">
+          <div class="bg-light p-5 rounded">
+            <h3 class="section-heading mb-3">Still Have Questions?</h3>
+            <p class="text-muted mb-4">We're here to help! Reach out to us directly for more information or specific inquiries.</p>
+            <a class="btn btn-primary btn-xl text-uppercase" href="{{ '/contact/' | relative_url }}">Contact Us</a>
+          </div>
+        </div>
+      </div>
 
       </div>
     </div>
