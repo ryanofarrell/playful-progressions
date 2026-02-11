@@ -111,9 +111,8 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
     
     temp_resized_image_path="${current_output_dir}/${base_name}_resized_temp.$extension_lower"
     magick "$source_image_path" -resize "${UNIVERSAL_MAX_WIDTH}>" "$temp_resized_image_path"
-    
     magick "$temp_resized_image_path" +profile "*" -quality $IM_AVIF_QUALITY "$avif_output_path"
-    magick "$temp_resized_image_path" -quality $IM_WEBP_QUALITY "$webp_output_path"
+    magick "$temp_resized_image_path" +profile "*" -quality $IM_WEBP_QUALITY "$webp_output_path"
     
     if [[ "$extension_lower" =~ ^(jpg|jpeg)$ ]]; then
         magick "$temp_resized_image_path" +profile "*" -define jpeg:extent=${JPEG_FALLBACK_TARGET_SIZE_KB}KB -quality $JPEG_FALLBACK_QUALITY "$fallback_output_path"

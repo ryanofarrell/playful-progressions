@@ -14,10 +14,27 @@ permalink: /meet-maria/
           <div class="col-md-4 text-center mb-4">
             {% assign maria = site.data.sitetext.team.people | where: "name", "Maria O'Farrell" | first %}
             {% if maria %}
-              <img
-                class="mx-auto rounded-circle img-fluid mb-3"
-                src="{{ maria.image | relative_url }}"
-                alt="{{ maria.name }}">
+              {% assign img_src = maria.image %}
+              {% assign img_base = img_src | split: "." | first %}
+
+              <picture>
+                <source
+                  srcset="{{ img_base | append: '-400.avif' | relative_url }} 400w, 
+                {{ img_base | append: '-800.avif' | relative_url }} 800w"
+                  sizes="(max-width: 767px) 200px, 400px"
+                  type="image/avif">
+                <source
+                  srcset="{{ img_base | append: '-400.webp' | relative_url }} 400w, 
+                {{ img_base | append: '-800.webp' | relative_url }} 800w"
+                  sizes="(max-width: 767px) 200px, 400px"
+                  type="image/webp">
+                <img
+                  class="mx-auto rounded-circle img-fluid mb-3"
+                  src="{{ img_src | relative_url }}"
+                  alt="{{ maria.name }}"
+                  width="400"
+                  height="400">
+              </picture>
               <h2>{{ maria.name }}</h2>
               <p class="text-muted">{{ maria.role }}</p>
             {% endif %}
