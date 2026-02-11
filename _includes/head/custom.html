@@ -59,6 +59,13 @@
           }{%- unless forloop.last -%},{%- endunless -%}
         {%- endfor -%}
       ],
+      {%- assign expertise = "" | split: "" -%}
+      {%- for group in sitetext.about.what-we-treat -%}
+        {%- for item in group.items -%}
+          {%- assign expertise = expertise | push: item -%}
+        {%- endfor -%}
+      {%- endfor -%}
+      "knowsAbout": {{ expertise | jsonify }},
       "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"]
     }
   </script>
