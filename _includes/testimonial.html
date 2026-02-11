@@ -14,8 +14,13 @@
           <li
             data-target="#testimonial-carousel"
             data-slide-to="{{ forloop.index0 }}"
+            role="button"
+            tabindex="0"
+            aria-label="Slide {{ forloop.index }}"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"
             {% if forloop.first %}
             class="active"
+            aria-current="true"
             {% endif %}></li>
         {% endfor %}
       </ol>
