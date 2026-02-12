@@ -18,7 +18,7 @@ When we absolutely have to get out of the house, these are our five favorite ind
 
 ## 1. HippoHopp | [Brookhaven](/service-areas/)
 
-[HippoHopp](https://hippohopp.com/){:target="_blank"} is a staple for indoor play in Atlanta. With multiple bouncy houses, a large climbing structure, and a thoughtfully designed toddler area, this space works well for a wide range of ages. Parents can relax in seating areas or jump in and play alongside their kids (which mine always request).
+[HippoHopp](https://hippohopp.com/){:target="_blank" rel="noopener noreferrer"} is a staple for indoor play in Atlanta. With multiple bouncy houses, a large climbing structure, and a thoughtfully designed toddler area, this space works well for a wide range of ages. Parents can relax in seating areas or jump in and play alongside their kids (which mine always request).
 
 From an OT perspective, Hippo Hopp provides excellent opportunities for **[proprioceptive input](/services/#treatments)**, **[vestibular movement](/services/#treatments)**, and **[motor planning](/services/#treatments)**. On busy days, the environment can feel overstimulating, but the staff is incredibly accommodating and often able to provide quieter space when party rooms are not in use.
 
@@ -30,7 +30,7 @@ From an OT perspective, Hippo Hopp provides excellent opportunities for **[propr
 
 ## 2. Atlanta History Center | [Buckhead](/service-areas/)
 
-The [Atlanta History Center](https://www.atlantahistorycenter.com/){:target="_blank"} features a newer child-friendly play area that offers something for nearly every age. Toddlers can explore giant foam blocks and open-ended play, while older children engage in multisensory exhibits—including a slide my daughter still talks about.
+The [Atlanta History Center](https://www.atlantahistorycenter.com/){:target="_blank" rel="noopener noreferrer"} features a newer child-friendly play area that offers something for nearly every age. Toddlers can explore giant foam blocks and open-ended play, while older children engage in multisensory exhibits—including a slide my daughter still talks about.
 
 One of my favorite features is the cozy reading nook, which provides a natural sensory break. The craft area is always stocked with coloring, cutting, and fine motor activities, and the museum exhibits themselves offer a calm, low-stim environment that balances out higher-energy play.
 
@@ -41,7 +41,7 @@ One of my favorite features is the cozy reading nook, which provides a natural s
 
 ## 3. Fernbank Museum | Druid Hills
 
-[Fernbank](https://www.fernbankmuseum.org/){:target="_blank"} is a dream for kids who love dinosaurs, climbing, and hands-on learning. The large fossil exhibits immediately capture attention, while upstairs areas offer crafts, tangram puzzles, and a STEAM lab with microscopes and experiments.
+[Fernbank](https://www.fernbankmuseum.org/){:target="_blank" rel="noopener noreferrer"} is a dream for kids who love dinosaurs, climbing, and hands-on learning. The large fossil exhibits immediately capture attention, while upstairs areas offer crafts, tangram puzzles, and a STEAM lab with microscopes and experiments.
 
 The children’s area, **NatureQuest**, is where we spend most of our time. Rope bridges, climbing structures, slides, live animals, and interactive environments provide rich sensory and motor experiences. When it’s time to calm down, the exhibits outside the children’s area are quiet, dimly lit, and perfect for regulation. If weather allows, WildWoods and the Canopy Walk are worth bundling up for.
 
@@ -52,7 +52,7 @@ The children’s area, **NatureQuest**, is where we spend most of our time. Rope
 
 ## 4. The Alliance Theatre | [Midtown](/service-areas/)
 
-The [Alliance Theatre](https://alliancetheatre.org/){:target="_blank"} recently opened PNC PlaySpace, a free indoor play experience for children ages 0–5. The current exhibit, *Bossa Nova Baby*, immerses children in a sensory-rich Brazilian rainforest environment designed for movement, exploration, and engagement.
+The [Alliance Theatre](https://alliancetheatre.org/){:target="_blank" rel="noopener noreferrer"} recently opened PNC PlaySpace, a free indoor play experience for children ages 0–5. The current exhibit, *Bossa Nova Baby*, immerses children in a sensory-rich Brazilian rainforest environment designed for movement, exploration, and engagement.
 
 Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. These shows are intentionally designed for young audiences—movement is encouraged, seating is flexible, and children are invited to experience theater with their whole bodies. (Yes, this OT fully supports that.) I’ve even recommended their dinosaur show to [feeding clients](/services/#treatments) for its thoughtful exploration of sitting at the dinner table.
 
@@ -63,7 +63,7 @@ Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. T
 
 ## 5. Kids Empire | [Chamblee](/service-areas/)
 
-[Kids Empire](https://www.kidsempire.com/park/plaza-fiesta){:target="_blank"} is a large indoor play space offering climbing, sliding, biking, dancing, and opportunities for safe risk-taking. The toddler area includes a big ball pit that provides excellent proprioceptive and tactile input, along with climbing and crawling challenges.
+[Kids Empire](https://www.kidsempire.com/park/plaza-fiesta){:target="_blank" rel="noopener noreferrer"} is a large indoor play space offering climbing, sliding, biking, dancing, and opportunities for safe risk-taking. The toddler area includes a big ball pit that provides excellent proprioceptive and tactile input, along with climbing and crawling challenges.
 
 For children who become overwhelmed in busy environments, the space underneath the main play structure offers a calmer setting with oversized blocks and quieter play opportunities.
 
