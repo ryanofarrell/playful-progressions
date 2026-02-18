@@ -9,3 +9,7 @@
 ## 2026-02-13 - Carousel Indicator Accessibility
 **Learning:** Carousel indicators are often implemented as non-interactive list items (`<li>`), making them inaccessible to keyboard users. Screen readers also need context about what these items do.
 **Action:** Added `role="button"`, `tabindex="0"`, `aria-label="Slide X"`, and `onkeydown` handlers (for Enter/Space) to testimonial carousel indicators to ensure full keyboard accessibility.
+
+## 2026-02-14 - Focus States on Custom Icons
+**Learning:** Custom interactive elements, like icon-only links (`.contact-icon`), often lack visible `:focus` states, making them difficult for keyboard users to navigate.
+**Action:** Ensure all interactive elements have a clear, high-contrast `:focus` state (e.g., outline or box-shadow ring) that is distinct from the default browser style if custom styling is applied.

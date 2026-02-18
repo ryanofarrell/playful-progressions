@@ -88,7 +88,17 @@
   /* Common styles for Contact Icons */
   /* Base size and spacing between icons (mobile spacing) */
   .contact-icon {
+    display: inline-block; // Ensure it respects box model properties
     font-size: 1.3rem; /* Adjust icon size */
+    border-radius: 50%; // Rounded for focus ring
+    padding: 2px; // specific padding to avoid overlap with content
+    transition: box-shadow 0.2s; // Smooth transition
+
+    &:focus {
+      outline: none; // Remove default outline
+      box-shadow: 0 0 0 0.2rem rgba($action, 0.5); // Add a visible ring using the action color
+    }
+
     /* Default color defined below */
 
     /* Mobile Contact Icon Active/Focus Color */
