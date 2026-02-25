@@ -26,16 +26,9 @@ permalink: /service-areas/
           {% endfor %}
         </div>
 
-        <div class="text-center mt-5">
-          <p class="text-muted lead">
-            {{ site.data.sitetext.location_info.location_note_pre_link }}
-            <a href="{{ site.data.sitetext.location_info.location_note_link_url | relative_url }}" class="btn btn-primary btn-sm">
-              {{ site.data.sitetext.location_info.location_note_link_text }}
-            </a>
-          </p>
-        </div>
-
       </div>
     </div>
   </div>
 </section>
+
+{% include soft_hook.html title="Don't see your neighborhood?" text="We do our best to accommodate families in the North Atlanta area. Contact us to discuss options!" btn_text="Contact Us" %}
