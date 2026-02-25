@@ -30,9 +30,13 @@
     margin-bottom: 5px; /* Space below the toggler */
     width: 120px; /* Adjust this value as needed */
     // Add hover/focus styles for toggler on mobile if desired
-    &:hover,
-    &:focus {
+    &:hover {
       color: white; /* Example: Primary color on hover/focus */
+    }
+    &:focus {
+      color: white;
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
     }
   }
 
@@ -43,9 +47,13 @@
     transition: all 0.3s; /* Smooth brand transition */
     &.active,
     &:active,
-    &:focus,
     &:hover {
       color: darken($primary, 10%); /* Hover effect */
+    }
+    &:focus {
+      color: darken($primary, 10%);
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
     }
   }
 
@@ -70,6 +78,11 @@
         &.active,
         &:hover {
           color: $action; /* Default active/hover color */
+        }
+        &:focus {
+          color: $action;
+          outline: 2px solid currentColor;
+          outline-offset: 2px;
         }
       }
     }
@@ -96,8 +109,13 @@
     .mobile-contact-icons & {
       &.active,
       &:active,
-      &:focus {
+      &:hover {
         color: darken($primary, 10%); /* Darkened primary color on click/focus */
+      }
+      &:focus {
+        color: darken($primary, 10%);
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
       }
     }
 
@@ -298,6 +316,11 @@
     color: $primary; /* Changed default color to primary */
     &:hover {
       color: darken($primary, 10%); /* Hover effect */
+    }
+    &:focus {
+      color: darken($primary, 10%);
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
     }
   }
 }
