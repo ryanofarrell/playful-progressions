@@ -55,7 +55,7 @@
                       src="{{ teaser_src }}"
                       alt="{{ page.title }} Teaser Image"
                       class="img-fluid rounded"
-                      loading="lazy"
+                      loading="eager"
                       width="1600"
                       height="800">
                   </picture>
@@ -205,17 +205,18 @@
                               {% assign related_teaser_src = post.header.teaser | relative_url %}
                               {% assign related_teaser_base = related_teaser_src | split: "." | first %}
                               <picture>
-                                {% assign related_avif_path = related_teaser_base | append: ".avif" %}
-                                {% assign related_avif_file = site.static_files | where: "path", related_avif_path | first %}
-                                {% if related_avif_file %}
-                                  <source srcset="{{ related_avif_path | relative_url }}" type="image/avif">
-                                {% endif %}
-
-                                {% assign related_webp_path = related_teaser_base | append: ".webp" %}
-                                {% assign related_webp_file = site.static_files | where: "path", related_webp_path | first %}
-                                {% if related_webp_file %}
-                                  <source srcset="{{ related_webp_path | relative_url }}" type="image/webp">
-                                {% endif %}
+                                <source
+                                  srcset="{{ related_teaser_base }}-400.avif 400w,
+                                          {{ related_teaser_base }}-800.avif 800w,
+                                          {{ related_teaser_base }}.avif 1600w"
+                                  sizes="(max-width: 767px) 90vw, (max-width: 991px) 45vw, 30vw"
+                                  type="image/avif">
+                                <source
+                                  srcset="{{ related_teaser_base }}-400.webp 400w,
+                                          {{ related_teaser_base }}-800.webp 800w,
+                                          {{ related_teaser_base }}.webp 1600w"
+                                  sizes="(max-width: 767px) 90vw, (max-width: 991px) 45vw, 30vw"
+                                  type="image/webp">
                                 <img
                                   src="{{ related_teaser_src }}"
                                   alt="{{ post.title }} Teaser"
