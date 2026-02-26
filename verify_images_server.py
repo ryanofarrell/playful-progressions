@@ -16,6 +16,7 @@ def run():
     try:
         time.sleep(2) # Wait for server to start
 
+        base_url = os.environ.get("BASE_URL", "http://localhost:8000").rstrip("/")
         with sync_playwright() as p:
             browser = p.chromium.launch()
             page = browser.new_page()
@@ -23,7 +24,7 @@ def run():
             # Verify Home Page Team Section
             print("Navigating to Home Page...")
             # Navigate to root, which serves index.html by default
-            response = page.goto("http://localhost:8000/")
+            response = page.goto(f"{base_url}/")
             if not response.ok:
                 print(f"Failed to load home page: {response.status}")
 
@@ -41,11 +42,11 @@ def run():
             # Verify Gift Guide Post
             print("Navigating to Gift Guide Post...")
             # Note: The path depends on permalink structure. Earlier grep showed _site/blog/gift-guide-2024.html
-            response = page.goto("http://localhost:8000/blog/gift-guide-2024.html")
+            response = page.goto(f"{base_url}/blog/gift-guide-2024.html")
             if not response.ok:
                 print(f"Failed to load blog post: {response.status}")
                 # Try directory index if html extension is stripped
-                response = page.goto("http://localhost:8000/blog/gift-guide-2024/")
+                response = page.goto(f"{base_url}/blog/gift-guide-2024/")
 
             # Find a figure
             figures = page.locator("figure")

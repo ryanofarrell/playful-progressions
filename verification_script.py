@@ -1,11 +1,13 @@
+import os
 from playwright.sync_api import sync_playwright
 
 def verify_cta():
+    base_url = os.environ.get("BASE_URL", "http://localhost:4000").rstrip("/")
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
         try:
-            response = page.goto("http://localhost:4000/blog/sensory-processing-in-womb.html")
+            response = page.goto(f"{base_url}/blog/sensory-processing-in-womb.html")
             if response.status != 200:
                 print(f"Failed to load page: {response.status}")
                 return

@@ -2,13 +2,14 @@ from playwright.sync_api import sync_playwright
 import os
 
 def run():
+    base_url = os.environ.get("BASE_URL", "file:///app/_site").rstrip("/")
     with sync_playwright() as p:
         browser = p.chromium.launch()
         page = browser.new_page()
 
         # Verify Home Page Team Section
         print("Navigating to Home Page...")
-        page.goto("file:///app/_site/index.html")
+        page.goto(f"{base_url}/index.html")
 
         # Wait for team section
         team_section = page.locator("#team")
@@ -23,7 +24,7 @@ def run():
 
         # Verify Gift Guide Post
         print("Navigating to Gift Guide Post...")
-        page.goto("file:///app/_site/blog/gift-guide-2024.html")
+        page.goto(f"{base_url}/blog/gift-guide-2024.html")
 
         # Find a figure
         figures = page.locator("figure")
