@@ -1,0 +1,19 @@
+<section class="page-section bg-light" id="home-cta">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Ready to See Your Child Thrive?</h2>
+        <h3 class="section-subheading text-muted">Let's work together to support their growth.</h3>
+        <a class="btn btn-primary btn-xl text-uppercase mb-4" href="{{ '/contact/' | relative_url }}">Get in Touch</a>
+
+        {% if site.instagram_url %}
+        <p class="text-muted">
+            Not ready to reach out yet? Follow us on
+            <a href="{{ site.instagram_url }}" target="_blank" rel="noopener noreferrer">Instagram</a>
+            for tips and updates.
+        </p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
