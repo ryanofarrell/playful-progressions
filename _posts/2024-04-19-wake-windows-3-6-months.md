@@ -13,7 +13,7 @@ image: /assets/images/processed/blog/wake-windows-3-6.jpeg
 
 ---
 
-_For 0-3 months [click here](wake-windows-0-3-months)_
+_For 0-3 months [click here](wake-windows-0-3-months)_ | _For 6-9 months [click here](wake-windows-6-9-months)_
 
 The 3-6 month phase was one of my favorites!  You are finally getting some positive feedback and encouragement from your little one– the smiles, the coos, watching them make connections and learn, it is truly the best!  Here are some ways to facilitate 3-6 month development!
 
