@@ -19,6 +19,12 @@ $(function () {
       // var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"; // Removed this line
       var url = $form.attr("action"); // Get the submission URL directly from the form's action attribute
 
+      // Basic URL validation: Ensure it starts with the expected Formspree prefix
+      if (!url || url.indexOf("https://formspree.io/") !== 0) {
+        console.error("Invalid form action URL: " + url);
+        return;
+      }
+
       var name = $("input#name").val();
       var email = $("input#email").val();
       // var phone = $("input#phone").val(); // Removed phone as per previous change

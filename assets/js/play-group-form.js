@@ -17,6 +17,13 @@ $(function () {
 
       // Get values from FORM
       var url = $form.attr("action"); // Get the submission URL directly from the form's action attribute
+
+      // Basic URL validation: Ensure it starts with the expected Formspree prefix
+      if (!url || url.indexOf("https://formspree.io/") !== 0) {
+        console.error("Invalid form action URL: " + url);
+        return;
+      }
+
       var name = $("input#playGroupName").val();
       var email = $("input#playGroupEmail").val();
       var firstName = name; // For Success/Failure Message
