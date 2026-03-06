@@ -13,3 +13,11 @@
 ## 2026-02-14 - Focus States on Custom Icons
 **Learning:** Custom interactive elements, like icon-only links (`.contact-icon`), often lack visible `:focus` states, making them difficult for keyboard users to navigate.
 **Action:** Ensure all interactive elements have a clear, high-contrast `:focus` state (e.g., outline or box-shadow ring) that is distinct from the default browser style if custom styling is applied.
+# Palette's Accessibility Audit Journal
+
+## Identified Anti-Patterns
+
+### 1. Decorative FontAwesome Icons Missing `aria-hidden`
+- **Description:** Several FontAwesome icons (`<i class="fas fa-...">`) used purely for visual decoration alongside descriptive text lack the `aria-hidden="true"` attribute.
+- **Impact:** Screen readers might announce these decorative icons in confusing ways (e.g., "phone-alt" alongside actual phone numbers), violating WCAG guidelines for handling decorative elements.
+- **Resolution:** Always add `aria-hidden="true"` to any `<i>` tag that serves only a decorative purpose and is accompanied by visually hidden or explicit text.
