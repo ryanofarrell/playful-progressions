@@ -3,6 +3,10 @@
   @include heading-font;
   font-weight: 700;
   color: $white;
+
+  &:focus {
+    outline: none; // Remove default browser outline
+  }
 }
 
 .btn-xl {
@@ -32,7 +36,7 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.5) !important;
   }
   &:disabled,
   &.disabled {
@@ -54,7 +58,7 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5) !important;
   }
 }
 .btn-action {
@@ -69,6 +73,6 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55, 0.5) !important;
+    box-shadow: 0 0 0 0.2rem rgba($action, 0.5) !important;
   }
 }
