@@ -13,6 +13,9 @@
       {%- else -%}
         "description": {{ content | strip_html | truncatewords: 50 | normalize_whitespace | jsonify }},
         {%- endif -%}
+        {%- if page.concepts -%}
+        "keywords": {{ page.concepts | join: ", " | jsonify }},
+        {%- endif -%}
         {%- if page.header.teaser -%}
           "image" : "{{ page.header.teaser | relative_url | prepend: site.url }}",
           {%- endif -%}
