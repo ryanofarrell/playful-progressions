@@ -21,3 +21,6 @@
 - **Description:** Several FontAwesome icons (`<i class="fas fa-...">`) used purely for visual decoration alongside descriptive text lack the `aria-hidden="true"` attribute.
 - **Impact:** Screen readers might announce these decorative icons in confusing ways (e.g., "phone-alt" alongside actual phone numbers), violating WCAG guidelines for handling decorative elements.
 - **Resolution:** Always add `aria-hidden="true"` to any `<i>` tag that serves only a decorative purpose and is accompanied by visually hidden or explicit text.
+## Focus States and Colors
+- **Anti-Pattern:** Using hardcoded RGB or hex values (e.g., `rgba(254, 209, 55, 0.5)`) for `:focus` state `box-shadow` rules on interactive elements like buttons.
+- **Solution:** Use semantic color variables (e.g., `$primary`, `$secondary`, `$action`) within the `rgba()` function to ensure focus rings are dynamically consistent with the element's specific color variant.
