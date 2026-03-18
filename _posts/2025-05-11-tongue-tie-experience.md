@@ -28,7 +28,7 @@ Tongue tie releases are not a straightforward solution. Both of my daughters beg
 
 ## Deciding to Get the Release
 
-After seeking help from multiple professionals, I decided to proceed with the release for both of my daughters because they continued to struggle with feeding and muscle tension. Although therapy improved these issues to some extent, it wasn’t sufficient for long-term functioning. My older daughter still experienced reflux and fed slowly, while my younger daughter fatigued easily, requiring frequent feeding. Additionally, her tension and head turn preference were concerning, potentially leading to plagiocephaly or torticollis. Beyond their immediate needs, I recognized that untreated tongue ties could result in lifelong issues, including migraines, TMJ, sleep disturbances, and head and neck tension.
+After seeking help from multiple professionals, I decided to proceed with the release for both of my daughters because they continued to struggle with feeding and muscle tension. Although therapy improved these issues to some extent, it wasn’t sufficient for long-term functioning. My older daughter still experienced reflux and fed slowly, while my younger daughter fatigued easily, requiring frequent feeding. Additionally, her tension and head turn preference were concerning, potentially leading to [plagiocephaly](/#what-we-treat) or [torticollis](/#what-we-treat). Beyond their immediate needs, I recognized that untreated tongue ties could result in lifelong issues, including migraines, TMJ, sleep disturbances, and head and neck tension.
 
 ## After-Release Care
 
@@ -37,3 +37,5 @@ The release is just the beginning of the journey. Stretching the wound every fou
 ## Would I Do It Again?
 
 Elective surgery decisions are undoubtedly difficult for any parent. However, having undergone two successful frenectomies, I would unquestionably make the same decision again. Understanding the ongoing work required to optimize the release and acknowledging that it’s not a quick fix, I’m confident that addressing my daughters’ tongue ties early has led to significant improvements in their oral motor skills and motor coordination. My youngest daughter, now four months old, is thriving during bottle feeds, and I have peace of mind knowing she can eat well under alternate caregivers while I work. Moreover, she’s meeting gross motor milestones more effectively and is progressing well with tummy time. Though the journey has been challenging, it has been undeniably worth every step.
+
+If you are in the **Atlanta** area (including **Buckhead**, **Brookhaven**, and surrounding neighborhoods) and suspect your child might be dealing with a tongue tie, tension, or torticollis, [reach out to us](/contact/) to discuss how we can help.
