@@ -92,12 +92,9 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
 
         # Create AVIF and WebP for the current size
         # We use > to ensure we don't upscale small images
-        avif_resize_cmd="magick \"$source_image_path\" -resize '${width}>' +profile \"*\" -quality $IM_AVIF_QUALITY \"$local_avif_path\""
-        webp_resize_cmd="magick \"$source_image_path\" -resize '${width}>' -quality $IM_WEBP_QUALITY \"$local_webp_path\""
-
         if [ "$DRY_RUN" = false ]; then
-            eval "$avif_resize_cmd"
-            eval "$webp_resize_cmd"
+            magick "$source_image_path" -resize "${width}>" +profile "*" -quality "$IM_AVIF_QUALITY" "$local_avif_path"
+            magick "$source_image_path" -resize "${width}>" -quality "$IM_WEBP_QUALITY" "$local_webp_path"
         fi
     done
     # --- END: NEW LOGIC ---
