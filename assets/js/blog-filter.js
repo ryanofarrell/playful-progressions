@@ -1,8 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
+function initBlogFilter() {
   const filterButtons = document.querySelectorAll(".btn-filter");
   const postCards = document.querySelectorAll(".blog-post-card");
   // Get the container of the filter buttons
   const filterContainer = document.getElementById("blog-filters");
+
+  if (!filterContainer) return;
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       postCards.forEach((card) => {
-        const cardTags = card.getAttribute("data-tags");
+        const cardTags = card.getAttribute("data-tags") || "";
 
         if (selectedTag === "all" || cardTags.includes(selectedTag)) {
           card.style.display = "block"; // Or your desired display property (e.g., 'flex')
@@ -31,4 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-});
+}
+
+if (typeof document !== "undefined") {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initBlogFilter);
+  } else {
+    initBlogFilter();
+  }
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { initBlogFilter };
+}
