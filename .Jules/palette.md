@@ -24,3 +24,7 @@
 ## Focus States and Colors
 - **Anti-Pattern:** Using hardcoded RGB or hex values (e.g., `rgba(254, 209, 55, 0.5)`) for `:focus` state `box-shadow` rules on interactive elements like buttons.
 - **Solution:** Use semantic color variables (e.g., `$primary`, `$secondary`, `$action`) within the `rgba()` function to ensure focus rings are dynamically consistent with the element's specific color variant.
+
+## Carousel Control Interactivity
+- **Anti-Pattern:** Carousel controls (e.g., directional arrows) lacking explicit, visible focus states and active hover states beyond browser defaults. This makes them hard to notice for keyboard users and provides poor visual feedback.
+- **Solution:** Apply a semantic `box-shadow` to `:focus` (while disabling `outline`), and implement subtle scale (`transform: scale()`) and color darkening transformations on `:hover` and `:focus` states.
