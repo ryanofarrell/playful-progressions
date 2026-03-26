@@ -5,7 +5,7 @@
         <div class="bg-light p-5 rounded">
           <h2 class="section-heading mb-3">{{ include.title | default: "Ready to connect?" }}</h2>
           <p class="text-muted mb-4">{{ include.text | default: "Every child is unique. If you're looking for personalized support or just have a few questions, feel free to reach out." }}</p>
-          <a class="btn btn-primary btn-xl text-uppercase" href="{{ include.btn_link | default: '/contact/' | relative_url }}">{{ include.btn_text | default: "Get in Touch" }}</a>
+          <a class="btn btn-primary btn-xl text-uppercase" href="{% if include.external %}{{ include.btn_link }}{% else %}{{ include.btn_link | default: '/contact/' | relative_url }}{% endif %}"{% if include.external %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ include.btn_text | default: "Get in Touch" }}</a>
         </div>
       </div>
     </div>
