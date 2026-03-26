@@ -33,6 +33,19 @@
   .carousel-arrow {
     color: $primary;
     font-size: 50px;
+    transition: all 0.3s ease;
+    border-radius: 50%; /* Ensure round shape for focus ring */
+
+    &:hover,
+    &:focus {
+      color: darken($primary, 10%);
+      transform: scale(1.1);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
+    }
   }
   .carousel-control {
     width: 10%;
