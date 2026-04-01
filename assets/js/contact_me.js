@@ -29,12 +29,9 @@ $(function () {
       var email = $("input#email").val();
       // var phone = $("input#phone").val(); // Removed phone as per previous change
       var message = $("textarea#message").val();
-      var firstName = name; // For Success/Failure Message
-
-      // Check for white space in name for Success/Fail message
-      if (firstName.indexOf(" ") >= 0) {
-        firstName = name.split(" ").slice(0, -1).join(" ");
-      }
+      var firstName = window.PPNameUtils
+        ? window.PPNameUtils.extractFirstName(name)
+        : name; // For Success/Failure Message
 
       var $this = $("#sendMessageButton");
       var originalButtonText = $this.html();
