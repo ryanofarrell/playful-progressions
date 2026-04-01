@@ -26,12 +26,9 @@ $(function () {
 
       var name = $("input#playGroupName").val();
       var email = $("input#playGroupEmail").val();
-      var firstName = name; // For Success/Failure Message
-
-      // Check for white space in name for Success/Fail message
-      if (firstName.indexOf(" ") >= 0) {
-        firstName = name.split(" ").slice(0, -1).join(" ");
-      }
+      var firstName = window.PPNameUtils
+        ? window.PPNameUtils.extractFirstName(name)
+        : name; // For Success/Failure Message
 
       var $this = $("#sendPlayGroupMessageButton");
       var originalButtonText = $this.html();
