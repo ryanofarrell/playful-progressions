@@ -28,3 +28,4 @@
 ## Carousel Control Interactivity
 - **Anti-Pattern:** Carousel controls (e.g., directional arrows) lacking explicit, visible focus states and active hover states beyond browser defaults. This makes them hard to notice for keyboard users and provides poor visual feedback.
 - **Solution:** Apply a semantic `box-shadow` to `:focus` (while disabling `outline`), and implement subtle scale (`transform: scale()`) and color darkening transformations on `:hover` and `:focus` states.
+Anti-Pattern: Missing `aria-hidden='true'` on purely decorative FontAwesome icons accompanied by `aria-label`s on their interactive parent elements.
