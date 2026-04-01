@@ -205,13 +205,11 @@
                   {% assign item_parts = sorted_item_string | split: "|" %}
                   {% assign post_url_to_find = item_parts[1] %}
 
-                  {% for site_post in site.posts %}
-                    {% if site_post.url == post_url_to_find %}
-                      {% assign related_posts_to_display = related_posts_to_display | push: site_post %}
-                      {% assign related_posts_found = related_posts_found | plus: 1 %}
-                      {% break %}
-                    {% endif %}
-                  {% endfor %}
+                  {% assign site_post = site.posts | where: "url", post_url_to_find | first %}
+                  {% if site_post %}
+                    {% assign related_posts_to_display = related_posts_to_display | push: site_post %}
+                    {% assign related_posts_found = related_posts_found | plus: 1 %}
+                  {% endif %}
                 {% endfor %}
 
                 {% comment %} --- Stage 4: Display the related posts --- {% endcomment %}
