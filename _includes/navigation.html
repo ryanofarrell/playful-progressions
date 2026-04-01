@@ -12,6 +12,10 @@
       {%- endif -%}
     </a>
 
+    {% comment %} Get message and subject from _config.yml, URL encode, and replace + with %20 {% endcomment %}
+    {% assign encoded_message = site.pre_populate_message | url_encode | replace: '+', '%20' %}
+    {% assign encoded_subject = site.email_subject | url_encode | replace: '+', '%20' %}
+
     <div class="navbar-toggler-container d-lg-none">
       <button
         class="navbar-toggler navbar-toggler-right"
@@ -29,9 +33,6 @@
         {% for icon in site.data.navigation.contact_icons %}
           {% comment %} Construct the link using the data_key to access site variables {% endcomment %}
         {% assign link_href = "" %}
-          {% comment %} Get message and subject from _config.yml, URL encode, and replace + with %20 {% endcomment %}
-          {% assign encoded_message = site.pre_populate_message | url_encode | replace: '+', '%20' %}
-          {% assign encoded_subject = site.email_subject | url_encode | replace: '+', '%20' %}
 
           {% if icon.type == "phone" %}
             {% assign link_href = "tel:" | append: site[icon.data_key] %}
@@ -79,9 +80,6 @@
           {% for icon in site.data.navigation.contact_icons %}
             {% comment %} Construct the link using the data_key to access site variables {% endcomment %}
           {% assign link_href = "" %}
-            {% comment %} Get message and subject from _config.yml, URL encode, and replace + with %20 {% endcomment %}
-            {% assign encoded_message = site.pre_populate_message | url_encode | replace: '+', '%20' %}
-            {% assign encoded_subject = site.email_subject | url_encode | replace: '+', '%20' %}
 
             {% if icon.type == "phone" %}
               {% assign link_href = "tel:" | append: site[icon.data_key] %}
