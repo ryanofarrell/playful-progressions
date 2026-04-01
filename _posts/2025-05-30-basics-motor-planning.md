@@ -66,3 +66,5 @@ Feedback occurs during a motor action and is used to execute a motor sequence us
 * Use increased cueing (visual verbal and manual cues) to improve a motor sequence.
 
 Motor planning affects everything we do from brushing our teeth to completing an exercise routine. Breaking motor planning down to its parts may be beneficial in helping those with motor planning deficits achieve improved performance.
+
+If you're noticing your child is struggling with multi-step tasks or motor planning, an occupational therapy evaluation can help! At Playful Progressions, we provide individualized, play-based support to help children succeed in their daily routines. If you are in the **Atlanta** area (including **Sandy Springs**, **Dunwoody**, and surrounding neighborhoods), please [reach out](/contact/)!
