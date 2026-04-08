@@ -28,3 +28,4 @@
 ## Carousel Control Interactivity
 - **Anti-Pattern:** Carousel controls (e.g., directional arrows) lacking explicit, visible focus states and active hover states beyond browser defaults. This makes them hard to notice for keyboard users and provides poor visual feedback.
 - **Solution:** Apply a semantic `box-shadow` to `:focus` (while disabling `outline`), and implement subtle scale (`transform: scale()`) and color darkening transformations on `:hover` and `:focus` states.
+- **Accessibility Anti-Pattern**: Found instances (e.g., in `_sass/layout/_footer.scss` for `.social-buttons a`) where default browser focus outlines (`outline: none;`) were removed without providing a clear alternative focus ring, which violates WCAG focus visibility guidelines. Always replace `outline: none;` with a visually distinct focus indicator, such as a matching `box-shadow` (e.g., `box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);`).
