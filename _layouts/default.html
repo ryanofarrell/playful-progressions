@@ -4,7 +4,15 @@
   {% include head.html %}
 
   {%- comment -%} Add body class for styling based on background {%- endcomment -%}
-  <body id="page-top"{% unless page.layout == "home" %} class="{% if page.background == 'grey' or page.background == 'gray' %}bg-light{% else %}body-light-background{% endif %}"{% endunless %}>
+  {%- assign body_class = "" -%}
+  {%- unless page.layout == "home" -%}
+    {%- if page.background == "grey" or page.background == "gray" -%}
+      {%- assign body_class = "bg-light" -%}
+    {%- else -%}
+      {%- assign body_class = "body-light-background" -%}
+    {%- endif -%}
+  {%- endunless -%}
+  <body id="page-top"{% if body_class != "" %} class="{{ body_class }}"{% endif %}>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
