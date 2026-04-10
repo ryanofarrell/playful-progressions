@@ -42,10 +42,14 @@ ul.social-buttons {
       border-radius: 100%;
       outline: none;
       background-color: $gray-900;
-      &:active,
-      &:focus,
       &:hover {
         background-color: $primary;
+      }
+      &:active,
+      &:focus {
+        background-color: $primary;
+        outline: 2px solid transparent;
+        box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
       }
     }
   }
