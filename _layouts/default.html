@@ -4,11 +4,7 @@
   {% include head.html %}
 
   {%- comment -%} Add body class for styling based on background {%- endcomment -%}
-  {% if page.layout == "home" %}
-    <body id="page-top">
-  {% else %}
-    <body id="page-top" class="{% if page.background == 'grey' or page.background == 'gray' %}bg-light{% else %}body-light-background{% endif %}">
-  {% endif %}
+  <body id="page-top"{% unless page.layout == "home" %} class="{% if page.background == 'grey' or page.background == 'gray' %}bg-light{% else %}body-light-background{% endif %}"{% endunless %}>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
