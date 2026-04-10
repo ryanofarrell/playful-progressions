@@ -24,7 +24,8 @@
 ## Focus States and Colors
 - **Anti-Pattern:** Using hardcoded RGB or hex values (e.g., `rgba(254, 209, 55, 0.5)`) for `:focus` state `box-shadow` rules on interactive elements like buttons.
 - **Solution:** Use semantic color variables (e.g., `$primary`, `$secondary`, `$action`) within the `rgba()` function to ensure focus rings are dynamically consistent with the element's specific color variant.
-- **Accessibility Anti-Pattern**: Found instances (e.g., in `_sass/layout/_footer.scss` for `.social-buttons a`) where default browser focus outlines (`outline: none;`) were removed without providing a clear alternative focus ring, which violates WCAG focus visibility guidelines. Always replace `outline: none;` with a visually distinct focus indicator, such as a matching `box-shadow` (e.g., `box-shadow: 0 0 0 0.2rem rgba($primary, 0.5) !important;`).
+- **Anti-Pattern:** Removing default browser focus outlines (`outline: none;`) without providing a visually distinct alternative for interactive elements (e.g., social buttons), which violates WCAG focus visibility guidelines.
+- **Solution:** Always replace `outline: none;` with a clear focus indicator, such as a `box-shadow` using semantic variables (e.g., `box-shadow: 0 0 0 0.2rem rgba($primary, 0.5) !important;`).
 
 ## Carousel Control Interactivity
 - **Anti-Pattern:** Carousel controls (e.g., directional arrows) lacking explicit, visible focus states and active hover states beyond browser defaults. This makes them hard to notice for keyboard users and provides poor visual feedback.

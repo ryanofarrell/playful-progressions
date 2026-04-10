@@ -43,11 +43,12 @@ ul.social-buttons {
       outline: none;
       background-color: $gray-900;
       &:active,
+      &:focus,
       &:hover {
         background-color: $primary;
       }
+      &:active,
       &:focus {
-        background-color: $primary;
         box-shadow: 0 0 0 0.2rem rgba($primary, 0.5) !important;
       }
     }
