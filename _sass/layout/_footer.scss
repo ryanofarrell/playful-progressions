@@ -49,7 +49,8 @@ ul.social-buttons {
       }
       &:active,
       &:focus {
-        box-shadow: 0 0 0 0.2rem rgba($primary, 0.5) !important;
+        outline: 2px solid transparent;
+        box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
       }
     }
   }
