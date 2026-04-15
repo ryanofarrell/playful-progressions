@@ -22,6 +22,8 @@
 - **Impact:** Screen readers might announce these decorative icons in confusing ways (e.g., "phone-alt" alongside actual phone numbers), violating WCAG guidelines for handling decorative elements.
 - **Resolution:** Always add `aria-hidden="true"` to any `<i>` tag that serves only a decorative purpose and is accompanied by visually hidden or explicit text.
 ## Focus States and Colors
+- **Anti-Pattern:** Removing default browser focus outlines (`box-shadow: none;` or `outline: none;`) from form controls (`.form-control`) and other interactive elements without providing a visually distinct alternative.
+- **Solution:** Always replace `outline: none;` or `box-shadow: none;` with a clear focus indicator, such as a `box-shadow` using semantic variables (e.g., `box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);`). To support Windows High Contrast Mode, also include a transparent outline (e.g., `outline: 2px solid transparent;`).
 - **Anti-Pattern:** Using hardcoded RGB or hex values (e.g., `rgba(254, 209, 55, 0.5)`) for `:focus` state `box-shadow` rules on interactive elements like buttons.
 - **Solution:** Use semantic color variables (e.g., `$primary`, `$secondary`, `$action`) within the `rgba()` function to ensure focus rings are dynamically consistent with the element's specific color variant.
 - **Anti-Pattern:** Removing default browser focus outlines (`outline: none;`) without providing a visually distinct alternative for interactive elements (e.g., social buttons), which violates WCAG focus visibility guidelines.
