@@ -43,18 +43,18 @@
       "@context": "https://schema.org",
       "@type": "MedicalBusiness",
       "name": {{ site.name | jsonify }},
-      "medicalSpecialty": "OccupationalTherapy",
-      "description": {{ sitetext.about.body | strip_html | normalize_whitespace | jsonify }},
-      "url": {{ site.url | jsonify }},
-      "logo": {{ site.logo | prepend: site.url | jsonify }},
+      "medicalSpecialty": "https://schema.org/OccupationalTherapy",
       "telephone": {{ site.phone-numeric | jsonify }},
-      "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",
         "addressRegion": "GA",
         "addressCountry": "US"
       },
+      "description": {{ sitetext.about.body | strip_html | normalize_whitespace | jsonify }},
+      "url": {{ site.url | jsonify }},
+      "logo": {{ site.logo | prepend: site.url | jsonify }},
+      "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
       "areaServed": [
         {%- for neighborhood in sitetext.location_info.neighborhoods -%}
           {
