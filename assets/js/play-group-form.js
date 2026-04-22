@@ -53,34 +53,34 @@ $(function () {
           if (response.ok) {
             // Check if Formspree indicated success
             // Success message
-            $("#playGroupSuccess").html("<div class='alert alert-success'>");
-            $("#playGroupSuccess > .alert-success")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#playGroupSuccess > .alert-success").append(
-              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>",
-            ); // Custom success message
-            $("#playGroupSuccess > .alert-success").append("</div>");
+            $("#playGroupSuccess").html(
+              $("<div class='alert alert-success' role='alert'>")
+                .append(
+                  "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>",
+                )
+                .append(
+                  $("<strong>").text(
+                    "Thank you for your interest! We'll notify you about upcoming play groups.",
+                  ),
+                ),
+            );
             // Clear all fields
             $("#playGroupForm").trigger("reset");
           } else {
             // Handle cases where Formspree responded but indicated an error
-            $("#playGroupSuccess").html("<div class='alert alert-danger'>");
-            $("#playGroupSuccess > .alert-danger")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#playGroupSuccess > .alert-danger").append(
-              $("<strong>").text(
-                "Sorry " +
-                  firstName +
-                  ", there was an issue submitting your interest. Please try again later!",
-              ),
+            $("#playGroupSuccess").html(
+              $("<div class='alert alert-danger' role='alert'>")
+                .append(
+                  "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>",
+                )
+                .append(
+                  $("<strong>").text(
+                    "Sorry " +
+                      firstName +
+                      ", there was an issue submitting your interest. Please try again later!",
+                  ),
+                ),
             );
-            $("#playGroupSuccess > .alert-danger").append("</div>");
           }
         },
 
@@ -93,20 +93,19 @@ $(function () {
             jqXHR,
           );
           // Fail message
-          $("#playGroupSuccess").html("<div class='alert alert-danger'>");
-          $("#playGroupSuccess > .alert-danger")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-            )
-            .append("</button>");
-          $("#playGroupSuccess > .alert-danger").append(
-            $("<strong>").text(
-              "Sorry " +
-                firstName +
-                ", it seems there was a problem submitting your interest. Please try again later!",
-            ),
+          $("#playGroupSuccess").html(
+            $("<div class='alert alert-danger' role='alert'>")
+              .append(
+                "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>",
+              )
+              .append(
+                $("<strong>").text(
+                  "Sorry " +
+                    firstName +
+                    ", it seems there was a problem submitting your interest. Please try again later!",
+                ),
+              ),
           );
-          $("#playGroupSuccess > .alert-danger").append("</div>");
         },
 
         complete: function () {
