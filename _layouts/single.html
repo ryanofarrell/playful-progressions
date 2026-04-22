@@ -25,10 +25,39 @@ layout: default
           </p>
           {% comment %} Display the teaser image if available {% endcomment %}
           {% if page.header.teaser %}
-            <img
-              src="{{ page.header.teaser | relative_url }}"
-              alt="{{ page.title }}"
-              class="post-teaser-img mb-4">
+            {% assign teaser_src = page.header.teaser | relative_url %}
+            {% assign teaser_parts = teaser_src | split: "." %}
+            {% assign teaser_parts_size = teaser_parts.size %}
+            {% assign teaser_base_parts_size = teaser_parts_size | minus: 1 %}
+            {% if teaser_base_parts_size > 0 %}
+              {% assign teaser_base = teaser_parts | slice: 0, teaser_base_parts_size | join: "." %}
+            {% else %}
+              {% assign teaser_base = teaser_src %}
+            {% endif %}
+
+            <div class="post-image-container mt-4 mb-4 text-center">
+              <picture>
+                <source
+                  srcset="{{ teaser_base | append: '-400.avif' }} 400w,
+                          {{ teaser_base | append: '-800.avif' }} 800w,
+                          {{ teaser_base | append: '.avif' }} 1600w"
+                  sizes="(max-width: 991px) 100vw, 800px"
+                  type="image/avif">
+                <source
+                  srcset="{{ teaser_base | append: '-400.webp' }} 400w,
+                          {{ teaser_base | append: '-800.webp' }} 800w,
+                          {{ teaser_base | append: '.webp' }} 1600w"
+                  sizes="(max-width: 991px) 100vw, 800px"
+                  type="image/webp">
+                <img
+                  src="{{ teaser_src }}"
+                  alt="{{ page.title }}"
+                  class="post-teaser-img img-fluid rounded mb-4"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async">
+              </picture>
+            </div>
           {% endif %}
         </header>
 
