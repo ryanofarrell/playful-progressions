@@ -54,9 +54,9 @@ $(function () {
             // Check if Formspree indicated success
             // Success message
             $("#playGroupSuccess").html(
-              $("<div class='alert alert-success'>")
+              $("<div class='alert alert-success' role='alert'>")
                 .append(
-                  "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>",
+                  "<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>",
                 )
                 .append(
                   $("<strong>").text(
