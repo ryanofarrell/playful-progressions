@@ -22,7 +22,8 @@ section#contact {
   }
   .form-control:focus {
     border-color: $primary;
-    box-shadow: none;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+    outline: 2px solid transparent;
   }
   ::-webkit-input-placeholder {
     font-weight: 700;
