@@ -100,9 +100,3 @@ h6 {
   font-weight: 700;
   @include heading-font;
 }
-
-// ADD THIS AT THE END OF THE FILE to fix card header bolding
-
-#what-we-treat .card .h4 {
-  font-weight: 700 !important;
-}
