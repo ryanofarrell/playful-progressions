@@ -11,7 +11,7 @@
 // More specific overrides to win the !important war
 #what-we-treat .card {
     .h4 {
-        font-weight: 700 !important;
+        font-weight: 700;
     }
     .text-muted {
         color: $gray-700 !important; // Use a dark gray and !important
