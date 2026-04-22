@@ -9,7 +9,7 @@
      * @returns {string} The first name or an empty string if no name is provided.
      */
     extractFirstName: function (name) {
-      if (!name) return "";
+      if (!name || typeof name !== "string") return "";
       var trimmedName = name.trim();
       if (!trimmedName) return "";
       return trimmedName.split(/\s+/)[0];
