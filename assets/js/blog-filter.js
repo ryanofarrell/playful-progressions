@@ -27,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       postCardsData.forEach((cardData) => {
-        if (selectedTag === "all" || cardData.tags.includes(selectedTag)) {
-          cardData.element.style.display = "block"; // Or your desired display property (e.g., 'flex')
+        if (selectedTag === "all" || cardData.tags === selectedTag) {
+          cardData.element.style.display = ""; // Revert to original CSS-defined display
         } else {
           cardData.element.style.display = "none";
         }
