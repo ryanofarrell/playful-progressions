@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Get the container of the filter buttons
   const filterContainer = document.getElementById("blog-filters");
 
+  // Cache post card data to avoid redundant DOM reads during filtering
+  const postCardsData = Array.from(postCards).map((card) => ({
+    element: card,
+    tags: card.getAttribute("data-tags") || "",
+  }));
+
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const selectedTag = this.getAttribute("data-tag");
@@ -20,13 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
         filterContainer.classList.add("filter-active");
       }
 
-      postCards.forEach((card) => {
-        const cardTags = card.getAttribute("data-tags");
-
-        if (selectedTag === "all" || cardTags.includes(selectedTag)) {
-          card.style.display = "block"; // Or your desired display property (e.g., 'flex')
+      postCardsData.forEach((cardData) => {
+        if (selectedTag === "all" || cardData.tags.includes(selectedTag)) {
+          cardData.element.style.display = "block"; // Or your desired display property (e.g., 'flex')
         } else {
-          card.style.display = "none";
+          cardData.element.style.display = "none";
         }
       });
     });
