@@ -52,7 +52,7 @@
             {% if icon.type == "instagram" %}
             target="_blank" rel="noopener noreferrer"
             {% endif %}>
-            <i class="{{ icon.icon }}"></i>
+            <i class="{{ icon.icon }}" aria-hidden="true"></i>
           </a>
         {% endfor %}
       </div>
@@ -99,7 +99,7 @@
               {% if icon.type == "instagram" %}
               target="_blank" rel="noopener noreferrer"
               {% endif %}>
-              <i class="{{ icon.icon }}"></i>
+              <i class="{{ icon.icon }}" aria-hidden="true"></i>
             </a>
           {% endfor %}
         </li>
