@@ -126,10 +126,7 @@
                 {% comment %} --- Stage 1: Prepare data for the current page --- {% endcomment %}
                 {% assign current_page_concepts_downcased = "" | split: "" %}
                 {% if page.concepts %}
-                  {% for concept_string in page.concepts %}
-                    {% assign downcased_concept_string = concept_string | downcase %}
-                    {% assign current_page_concepts_downcased = current_page_concepts_downcased | push: downcased_concept_string %}
-                  {% endfor %}
+                  {% assign current_page_concepts_downcased = page.concepts | join: "|||" | downcase | split: "|||" %}
                 {% endif %}
                 {% assign current_page_singular_tag_downcased = page.tag | downcase %}
               {% assign current_post_url = page.url %}
@@ -148,10 +145,7 @@
                   {% comment %} Prepare downcased concepts for the iterated post_item {% endcomment %}
                   {% assign other_post_concepts_downcased = "" | split: "" %}
                   {% if post_item.concepts %}
-                    {% for concept_string in post_item.concepts %}
-                      {% assign downcased_concept_string = concept_string | downcase %}
-                      {% assign other_post_concepts_downcased = other_post_concepts_downcased | push: downcased_concept_string %}
-                    {% endfor %}
+                    {% assign other_post_concepts_downcased = post_item.concepts | join: "|||" | downcase | split: "|||" %}
                   {% endif %}
                 {% assign other_post_singular_tag_downcased = post_item.tag | downcase %}
 
