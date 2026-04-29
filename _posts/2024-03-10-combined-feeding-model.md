@@ -22,3 +22,7 @@ Feeding purees can also be beneficial for babies. When feeding purees, I use two
 When starting solids, it is important to start introducing water as well. Try using an open cup (we love the tiny cup) and learning to drink through a straw.
 
 It is important to keep feeding your baby as simple as possible for both you and your baby. Enjoy this phase as your baby learns so many new things about their world!
+
+## Feeding Support in Atlanta
+
+If you’re feeling overwhelmed by starting solids, transitioning to new textures, or encountering feeding difficulties, you don’t have to figure it out alone. Playful Progressions provides specialized, play-based [OT treatments](/services/#treatments) for feeding therapy in the child’s natural environment. Whether you are in Brookhaven, Buckhead, or the greater Atlanta area, we are here to support your child’s development and make mealtimes less stressful for the whole family.
