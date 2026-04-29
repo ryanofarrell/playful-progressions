@@ -30,9 +30,13 @@
     margin-bottom: 5px; /* Space below the toggler */
     width: 120px; /* Adjust this value as needed */
     // Add hover/focus styles for toggler on mobile if desired
-    &:hover,
+    &:hover {
+      color: white; /* Example: Primary color on hover/focus */
+    }
     &:focus {
       color: white; /* Example: Primary color on hover/focus */
+      outline: 2px solid transparent;
+      box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
     }
   }
 
@@ -68,7 +72,8 @@
       .nav-link {
         /* Generic nav-link styles */
         &.active,
-        &:hover {
+        &:hover,
+        &:focus {
           color: $action; /* Default active/hover color */
         }
       }
@@ -175,7 +180,8 @@
           /* Generic nav-link style for desktop */
           color: white; /* Desktop: white link text on dark headers */
           &.active,
-          &:hover {
+          &:hover,
+          &:focus {
             color: $action; /* Active/hover color */
           }
         }
@@ -221,7 +227,8 @@
             .nav-link {
               color: $gray-900; /* Shrunk: dark grey link color */
               &.active,
-              &:hover {
+              &:hover,
+              &:focus {
                 color: $action;
               }
             }
@@ -244,7 +251,8 @@
         /* Contact icon color when navbar is shrunk (on dark header) */
         .contact-icon {
           color: $gray-300; /* Light grey color when shrunk on dark */
-          &:hover {
+          &:hover,
+          &:focus {
             color: $action;
           }
         }
@@ -280,7 +288,8 @@
             /* Generic nav-link style on light background (desktop) */
             color: $primary;
             &.active,
-            &:hover {
+            &:hover,
+            &:focus {
               color: $action;
             }
           }
@@ -294,7 +303,8 @@
         }
         .contact-icon {
           color: $primary; /* Primary icon color on light background */
-          &:hover {
+          &:hover,
+          &:focus {
             color: darken($primary, 10%); /* Hover effect */
           }
         }
@@ -306,7 +316,8 @@
   /* This applies to mobile icons on dark header BEFORE scrolling */
   .contact-icon {
     color: $primary; /* Changed default color to primary */
-    &:hover {
+    &:hover,
+    &:focus {
       color: darken($primary, 10%); /* Hover effect */
     }
   }
