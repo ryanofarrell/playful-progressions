@@ -24,8 +24,8 @@
 ## Focus States and Colors
 - **Anti-Pattern:** Using hardcoded RGB or hex values (e.g., `rgba(254, 209, 55, 0.5)`) for `:focus` state `box-shadow` rules on interactive elements like buttons.
 - **Solution:** Use semantic color variables (e.g., `$primary`, `$secondary`, `$action`) within the `rgba()` function to ensure focus rings are dynamically consistent with the element's specific color variant.
-- **Anti-Pattern:** Removing default browser focus outlines (`outline: none;`) without providing a visually distinct alternative for interactive elements (e.g., social buttons), which violates WCAG focus visibility guidelines.
-- **Solution:** Always replace `outline: none;` with a clear focus indicator, such as a `box-shadow` using semantic variables (e.g., `box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);`). To support Windows High Contrast Mode, also include a transparent outline (e.g., `outline: 2px solid transparent;`).
+- **Anti-Pattern:** Removing default browser focus styles (`outline: none;` or `box-shadow: none;`) without providing a visually distinct alternative for interactive elements (e.g., social buttons, form controls). This violates WCAG focus visibility guidelines and makes keyboard navigation difficult.
+- **Solution:** Always replace `outline: none;` or `box-shadow: none;` with a clear focus indicator, such as a `box-shadow` using semantic variables (e.g., `box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);`). To support Windows High Contrast Mode, also include a transparent outline (e.g., `outline: 2px solid transparent;`).
 
 - **Anti-Pattern:** Applying color transitions or transformations exclusively to `:hover` and `.active` states on interactive elements (like navigation links or custom icons), while completely omitting the `:focus` state.
 - **Solution:** Always pair `:focus` with `:hover` (e.g., `&:hover, &:focus { color: $action; }`) when defining interactive visual feedback to ensure keyboard users experience the same visual context as pointer users.
