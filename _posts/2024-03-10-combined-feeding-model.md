@@ -25,4 +25,4 @@ It is important to keep feeding your baby as simple as possible for both you and
 
 ## Feeding Support in Atlanta
 
-If you’re feeling overwhelmed by starting solids, transitioning to new textures, or encountering feeding difficulties, you don’t have to figure it out alone. Playful Progressions provides specialized, play-based [OT treatments](/services/#treatments) for feeding therapy in the child’s natural environment. Whether you are in Brookhaven, Buckhead, or the greater Atlanta area, we are here to support your child’s development and make mealtimes less stressful for the whole family.
+If you’re feeling overwhelmed by starting solids, transitioning to new textures, or encountering feeding difficulties, you don’t have to figure it out alone. Playful Progressions provides specialized, play-based OT treatments for [feeding therapy]({{ '/services/#treatments' | relative_url }}) in the child’s natural environment. Whether you are in Brookhaven, Buckhead, or the greater Atlanta area, we are here to support your child’s development and make mealtimes less stressful for the whole family.
