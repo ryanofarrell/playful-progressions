@@ -912,13 +912,10 @@
           };
         },
         validate: function ($this, value, validator) {
+          var checkedCount = validator.elements.filter(":checked").length;
           return (
-            (validator.elements.filter(":checked").length >
-              validator.maxchecked &&
-              !validator.negative) ||
-            (validator.elements.filter(":checked").length <=
-              validator.maxchecked &&
-              validator.negative)
+            (checkedCount > validator.maxchecked && !validator.negative) ||
+            (checkedCount <= validator.maxchecked && validator.negative)
           );
         },
         blockSubmit: true,
@@ -941,13 +938,10 @@
           };
         },
         validate: function ($this, value, validator) {
+          var checkedCount = validator.elements.filter(":checked").length;
           return (
-            (validator.elements.filter(":checked").length <
-              validator.minchecked &&
-              !validator.negative) ||
-            (validator.elements.filter(":checked").length >=
-              validator.minchecked &&
-              validator.negative)
+            (checkedCount < validator.minchecked && !validator.negative) ||
+            (checkedCount >= validator.minchecked && validator.negative)
           );
         },
         blockSubmit: true,
