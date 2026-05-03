@@ -201,6 +201,9 @@ $spacings: (
 }
 
 // Additional Utility Example: Auto Margins
+.d-none {
+    display: none !important;
+}
 .m-auto {
     margin: auto !important;
 }
