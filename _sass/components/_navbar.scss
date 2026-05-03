@@ -30,11 +30,11 @@
     margin-bottom: 5px; /* Space below the toggler */
     width: 120px; /* Adjust this value as needed */
     // Add hover/focus styles for toggler on mobile if desired
-    &:hover {
+    &:hover,
+    &:focus {
       color: white; /* Example: Primary color on hover/focus */
     }
     &:focus {
-      color: white; /* Example: Primary color on hover/focus */
       outline: 2px solid transparent;
       box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
     }
