@@ -125,7 +125,7 @@
 
                 {% comment %} --- Stage 1: Prepare data for the current page --- {% endcomment %}
                 {% assign current_page_concepts_downcased = "" | split: "" %}
-                {% assign concept_delimiter = "@@@CONCEPT_DELIMITER@@@" %}
+                {% assign concept_delimiter = "|||" %}
                 {% if page.concepts.size > 0 %}
                   {% assign current_page_concepts_downcased = page.concepts | join: concept_delimiter | downcase | split: concept_delimiter %}
                 {% endif %}
