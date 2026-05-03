@@ -5,6 +5,32 @@
  */
 
 $(function () {
+  var $success = $("#playGroupSuccess");
+
+  // Helper to display alert messages
+  var showAlert = function (isSuccess, message) {
+    $success.html(
+      $("<div>")
+        .addClass(
+          "alert alert-" +
+            (isSuccess ? "success" : "danger") +
+            " alert-dismissible",
+        )
+        .attr("role", "alert")
+        .append(
+          $("<button>")
+            .attr({
+              type: "button",
+              class: "close",
+              "data-dismiss": "alert",
+              "aria-label": "Close",
+            })
+            .append($("<span>").attr("aria-hidden", "true").html("&times;")),
+        )
+        .append($("<strong>").text(message)),
+    );
+  };
+
   // Initialize jqBootstrapValidation for the Play Group form
   $("#playGroupForm input,#playGroupForm textarea").jqBootstrapValidation({
     preventSubmit: true, // Prevent default HTML form submission
@@ -49,38 +75,19 @@ $(function () {
         cache: false, // Prevent caching of the AJAX request
 
         success: function (response) {
-          // Handle successful submission response from Formspree
-          if (response.ok) {
-            // Check if Formspree indicated success
-            // Success message
-            $("#playGroupSuccess").html("<div class='alert alert-success'>");
-            $("#playGroupSuccess > .alert-success")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#playGroupSuccess > .alert-success").append(
-              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>",
-            ); // Custom success message
-            $("#playGroupSuccess > .alert-success").append("</div>");
+          // Handle submission response from Formspree
+          var isSuccess = response.ok;
+          var message = isSuccess
+            ? "Thank you for your interest! We'll notify you about upcoming play groups."
+            : "Sorry " +
+              firstName +
+              ", there was an issue submitting your interest. Please try again later!";
+
+          showAlert(isSuccess, message);
+
+          if (isSuccess) {
             // Clear all fields
             $("#playGroupForm").trigger("reset");
-          } else {
-            // Handle cases where Formspree responded but indicated an error
-            $("#playGroupSuccess").html("<div class='alert alert-danger'>");
-            $("#playGroupSuccess > .alert-danger")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#playGroupSuccess > .alert-danger").append(
-              $("<strong>").text(
-                "Sorry " +
-                  firstName +
-                  ", there was an issue submitting your interest. Please try again later!",
-              ),
-            );
-            $("#playGroupSuccess > .alert-danger").append("</div>");
           }
         },
 
@@ -93,20 +100,12 @@ $(function () {
             jqXHR,
           );
           // Fail message
-          $("#playGroupSuccess").html("<div class='alert alert-danger'>");
-          $("#playGroupSuccess > .alert-danger")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-            )
-            .append("</button>");
-          $("#playGroupSuccess > .alert-danger").append(
-            $("<strong>").text(
-              "Sorry " +
-                firstName +
-                ", it seems there was a problem submitting your interest. Please try again later!",
-            ),
+          showAlert(
+            false,
+            "Sorry " +
+              firstName +
+              ", it seems there was a problem submitting your interest. Please try again later!",
           );
-          $("#playGroupSuccess > .alert-danger").append("</div>");
         },
 
         complete: function () {
@@ -121,11 +120,7 @@ $(function () {
   });
 
   // Clear success/failure messages when form inputs are focused
-  $("#playGroupName").focus(function () {
-    $("#playGroupSuccess").html("");
-  });
-
-  $("#playGroupEmail").focus(function () {
-    $("#playGroupSuccess").html("");
+  $("#playGroupName, #playGroupEmail").focus(function () {
+    $success.html("");
   });
 });
