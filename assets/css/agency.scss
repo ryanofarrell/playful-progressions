@@ -72,8 +72,6 @@ $contact-image: "{{ site.data.style.contact-image }}";
 // =============================================================================
 @import "base/page.scss";
 
-@import "base/accessibility";
-
 // Components
 @import "components/buttons.scss";
 @import "components/navbar.scss";
@@ -96,3 +94,6 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/_blog.scss";
 @import "layout/_services-page.scss";
 @import "layout/_contact-page.scss";
+
+// Accessibility (Last to ensure overrides)
+@import "base/accessibility";
