@@ -5,6 +5,8 @@
  */
 
 $(function () {
+  var $success = $("#playGroupSuccess");
+
   // Initialize jqBootstrapValidation for the Play Group form
   $("#playGroupForm input,#playGroupForm textarea").jqBootstrapValidation({
     preventSubmit: true, // Prevent default HTML form submission
@@ -49,55 +51,33 @@ $(function () {
         cache: false, // Prevent caching of the AJAX request
 
         success: function (response) {
-          // Handle successful submission response from Formspree
-          var $success = $("#playGroupSuccess");
-          if (response.ok) {
-            // Check if Formspree indicated success
-            // Success message
-            $success.html(
-              $("<div>")
-                .addClass("alert alert-success")
-                .append(
-                  $("<button>")
-                    .attr({
-                      type: "button",
-                      class: "close",
-                      "data-dismiss": "alert",
-                      "aria-hidden": "true",
-                    })
-                    .html("&times;"),
-                )
-                .append(
-                  $("<strong>").text(
-                    "Thank you for your interest! We'll notify you about upcoming play groups.",
-                  ),
-                ),
-            );
+          // Handle submission response from Formspree
+          var isSuccess = response.ok;
+          var message = isSuccess
+            ? "Thank you for your interest! We'll notify you about upcoming play groups."
+            : "Sorry " +
+              firstName +
+              ", there was an issue submitting your interest. Please try again later!";
+
+          $success.html(
+            $("<div>")
+              .addClass("alert alert-" + (isSuccess ? "success" : "danger"))
+              .append(
+                $("<button>")
+                  .attr({
+                    type: "button",
+                    class: "close",
+                    "data-dismiss": "alert",
+                    "aria-hidden": "true",
+                  })
+                  .html("&times;"),
+              )
+              .append($("<strong>").text(message)),
+          );
+
+          if (isSuccess) {
             // Clear all fields
             $("#playGroupForm").trigger("reset");
-          } else {
-            // Handle cases where Formspree responded but indicated an error
-            $success.html(
-              $("<div>")
-                .addClass("alert alert-danger")
-                .append(
-                  $("<button>")
-                    .attr({
-                      type: "button",
-                      class: "close",
-                      "data-dismiss": "alert",
-                      "aria-hidden": "true",
-                    })
-                    .html("&times;"),
-                )
-                .append(
-                  $("<strong>").text(
-                    "Sorry " +
-                      firstName +
-                      ", there was an issue submitting your interest. Please try again later!",
-                  ),
-                ),
-            );
           }
         },
 
@@ -110,7 +90,7 @@ $(function () {
             jqXHR,
           );
           // Fail message
-          $("#playGroupSuccess").html(
+          $success.html(
             $("<div>")
               .addClass("alert alert-danger")
               .append(
@@ -146,6 +126,6 @@ $(function () {
 
   // Clear success/failure messages when form inputs are focused
   $("#playGroupName, #playGroupEmail").focus(function () {
-    $("#playGroupSuccess").html("");
+    $success.html("");
   });
 });
