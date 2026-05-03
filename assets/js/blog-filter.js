@@ -27,8 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       postCardsData.forEach((data) => {
-        const isVisible =
-          selectedTag === "all" || data.tags.includes(selectedTag);
+        const isVisible = selectedTag === "all" || data.tags === selectedTag;
 
         // Use classList.toggle with the 'd-none' class for better performance than direct style manipulation
         data.element.classList.toggle("d-none", !isVisible);
