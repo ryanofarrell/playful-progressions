@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cache the post cards data to avoid repeated DOM queries and attribute lookups
   const postCardsData = Array.from(postCards).map((card) => ({
     element: card,
-    tags: card.getAttribute("data-tags") || "",
+    tags: (card.getAttribute("data-tags") || "").split(/\s+/).filter(Boolean),
   }));
 
   // Get the container of the filter buttons
@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       postCardsData.forEach((data) => {
-        const isVisible = selectedTag === "all" || data.tags === selectedTag;
+        const isVisible =
+          selectedTag === "all" || data.tags.includes(selectedTag);
 
         // Use classList.toggle with the 'd-none' class for better performance than direct style manipulation
         data.element.classList.toggle("d-none", !isVisible);
