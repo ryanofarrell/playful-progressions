@@ -1,0 +1,13 @@
+--- post.html
++++ post.html
+@@ -144,8 +144,8 @@
+
+                   {% comment %} Prepare downcased concepts for the iterated post_item {% endcomment %}
+                   {% assign other_post_concepts_downcased = "" | split: "" %}
+-                  {% assign has_concepts = current_page_concepts_downcased.size > 0 and post_item.concepts.size > 0 %}
+-                  {% if has_concepts %}
++                  {% assign has_common_concepts = current_page_concepts_downcased.size > 0 and post_item.concepts.size > 0 %}
++                  {% if has_common_concepts %}
+                     {% assign other_post_concepts_downcased = post_item.concepts | join: concept_delimiter | downcase | split: concept_delimiter %}
+                   {% endif %}
+                 {% assign other_post_singular_tag_downcased = post_item.tag | downcase %}
