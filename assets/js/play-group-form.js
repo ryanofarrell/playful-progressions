@@ -11,16 +11,21 @@ $(function () {
   var showAlert = function (isSuccess, message) {
     $success.html(
       $("<div>")
-        .addClass("alert alert-" + (isSuccess ? "success" : "danger"))
+        .addClass(
+          "alert alert-" +
+            (isSuccess ? "success" : "danger") +
+            " alert-dismissible",
+        )
+        .attr("role", "alert")
         .append(
           $("<button>")
             .attr({
               type: "button",
               class: "close",
               "data-dismiss": "alert",
-              "aria-hidden": "true",
+              "aria-label": "Close",
             })
-            .html("&times;"),
+            .append($("<span>").attr("aria-hidden", "true").html("&times;")),
         )
         .append($("<strong>").text(message)),
     );
