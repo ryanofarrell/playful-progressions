@@ -41,21 +41,21 @@ layout: default
                   srcset="{{ teaser_base | append: '-400.avif' }} 400w,
                           {{ teaser_base | append: '-800.avif' }} 800w,
                           {{ teaser_base | append: '.avif' }} 1600w"
-                  sizes="(max-width: 991px) 100vw, 800px"
+                  sizes="(max-width: 991px) 100vw, (max-width: 1199px) 800px, 950px"
                   type="image/avif">
                 <source
                   srcset="{{ teaser_base | append: '-400.webp' }} 400w,
                           {{ teaser_base | append: '-800.webp' }} 800w,
                           {{ teaser_base | append: '.webp' }} 1600w"
-                  sizes="(max-width: 991px) 100vw, 800px"
+                  sizes="(max-width: 991px) 100vw, (max-width: 1199px) 800px, 950px"
                   type="image/webp">
                 <img
                   src="{{ teaser_src }}"
-                  alt="{{ page.title }}"
-                  class="post-teaser-img img-fluid rounded mb-4"
+                  alt="{{ page.title | escape }}"
+                  class="post-teaser-img img-fluid rounded"
                   loading="eager"
                   fetchpriority="high"
-                  decoding="async">
+                  decoding="sync">
               </picture>
             </div>
           {% endif %}
