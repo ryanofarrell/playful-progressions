@@ -50,37 +50,54 @@ $(function () {
 
         success: function (response) {
           // Handle successful submission response from Formspree
+          var $success = $("#playGroupSuccess");
           if (response.ok) {
             // Check if Formspree indicated success
             // Success message
-            $("#playGroupSuccess").html("<div class='alert alert-success'>");
-            $("#playGroupSuccess > .alert-success")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#playGroupSuccess > .alert-success").append(
-              "<strong>Thank you for your interest! We'll notify you about upcoming play groups. </strong>",
-            ); // Custom success message
-            $("#playGroupSuccess > .alert-success").append("</div>");
+            $success.html(
+              $("<div>")
+                .addClass("alert alert-success")
+                .append(
+                  $("<button>")
+                    .attr({
+                      type: "button",
+                      class: "close",
+                      "data-dismiss": "alert",
+                      "aria-hidden": "true",
+                    })
+                    .html("&times;"),
+                )
+                .append(
+                  $("<strong>").text(
+                    "Thank you for your interest! We'll notify you about upcoming play groups.",
+                  ),
+                ),
+            );
             // Clear all fields
             $("#playGroupForm").trigger("reset");
           } else {
             // Handle cases where Formspree responded but indicated an error
-            $("#playGroupSuccess").html("<div class='alert alert-danger'>");
-            $("#playGroupSuccess > .alert-danger")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#playGroupSuccess > .alert-danger").append(
-              $("<strong>").text(
-                "Sorry " +
-                  firstName +
-                  ", there was an issue submitting your interest. Please try again later!",
-              ),
+            $success.html(
+              $("<div>")
+                .addClass("alert alert-danger")
+                .append(
+                  $("<button>")
+                    .attr({
+                      type: "button",
+                      class: "close",
+                      "data-dismiss": "alert",
+                      "aria-hidden": "true",
+                    })
+                    .html("&times;"),
+                )
+                .append(
+                  $("<strong>").text(
+                    "Sorry " +
+                      firstName +
+                      ", there was an issue submitting your interest. Please try again later!",
+                  ),
+                ),
             );
-            $("#playGroupSuccess > .alert-danger").append("</div>");
           }
         },
 
@@ -93,20 +110,27 @@ $(function () {
             jqXHR,
           );
           // Fail message
-          $("#playGroupSuccess").html("<div class='alert alert-danger'>");
-          $("#playGroupSuccess > .alert-danger")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-            )
-            .append("</button>");
-          $("#playGroupSuccess > .alert-danger").append(
-            $("<strong>").text(
-              "Sorry " +
-                firstName +
-                ", it seems there was a problem submitting your interest. Please try again later!",
-            ),
+          $("#playGroupSuccess").html(
+            $("<div>")
+              .addClass("alert alert-danger")
+              .append(
+                $("<button>")
+                  .attr({
+                    type: "button",
+                    class: "close",
+                    "data-dismiss": "alert",
+                    "aria-hidden": "true",
+                  })
+                  .html("&times;"),
+              )
+              .append(
+                $("<strong>").text(
+                  "Sorry " +
+                    firstName +
+                    ", it seems there was a problem submitting your interest. Please try again later!",
+                ),
+              ),
           );
-          $("#playGroupSuccess > .alert-danger").append("</div>");
         },
 
         complete: function () {
@@ -121,11 +145,7 @@ $(function () {
   });
 
   // Clear success/failure messages when form inputs are focused
-  $("#playGroupName").focus(function () {
-    $("#playGroupSuccess").html("");
-  });
-
-  $("#playGroupEmail").focus(function () {
+  $("#playGroupName, #playGroupEmail").focus(function () {
     $("#playGroupSuccess").html("");
   });
 });
