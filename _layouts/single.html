@@ -39,19 +39,23 @@ layout: default
             <div class="post-image-container mt-4 mb-4 text-center">
               <picture>
                 <source
-                  srcset="{{ teaser_base | append: '-400.avif' }} 400w,
-                          {{ teaser_base | append: '-800.avif' }} 800w,
-                          {{ teaser_base | append: '.avif' }} 1600w"
-                  sizes="{{ teaser_sizes }}"
+                  srcset="{{ teaser_base | append: '-400.avif' | escape }} 400w,
+                          {{ teaser_base | append: '-800.avif' | escape }} 800w,
+                          {{ teaser_base | append: '.avif' | escape }} 1600w"
+                  sizes="{{ teaser_sizes | escape }}"
                   type="image/avif">
                 <source
-                  srcset="{{ teaser_base | append: '-400.webp' }} 400w,
-                          {{ teaser_base | append: '-800.webp' }} 800w,
-                          {{ teaser_base | append: '.webp' }} 1600w"
-                  sizes="{{ teaser_sizes }}"
+                  srcset="{{ teaser_base | append: '-400.webp' | escape }} 400w,
+                          {{ teaser_base | append: '-800.webp' | escape }} 800w,
+                          {{ teaser_base | append: '.webp' | escape }} 1600w"
+                  sizes="{{ teaser_sizes | escape }}"
                   type="image/webp">
                 <img
                   src="{{ teaser_src | escape }}"
+                  srcset="{{ teaser_base | append: '-400.' | append: teaser_parts.last | escape }} 400w,
+                          {{ teaser_base | append: '-800.' | append: teaser_parts.last | escape }} 800w,
+                          {{ teaser_src | escape }} 1600w"
+                  sizes="{{ teaser_sizes | escape }}"
                   alt="{{ page.title | escape }}"
                   class="post-teaser-img img-fluid rounded"
                   loading="eager"
