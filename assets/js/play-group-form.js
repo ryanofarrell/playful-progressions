@@ -7,6 +7,25 @@
 $(function () {
   var $success = $("#playGroupSuccess");
 
+  // Helper to display alert messages
+  var showAlert = function (isSuccess, message) {
+    $success.html(
+      $("<div>")
+        .addClass("alert alert-" + (isSuccess ? "success" : "danger"))
+        .append(
+          $("<button>")
+            .attr({
+              type: "button",
+              class: "close",
+              "data-dismiss": "alert",
+              "aria-hidden": "true",
+            })
+            .html("&times;"),
+        )
+        .append($("<strong>").text(message)),
+    );
+  };
+
   // Initialize jqBootstrapValidation for the Play Group form
   $("#playGroupForm input,#playGroupForm textarea").jqBootstrapValidation({
     preventSubmit: true, // Prevent default HTML form submission
@@ -59,21 +78,7 @@ $(function () {
               firstName +
               ", there was an issue submitting your interest. Please try again later!";
 
-          $success.html(
-            $("<div>")
-              .addClass("alert alert-" + (isSuccess ? "success" : "danger"))
-              .append(
-                $("<button>")
-                  .attr({
-                    type: "button",
-                    class: "close",
-                    "data-dismiss": "alert",
-                    "aria-hidden": "true",
-                  })
-                  .html("&times;"),
-              )
-              .append($("<strong>").text(message)),
-          );
+          showAlert(isSuccess, message);
 
           if (isSuccess) {
             // Clear all fields
@@ -90,26 +95,11 @@ $(function () {
             jqXHR,
           );
           // Fail message
-          $success.html(
-            $("<div>")
-              .addClass("alert alert-danger")
-              .append(
-                $("<button>")
-                  .attr({
-                    type: "button",
-                    class: "close",
-                    "data-dismiss": "alert",
-                    "aria-hidden": "true",
-                  })
-                  .html("&times;"),
-              )
-              .append(
-                $("<strong>").text(
-                  "Sorry " +
-                    firstName +
-                    ", it seems there was a problem submitting your interest. Please try again later!",
-                ),
-              ),
+          showAlert(
+            false,
+            "Sorry " +
+              firstName +
+              ", it seems there was a problem submitting your interest. Please try again later!",
           );
         },
 
