@@ -7,6 +7,8 @@
 // These are foundational and must be available to everything that follows.
 // =============================================================================
 @import "base/variables";
+
+
 @import "base/custom_utilities";
 @import "base/mixins.scss";
 @import "base/fonts";
@@ -69,6 +71,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 // override anything from Bootstrap or Font Awesome.
 // =============================================================================
 @import "base/page.scss";
+
+@import "base/accessibility";
 
 // Components
 @import "components/buttons.scss";
