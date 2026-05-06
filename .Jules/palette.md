@@ -22,6 +22,8 @@
 - **Impact:** Screen readers might announce these decorative icons in confusing ways (e.g., "phone-alt" alongside actual phone numbers), violating WCAG guidelines for handling decorative elements.
 - **Resolution:** Always add `aria-hidden="true"` to any `<i>` tag that serves only a decorative purpose and is accompanied by visually hidden or explicit text.
 ## Focus States and Colors
+- **Anti-Pattern:** Interactive container elements (like cards) that feature hover transformations (e.g., lifting up on hover) but fail to apply the same transformation when their inner links receive keyboard focus.
+- **Solution:** Always add `&:focus-within` alongside `&:hover` for container elements that transform, ensuring the container reacts when keyboard users focus on elements inside it.
 - **Anti-Pattern:** Using hardcoded RGB or hex values (e.g., `rgba(254, 209, 55, 0.5)`) for `:focus` state `box-shadow` rules on interactive elements like buttons.
 - **Solution:** Use semantic color variables (e.g., `$primary`, `$secondary`, `$action`) within the `rgba()` function to ensure focus rings are dynamically consistent with the element's specific color variant.
 - **Anti-Pattern:** Removing default browser focus styles (`outline: none;` or `box-shadow: none;`) without providing a visually distinct alternative for interactive elements (e.g., social buttons, form controls). This violates WCAG focus visibility guidelines and makes keyboard navigation difficult.
