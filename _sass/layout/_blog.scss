@@ -9,8 +9,9 @@
     flex-direction: column;
     transition: transform 0.3s ease-in-out; /* Subtle hover effect */
 
-    &:hover {
-        transform: translateY(-5px); /* Lift card on hover */
+    &:hover,
+    &:focus-within {
+        transform: translateY(-5px); /* Lift card on hover or focus-within */
     }
 
     a {
@@ -34,8 +35,9 @@
             @include heading-font; /* Use your heading font mixin */
 
             a {
-                &:hover {
-                    color: $primary; /* Change link color on hover */
+                &:hover,
+                &:focus {
+                    color: $primary; /* Change link color on hover or focus */
                 }
             }
         }
