@@ -125,11 +125,9 @@
 
                 {% comment %} --- Stage 1: Prepare data for the current page --- {% endcomment %}
                 {% assign current_page_concepts_downcased = "" | split: "" %}
-                {% if page.concepts %}
-                  {% for concept_string in page.concepts %}
-                    {% assign downcased_concept_string = concept_string | downcase %}
-                    {% assign current_page_concepts_downcased = current_page_concepts_downcased | push: downcased_concept_string %}
-                  {% endfor %}
+                {% assign concept_delimiter = "|||" %}
+                {% if page.concepts.size > 0 %}
+                  {% assign current_page_concepts_downcased = page.concepts | join: concept_delimiter | downcase | split: concept_delimiter %}
                 {% endif %}
                 {% assign current_page_singular_tag_downcased = page.tag | downcase %}
               {% assign current_post_url = page.url %}
@@ -147,11 +145,9 @@
 
                   {% comment %} Prepare downcased concepts for the iterated post_item {% endcomment %}
                   {% assign other_post_concepts_downcased = "" | split: "" %}
-                  {% if post_item.concepts %}
-                    {% for concept_string in post_item.concepts %}
-                      {% assign downcased_concept_string = concept_string | downcase %}
-                      {% assign other_post_concepts_downcased = other_post_concepts_downcased | push: downcased_concept_string %}
-                    {% endfor %}
+                  {% assign has_concepts = current_page_concepts_downcased.size > 0 and post_item.concepts.size > 0 %}
+                  {% if has_concepts %}
+                    {% assign other_post_concepts_downcased = post_item.concepts | join: concept_delimiter | downcase | split: concept_delimiter %}
                   {% endif %}
                 {% assign other_post_singular_tag_downcased = post_item.tag | downcase %}
 

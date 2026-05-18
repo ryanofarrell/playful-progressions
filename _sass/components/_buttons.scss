@@ -23,8 +23,6 @@
 .btn-primary {
   background-color: $primary;
   border-color: $primary;
-  &:active,
-  &:focus,
   &:hover {
     background-color: darken($primary, 7.5%) !important;
     border-color: darken($primary, 7.5%) !important;
@@ -32,7 +30,10 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba($primary, 0.5) !important;
+    background-color: darken($primary, 7.5%) !important;
+    border-color: darken($primary, 7.5%) !important;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba($primary, 0.5);
   }
   &:disabled,
   &.disabled {
@@ -45,8 +46,6 @@
 .btn-secondary {
   background-color: $secondary;
   border-color: $secondary;
-  &:active,
-  &:focus,
   &:hover {
     background-color: darken($secondary, 7.5%) !important;
     border-color: darken($secondary, 7.5%) !important;
@@ -54,14 +53,15 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5) !important;
+    background-color: darken($secondary, 7.5%) !important;
+    border-color: darken($secondary, 7.5%) !important;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba($secondary, 0.5);
   }
 }
 .btn-action {
   background-color: $action;
   border-color: $action;
-  &:active,
-  &:focus,
   &:hover {
     background-color: darken($action, 7.5%) !important;
     border-color: darken($action, 7.5%) !important;
@@ -69,6 +69,9 @@
   }
   &:active,
   &:focus {
-    box-shadow: 0 0 0 0.2rem rgba($action, 0.5) !important;
+    background-color: darken($action, 7.5%) !important;
+    border-color: darken($action, 7.5%) !important;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba($action, 0.5);
   }
 }

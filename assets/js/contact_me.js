@@ -16,7 +16,6 @@ $(function () {
       event.preventDefault(); // Prevent default submit behaviour (already done by preventSubmit: true, but good to keep)
 
       // Get values from FORM
-      // var url = "https://formspree.io/" + "{% if site.formspree_form_path %}{{ site.formspree_form_path }}{% else %}{{ site.email }}{% endif %}"; // Removed this line
       var url = $form.attr("action"); // Get the submission URL directly from the form's action attribute
 
       // Basic URL validation: Ensure it starts with the expected Formspree prefix

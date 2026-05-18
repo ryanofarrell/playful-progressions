@@ -20,10 +20,6 @@ section#contact {
       height: 248px;
     }
   }
-  .form-control:focus {
-    border-color: $primary;
-    box-shadow: none;
-  }
   ::-webkit-input-placeholder {
     font-weight: 700;
     color: $gray-400;

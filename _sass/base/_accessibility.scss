@@ -1,0 +1,24 @@
+// _accessibility.scss
+
+// Shared accessibility mixins and utilities
+
+// Accessible focus ring mixin for form controls and interactive elements
+@mixin focus-ring($color: $primary) {
+  border-color: $color;
+  box-shadow: 0 0 0 0.2rem rgba($color, 0.5);
+  outline: 2px solid transparent; // For Windows High Contrast Mode support
+}
+
+// Global class for applying focus rings to custom elements
+.focus-ring {
+  &:active,
+  &:focus {
+    @include focus-ring();
+  }
+}
+
+// Global rule to ensure all .form-control elements receive accessible focus states
+.form-control:active,
+.form-control:focus {
+  @include focus-ring();
+}
