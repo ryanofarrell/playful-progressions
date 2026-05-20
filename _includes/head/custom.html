@@ -51,6 +51,8 @@
       "url": {{ site.url | jsonify }},
       "logo": {{ site.logo | prepend: site.url | jsonify }},
       "telephone": {{ site.phone-numeric | jsonify }},
+      "email": {{ site.email | jsonify }},
+      "paymentAccepted": "Credit Card, HSA, FSA",
       "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
       "address": {
         "@type": "PostalAddress",
