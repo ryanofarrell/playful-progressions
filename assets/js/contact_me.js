@@ -5,13 +5,35 @@
  */
 
 $(function () {
+  var $success = $("#success");
+
+  // Helper to display alert messages
+  var showAlert = function (isSuccess, message) {
+    $success.html(
+      $("<div>")
+        .addClass(
+          "alert alert-" +
+            (isSuccess ? "success" : "danger") +
+            " alert-dismissible",
+        )
+        .attr("role", "alert")
+        .append(
+          $("<button>")
+            .attr({
+              type: "button",
+              class: "close",
+              "data-dismiss": "alert",
+              "aria-label": "Close",
+            })
+            .append($("<span>").attr("aria-hidden", "true").html("&times;")),
+        )
+        .append($("<strong>").text(message)),
+    );
+  };
+
   // Initialize jqBootstrapValidation for the contact form
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
     preventSubmit: true, // Prevent default HTML form submission
-    submitError: function ($form, event, errors) {
-      // Additional error messages or events can be handled here if needed
-      // jqBootstrapValidation will display default error messages based on data-validation attributes
-    },
     submitSuccess: function ($form, event) {
       event.preventDefault(); // Prevent default submit behaviour (already done by preventSubmit: true, but good to keep)
 
@@ -54,67 +76,36 @@ $(function () {
 
         success: function (response) {
           // Handle successful submission response from Formspree
-          // Formspree returns a JSON response on success
-          if (response.ok) {
-            // Check if Formspree indicated success
-            // Success message
-            $("#success").html("<div class='alert alert-success'>");
-            $("#success > .alert-success")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#success > .alert-success").append(
-              "<strong>Your message has been sent. </strong>",
-            );
-            $("#success > .alert-success").append("</div>");
+          var isSuccess = response.ok;
+          var message = isSuccess
+            ? "Your message has been sent. "
+            : "Sorry " +
+              firstName +
+              ", there was an issue sending your message. Please try again later or contact us directly!";
+
+          showAlert(isSuccess, message);
+
+          if (isSuccess) {
             // Clear all fields
             $("#contactForm").trigger("reset");
-            // Formspree handles the redirect via the _next hidden input, so no manual redirect needed here
-          } else {
-            // Handle cases where Formspree responded but indicated an error
-            // This might happen with spam detection, etc.
-            $("#success").html("<div class='alert alert-danger'>");
-            $("#success > .alert-danger")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#success > .alert-danger").append(
-              $("<strong>").text(
-                "Sorry " +
-                  firstName +
-                  ", there was an issue sending your message. Please try again later or contact us directly!",
-              ),
-            );
-            $("#success > .alert-danger").append("</div>");
           }
         },
 
         error: function (jqXHR, textStatus, errorThrown) {
-          // Handle AJAX error (e.g., network issue, incorrect Formspree URL leading to 404/500)
+          // Handle AJAX error
           console.error(
             "Form submission error:",
             textStatus,
             errorThrown,
             jqXHR,
-          ); // Log error details
-          // Fail message
-          $("#success").html("<div class='alert alert-danger'>");
-          $("#success > .alert-danger")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-            )
-            .append("</button>");
-          $("#success > .alert-danger").append(
-            $("<strong>").text(
-              "Sorry " +
-                firstName +
-                ", it seems that my mail server is not responding or there was a network issue. Please try again later!",
-            ),
           );
-          $("#success > .alert-danger").append("</div>");
-          // No reset here, let user see their input to try again
+          // Fail message
+          showAlert(
+            false,
+            "Sorry " +
+              firstName +
+              ", it seems that my mail server is not responding or there was a network issue. Please try again later!"
+          );
         },
 
         complete: function () {
@@ -134,17 +125,8 @@ $(function () {
     $(this).tab("show");
   });
 
-  // Clear success/failure messages when the name input is focused
-  $("#name").focus(function () {
-    $("#success").html("");
-  });
-
-  // Clear success/failure messages when other inputs are focused
-  $("#email").focus(function () {
-    $("#success").html("");
-  });
-
-  $("#message").focus(function () {
-    $("#success").html("");
+  // Clear success/failure messages when inputs are focused
+  $("#name, #email, #message").focus(function () {
+    $success.html("");
   });
 });
