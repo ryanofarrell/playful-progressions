@@ -57,3 +57,5 @@ future: false
 sass:
   sass_dir: _sass
   style: compressed # Minifies CSS output
+  quiet_deps: true
+  silence_deprecations: ["import", "global-builtin", "color-functions"]
