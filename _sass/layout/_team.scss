@@ -1,18 +1,30 @@
-// Styling for the team section
-.team-member {
-  margin-bottom: 50px;
-  text-align: center;
+// Styling for the team section on the homepage
+.editorial-portrait-wrapper {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  
+  &:hover {
+    transform: translateY(-5px);
+    
+    img {
+      transform: scale(1.03) rotate(1deg);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08) !important;
+    }
+  }
+  
   img {
-    width: 225px;
-    height: 225px;
-    border: 7px solid fade-out($black, 0.9);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   }
-  h4 {
-    margin-top: 25px;
-    margin-bottom: 0;
-    text-transform: none;
-  }
-  p {
-    margin-top: 0;
-  }
+}
+
+.feature-check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: rgba($primary, 0.08);
+  color: $primary;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 900;
 }
