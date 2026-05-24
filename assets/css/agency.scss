@@ -97,3 +97,110 @@ $contact-image: "{{ site.data.style.contact-image }}";
 
 // Accessibility (Last to ensure overrides)
 @import "base/accessibility";
+
+// =============================================================================
+// 5. Playful Bubble Animations & Delighters
+// Custom premium visual effects tailored to the child-focused clinical brand.
+// =============================================================================
+.bubble-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -150px;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  // Iridescent soap bubble effect blending action rose pink, secondary teal, and white highlights
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba($action, 0.15) 45%,
+    rgba($secondary, 0.25) 75%,
+    rgba($action, 0.45) 100%
+  );
+  box-shadow: 
+    inset -5px -5px 12px rgba($action, 0.25), 
+    inset 5px 5px 12px rgba(255, 255, 255, 0.35), 
+    0 4px 10px rgba(0, 0, 0, 0.05);
+  animation: float-bubble 24s linear infinite;
+  will-change: transform, opacity;
+}
+
+// Staggered timing, placement, and sizes for organic, natural movement
+.bubble-1 {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation-duration: 20s;
+  animation-delay: 0s;
+}
+
+.bubble-2 {
+  width: 120px;
+  height: 120px;
+  left: 30%;
+  animation-duration: 26s;
+  animation-delay: 4s;
+}
+
+.bubble-3 {
+  width: 60px;
+  height: 60px;
+  left: 55%;
+  animation-duration: 18s;
+  animation-delay: 8s;
+}
+
+.bubble-4 {
+  width: 100px;
+  height: 100px;
+  left: 75%;
+  animation-duration: 28s;
+  animation-delay: 2s;
+}
+
+.bubble-5 {
+  width: 75px;
+  height: 75px;
+  left: 88%;
+  animation-duration: 22s;
+  animation-delay: 12s;
+}
+
+// Responsive down-scaling for optimal performance and viewing on smaller screens
+@media (max-width: 768px) {
+  .bubble-1 { width: 45px; height: 45px; }
+  .bubble-2 { width: 65px; height: 65px; }
+  .bubble-3 { width: 35px; height: 35px; }
+  .bubble-4 { width: 55px; height: 55px; }
+  .bubble-5 { width: 40px; height: 40px; }
+}
+
+@keyframes float-bubble {
+  0% {
+    transform: translateY(110vh) translateX(0) scale(0.8) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(50vh) translateX(35px) scale(1.1) rotate(180deg);
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-20vh) translateX(-15px) scale(1.3) rotate(360deg);
+    opacity: 0;
+  }
+}

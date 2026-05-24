@@ -25,16 +25,25 @@
       width="1600"
       height="900" />
   </picture>
+  
+  <!-- Playful background bubble elements -->
+  <div class="bubble-container">
+    <div class="bubble bubble-1"></div>
+    <div class="bubble bubble-2"></div>
+    <div class="bubble bubble-3"></div>
+    <div class="bubble bubble-4"></div>
+    <div class="bubble bubble-5"></div>
+  </div>
 
   <div class="container position-relative masthead-content">
     <div class="intro-text">
       {%- comment %} Display the main title from sitetext {% endcomment -%}
       {%- if site.data.sitetext.header.title -%}
-        <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
+        <div class="intro-lead-in">{{ site.data.sitetext.header.title }}</div>
       {%- endif -%}
       {%- comment %} Display the subtitle from sitetext {% endcomment -%}
       {%- if site.data.sitetext.header.subtitle -%}
-        <div class="intro-heading text-uppercase">{{ site.data.sitetext.header.subtitle | markdownify }}</div>
+        <h1 class="intro-heading text-uppercase">{{ site.data.sitetext.header.subtitle }}</h1>
       {%- endif -%}
 
       {%- comment %} Loop through and display header buttons from sitetext {% endcomment -%}

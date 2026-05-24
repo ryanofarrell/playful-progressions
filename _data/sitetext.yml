@@ -1,7 +1,7 @@
 # _data/sitetext.yml
 header:
-  title: Playful Progressions Therapy
-  subtitle: Nurturing Development Through Play
+  title: Playful Progressions
+  subtitle: Pediatric Occupational Therapy in Atlanta, GA
   buttons:
     - label: Contact Maria
       link: "/contact/" # Updated link to the contact page
@@ -41,6 +41,8 @@ location_info:
   location_note_pre_link: "Don't see your part of town?"
   location_note_link_text: "Contact Maria to discuss options!"
   location_note_link_url: "/contact/"
+  service_areas_link_text: "View our full pediatric occupational therapy service areas"
+  service_areas_link_url: "/service-areas/"
 
 # NEW: Content specific to the Service Areas page
 service_areas_page:

@@ -67,10 +67,10 @@
   </style>
   <link
     rel="preload"
-    href="{{ '/assets/css/agency.css' | relative_url }}"
+    href="{{ '/assets/css/agency.css' | relative_url }}?v={{ site.time | date: '%s' }}"
     as="style"
     onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="{{ '/assets/css/agency.css' | relative_url }}"></noscript>
+  <noscript><link rel="stylesheet" href="{{ '/assets/css/agency.css' | relative_url }}?v={{ site.time | date: '%s' }}"></noscript>
 
   <link
     rel="apple-touch-icon"
