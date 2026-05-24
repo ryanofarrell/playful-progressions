@@ -168,12 +168,27 @@ permalink: /meet-maria/
           </div>
         {% endif %}
 
-        <div class="row mt-5">
-          <div class="col-lg-8 mx-auto text-center">
-            <div class="bg-light p-5 rounded">
-              <h3 class="section-heading mb-3">Ready to Work with Maria?</h3>
-              <p class="text-muted mb-4">Discover how her personalized approach can support your child's growth and development.</p>
-              <a class="btn btn-primary btn-xl text-uppercase" href="{{ '/services/' | relative_url }}">View Services</a>
+        <div class="row mt-5 justify-content-center">
+          <div class="col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="soft-hook-card text-center w-100 d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="soft-hook-title mb-3">Ready to Work with Maria?</h3>
+                <p class="soft-hook-text mb-4">Discover how her personalized approach can support your child's growth and development.</p>
+              </div>
+              <div>
+                <a class="btn btn-primary text-uppercase px-4 py-2 font-weight-bold" style="border-radius: 30px; font-size: 0.85rem; letter-spacing: 1px;" href="{{ '/services/' | relative_url }}">View Services</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-4 d-flex align-items-stretch">
+            <div class="soft-hook-card text-center w-100 d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="soft-hook-title mb-3">Get to Know Me Better</h3>
+                <p class="soft-hook-text mb-4">Follow along on Instagram for daily OT tips, behind-the-scenes moments, and playful activities.</p>
+              </div>
+              <div>
+                <a class="btn btn-primary text-uppercase px-4 py-2 font-weight-bold" style="border-radius: 30px; font-size: 0.85rem; letter-spacing: 1px;" href="https://www.instagram.com/playfulprogressions/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
+              </div>
             </div>
           </div>
         </div>
@@ -182,5 +197,3 @@ permalink: /meet-maria/
     </div>
   </div>
 </section>
-
-{% include soft_hook.html title="Get to know me better" text="Follow along on Instagram for daily OT tips, behind-the-scenes moments, and playful activities." btn_text="Follow on Instagram" btn_link="https://www.instagram.com/playfulprogressions/" external=true %}

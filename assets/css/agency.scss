@@ -78,6 +78,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "components/client-scroll.scss";
 @import "components/_blog-filter.scss";
 @import "components/skip-link";
+@import "components/soft-hook.scss";
+
 
 // Layout
 @import "layout/masthead.scss";
