@@ -5,7 +5,11 @@ nav:
     url: "/services/"
     section: services
   - title: "Resources"
-    url: "/resources/"
+    sublinks:
+      - title: "Browse by Topic"
+        url: "/resources/"
+      - title: "Browse All Articles"
+        url: "/blog/"
   - title: "FAQ"
     url: "/faq/"
   - title: "Contact" # Added Contact link

@@ -321,4 +321,55 @@
       color: darken($primary, 10%); /* Hover effect */
     }
   }
+
+  // Dropdown menu styles
+  .dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: $gray-100;
+    margin-top: 15px;
+    padding: 10px 0;
+    
+    .dropdown-item {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: $primary;
+      text-transform: uppercase;
+      padding: 12px 24px;
+      transition: all 0.2s ease;
+      
+      &:hover,
+      &:focus {
+        background-color: rgba($primary, 0.05);
+        color: $action;
+        padding-left: 28px; // Smooth shift-in micro-animation!
+      }
+    }
+  }
+
+  // Adjustments for mobile viewports
+  @media (max-width: 991px) {
+    .dropdown-menu {
+      background-color: transparent;
+      box-shadow: none;
+      margin-top: 0;
+      padding: 5px 0 5px 15px;
+      border-left: 2px dashed rgba($primary, 0.2);
+      
+      .dropdown-item {
+        color: $primary;
+        padding: 8px 15px;
+        
+        &:hover,
+        &:focus {
+          background-color: transparent;
+          color: $action;
+          padding-left: 20px;
+        }
+      }
+    }
+  }
 }
+
