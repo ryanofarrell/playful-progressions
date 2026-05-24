@@ -1,0 +1,141 @@
+---
+layout: default
+title: "At-Home Sensory Play & Five Minute Fridays"
+display_title: "At-Home Play"
+subtitle: "Therapeutic play ideas using simple household items"
+description: "Discover pediatric OT play activities you can set up in five minutes using everyday household objects like foil, tape, sponges, and cups. Low cost, high benefit!"
+permalink: /topics/at-home-play/
+---
+
+<section class="page-section first-content-section" id="topics-page">
+  <div class="container">
+    
+    <!-- Introduction Section -->
+    <div class="row mb-5 justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="handwritten-accent mb-3">Compassionate, play-based education</div>
+        <p class="lead text-muted">
+          You don’t need expensive toys to promote your child’s development! Some of the most powerful developmental and sensory exercises can be done in under five minutes using simple items you already have in your kitchen or closet—like aluminum foil, painter’s tape, muffin tins, and laundry baskets. Therapeutic play is about engaging your child's curiosity while gently building fine motor, gross motor, and regulation skills.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Play Subtopics -->
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h3 class="section-heading text-uppercase h4" style="color: var(--primary); font-weight: 800; letter-spacing: 1px;">Pillars of Everyday Play</h3>
+        <p class="text-muted">How quick, low-cost activities build massive motor, sensory, and cognitive skills.</p>
+      </div>
+      
+      <!-- Five Minute Fridays Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #faf8ff; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-clock fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Five Minute Fridays</h4>
+          <p class="text-muted small mb-0">
+            A weekly series of quick, highly therapeutic play setups designed for busy families. Every activity takes less than five minutes to set up, costs virtually nothing, and utilizes household objects to achieve specific developmental goals (like bilateral coordination or core strength).
+          </p>
+        </div>
+      </div>
+      
+      <!-- Everyday Staples Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #fffcf8; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-box-open fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Household Staples</h4>
+          <p class="text-muted small mb-0">
+            Learn how kitchen cabinet items hold secret developmental benefits! Peeling painter's tape off the wall builds pincer grasping; crumbling and flattening aluminum foil builds hand strength; pushing a weighted laundry basket provides soothing proprioceptive "heavy work."
+          </p>
+        </div>
+      </div>
+      
+      <!-- Developmental Benefits Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #f8fafc; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-magic fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">OT Benefits of Simple Play</h4>
+          <p class="text-muted small mb-0">
+            Simple play captures children's intrinsic motivation. Rather than drilling exercises, a child who is trying to rescue "trapped" toys inside a muffin tin is naturally practicing sorting, fine motor precision, wrist stability, bilateral integration, and cognitive problem-solving!
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="my-5" style="border-top: 2px dashed var(--primary-light); opacity: 0.5;" />
+    
+    <!-- Curated Posts Heading -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h3 class="section-heading text-uppercase h3 font-weight-bold">Our At-Home Play Library</h3>
+        <h4 class="section-subheading text-muted" style="font-size: 1rem;">Explore all our quick, therapeutic play ideas.</h4>
+      </div>
+    </div>
+    
+    <!-- Dynamic Post Loop -->
+    <div class="row">
+      {% assign post_count = 0 %}
+      {% for post in site.posts %}
+        {% assign show_post = false %}
+        {% assign title_slug = post.title | slugify %}
+        {% if post.tag == "5 Minute Friday" or title_slug contains "five-minute" or title_slug contains "5-minute" or title_slug contains "friday" %}
+          {% assign show_post = true %}
+        {% else %}
+          {% for concept in post.concepts %}
+            {% assign concept_slug = concept | slugify %}
+            {% if concept_slug == "play-ideas" %}
+              {% assign show_post = true %}
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+        
+        {% if show_post %}
+          {% assign post_count = post_count | plus: 1 %}
+          <div class="col-md-6 col-lg-4 mb-4 blog-post-card">
+            <div class="blog-card h-100 d-flex flex-column">
+              <a href="{{ post.url | relative_url }}">
+                {% if post.header.teaser %}
+                  {% assign teaser_src = post.header.teaser | relative_url %}
+                  {% assign teaser_base = teaser_src | split: "." | first %}
+                  <picture>
+                    <source type="image/avif" srcset="{{ teaser_base }}.avif" />
+                    <source type="image/webp" srcset="{{ teaser_base }}.webp" />
+                    <img src="{{ teaser_src }}" alt="{{ post.title }}" class="blog-card-img" style="border-radius: 12px 28px 0 0;" loading="lazy" />
+                  </picture>
+                {% endif %}
+              </a>
+              <div class="blog-card-content p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                <div>
+                  <h4 class="blog-card-title h5 font-weight-bold mb-2">
+                    <a href="{{ post.url | relative_url }}" class="text-dark" style="text-decoration: none;">{{ post.title }}</a>
+                  </h4>
+                  <p class="blog-card-excerpt text-muted small">{{ post.excerpt }}</p>
+                </div>
+                <p class="blog-card-meta mb-0 mt-3 pt-2" style="border-top: 1px solid #f1f5f9;">
+                  <small class="text-muted">{{ post.date | date: "%B %d, %Y" }}</small>
+                  {% if post.tag %}
+                    <span class="badge badge-pill badge-primary ml-2 py-1 px-2" style="background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem;">{{ post.tag }}</span>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      
+      {% if post_count == 0 %}
+        <div class="col-12 text-center text-muted">
+          <p>New articles coming soon! Check back for more tips and play ideas.</p>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% include soft_hook.html title="Want tailored therapeutic play activities?" text="We design fully customized occupational therapy home plans and sensory diets to support children's behavior, focus, and milestone achievements in Brookhaven, Buckhead, and Atlanta." btn_text="Work with Maria" btn_link="/contact/" %}

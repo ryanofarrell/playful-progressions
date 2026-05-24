@@ -1,0 +1,136 @@
+---
+layout: default
+title: "Sensory Processing in Kids: A Parent's Guide"
+display_title: "Sensory Processing"
+subtitle: "Understanding your child's sensory world"
+description: "Explore a parent-focused guide on pediatric sensory processing. Learn about tactile, proprioceptive, and vestibular systems and discover expert OT tips and at-home play ideas."
+permalink: /topics/sensory-processing/
+---
+
+<section class="page-section first-content-section" id="topics-page">
+  <div class="container">
+    
+    <!-- Introduction Section -->
+    <div class="row mb-5 justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="handwritten-accent mb-3">Compassionate, play-based education</div>
+        <p class="lead text-muted">
+          Sensory processing is how our brain receives, interprets, and responds to messages from our senses. It helps children understand the world, interact with others, and learn to coordinate their movements. When a child has difficulty processing these inputs, they might feel overwhelmed (sensory seeking or avoiding) or struggle with everyday tasks.
+        </p>
+      </div>
+    </div>
+    
+    <!-- The Big Three Systems -->
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h3 class="section-heading text-uppercase h4" style="color: var(--primary); font-weight: 800; letter-spacing: 1px;">The "Big Three" Sensory Systems</h3>
+        <p class="text-muted">These primitive systems lay the foundation for all early learning, regulation, and motor skills.</p>
+      </div>
+      
+      <!-- Tactile Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #fffcf8; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-hand-paper fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Tactile System (Touch)</h4>
+          <p class="text-muted small mb-0">
+            Helps children interpret information from receptors on their skin. This includes light touch, deep pressure, temperature, pain, and textures. A well-integrated tactile system supports emotional regulation, early bonding, and fine motor skills.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Proprioceptive Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #f8fafc; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-child fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Proprioception (Body Position)</h4>
+          <p class="text-muted small mb-0">
+            Our "body awareness" sense. Receptors in joints and muscles tell the brain where our limbs are and how much force to use. Doing "heavy work" (pushing, pulling, lifting) provides proprioceptive input that calms and regulates a busy nervous system.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Vestibular Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #faf8ff; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-running fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Vestibular System (Movement)</h4>
+          <p class="text-muted small mb-0">
+            Our sense of movement and balance. Fluid in our inner ears tells us where our head is in space, if we're moving fast or slow, and in which direction. This system serves as the "battery pack" of the brain, affecting muscle tone, coordination, and attention.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="my-5" style="border-top: 2px dashed var(--primary-light); opacity: 0.5;" />
+    
+    <!-- Curated Posts Heading -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h3 class="section-heading text-uppercase h3 font-weight-bold">Sensory Resources & Play Ideas</h3>
+        <h4 class="section-subheading text-muted" style="font-size: 1rem;">Read our expert deep-dives and simple, therapeutic at-home activities.</h4>
+      </div>
+    </div>
+    
+    <!-- Dynamic Post Loop -->
+    <div class="row">
+      {% assign post_count = 0 %}
+      {% for post in site.posts %}
+        {% assign show_post = false %}
+        {% for concept in post.concepts %}
+          {% assign concept_slug = concept | slugify %}
+          {% if concept_slug == "sensory-processing" or concept_slug == "sensory-play" or concept_slug == "sensory-exploration" or concept_slug == "sensory-development" or concept_slug == "vestibular" or concept_slug == "vestibular-input" or concept_slug == "proprioception" or concept_slug == "proprioceptive-input" or concept_slug == "heavy-work" or concept_slug == "tactile-input" or concept_slug == "tactile-processing" or concept_slug == "sensory-toys" %}
+            {% assign show_post = true %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if show_post %}
+          {% assign post_count = post_count | plus: 1 %}
+          <div class="col-md-6 col-lg-4 mb-4 blog-post-card">
+            <div class="blog-card h-100 d-flex flex-column">
+              <a href="{{ post.url | relative_url }}">
+                {% if post.header.teaser %}
+                  {% assign teaser_src = post.header.teaser | relative_url %}
+                  {% assign teaser_base = teaser_src | split: "." | first %}
+                  <picture>
+                    <source type="image/avif" srcset="{{ teaser_base }}.avif" />
+                    <source type="image/webp" srcset="{{ teaser_base }}.webp" />
+                    <img src="{{ teaser_src }}" alt="{{ post.title }}" class="blog-card-img" style="border-radius: 12px 28px 0 0;" loading="lazy" />
+                  </picture>
+                {% endif %}
+              </a>
+              <div class="blog-card-content p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                <div>
+                  <h4 class="blog-card-title h5 font-weight-bold mb-2">
+                    <a href="{{ post.url | relative_url }}" class="text-dark" style="text-decoration: none;">{{ post.title }}</a>
+                  </h4>
+                  <p class="blog-card-excerpt text-muted small">{{ post.excerpt }}</p>
+                </div>
+                <p class="blog-card-meta mb-0 mt-3 pt-2" style="border-top: 1px solid #f1f5f9;">
+                  <small class="text-muted">{{ post.date | date: "%B %d, %Y" }}</small>
+                  {% if post.tag %}
+                    <span class="badge badge-pill badge-primary ml-2 py-1 px-2" style="background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem;">{{ post.tag }}</span>
+                  {% endif %}
+                </p>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+      
+      {% if post_count == 0 %}
+        <div class="col-12 text-center text-muted">
+          <p>New articles coming soon! Check back for more tips and play ideas.</p>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% include soft_hook.html title="Suspect your child has sensory differences?" text="We provide in-home and school-based occupational therapy evaluations to support children's sensory processing and daily routines." btn_text="Let's Chat" btn_link="/contact/" %}
