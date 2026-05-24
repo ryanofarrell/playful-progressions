@@ -4,6 +4,8 @@ nav:
   - title: "Services"
     url: "/services/"
     section: services
+  - title: "Topics"
+    url: "/topics/"
   - title: "FAQ"
     url: "/faq/"
   - title: "Contact" # Added Contact link
