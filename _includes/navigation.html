@@ -62,30 +62,17 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav text-uppercase ml-auto">
         {% for link in site.data.navigation.nav %}
-          {%- if link.sublinks -%}
-            <li class="nav-item dropdown">
-              <a class="nav-link nav-link-text dropdown-toggle" href="#" id="navbarDropdown{{ forloop.index }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ link.title }}
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown{{ forloop.index }}">
-                {% for sublink in link.sublinks %}
-                  <a class="dropdown-item" href="{{ sublink.url | relative_url }}">{{ sublink.title }}</a>
-                {% endfor %}
-              </div>
-            </li>
-          {%- else -%}
-            <li class="nav-item">
-              {%- if link.url -%}
-                <a class="nav-link nav-link-text {% unless page.url == '/' %}{% if link.section %}js-scroll-trigger{% endif %}{% endunless %}" href="{{ link.url | relative_url }}">{{ link.title }}</a>
-              {%- elsif link.button -%}
-                <a class="btn nav-link nav-button {{ link.button-class | default: "btn-action" }} btn-m text-uppercase js-scroll-trigger m-2" href="{{ link.url | relative_url }}">{{ link.title }}</a>
-              {%- elsif link.section -%}
-                <a class="nav-link nav-link-text js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
-              {%- else -%}
-                <a class="nav-link nav-link-text" href="#">{{ link.title }}</a>
-              {%- endif -%}
-            </li>
-          {%- endif -%}
+          <li class="nav-item">
+            {%- if link.url -%}
+              <a class="nav-link nav-link-text {% unless page.url == '/' %}{% if link.section %}js-scroll-trigger{% endif %}{% endunless %}" href="{{ link.url | relative_url }}">{{ link.title }}</a>
+            {%- elsif link.button -%}
+              <a class="btn nav-link nav-button {{ link.button-class | default: "btn-action" }} btn-m text-uppercase js-scroll-trigger m-2" href="{{ link.url | relative_url }}">{{ link.title }}</a>
+            {%- elsif link.section -%}
+              <a class="nav-link nav-link-text js-scroll-trigger" href="#{{ link.section }}">{{ link.title }}</a>
+            {%- else -%}
+              <a class="nav-link nav-link-text" href="#">{{ link.title }}</a>
+            {%- endif -%}
+          </li>
         {% endfor %}
 
         {% comment %} Desktop Contact Icons (Visible on desktop, hidden on mobile) {% endcomment %}

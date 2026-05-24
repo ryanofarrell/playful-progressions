@@ -6,103 +6,154 @@ display_title: "Contact Us"
 description: "Contact Maria O'Farrell at Playful Progressions for pediatric occupational therapy services, consultations, or to schedule an evaluation. We're here to help."
 subtitle: Get in touch with Playful Progressions
 permalink: /contact/
-# Optional: Specify a custom header image for this page
-# header_image: /assets/img/your-contact-header-image.avif
 ---
 
 <section class="page-section first-content-section" id="contact-page">
   <div class="container">
+    
+    <!-- Editorial Layout Row -->
     <div class="row justify-content-center">
-      <div class="col-lg-10">
-        {% comment %} Reverted column width {% endcomment %}
-
-        {% comment %} Section header {% endcomment %}
-        <h2 class="section-heading text-center text-uppercase mb-4">Send Us a Message</h2>
-        <h3 class="section-subheading text-muted text-center mb-5">We'd love to hear from you! Fill out the form below or use our contact info.</h3>
-        {% comment %} Reverted subtitle {% endcomment %}
-
+      <div class="col-xl-11">
         <div class="row">
-          {% comment %} Added row wrapper back {% endcomment %}
-          <div class="col-md-6 mb-4">
-            {% comment %} Added column for contact info block back {% endcomment %}
-            <div class="contact-info-block">
-              <h4 class="mb-3">Contact Information</h4>
-              <p>
-                <i class="fas fa-envelope text-primary mr-2"></i>
-                Email:
-                <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-              </p>
-              <p>
-                <i class="fas fa-phone text-primary mr-2"></i>
-                Phone:
-                <a href="tel:{{ site.phone-numeric }}">{{ site.phone-text }}</a>
-              </p>
-
+          
+          <!-- LEFT COLUMN: Contact Info & Low-Pressure Roadmap Card -->
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <div class="card border-0 shadow-sm p-4 p-md-5 d-flex flex-column h-100" style="border-radius: 12px 28px 12px 24px; background: linear-gradient(135deg, #fffbf8 0%, #fff6f0 100%); border-left: 6px solid var(--primary) !important; box-shadow: 0 .125rem .25rem rgba(0,0,0,0.075) !important;">
+              <div>
+                <div class="handwritten-accent text-primary mb-3">Let's grow together</div>
+                <h3 class="h4 font-weight-bold mb-3" style="color: var(--gray-900);">Get in Touch</h3>
+                <p class="text-muted small mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+                  Whether you have a quick question about milestones or want to discuss your child's unique needs, we are here to support your family every step of the way.
+                </p>
+                
+                <!-- Contact Points -->
+                <div class="mb-4">
+                  <!-- Email Point -->
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="d-inline-flex align-items-center justify-content-center mr-3" style="width: 42px; height: 42px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary); flex-shrink: 0;">
+                      <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                      <div class="text-muted font-weight-bold" style="font-size: 0.75rem; letter-spacing: 1px;">EMAIL US</div>
+                      <a href="mailto:{{ site.email }}" class="text-primary font-weight-bold small" style="text-decoration: none; font-size: 0.9rem;">{{ site.email }}</a>
+                    </div>
+                  </div>
+                  
+                  <!-- Phone Point -->
+                  <div class="d-flex align-items-center">
+                    <div class="d-inline-flex align-items-center justify-content-center mr-3" style="width: 42px; height: 42px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary); flex-shrink: 0;">
+                      <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                      <div class="text-muted font-weight-bold" style="font-size: 0.75rem; letter-spacing: 1px;">CALL OR TEXT</div>
+                      <a href="tel:{{ site.phone-numeric }}" class="text-primary font-weight-bold small" style="text-decoration: none; font-size: 0.9rem;">{{ site.phone-text }}</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Dashed Divider -->
+              <hr class="my-4" style="border-top: 1px dashed var(--primary-light); opacity: 0.5;" />
+              
+              <!-- Roadmap Timeline -->
+              <div>
+                <h4 class="h6 text-uppercase font-weight-bold mb-3" style="color: var(--gray-900); letter-spacing: 1px;">What to Expect Next</h4>
+                
+                <div class="roadmap-timeline small">
+                  <!-- Step 1 -->
+                  <div class="d-flex mb-3">
+                    <div class="font-weight-bold text-primary mr-3" style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">1</div>
+                    <div>
+                      <strong class="text-dark" style="font-size: 0.9rem;">15-Minute Inquiry Call</strong>
+                      <p class="text-muted mb-0 mt-1" style="font-size: 0.85rem; line-height: 1.5;">
+                        A complimentary, friendly phone conversation to discuss your child's current development and daily routines.
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <!-- Step 2 -->
+                  <div class="d-flex">
+                    <div class="font-weight-bold text-primary mr-3" style="font-size: 1.1rem; line-height: 1; flex-shrink: 0;">2</div>
+                    <div>
+                      <strong class="text-dark" style="font-size: 0.9rem;">Finding the Right Fit</strong>
+                      <p class="text-muted mb-0 mt-1" style="font-size: 0.85rem; line-height: 1.5;">
+                        We'll talk through options together to determine if our home/school-based therapy matches your goals, or point you toward helpful local resources.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            {% comment %} Added column for form block back {% endcomment %}
-            <div class="contact-form-block">
-              <h4 class="mb-3 text-center">Contact Form</h4>
-              {% comment %}
-                Formspree setup:
-                1. Go to https://formspree.io/ and create a new form.
-                2. Verify your email address.
-                3. Copy the unique endpoint URL provided by Formspree (it will look like https://formspree.io/f/xxxxxxxx).
-                4. Replace the "YOUR_FORMSPREE_ENDPOINT" below with your unique URL.
-                5. Formspree will send submissions to the email address you verified.
-                6. We've added a hidden _subject field to indicate the source.
-                7. The form is configured to redirect to /thank-you/ on success.
-              {% endcomment %}
-
-              {% comment %} Placeholder for success/failure messages from contact_me.js {% endcomment %}
+          
+          <!-- RIGHT COLUMN: Premium Contact Form Card -->
+          <div class="col-lg-7">
+            <div class="card border-0 shadow p-4 p-md-5" style="border-radius: 20px; background-color: #ffffff; box-shadow: 0 1rem 3rem rgba(0,0,0,0.075) !important;">
+              <h3 class="h4 font-weight-bold mb-2 text-center" style="color: var(--gray-900);">Send a Message</h3>
+              <p class="text-muted small text-center mb-4" style="font-size: 0.9rem;">Fill out the form below, and we'll reply within 1-2 business days.</p>
+              
+              <!-- Formspree placeholder for success/failure messages from contact_me.js -->
               <div id="success"></div>
-
-              <form
-                id="contactForm"
-                action="https://formspree.io/f/xgvkapgj"
-                method="POST">
-                {% comment %} Updated Formspree endpoint {% endcomment %}
-                <div class="form-group">
+              
+              <form id="contactForm" action="https://formspree.io/f/xgvkapgj" method="POST">
+                
+                <!-- Name Field -->
+                <div class="form-group mb-3">
+                  <label for="name" class="small font-weight-bold text-muted mb-1">Your Name *</label>
                   <input
                     class="form-control"
                     id="name"
                     type="text"
-                    placeholder="Your Name *"
+                    placeholder="Enter your name"
                     required="required"
                     data-validation-required-message="Please enter your name."
-                    name="name">
-                  <p class="help-block text-danger"></p>
+                    name="name"
+                    style="border-radius: 8px; border: 1px solid #e2e8f0; padding: 12px 16px; background-color: #faf8ff; font-size: 0.9rem;">
+                  <p class="help-block text-danger small"></p>
                 </div>
-                <div class="form-group">
+                
+                <!-- Email Field -->
+                <div class="form-group mb-3">
+                  <label for="email" class="small font-weight-bold text-muted mb-1">Your Email *</label>
                   <input
                     class="form-control"
                     id="email"
                     type="email"
-                    placeholder="Your Email *"
+                    placeholder="name@example.com"
                     required="required"
                     data-validation-required-message="Please enter your email address."
-                    name="email">
-                  <p class="help-block text-danger"></p>
+                    name="email"
+                    style="border-radius: 8px; border: 1px solid #e2e8f0; padding: 12px 16px; background-color: #faf8ff; font-size: 0.9rem;">
+                  <p class="help-block text-danger small"></p>
                 </div>
-                {% comment %} Removed the phone field {% endcomment %}
-                <div class="form-group">
+                
+                <!-- Message Field -->
+                <div class="form-group mb-4">
+                  <label for="message" class="small font-weight-bold text-muted mb-1">Your Message *</label>
                   <textarea
                     class="form-control"
                     id="message"
-                    placeholder="Your Message *"
+                    placeholder="How can we help your child shine?"
                     required="required"
                     data-validation-required-message="Please enter a message."
-                    name="message"></textarea>
-                  <p class="help-block text-danger"></p>
+                    name="message"
+                    rows="5"
+                    style="border-radius: 8px; border: 1px solid #e2e8f0; padding: 12px 16px; background-color: #faf8ff; font-size: 0.9rem; resize: none;"></textarea>
+                  <p class="help-block text-danger small"></p>
                 </div>
+                
+                <!-- Submit Button -->
                 <div class="text-center">
                   <button
                     id="sendMessageButton"
-                    class="btn btn-primary btn-xl text-uppercase"
-                    type="submit">Send Message</button>
+                    class="btn btn-primary text-uppercase"
+                    type="submit"
+                    style="border-radius: 30px; padding: 12px 40px; font-weight: 700; width: 100%; color: white; box-shadow: 0 4px 15px rgba(230, 92, 120, 0.2);">
+                    Send Message <i class="fas fa-paper-plane ml-2"></i>
+                  </button>
                 </div>
-                {% comment %} Hidden field for email subject indicator {% endcomment %}
+                
+                <!-- Hidden field for email subject indicator -->
                 <input
                   type="hidden"
                   name="_subject"
@@ -110,10 +161,11 @@ permalink: /contact/
               </form>
             </div>
           </div>
+          
         </div>
-
       </div>
     </div>
+    
   </div>
 </section>
 
