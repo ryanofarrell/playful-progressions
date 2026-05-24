@@ -19,10 +19,10 @@
 
   {% include navigation.html %}
 
-  {%- comment -%} Include masthead on home page, mini-masthead on other pages {%- endcomment -%}
+  {%- comment -%} Include masthead on home page, mini-masthead on other standard subpages (excluding post layout) {%- endcomment -%}
   {% if page.layout == "home" %}
     {% include masthead.html %}
-  {% else %}
+  {% elsif page.layout != "post" %}
     {% include mini-masthead.html %}
   {% endif %}
 
