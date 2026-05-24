@@ -64,3 +64,20 @@
     font-weight: 700;
     src: url("../fonts/roboto-slab-v35-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
+
+/* caveat-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: "Caveat";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../fonts/caveat-v23-latin-regular.woff2") format("woff2");
+}
+@font-face {
+    font-display: swap;
+    font-family: "Caveat";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../fonts/caveat-v23-latin-regular.woff2") format("woff2");
+}
+

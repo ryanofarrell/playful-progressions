@@ -183,3 +183,37 @@
         }
     }
 }
+
+// Custom Pagination styling for WCAG AA contrast compliance
+.pagination {
+    .page-item {
+        .page-link {
+            color: $primary;
+            border-color: rgba($primary, 0.15);
+            background-color: #ffffff;
+            transition: all 0.2s ease;
+
+            &:hover, &:focus {
+                color: #ffffff;
+                background-color: $primary;
+                border-color: $primary;
+            }
+        }
+
+        &.active {
+            .page-link {
+                background-color: $primary !important;
+                border-color: $primary !important;
+                color: #ffffff !important;
+            }
+        }
+
+        &.disabled {
+            .page-link {
+                color: #868e96;
+                background-color: #f8f9fa;
+                border-color: rgba($primary, 0.08);
+            }
+        }
+    }
+}
