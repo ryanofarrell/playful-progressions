@@ -55,3 +55,14 @@
 .blockquote .blockquote-footer {
     color: #555 !important; // A darker shade of gray
 }
+
+// Personal biography handwriting accent
+.handwritten-accent {
+  font-family: 'Caveat', cursive;
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: $action;
+  transform: rotate(-3deg);
+  display: inline-block;
+  margin-top: 5px;
+}

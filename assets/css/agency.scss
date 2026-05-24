@@ -94,6 +94,7 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/_blog.scss";
 @import "layout/_services-page.scss";
 @import "layout/_contact-page.scss";
+@import "layout/faq.scss";
 
 // Accessibility (Last to ensure overrides)
 @import "base/accessibility";

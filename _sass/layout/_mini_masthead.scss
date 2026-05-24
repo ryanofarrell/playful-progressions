@@ -68,3 +68,32 @@ header.mini-masthead {
         }
     }
 }
+
+// Playful SVG Wave Divider for Subpages
+.mini-masthead-divider {
+  position: absolute;
+  bottom: -1px; // Align to bottom tightly
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
+  
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 60px;
+    
+    .divider-fill {
+      fill: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .mini-masthead-divider svg {
+    height: 30px;
+  }
+}

@@ -45,14 +45,26 @@
 
     .service-tier-card {
         /* Style for the tier cards */
-        border: 1px solid $gray-300;
-        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 15px 35px 15px 30px;
         padding: 20px;
         height: 100%; /* Make tier cards equal height in a row */
         display: flex;
         flex-direction: column;
         background-color: white; /* White background for cards */
-        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05); /* Subtle shadow */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); /* Subtle shadow */
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+        &:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 12px 24px rgba(11, 27, 65, 0.07);
+            border-color: rgba($secondary, 0.25);
+
+            .tier-name {
+                color: $secondary;
+                transition: color 0.3s ease;
+            }
+        }
 
         .tier-name {
             /* Style for tier name (H4) */
