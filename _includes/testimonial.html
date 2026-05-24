@@ -20,16 +20,17 @@
             <ol class="carousel-indicators">
               {% for obj in site.data.sitetext.testimonial.quotes %}
                 <li
-                  data-target="#testimonial-carousel"
-                  data-slide-to="{{ forloop.index0 }}"
-                  role="button"
-                  tabindex="0"
-                  aria-label="Slide {{ forloop.index }}"
-                  onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click();}"
                   {% if forloop.first %}
                   class="active"
                   aria-current="true"
-                  {% endif %}></li>
+                  {% endif %}>
+                  <button
+                    type="button"
+                    data-target="#testimonial-carousel"
+                    data-slide-to="{{ forloop.index0 }}"
+                    aria-label="Slide {{ forloop.index }}"
+                    class="carousel-indicator-button"></button>
+                </li>
               {% endfor %}
             </ol>
             <div class="carousel-inner">
