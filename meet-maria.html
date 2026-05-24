@@ -11,7 +11,8 @@ permalink: /meet-maria/
       <div class="col-lg-10 mx-auto">
 
         <div class="row">
-          <div class="col-md-4 text-center mb-4">
+          <!-- Left Column: Portrait & Quick Facts -->
+          <div class="col-lg-4 text-center mb-5 mb-lg-0">
             {% assign maria = site.data.sitetext.team.people | where: "name", "Maria O'Farrell" | first %}
             {% if maria %}
               {% assign img_src = maria.image %}
@@ -29,22 +30,125 @@ permalink: /meet-maria/
                   sizes="(max-width: 767px) 200px, 400px"
                   type="image/webp">
                 <img
-                  class="mx-auto rounded-circle img-fluid mb-3"
+                  class="mx-auto rounded-circle img-fluid mb-3 shadow"
                   src="{{ img_src | relative_url }}"
                   alt="{{ maria.name }}"
                   width="400"
-                  height="400">
+                  height="400"
+                  style="border: 6px solid #fff;">
               </picture>
-              <h2>{{ maria.name }}</h2>
-              <p class="text-muted">{{ maria.role }}</p>
-              <div class="handwritten-accent mt-2 mb-3">
-                OT &amp; Mom-approved! 🧸
+              <h2 class="mb-1">{{ maria.name }}</h2>
+              <p class="text-muted mb-2 font-weight-bold text-uppercase" style="letter-spacing: 1px; font-size: 0.9rem;">{{ maria.role }}</p>
+              
+              <div class="d-block my-3">
+                <div class="handwritten-accent">
+                  Compassionate, play-based therapy
+                </div>
+              </div>
+
+              <!-- Quick Facts Card -->
+              <div class="card bg-light border-0 shadow-sm text-left p-4 mt-4">
+                <h4 class="h5 mb-4 text-primary text-center"><i class="fas fa-id-card mr-2"></i>Quick Facts</h4>
+                <ul class="list-unstyled mb-0" style="font-size: 0.9rem;">
+                  <li class="media mb-3">
+                    <i class="fas fa-graduation-cap fa-lg text-secondary mr-3 mt-1" style="width: 25px;"></i>
+                    <div class="media-body">
+                      <strong class="text-dark d-block">Education</strong>
+                      <span class="text-muted">Master of Science in Occupational Therapy (FGCU)</span>
+                    </div>
+                  </li>
+                  <li class="media mb-3">
+                    <i class="fas fa-university fa-lg text-secondary mr-3 mt-1" style="width: 25px;"></i>
+                    <div class="media-body">
+                      <strong class="text-dark d-block">Faculty Appointment</strong>
+                      <span class="text-muted">Part-Time Instructor in the OT Program at Georgia State University</span>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <i class="fas fa-heart fa-lg text-secondary mr-3 mt-1" style="width: 25px;"></i>
+                    <div class="media-body">
+                      <strong class="text-dark d-block">Perspective</strong>
+                      <span class="text-muted">Dedicated Pediatric OT &amp; Mother of Two</span>
+                    </div>
+                  </li>
+                </ul>
               </div>
             {% endif %}
           </div>
-          <div class="col-md-8">
-            <div class="large text-muted">
-              {{ site.data.sitetext.team.subtext | markdownify }}
+
+          <!-- Right Column: Values & Biography -->
+          <div class="col-lg-8 text-left">
+            <div class="mb-4 lead text-muted" style="font-size: 1.15rem; line-height: 1.6;">
+              Maria is a pediatric occupational therapist who brings warmth, expertise, and deep compassion to the families she serves. Since earning her Master of Science in Occupational Therapy in 2017, she has dedicated her career to helping children thrive through a strengths-based, individualized approach.
+            </div>
+
+            <div class="row">
+              <!-- Value Card 1 -->
+              <div class="col-12 mb-4">
+                <div class="service-tier-card d-flex flex-row align-items-start p-4">
+                  <div class="mr-4 d-none d-sm-block">
+                    <div class="icon-circle bg-light p-3 rounded-circle text-center" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-child fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-child fa-lg text-primary mr-2 d-sm-none"></i>
+                      <h3 class="tier-name mb-0">Strengths-Based Approach</h3>
+                    </div>
+                    <p class="tier-description mb-0">
+                      Maria is passionate about supporting children's development by emphasizing sensory processing skills to promote emotional regulation, motor coordination, and learning readiness. She incorporates reflex integration strategies to support foundational movement patterns and neurological development. Her approach is evidence-informed and rooted in meaningful connection—with children and their families.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Value Card 2 -->
+              <div class="col-12 mb-4">
+                <div class="service-tier-card d-flex flex-row align-items-start p-4">
+                  <div class="mr-4 d-none d-sm-block">
+                    <div class="icon-circle bg-light p-3 rounded-circle text-center" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-home fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-home fa-lg text-primary mr-2 d-sm-none"></i>
+                      <h3 class="tier-name mb-0">Realistic, Family-Centered Support</h3>
+                    </div>
+                    <p class="tier-description mb-0">
+                      As a mother of two, Maria deeply understands the challenges and joys of parenting. She strives to offer realistic, sustainable support that fits within the natural flow of daily family life. She is just as passionate about encouraging and equipping parents as she is about working directly with children.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Value Card 3 -->
+              <div class="col-12 mb-4">
+                <div class="service-tier-card d-flex flex-row align-items-start p-4">
+                  <div class="mr-4 d-none d-sm-block">
+                    <div class="icon-circle bg-light p-3 rounded-circle text-center" style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center;">
+                      <i class="fas fa-chalkboard-teacher fa-2x text-primary"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="d-flex align-items-center mb-3">
+                      <i class="fas fa-chalkboard-teacher fa-lg text-primary mr-2 d-sm-none"></i>
+                      <h3 class="tier-name mb-0">Teaching &amp; Mentorship</h3>
+                    </div>
+                    <p class="tier-description mb-0">
+                      Maria is a part-time instructor in the Occupational Therapy program at Georgia State University, where she enjoys mentoring future therapists and sharing her knowledge with both students and families. Her teaching reflects her commitment to empowering others through practical, family-centered strategies.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Closing Personal Statement -->
+            <div class="mt-4 p-3 bg-light rounded text-center" style="border-left: 4px solid var(--primary);">
+              <p class="font-italic text-muted mb-0" style="font-size: 1.05rem; line-height: 1.6;">
+                "Above all, I am honored to be part of your child's journey. I look forward to walking alongside your family with compassion, creativity, and clinical expertise."
+              </p>
             </div>
           </div>
         </div>

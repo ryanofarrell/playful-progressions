@@ -145,7 +145,10 @@
 
                   {% comment %} Prepare downcased concepts for the iterated post_item {% endcomment %}
                   {% assign other_post_concepts_downcased = "" | split: "" %}
-                  {% assign has_concepts = current_page_concepts_downcased.size > 0 and post_item.concepts.size > 0 %}
+                  {% assign has_concepts = false %}
+                  {% if current_page_concepts_downcased.size > 0 and post_item.concepts.size > 0 %}
+                    {% assign has_concepts = true %}
+                  {% endif %}
                   {% if has_concepts %}
                     {% assign other_post_concepts_downcased = post_item.concepts | join: concept_delimiter | downcase | split: concept_delimiter %}
                   {% endif %}
