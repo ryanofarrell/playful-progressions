@@ -1,7 +1,7 @@
 ---
 layout: default # Use the default layout for standard header/footer
 title: "Pediatric OT Services & Evaluations in Atlanta"
-include_play_group_form: true
+include_play_group_form: false
 display_title: "Our Services"
 description: "Explore expert pediatric OT services in Atlanta. Playful Progressions offers evaluations, telehealth, and tailored interventions in Brookhaven, Buckhead, and more."
 subtitle: Detailed information about our offerings # Kept from your original front matter
@@ -121,7 +121,7 @@ permalink: /services/
     {% comment %} The main page title and subtitle come from the mini-masthead {% endcomment %}
     <div class="row mb-5">
       <div class="col-lg-12 text-center">
-        <h4 class="mb-3">Jump to a Service:</h4>
+        <h4 class="mb-3 text-uppercase text-primary" style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 800;">Jump to a Service:</h4>
         <ul class="list-inline mini-nav">
           {% comment %} Loop through offerings to create mini-nav links {% endcomment %}
           {% for offering in site.data.sitetext.services.offerings %}
@@ -231,49 +231,7 @@ permalink: /services/
                       {% endif %}
                       <p class="item-description">{{ item.description | markdownify }}</p>
 
-                      {% if item.form %}
-                        <div class="play-group-form-block mt-4">
-                          <h5 class="mb-3 text-center">Interested in Play Group?</h5>
-                          <div id="playGroupSuccess"></div>
-                          <form
-                            id="playGroupForm"
-                            action="https://formspree.io/f/{{ item.form_id }}"
-                            method="POST">
-                            <div class="form-group">
-                              <input
-                                class="form-control"
-                                id="playGroupName"
-                                type="text"
-                                placeholder="Your Name *"
-                                required="required"
-                                data-validation-required-message="Please enter your name."
-                                name="name">
-                              <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group">
-                              <input
-                                class="form-control"
-                                id="playGroupEmail"
-                                type="email"
-                                placeholder="Your Email *"
-                                required="required"
-                                data-validation-required-message="Please enter your email address."
-                                name="email">
-                              <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="text-center">
-                              <button
-                                id="sendPlayGroupMessageButton"
-                                class="btn btn-primary btn-sm text-uppercase"
-                                type="submit">Notify Me About Upcoming Play Groups</button>
-                            </div>
-                            <input
-                              type="hidden"
-                              name="_subject"
-                              value="Play Group Interest - Website Form">
-                          </form>
-                        </div>
-                      {% endif %}
+
 
                     </div>
                   </div>
@@ -286,17 +244,30 @@ permalink: /services/
       </section>
     {% endfor %}
 
-    <div class="row mt-5">
-      <div class="col-lg-8 mx-auto text-center">
-        <div class="bg-light p-5 rounded">
-          <h2 class="section-heading mb-3">Not Sure Where to Begin?</h2>
-          <p class="text-muted mb-4">Every child is unique. If you're unsure which service is right for you, let's chat about your specific needs.</p>
-          <a class="btn btn-primary btn-xl text-uppercase" href="{{ '/contact/' | relative_url }}">Get in Touch</a>
+    <div class="row mt-5 justify-content-center">
+      <div class="col-md-6 mb-4 d-flex align-items-stretch">
+        <div class="soft-hook-card text-center w-100 d-flex flex-column justify-content-between">
+          <div>
+            <h3 class="soft-hook-title mb-3">Not Sure Where to Begin?</h3>
+            <p class="soft-hook-text mb-4">Every child is unique. If you're unsure which service is right for you, let's chat about your specific needs.</p>
+          </div>
+          <div>
+            <a class="btn btn-primary text-uppercase px-4 py-2 font-weight-bold" style="border-radius: 30px; font-size: 0.85rem; letter-spacing: 1px;" href="{{ '/contact/' | relative_url }}">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4 d-flex align-items-stretch">
+        <div class="soft-hook-card text-center w-100 d-flex flex-column justify-content-between">
+          <div>
+            <h3 class="soft-hook-title mb-3">Looking for Free Resources?</h3>
+            <p class="soft-hook-text mb-4">Check out our blog for expert articles on child development, occupational therapy activities, and parenting tips.</p>
+          </div>
+          <div>
+            <a class="btn btn-primary text-uppercase px-4 py-2 font-weight-bold" style="border-radius: 30px; font-size: 0.85rem; letter-spacing: 1px;" href="{{ '/blog/' | relative_url }}">Read the Blog</a>
+          </div>
         </div>
       </div>
     </div>
 
   </div>
 </section>
-
-{% include soft_hook.html title="Looking for free resources?" text="Check out our blog for expert articles on child development, occupational therapy activities, and parenting tips." btn_text="Read the Blog" btn_link="/blog/" %}

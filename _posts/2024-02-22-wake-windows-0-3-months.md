@@ -13,7 +13,7 @@ image: /assets/images/processed/blog/wake-windows-0-3.jpeg
 
 ---
 
-_For 3-6 months [click here](wake-windows-3-6-months)_
+_For 3-6 months [click here]({{ '/blog/wake-windows-3-6-months.html' | relative_url }})_
 
 You’ve fed them, you’ve burped them, you’ve changed them…now what?! Here are some ways to fill those small but mighty wake windows in the newborn phase that are beneficial to you and your little one.
 

@@ -4,12 +4,12 @@ nav:
   - title: "Services"
     url: "/services/"
     section: services
+  - title: "Resources"
+    url: "/resources/"
   - title: "FAQ"
     url: "/faq/"
   - title: "Contact" # Added Contact link
     url: "/contact/" # Link to the new contact page
-  - title: "Blog"
-    url: "/blog/"
 
 contact_icons:
   - type: "phone"

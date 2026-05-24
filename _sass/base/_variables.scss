@@ -1,5 +1,13 @@
 // Variables
 
+// =============================================================================
+// Design Tokens: Shared radius values for the playful asymmetric card style.
+// Use these in SCSS files; for inline HTML styles use var(--radius-playful).
+// =============================================================================
+$radius-playful:    12px 28px 12px 24px !default; // Standard content cards
+$radius-playful-lg: 15px 35px 15px 30px !default; // Service/FAQ tier cards
+$radius-playful-xl: 20px 50px 20px 45px !default; // Testimonial card
+
 // Restated Bootstrap Variables
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;

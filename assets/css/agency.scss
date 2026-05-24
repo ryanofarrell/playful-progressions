@@ -78,6 +78,8 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "components/client-scroll.scss";
 @import "components/_blog-filter.scss";
 @import "components/skip-link";
+@import "components/soft-hook.scss";
+
 
 // Layout
 @import "layout/masthead.scss";
@@ -94,6 +96,37 @@ $contact-image: "{{ site.data.style.contact-image }}";
 @import "layout/_blog.scss";
 @import "layout/_services-page.scss";
 @import "layout/_contact-page.scss";
+@import "layout/faq.scss";
 
 // Accessibility (Last to ensure overrides)
 @import "base/accessibility";
+
+// =============================================================================
+// 5. Tactile spring-back tap micro-interactions for mobile/buttons
+// =============================================================================
+.btn, .topic {
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              color 0.15s ease-in-out, 
+              background-color 0.15s ease-in-out, 
+              border-color 0.15s ease-in-out, 
+              box-shadow 0.15s ease-in-out;
+
+  &:active {
+    transform: scale(0.94) !important;
+    transition: transform 0.08s ease !important;
+  }
+}
+
+// =============================================================================
+// 6. Progressive Scroll-Reveal Animations (Option 3)
+// =============================================================================
+.js-reveal {
+  opacity: 0;
+  transform: scale(0.88) translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.js-reveal.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}

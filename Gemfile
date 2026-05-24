@@ -19,3 +19,4 @@ end
 
 # Required for the local 'jekyll serve' command
 gem "webrick"
+gem "logger"

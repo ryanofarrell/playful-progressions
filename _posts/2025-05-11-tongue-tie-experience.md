@@ -28,7 +28,7 @@ Tongue tie releases are not a straightforward solution. Both of my daughters beg
 
 ## Deciding to Get the Release
 
-After seeking help from multiple professionals, I decided to proceed with the release for both of my daughters because they continued to struggle with feeding and muscle tension. Although therapy improved these issues to some extent, it wasn’t sufficient for long-term functioning. My older daughter still experienced reflux and fed slowly, while my younger daughter fatigued easily, requiring frequent feeding. Additionally, her tension and head turn preference were concerning, potentially leading to [plagiocephaly](/#what-we-treat) or [torticollis](/#what-we-treat). Beyond their immediate needs, I recognized that untreated tongue ties could result in lifelong issues, including migraines, TMJ, sleep disturbances, and head and neck tension.
+After seeking help from multiple professionals, I decided to proceed with the release for both of my daughters because they continued to struggle with feeding and muscle tension. Although therapy improved these issues to some extent, it wasn’t sufficient for long-term functioning. My older daughter still experienced reflux and fed slowly, while my younger daughter fatigued easily, requiring frequent feeding. Additionally, her tension and head turn preference were concerning, potentially leading to [plagiocephaly]({{ '/blog/importance-of-tummy-time.html' | relative_url }}) or [torticollis]({{ '/blog/importance-of-tummy-time.html' | relative_url }}). Beyond their immediate needs, I recognized that untreated tongue ties could result in lifelong issues, including migraines, TMJ, sleep disturbances, and head and neck tension.
 
 ## After-Release Care
 

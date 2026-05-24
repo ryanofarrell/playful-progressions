@@ -1,0 +1,139 @@
+---
+layout: default
+title: "Newborn & Infant Development Guide"
+display_title: "Newborn Development"
+subtitle: "Navigating early sensory needs, wake windows, and milestone foundations"
+description: "Explore an expert guide on newborn care, wake windows (0-6 months), early tummy time, infant massage, and supporting caregiver postpartum mental health."
+permalink: /topics/newborn-development/
+---
+
+<section class="page-section first-content-section" id="newborn-development-page">
+  <div class="container">
+    
+    <!-- Introduction Section -->
+    <div class="row mb-5 justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="handwritten-accent mb-3">Compassionate, play-based education</div>
+        <p class="lead text-muted">
+          The early months of your baby’s life are a beautiful, intense, and often overwhelming transition. In pediatric OT, we look at the newborn phase from a sensory and regulatory lens—helping parents understand their infant’s "wake windows," providing strategies to soothe their central nervous system, starting early milestones (like tummy time or infant massage), and supporting the critical well-being of the postpartum parent.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Newborn Subtopics -->
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h3 class="section-heading text-uppercase h4" style="color: var(--primary); font-weight: 800; letter-spacing: 1px;">Foundations of Early Development</h3>
+        <p class="text-muted">How early sleep rhythms, milestone play, and maternal well-being support your family.</p>
+      </div>
+      
+      <!-- Wake Windows Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #faf8ff; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-bed fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Wake Windows & Sleep</h4>
+          <p class="text-muted small mb-0">
+            A baby’s "wake window" is the active time between sleep cycles. In the early weeks (0-3 months) this window is tiny but vital. Understanding how to gently stimulate your baby during their awake times (and recognizing overstimulation cues) ensures a calm transition back to rest and prevents overtiredness.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Early Milestones Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #fffcf8; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-baby fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Early Milestones & Massage</h4>
+          <p class="text-muted small mb-0">
+            Gentle bodywork routines that support development right from the start. Infant massage provides critical proprioceptive (muscle/joint) and tactile (touch) input that promotes parent-child bonding and digestion comfort. Early tummy time and crossing midline exercises build core extensor and bilateral coordination.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Postpartum Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #f8fafc; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-heart fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Postpartum Mental Well-Being</h4>
+          <p class="text-muted small mb-0">
+            A baby cannot regulate themselves without a co-regulating parent. The postpartum transition involves massive physiological, emotional, and neurobiological adjustments. Providing self-care strategies, setting realistic boundaries, and acknowledging postpartum mental health changes is key to a thriving family.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="my-5" style="border-top: 2px dashed var(--primary-light); opacity: 0.5;" />
+    
+    <!-- Curated Posts Heading -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h3 class="section-heading text-uppercase h3 font-weight-bold">Newborn & Infant Resources</h3>
+        <h4 class="section-subheading text-muted" style="font-size: 1rem;">Read our early wake window activities, sleep hygiene guides, and postpartum tips.</h4>
+      </div>
+    </div>
+    
+    <!-- Dynamic Post Loop (Limited to 3) -->
+    <div class="row justify-content-center">
+      {% assign post_count = 0 %}
+      {% for post in site.posts %}
+        {% assign show_post = false %}
+        {% for concept in post.concepts %}
+          {% assign concept_slug = concept | slugify %}
+          {% if concept_slug == "newborn-care" or concept_slug == "wake-windows" or concept_slug == "infant-care" or concept_slug == "infant-development" or concept_slug == "infant-activities" or concept_slug == "postpartum" or concept_slug == "womb" or concept_slug == "prenatal-development" or concept_slug == "infant-massage" %}
+            {% assign show_post = true %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if show_post %}
+          {% if post_count < 3 %}
+            {% assign post_count = post_count | plus: 1 %}
+            <div class="col-md-6 col-lg-4 mb-4 blog-post-card">
+              <div class="blog-card h-100 d-flex flex-column">
+                <a href="{{ post.url | relative_url }}">
+                  {% if post.header.teaser %}
+                    {% assign teaser_src = post.header.teaser | relative_url %}
+                    {% assign teaser_base = teaser_src | split: "." | first %}
+                    <picture>
+                      <source type="image/avif" srcset="{{ teaser_base }}.avif" />
+                      <source type="image/webp" srcset="{{ teaser_base }}.webp" />
+                      <img src="{{ teaser_src }}" alt="{{ post.title }}" class="blog-card-img" style="border-radius: 12px 28px 0 0;" loading="lazy" />
+                    </picture>
+                  {% endif %}
+                </a>
+                <div class="blog-card-content p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4 class="blog-card-title h5 font-weight-bold mb-2">
+                      <a href="{{ post.url | relative_url }}" class="text-dark" style="text-decoration: none;">{{ post.title }}</a>
+                    </h4>
+                    <p class="blog-card-excerpt text-muted small">{{ post.excerpt }}</p>
+                  </div>
+                  <p class="blog-card-meta mb-0 mt-3 pt-2" style="border-top: 1px solid #f1f5f9;">
+                    <small class="text-muted">{{ post.date | date: "%B %d, %Y" }}</small>
+                    {% if post.tag %}
+                      <span class="badge badge-pill badge-primary ml-2 py-1 px-2" style="background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem;">{{ post.tag }}</span>
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if post_count == 0 %}
+        <div class="col-12 text-center text-muted">
+          <p>New articles coming soon! Check back for more tips and play ideas.</p>
+        </div>
+      {% endif %}
+    </div>
+
+
+  </div>
+</section>
+
+{% include soft_hook.html title="Struggling with sleep, feeding, or early tummy time?" text="We provide in-home infant occupational therapy assessments and support for newborns and babies, helping families in Brookhaven, Buckhead, and North Atlanta thrive." btn_text="Schedule Infant Consultation" btn_link="/contact/" %}

@@ -12,7 +12,7 @@ header:
 image: /assets/images/processed/blog/indoor-play-atlanta.jpeg
 ---
 
-I’m a big believer in outdoor play—for the sensory input, the fresh air, and the endless opportunities for movement. That said, I did not move to Atlanta to experience weeks of subfreezing temperatures. When it’s cold, dark, and everyone is bouncing off the walls, staying home with two young children who need movement to [regulate](/services/#treatments) is… not the vibe.
+I’m a big believer in outdoor play—for the sensory input, the fresh air, and the endless opportunities for movement. That said, I did not move to Atlanta to experience weeks of subfreezing temperatures. When it’s cold, dark, and everyone is bouncing off the walls, staying home with two young children who need movement to regulate is… not the vibe.
 
 When we absolutely have to get out of the house, these are our five favorite indoor go-tos for cold days—places where kids can move their bodies and parents can breathe.
 
@@ -20,7 +20,7 @@ When we absolutely have to get out of the house, these are our five favorite ind
 
 [HippoHopp](https://hippohopp.com/){:target="_blank" rel="noopener noreferrer"} is a staple for indoor play in Atlanta. With multiple bouncy houses, a large climbing structure, and a thoughtfully designed toddler area, this space works well for a wide range of ages. Parents can relax in seating areas or jump in and play alongside their kids (which mine always request).
 
-From an OT perspective, Hippo Hopp provides excellent opportunities for **[proprioceptive input](/services/#treatments)**, **[vestibular movement](/services/#treatments)**, and **[motor planning](/services/#treatments)**. On busy days, the environment can feel overstimulating, but the staff is incredibly accommodating and often able to provide quieter space when party rooms are not in use.
+From an OT perspective, Hippo Hopp provides excellent opportunities for **[proprioceptive input]({{ '/topics/sensory-processing/' | relative_url }})**, **[vestibular movement]({{ '/topics/sensory-processing/' | relative_url }})**, and **[motor planning]({{ '/topics/motor-development/' | relative_url }})**. On busy days, the environment can feel overstimulating, but the staff is incredibly accommodating and often able to provide quieter space when party rooms are not in use.
 
 **OT Tips:**
 *   **Take Breaks:** Encourage your child to take movement breaks between bouncy houses to avoid sensory overload.
@@ -54,7 +54,7 @@ The children’s area, **NatureQuest**, is where we spend most of our time. Rope
 
 The [Alliance Theatre](https://alliancetheatre.org/){:target="_blank" rel="noopener noreferrer"} recently opened PNC PlaySpace, a free indoor play experience for children ages 0–5. The current exhibit, *Bossa Nova Baby*, immerses children in a sensory-rich Brazilian rainforest environment designed for movement, exploration, and engagement.
 
-Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. These shows are intentionally designed for young audiences—movement is encouraged, seating is flexible, and children are invited to experience theater with their whole bodies. (Yes, this OT fully supports that.) I’ve even recommended their dinosaur show to [feeding clients](/services/#treatments) for its thoughtful exploration of sitting at the dinner table.
+Beyond PlaySpace, the Alliance offers outstanding child-friendly performances. These shows are intentionally designed for young audiences—movement is encouraged, seating is flexible, and children are invited to experience theater with their whole bodies. (Yes, this OT fully supports that.) I’ve even recommended their dinosaur show to [feeding clients]({{ '/topics/feeding-and-oral-motor/' | relative_url }}) for its thoughtful exploration of sitting at the dinner table.
 
 **OT Tips:**
 *   **Child-Led Play:** Let children explore the space at their own pace—there’s no “right” way to play.

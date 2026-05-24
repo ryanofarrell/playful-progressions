@@ -1,7 +1,7 @@
 # _data/sitetext.yml
 header:
-  title: Playful Progressions Therapy
-  subtitle: Nurturing Development Through Play
+  title: Playful Progressions
+  subtitle: Pediatric Occupational Therapy in Atlanta, GA
   buttons:
     - label: Contact Maria
       link: "/contact/" # Updated link to the contact page
@@ -41,6 +41,8 @@ location_info:
   location_note_pre_link: "Don't see your part of town?"
   location_note_link_text: "Contact Maria to discuss options!"
   location_note_link_url: "/contact/"
+  service_areas_link_text: "View our full pediatric occupational therapy service areas"
+  service_areas_link_url: "/service-areas/"
 
 # NEW: Content specific to the Service Areas page
 service_areas_page:
@@ -143,30 +145,19 @@ services:
 
     - id: "other-offerings"
       title: "Other Offerings"
-      description: "Additional services for families and children in various contexts, including consultations and specialized play groups." # Ensure/Improve Description
+      description: "Additional services for families and children in various contexts, including virtual parent consultations and school visits."
       type: "list"
       items:
         - name: "Parent Consultation"
-          price: 99 # CHANGED: Numeric
-          # price_unit: "" # Optional: if price is for the defined duration
+          price: 99
           duration: "30 minutes"
           format: "Virtual"
           description: "Get strategies for specific known problems and guidance for home programming."
         - name: "School Consultation"
-          price: 150 # CHANGED: Numeric
-          # price_unit: "" # Optional
+          price: 150
           duration: "45 minutes"
           format: "On-site or Virtual"
           description: "Educate teachers and school staff on strategies to best support your child's participation and learning in the school environment."
-        - name: "Play Group"
-          price: 40 # CHANGED: Numeric
-          price_unit: " to attend" # ADDED
-          duration: "1 per month"
-          format: "Local Parks (Atlanta, GA)"
-          description: |
-            A fun, informal opportunity for parents to network with families of similar-aged children and for kids to engage in play targeting a specific developmental skill each session. Location varies, typically held on weekends.
-          form: true
-          form_id: "xyzwelkn"
 footer:
   legal: "Privacy Policy"
 

@@ -62,3 +62,32 @@ header.masthead {
     }
   }
 }
+
+// Playful SVG Wave Divider
+.masthead-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1;
+  pointer-events: none;
+  
+  svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 70px;
+    
+    .divider-fill {
+      fill: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .masthead-divider svg {
+    height: 35px;
+  }
+}

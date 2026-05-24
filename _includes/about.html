@@ -20,6 +20,13 @@
         {% endfor %}
       </div>
       <div class="mt-4">
+        {%- if site.data.sitetext.location_info.service_areas_link_url -%}
+          <p class="mb-2">
+            <a class="text-primary font-weight-bold" href="{{ site.data.sitetext.location_info.service_areas_link_url | relative_url }}">
+              {{ site.data.sitetext.location_info.service_areas_link_text }} &rarr;
+            </a>
+          </p>
+        {%- endif -%}
         <p class="text-muted">
           {{ site.data.sitetext.location_info.location_note_pre_link }}
           <a class="text-muted" href="{{ site.data.sitetext.location_info.location_note_link_url | relative_url }}">

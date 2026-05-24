@@ -1,0 +1,139 @@
+---
+layout: default
+title: "Pediatric Motor Development & Milestones"
+display_title: "Motor Development"
+subtitle: "Nurturing coordination, strength, and motor planning"
+description: "Discover a parent's guide to gross motor milestones, fine motor skills, and motor planning (praxis) from a pediatric OT perspective, with expert tips and activities."
+permalink: /topics/motor-development/
+---
+
+<section class="page-section first-content-section" id="motor-development-page">
+  <div class="container">
+    
+    <!-- Introduction Section -->
+    <div class="row mb-5 justify-content-center">
+      <div class="col-lg-10 text-center">
+        <div class="handwritten-accent mb-3">Compassionate, play-based education</div>
+        <p class="lead text-muted">
+          Motor development is the foundation of your child’s physical independence and confidence. It spans from major milestones (like rolling, sitting, and crawling) to microscopic coordination (like holding a pencil, buttoning a shirt, or planning a complex obstacle course). In pediatric OT, we look at the whole child to build strength and coordination from the core outward.
+        </p>
+      </div>
+    </div>
+    
+    <!-- Motor Subtopics -->
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <h3 class="section-heading text-uppercase h4" style="color: var(--primary); font-weight: 800; letter-spacing: 1px;">Key Pillars of Physical Growth</h3>
+        <p class="text-muted">Understanding how strength, hand coordination, and brain-body planning work together.</p>
+      </div>
+      
+      <!-- Gross Motor Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #faf8ff; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-skating fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Gross Motor Skills</h4>
+          <p class="text-muted small mb-0">
+            Uses the body's large muscle groups for movements like rolling, crawling, walking, jumping, and balance. Strong gross motor development starts with a stable "core" and strong neck/shoulder muscles, which directly support a child's ability to sit still and focus in a classroom.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Fine Motor Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #fffcf8; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-pencil-alt fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Fine Motor & Hand Skills</h4>
+          <p class="text-muted small mb-0">
+            The coordination of small muscles in the fingers, hands, and wrists. Essential for functional tasks like grasping toys, feeding themselves, buttoning, using scissors, and writing. Building fine motor strength involves hand-eye coordination and pincer grasp precision.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Motor Planning Card -->
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 border-0 shadow-sm p-4 text-center text-md-left" style="border-radius: 12px 28px 12px 24px; background: #f8fafc; transition: all 0.3s ease;">
+          <div class="d-inline-flex align-items-center justify-content-center mb-3 mx-auto mx-md-0" style="width: 55px; height: 55px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary);">
+            <i class="fas fa-brain fa-lg"></i>
+          </div>
+          <h4 class="h5 font-weight-bold mb-2">Motor Planning (Praxis)</h4>
+          <p class="text-muted small mb-0">
+            The brain's ability to conceive, organize, and execute an unfamiliar physical action. A child with strong motor planning can look at a playground obstacle course, figure out how to climb it, and adjust their body movements gracefully. It requires body awareness and sensory feedback.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <hr class="my-5" style="border-top: 2px dashed var(--primary-light); opacity: 0.5;" />
+    
+    <!-- Curated Posts Heading -->
+    <div class="row mb-5">
+      <div class="col-12 text-center">
+        <h3 class="section-heading text-uppercase h3 font-weight-bold">Motor Development Resources & Play Ideas</h3>
+        <h4 class="section-subheading text-muted" style="font-size: 1rem;">Read our expert deep-dives and simple, therapeutic at-home activities.</h4>
+      </div>
+    </div>
+    
+    <!-- Dynamic Post Loop (Limited to 3) -->
+    <div class="row justify-content-center">
+      {% assign post_count = 0 %}
+      {% for post in site.posts %}
+        {% assign show_post = false %}
+        {% for concept in post.concepts %}
+          {% assign concept_slug = concept | slugify %}
+          {% if concept_slug == "motor-skills" or concept_slug == "gross-motor" or concept_slug == "fine-motor" or concept_slug == "motor-planning" or concept_slug == "praxis" or concept_slug == "bilateral-coordination" or concept_slug == "crossing-midline" or concept_slug == "tummy-time" or concept_slug == "milestones" or concept_slug == "developmental-milestones" or concept_slug == "grasp-development" or concept_slug == "pincer-grasp" or concept_slug == "visual-motor-integration" %}
+            {% assign show_post = true %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if show_post %}
+          {% if post_count < 3 %}
+            {% assign post_count = post_count | plus: 1 %}
+            <div class="col-md-6 col-lg-4 mb-4 blog-post-card">
+              <div class="blog-card h-100 d-flex flex-column">
+                <a href="{{ post.url | relative_url }}">
+                  {% if post.header.teaser %}
+                    {% assign teaser_src = post.header.teaser | relative_url %}
+                    {% assign teaser_base = teaser_src | split: "." | first %}
+                    <picture>
+                      <source type="image/avif" srcset="{{ teaser_base }}.avif" />
+                      <source type="image/webp" srcset="{{ teaser_base }}.webp" />
+                      <img src="{{ teaser_src }}" alt="{{ post.title }}" class="blog-card-img" style="border-radius: 12px 28px 0 0;" loading="lazy" />
+                    </picture>
+                  {% endif %}
+                </a>
+                <div class="blog-card-content p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4 class="blog-card-title h5 font-weight-bold mb-2">
+                      <a href="{{ post.url | relative_url }}" class="text-dark" style="text-decoration: none;">{{ post.title }}</a>
+                    </h4>
+                    <p class="blog-card-excerpt text-muted small">{{ post.excerpt }}</p>
+                  </div>
+                  <p class="blog-card-meta mb-0 mt-3 pt-2" style="border-top: 1px solid #f1f5f9;">
+                    <small class="text-muted">{{ post.date | date: "%B %d, %Y" }}</small>
+                    {% if post.tag %}
+                      <span class="badge badge-pill badge-primary ml-2 py-1 px-2" style="background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem;">{{ post.tag }}</span>
+                    {% endif %}
+                  </p>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      
+      {% if post_count == 0 %}
+        <div class="col-12 text-center text-muted">
+          <p>New articles coming soon! Check back for more tips and play ideas.</p>
+        </div>
+      {% endif %}
+    </div>
+
+
+  </div>
+</section>
+
+{% include soft_hook.html title="Concerned about your child's milestones or coordination?" text="We offer comprehensive, in-home pediatric occupational therapy evaluations and tailored play-based treatments in Brookhaven, Buckhead, and surrounding Atlanta neighborhoods." btn_text="Schedule Consultation" btn_link="/contact/" %}

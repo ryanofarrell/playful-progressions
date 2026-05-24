@@ -26,15 +26,16 @@
       height="900" />
   </picture>
 
+
   <div class="container position-relative masthead-content">
     <div class="intro-text">
       {%- comment %} Display the main title from sitetext {% endcomment -%}
       {%- if site.data.sitetext.header.title -%}
-        <div class="intro-lead-in">{{ site.data.sitetext.header.title | markdownify }}</div>
+        <div class="intro-lead-in">{{ site.data.sitetext.header.title }}</div>
       {%- endif -%}
       {%- comment %} Display the subtitle from sitetext {% endcomment -%}
       {%- if site.data.sitetext.header.subtitle -%}
-        <div class="intro-heading text-uppercase">{{ site.data.sitetext.header.subtitle | markdownify }}</div>
+        <h1 class="intro-heading text-uppercase">{{ site.data.sitetext.header.subtitle }}</h1>
       {%- endif -%}
 
       {%- comment %} Loop through and display header buttons from sitetext {% endcomment -%}
@@ -46,5 +47,12 @@
         </div>
       {%- endif -%}
     </div>
+  </div>
+  
+  <!-- Playful SVG Wave Divider -->
+  <div class="masthead-divider" aria-hidden="true">
+    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+      <path d="M0,32 C300,96 900,0 1200,64 L1200,120 L0,120 Z" class="divider-fill"></path>
+    </svg>
   </div>
 </header>
