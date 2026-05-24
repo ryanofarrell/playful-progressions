@@ -113,3 +113,18 @@ $contact-image: "{{ site.data.style.contact-image }}";
     transition: transform 0.08s ease !important;
   }
 }
+
+// =============================================================================
+// 6. Progressive Scroll-Reveal Animations (Option 3)
+// =============================================================================
+.js-reveal {
+  opacity: 0;
+  transform: scale(0.88) translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform, opacity;
+}
+
+.js-reveal.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
