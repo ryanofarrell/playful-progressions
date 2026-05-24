@@ -15,10 +15,14 @@ section .testimonial-card {
   
   .carousel-inner {
     align-content: center;
-    padding: 30px 10px;
+    // Bottom padding creates space for the indicator dots so they never
+    // overlap the quote text (indicators are bottom: 8px inside the carousel).
+    padding: 20px 10px 50px;
     
     @media (min-width: 768px) {
-      padding: 40px 20px;
+      // Horizontal padding keeps quote text clear of the prev/next arrows
+      // (arrows are position:absolute at the left/right edge of the carousel).
+      padding: 30px 60px 50px;
     }
     
     .carousel-item {
@@ -88,16 +92,20 @@ section .testimonial-card {
   }
 
   .carousel-control {
-    width: 6%;
+    // Narrower than the text padding so arrows sit in the gutter, not over text
+    width: 50px;
     
     @media (max-width: 768px) {
-      display: none !important; // Hide arrow clickers on small viewports
+      display: none !important; // Replaced by swipe on mobile
     }
   }
 
   // Refined carousel dot indicators
+  // Positioned inside the carousel at the bottom (above the padding-bottom
+  // breathing room we added to carousel-inner). This keeps dots fully within
+  // the testimonial-card boundary on all screen sizes.
   ol.carousel-indicators {
-    bottom: -35px !important;
+    bottom: 12px;
     margin-bottom: 0;
     
     li {
