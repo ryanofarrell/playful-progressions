@@ -21,12 +21,14 @@ permalink: /meet-maria/
               <picture>
                 <source
                   srcset="{{ img_base | append: '-400.avif' | relative_url }} 400w, 
-                {{ img_base | append: '-800.avif' | relative_url }} 800w"
+                          {{ img_base | append: '-600.avif' | relative_url }} 600w, 
+                          {{ img_base | append: '-800.avif' | relative_url }} 800w"
                   sizes="(max-width: 767px) 350px, 400px"
                   type="image/avif">
                 <source
                   srcset="{{ img_base | append: '-400.webp' | relative_url }} 400w, 
-                {{ img_base | append: '-800.webp' | relative_url }} 800w"
+                          {{ img_base | append: '-600.webp' | relative_url }} 600w, 
+                          {{ img_base | append: '-800.webp' | relative_url }} 800w"
                   sizes="(max-width: 767px) 350px, 400px"
                   type="image/webp">
                 <img
