@@ -2,19 +2,26 @@
 
 .mini-nav {
     .btn-services-nav {
-        /* Style for mini-navigation buttons */
-        margin: 0 5px;
-        margin-bottom: 10px; /* Space below buttons */
-        background-color: $primary; /* Solid primary background */
-        color: white; /* White text */
-        border-color: $primary; /* Primary border */
-        /* Add padding, font size, etc. if needed, potentially inheriting from .btn */
+        /* Style for mini-navigation outline pill tags */
+        margin: 0 6px;
+        margin-bottom: 12px;
+        background-color: transparent;
+        color: $primary;
+        border: 2px solid rgba($primary, 0.16);
+        border-radius: 30px;
+        padding: 8px 22px;
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
         &:hover,
         &:focus {
-            background-color: darken($primary, 10%); /* Darken on hover/focus */
-            border-color: darken($primary, 10%);
-            color: white; /* Keep text white */
+            background-color: $primary;
+            border-color: $primary;
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba($primary, 0.15);
         }
     }
 }
@@ -24,6 +31,7 @@
     padding-top: 10px; /* Space above each section */
     border-bottom: 1px solid $gray-200; /* Separator between sections */
     margin-bottom: 50px; /* Space below each section */
+    scroll-margin-top: 110px; /* Prevent header covering section titles on jump links */
 
     &:last-child {
         border-bottom: none; /* No border on the last section */

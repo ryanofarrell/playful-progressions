@@ -1,7 +1,7 @@
 ---
 layout: default # Use the default layout for standard header/footer
 title: "Pediatric OT Services & Evaluations in Atlanta"
-include_play_group_form: true
+include_play_group_form: false
 display_title: "Our Services"
 description: "Explore expert pediatric OT services in Atlanta. Playful Progressions offers evaluations, telehealth, and tailored interventions in Brookhaven, Buckhead, and more."
 subtitle: Detailed information about our offerings # Kept from your original front matter
@@ -121,7 +121,7 @@ permalink: /services/
     {% comment %} The main page title and subtitle come from the mini-masthead {% endcomment %}
     <div class="row mb-5">
       <div class="col-lg-12 text-center">
-        <h4 class="mb-3">Jump to a Service:</h4>
+        <h4 class="mb-3 text-uppercase text-primary" style="font-size: 0.8rem; letter-spacing: 2px; font-weight: 800;">Jump to a Service:</h4>
         <ul class="list-inline mini-nav">
           {% comment %} Loop through offerings to create mini-nav links {% endcomment %}
           {% for offering in site.data.sitetext.services.offerings %}
@@ -231,49 +231,7 @@ permalink: /services/
                       {% endif %}
                       <p class="item-description">{{ item.description | markdownify }}</p>
 
-                      {% if item.form %}
-                        <div class="play-group-form-block mt-4">
-                          <h5 class="mb-3 text-center">Interested in Play Group?</h5>
-                          <div id="playGroupSuccess"></div>
-                          <form
-                            id="playGroupForm"
-                            action="https://formspree.io/f/{{ item.form_id }}"
-                            method="POST">
-                            <div class="form-group">
-                              <input
-                                class="form-control"
-                                id="playGroupName"
-                                type="text"
-                                placeholder="Your Name *"
-                                required="required"
-                                data-validation-required-message="Please enter your name."
-                                name="name">
-                              <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="form-group">
-                              <input
-                                class="form-control"
-                                id="playGroupEmail"
-                                type="email"
-                                placeholder="Your Email *"
-                                required="required"
-                                data-validation-required-message="Please enter your email address."
-                                name="email">
-                              <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="text-center">
-                              <button
-                                id="sendPlayGroupMessageButton"
-                                class="btn btn-primary btn-sm text-uppercase"
-                                type="submit">Notify Me About Upcoming Play Groups</button>
-                            </div>
-                            <input
-                              type="hidden"
-                              name="_subject"
-                              value="Play Group Interest - Website Form">
-                          </form>
-                        </div>
-                      {% endif %}
+
 
                     </div>
                   </div>
