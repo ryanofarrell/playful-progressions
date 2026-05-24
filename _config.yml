@@ -59,3 +59,7 @@ sass:
   style: compressed # Minifies CSS output
   quiet_deps: true
   silence_deprecations: ["import", "global-builtin", "color-functions"]
+
+# CSS cache-busting version — bump this manually whenever CSS changes are deployed.
+# Using a static string avoids re-fetching the stylesheet on every build.
+css_version: "1.0.0"

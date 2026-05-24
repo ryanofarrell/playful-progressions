@@ -54,7 +54,7 @@
     .service-tier-card {
         /* Style for the tier cards */
         border: 1px solid rgba(0, 0, 0, 0.05);
-        border-radius: 15px 35px 15px 30px;
+        border-radius: $radius-playful-lg;
         padding: 20px;
         height: 100%; /* Make tier cards equal height in a row */
         display: flex;

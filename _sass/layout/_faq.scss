@@ -1,28 +1,33 @@
 // =============================================================================
 // FAQ Page Accordion Layout & Spring Eases
 // =============================================================================
-.faq-card {
-  border-radius: 15px 35px 15px 30px !important; // Consistent with services cards
+
+// Use increased specificity (.card.faq-card) to beat Bootstrap's .card defaults
+// without resorting to !important on structural properties.
+.card.faq-card {
+  border-radius: $radius-playful-lg;
   background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.05) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin-bottom: 20px;
   
   .card-header {
-    background-color: transparent !important;
+    background-color: transparent;
   }
   
-  .faq-btn {
-    color: $primary !important;
-    text-decoration: none !important;
+  // Bootstrap's .btn-link sets color and text-decoration; the extra specificity
+  // here (.card.faq-card .btn.faq-btn) wins without !important.
+  .btn.faq-btn {
+    color: $primary;
+    text-decoration: none;
     white-space: normal;
     font-size: 1.15rem;
     line-height: 1.4;
     transition: color 0.3s ease;
     
     &:hover, &:focus {
-      color: $secondary !important;
+      color: $secondary;
     }
   }
 
@@ -33,18 +38,18 @@
 
   // Active / Expanded State Styling
   button[aria-expanded="true"] {
-    color: $secondary !important;
+    color: $secondary;
     
     .faq-icon {
       transform: rotate(180deg);
-      color: $action !important;
+      color: $action;
     }
   }
 
   // Soft spring hover lift for cards
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(11, 27, 65, 0.06) !important;
+    box-shadow: 0 8px 20px rgba(11, 27, 65, 0.06);
     border-color: rgba($secondary, 0.2);
   }
 }

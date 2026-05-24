@@ -1,9 +1,10 @@
 // Refined styling for the testimonials carousel
-.testimonial-card {
-  border-radius: 20px 50px 20px 45px; // Soft child-friendly asymmetrical curves
+// Use section scope to increase specificity over Bootstrap's card utilities
+section .testimonial-card {
+  border-radius: $radius-playful-xl;
   border: 1px solid rgba($primary, 0.08);
-  background-color: white !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.025) !important;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.025);
   margin-top: 30px;
   position: relative;
 }

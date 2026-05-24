@@ -1,5 +1,12 @@
 // Global styling for this template
 
+// CSS Custom Properties (accessible from inline styles in HTML templates)
+:root {
+  --radius-playful:    #{$radius-playful};    // Standard content/topic cards
+  --radius-playful-lg: #{$radius-playful-lg}; // Service/FAQ tier cards
+  --radius-playful-xl: #{$radius-playful-xl}; // Testimonial card
+}
+
 // Apply scroll-padding-top to the html element
 // This creates an offset from the top of the viewport when scrolling to an anchor.
 // The value should be the height of your fixed navbar.
