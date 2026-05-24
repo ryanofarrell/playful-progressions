@@ -97,3 +97,19 @@ $contact-image: "{{ site.data.style.contact-image }}";
 
 // Accessibility (Last to ensure overrides)
 @import "base/accessibility";
+
+// =============================================================================
+// 5. Tactile spring-back tap micro-interactions for mobile/buttons
+// =============================================================================
+.btn, .topic {
+  transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+              color 0.15s ease-in-out, 
+              background-color 0.15s ease-in-out, 
+              border-color 0.15s ease-in-out, 
+              box-shadow 0.15s ease-in-out;
+
+  &:active {
+    transform: scale(0.94) !important;
+    transition: transform 0.08s ease !important;
+  }
+}
