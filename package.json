@@ -6,13 +6,15 @@
     "scripts": {
         "build": "jekyll build && npx purgecss --config ./purgecss.config.js",
         "minify:js": "terser assets/js/jqBootstrapValidation.js -o assets/js/jqBootstrapValidation.min.js -c -m",
-        "critical:css": "npm-run-all critical:prepare --parallel critical:home critical:contact critical:services critical:blog critical:maria && npm run critical:repath && npm run critical:combine",
+        "critical:css": "npm-run-all critical:prepare --parallel critical:home critical:contact critical:services critical:blog critical:maria critical:resources critical:faq && npm run critical:repath && npm run critical:combine",
         "critical:prepare": "mkdir -p _tmp",
         "critical:home": "critical _site/index.html --base _site/ > _tmp/critical-home.css",
         "critical:contact": "critical _site/contact/index.html --base _site/ > _tmp/critical-contact.css",
         "critical:services": "critical _site/services/index.html --base _site/ > _tmp/critical-services.css",
         "critical:blog": "critical _site/blog/index.html --base _site/ > _tmp/critical-blog.css",
         "critical:maria": "critical _site/meet-maria/index.html --base _site/ > _tmp/critical-maria.css",
+        "critical:resources": "critical _site/resources/index.html --base _site/ > _tmp/critical-resources.css",
+        "critical:faq": "critical _site/faq/index.html --base _site/ > _tmp/critical-faq.css",
         "critical:repath": "find ./_tmp -type f -name '*.css' -exec sed -i.bak 's|url(../assets|url(/assets|g; s|url(assets|url(/assets|g; s|url(\"../assets|url(\"/assets|g; s|url(\"assets|url(\"/assets|g' {} +",
         "critical:combine": "cat _tmp/*.css | csso > _includes/critical.css && rm -rf _tmp"
     },
