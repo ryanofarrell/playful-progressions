@@ -77,8 +77,8 @@ permalink: /topics/feeding-and-oral-motor/
       </div>
     </div>
     
-    <!-- Dynamic Post Loop -->
-    <div class="row">
+    <!-- Dynamic Post Loop (Limited to 3) -->
+    <div class="row justify-content-center">
       {% assign post_count = 0 %}
       {% for post in site.posts %}
         {% assign show_post = false %}
@@ -90,36 +90,38 @@ permalink: /topics/feeding-and-oral-motor/
         {% endfor %}
         
         {% if show_post %}
-          {% assign post_count = post_count | plus: 1 %}
-          <div class="col-md-6 col-lg-4 mb-4 blog-post-card">
-            <div class="blog-card h-100 d-flex flex-column">
-              <a href="{{ post.url | relative_url }}">
-                {% if post.header.teaser %}
-                  {% assign teaser_src = post.header.teaser | relative_url %}
-                  {% assign teaser_base = teaser_src | split: "." | first %}
-                  <picture>
-                    <source type="image/avif" srcset="{{ teaser_base }}.avif" />
-                    <source type="image/webp" srcset="{{ teaser_base }}.webp" />
-                    <img src="{{ teaser_src }}" alt="{{ post.title }}" class="blog-card-img" style="border-radius: 12px 28px 0 0;" loading="lazy" />
-                  </picture>
-                {% endif %}
-              </a>
-              <div class="blog-card-content p-4 flex-grow-1 d-flex flex-column justify-content-between">
-                <div>
-                  <h4 class="blog-card-title h5 font-weight-bold mb-2">
-                    <a href="{{ post.url | relative_url }}" class="text-dark" style="text-decoration: none;">{{ post.title }}</a>
-                  </h4>
-                  <p class="blog-card-excerpt text-muted small">{{ post.excerpt }}</p>
-                </div>
-                <p class="blog-card-meta mb-0 mt-3 pt-2" style="border-top: 1px solid #f1f5f9;">
-                  <small class="text-muted">{{ post.date | date: "%B %d, %Y" }}</small>
-                  {% if post.tag %}
-                    <span class="badge badge-pill badge-primary ml-2 py-1 px-2" style="background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem;">{{ post.tag }}</span>
+          {% if post_count < 3 %}
+            {% assign post_count = post_count | plus: 1 %}
+            <div class="col-md-6 col-lg-4 mb-4 blog-post-card">
+              <div class="blog-card h-100 d-flex flex-column">
+                <a href="{{ post.url | relative_url }}">
+                  {% if post.header.teaser %}
+                    {% assign teaser_src = post.header.teaser | relative_url %}
+                    {% assign teaser_base = teaser_src | split: "." | first %}
+                    <picture>
+                      <source type="image/avif" srcset="{{ teaser_base }}.avif" />
+                      <source type="image/webp" srcset="{{ teaser_base }}.webp" />
+                      <img src="{{ teaser_src }}" alt="{{ post.title }}" class="blog-card-img" style="border-radius: 12px 28px 0 0;" loading="lazy" />
+                    </picture>
                   {% endif %}
-                </p>
+                </a>
+                <div class="blog-card-content p-4 flex-grow-1 d-flex flex-column justify-content-between">
+                  <div>
+                    <h4 class="blog-card-title h5 font-weight-bold mb-2">
+                      <a href="{{ post.url | relative_url }}" class="text-dark" style="text-decoration: none;">{{ post.title }}</a>
+                    </h4>
+                    <p class="blog-card-excerpt text-muted small">{{ post.excerpt }}</p>
+                  </div>
+                  <p class="blog-card-meta mb-0 mt-3 pt-2" style="border-top: 1px solid #f1f5f9;">
+                    <small class="text-muted">{{ post.date | date: "%B %d, %Y" }}</small>
+                    {% if post.tag %}
+                      <span class="badge badge-pill badge-primary ml-2 py-1 px-2" style="background-color: var(--primary-light); color: var(--primary); font-size: 0.75rem;">{{ post.tag }}</span>
+                    {% endif %}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          {% endif %}
         {% endif %}
       {% endfor %}
       
@@ -128,6 +130,15 @@ permalink: /topics/feeding-and-oral-motor/
           <p>New articles coming soon! Check back for more tips and play ideas.</p>
         </div>
       {% endif %}
+    </div>
+
+    <!-- View Full Blog Button -->
+    <div class="row mt-4 justify-content-center">
+      <div class="col-12 text-center">
+        <a href="{{ '/blog/' | relative_url }}" class="btn btn-primary" style="border-radius: 30px; padding: 12px 35px; font-size: 1rem; color: white;">
+          Browse All Feeding Articles <i class="fas fa-arrow-right ml-2"></i>
+        </a>
+      </div>
     </div>
 
   </div>
