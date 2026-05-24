@@ -81,9 +81,9 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
     echo "Processing $source_image_path..."
 
     # --- UPDATED: Universal Responsive Generation ---
-    # We generate 400 and 800 widths for ALL images now, not just blog
-    echo "  -> Generating responsive sizes (400px, 800px)..."
-    for width in 400 800; do
+    # We generate 400, 600, and 800 widths for ALL images now, not just blog
+    echo "  -> Generating responsive sizes (400px, 600px, 800px)..."
+    for width in 400 600 800; do
         local_avif_path="${current_output_dir}/${base_name}-${width}.avif"
         local_webp_path="${current_output_dir}/${base_name}-${width}.webp"
         
