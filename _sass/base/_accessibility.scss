@@ -22,3 +22,10 @@
 .form-control:focus {
   @include focus-ring();
 }
+
+// Accessibility contrast overrides for text-muted on light backgrounds
+.bg-light, .card.bg-light, .testimonial-card, blockquote {
+  .text-muted {
+    color: #495057 !important; // Darker gray for high contrast (WCAG AA compliant)
+  }
+}

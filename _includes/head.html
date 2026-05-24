@@ -45,6 +45,22 @@
       fetchpriority="high" />
   {% endif %}
 
+  {%- comment -%} Conditionally preload headshot image on Meet Maria page {%- endcomment -%}
+  {% if page.permalink == "/meet-maria/" %}
+    {% assign maria = site.data.sitetext.team.people | where: "name", "Maria O'Farrell" | first %}
+    {% if maria %}
+      {% assign img_base = maria.image | split: "." | first %}
+      <link
+        rel="preload"
+        as="image"
+        href="{{ img_base | append: '-800.avif' | relative_url }}"
+        imagesrcset="{{ img_base | append: '-400.avif' | relative_url }} 400w,
+                   {{ img_base | append: '-800.avif' | relative_url }} 800w"
+        imagesizes="(max-width: 767px) 350px, 400px"
+        fetchpriority="high" />
+    {% endif %}
+  {% endif %}
+
   <link
     rel="preload"
     href="/assets/fonts/montserrat-v30-latin-700.woff2"
