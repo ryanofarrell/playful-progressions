@@ -170,7 +170,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md` (✅ 2026-05-27)
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
@@ -181,4 +181,9 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+
+## 2026-05-27 — Fix front matter and image links for basics motor planning post
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Missing `description` and `tags` fields, non-standard `tag` field, and incorrect `header.teaser` and `image` file extensions.
+- **Action:** Added `description`, changed `tag` to `tags`, and updated `header.teaser` and `image` extensions to `-400w.avif` and `-800w.avif` respectively.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
