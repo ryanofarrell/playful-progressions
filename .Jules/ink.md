@@ -170,7 +170,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md` - 2026-06-03
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
@@ -181,4 +181,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-06-03 — Fix front matter schema and structure for basics-motor-planning.md
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** The post was missing a `description`, used non-canonical `concepts` slugs, had `tag` instead of `tags`, its title was too long (> 60 chars), and lacked an `H2` within the first 200 words.
+- **Action:** Shortened `title`, added `description` (148 chars), updated `tags` to `["Posts", "Motor Planning"]`, updated `concepts` to canonical terms (`[motor-planning, body-awareness, sensory-processing, executive-function]`), and added `## What is Motor Planning?` as the first heading. Updated `_data/tags.yml` to include the new `Motor Planning` tag.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
