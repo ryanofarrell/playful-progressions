@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [✅] `services.html` — Has hook? Contextually relevant? (2026-06-03)
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,13 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-06-03 — Escalate multiple hardcoded soft hooks on services page
+- **Target:** `services.html`
+- **Finding:** Page contains multiple hardcoded `soft-hook-card` elements instead of using the `_includes/soft_hook.html` component, violating the max 1 frequency rule and component usage constraint.
+- **Action:** Since Palette owns `services.html` structure, logging an escalation.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `services.html`
+- **Issue:** Page has multiple hardcoded `soft-hook-card` elements at the bottom instead of using the `_includes/soft_hook.html` component.
+- **Suggested Fix:** Remove the two hardcoded cards and replace them with a single `{% include soft_hook.html title="Looking for free resources?" text="Check out our blog for expert articles on child development." btn_text="Read the Blog" btn_link="/blog/" %}`.
