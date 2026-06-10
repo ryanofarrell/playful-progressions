@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [x] `services.html` — Has hook? Contextually relevant?
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,13 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-06-10 — Audit services.html for engagement hooks
+- **Target:** `services.html`
+- **Finding:** The page contains multiple hardcoded soft hooks directly written in HTML (e.g. `div class="soft-hook-card"`) instead of using the `soft_hook.html` include. It also contains two side-by-side hooks which violates the "Max 1 `soft_hook` per page" guideline.
+- **Action:** Since `services.html` is owned by Palette for page structure and Convert only consults, this requires an escalation.
+- **Verification:** N/A (Escalation only)
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `services.html`
+- **Issue:** `services.html` contains hardcoded engagement hooks instead of using the `soft_hook.html` component. Additionally, it has two side-by-side hooks, violating the maximum of 1 hook per page rule.
+- **Suggested Fix:** Replace the hardcoded hooks section with a single `{% include soft_hook.html title="Not Sure Where to Begin?" text="Every child is unique. Let's chat about your specific needs." btn_text="Get in Touch" btn_link="/contact/" %}` and remove the second hook to reduce visual clutter and follow guidelines.
