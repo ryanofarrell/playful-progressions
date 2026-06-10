@@ -59,7 +59,7 @@ if [ "$USE_PNGQUANT" = true ] && ! command -v pngquant &>/dev/null; then
     USE_PNGQUANT=false
 fi
 # Find command updated to include webp and match common extensions
-find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
+find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" -o -iname "*.svg" \) -print0 | while IFS= read -r -d $'\0' source_image_path; do
     relative_image_path="${source_image_path#$SOURCE_BASE_DIR/}"
     image_subdir=$(dirname "$relative_image_path")
     filename=$(basename "$source_image_path")
@@ -79,6 +79,16 @@ find "$SOURCE_BASE_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "
 
     echo
     echo "Processing $source_image_path..."
+
+    if [ "$extension_lower" = "svg" ]; then
+        echo "  -> Copying SVG file..."
+        if [ "$DRY_RUN" = false ]; then
+            cp "$source_image_path" "$current_output_dir/$filename"
+        fi
+        echo "  -> Processing complete for $filename"
+        echo "---"
+        continue
+    fi
 
     # --- UPDATED: Universal Responsive Generation ---
     # We generate 400, 600, and 800 widths for ALL images now, not just blog
