@@ -29,10 +29,29 @@
           "publisher": {
             "@type": "Organization",
             "name": {{ site.name | jsonify }},
+            "url": {{ site.url | jsonify }},
             "logo": {
               "@type": "ImageObject",
               "url": "{{ site.logo | relative_url | prepend: site.url }}"
-            }
+            },
+            "email": {{ site.email | jsonify }},
+            "telephone": {{ site.phone-numeric | jsonify }},
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Atlanta",
+              "addressRegion": "GA",
+              "addressCountry": "US"
+            },
+            "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"],
+            "areaServed": [
+              {%- assign sitetext = site.data.sitetext -%}
+              {%- for neighborhood in sitetext.location_info.neighborhoods -%}
+                {
+                  "@type": "City",
+                  "name": {{ neighborhood | append: ", GA" | jsonify }}
+                }{%- unless forloop.last -%},{%- endunless -%}
+              {%- endfor -%}
+            ]
           }
         }
   </script>
@@ -50,8 +69,12 @@
       "description": {{ sitetext.about.body | strip_html | normalize_whitespace | jsonify }},
       "url": {{ site.url | jsonify }},
       "logo": {{ site.logo | prepend: site.url | jsonify }},
+      "email": {{ site.email | jsonify }},
       "telephone": {{ site.phone-numeric | jsonify }},
       "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
+      "paymentAccepted": "Credit Card, HSA, FSA",
+      "openingHours": "",
+      "priceRange": "$99-$299",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",
