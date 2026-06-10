@@ -170,15 +170,21 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md` (2024-05-18)
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
-- [ ] `_data/tags.yml` — Verify all tags used in posts exist in taxonomy
+- [x] `_data/tags.yml` — Verify all tags used in posts exist in taxonomy (2024-05-18)
 - [ ] Concept taxonomy (this file) — Verify no concepts used in posts are missing from table
 
 ---
 
 ## Execution Log
+
+## 2026-06-10 — Update front matter for basics-motor-planning post
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Front matter was missing `description`, used incorrect string formatting for `tags`, used non-canonical concepts, and incorrectly targeted jpeg image paths.
+- **Action:** Fixed `title` length, updated `tags` to use array and added new "Motor Planning" tag to taxonomy, added `description`, updated `concepts` to match canonical taxonomy list, and changed image paths to AVIF files.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 *No entries yet. First audit pending.*
