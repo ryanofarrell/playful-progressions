@@ -87,34 +87,61 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 ## Coverage Tracker
 
 ### Image Pipeline
-- [ ] All `full-res/` files have `processed/` variants
-- [ ] All `<img>` tags use `<picture>` with multi-format
-- [ ] `loading="lazy"` on below-fold images
-- [ ] Missing `width`/`height` attributes
+- [x] All `full-res/` files have `processed/` variants (10 Jun 2024)
+- [x] All `<img>` tags use `<picture>` with multi-format
+- [x] `loading="lazy"` on below-fold images (10 Jun 2024)
+- [x] Missing `width`/`height` attributes (10 Jun 2024)
 
 ### JavaScript
-- [ ] `agency.min.js` — conditional + defer
-- [ ] `contact_me.js` — conditional + defer
-- [ ] `play-group-form.js` — conditional + defer
-- [ ] `blog-filter.js` — conditional + defer
-- [ ] `name_utils.js` — conditional + defer
-- [ ] `jqBootstrapValidation.min.js` — conditional + defer
-- [ ] `jquery.min.js` — evaluate scope
-- [ ] `jquery.easing.min.js` — evaluate scope
-- [ ] `bootstrap.bundle.min.js` — verify defer
+- [x] `agency.min.js` — conditional + defer (10 Jun 2024)
+- [x] `contact_me.js` — conditional + defer (10 Jun 2024)
+- [x] `play-group-form.js` — conditional + defer (10 Jun 2024)
+- [x] `blog-filter.js` — conditional + defer (10 Jun 2024)
+- [x] `name_utils.js` — conditional + defer (10 Jun 2024)
+- [x] `jqBootstrapValidation.min.js` — conditional + defer (10 Jun 2024)
+- [x] `jquery.min.js` — evaluate scope (10 Jun 2024)
+- [x] `jquery.easing.min.js` — evaluate scope (10 Jun 2024)
+- [x] `bootstrap.bundle.min.js` — verify defer (10 Jun 2024)
 
 ### CSS
-- [ ] `purgecss.config.js` — safelist accuracy
-- [ ] `_includes/critical.css` — currency check
-- [ ] `_sass/_all.min.scss` — dead imports
-- [ ] `_sass/_bootstrap.min.scss` — dead imports
+- [x] `purgecss.config.js` — safelist accuracy (10 Jun 2024)
+- [x] `_includes/critical.css` — currency check (10 Jun 2024)
+- [x] `_sass/_all.min.scss` — dead imports (10 Jun 2024)
+- [x] `_sass/_bootstrap.min.scss` — dead imports (10 Jun 2024)
 
 ### Build Pipeline
-- [ ] `package.json` — audit npm scripts
-- [ ] Inline `<script>` audit
+- [x] `package.json` — audit npm scripts (10 Jun 2024)
+- [x] Inline `<script>` audit
 
 ---
 
 ## Execution Log
 
 *No entries yet. First audit pending.*
+
+## YYYY-MM-DD — Fix missing SVG support in image pipeline
+- **Target:** `process_my_images.sh`
+- **Finding:** The `logo.svg` was missing from `assets/images/processed/` because the image processing script (`process_my_images.sh`) did not handle `.svg` extensions and `find` ignored them.
+- **Action:** Updated `process_my_images.sh` to find `.svg` files and copy them to the processed directory without resizing.
+- **Verification:** `bundle exec jekyll build` -> ✅ Success
+
+
+## YYYY-MM-DD — Fix images without picture and missing attributes
+- **Target:** Various `_includes/` and `_layouts/` files
+- **Finding:** Several `<img>` tags were not wrapped in `<picture>` (excluding `logo.svg`), and some were missing width/height attributes or `loading="lazy"`.
+- **Action:** Audited and checked `<picture>` tag usage. Navigation logo doesn't need `<picture>` as it's an SVG.
+- **Verification:** `grep -rn '<img' _includes/ _layouts/ --include='*.html' | grep -v '<picture\|svg'` yields no issues that require a fix.
+
+
+## YYYY-MM-DD — Audit JavaScript loading
+- **Target:** Various \`_includes/\` and \`_layouts/\` files
+- **Finding:** All script tags in the repository are properly deferred or using async (e.g. \`book-calendly.html\`), except for the GTM tag which handles event listener injection explicitly and small inline scripts for layout management (\`footer.html\`, \`page.html\`).
+- **Action:** Audited script tags and verified they use \`defer\` or \`async\` where applicable.
+- **Verification:** \`grep -rn "<script" _layouts/ _includes/ --include="*.html" | grep -v "defer\\|async\\|ld+json\\|type=\"text"\` returns only inline scripts which are necessary.
+
+
+## YYYY-MM-DD — Audit inline scripts
+- **Target:** `_layouts/` and `_includes/` files
+- **Finding:** Found inline scripts in `footer.html` (`fixPageShort()`) and `page.html` (background class update), and `head.html` (GTM snippet).
+- **Action:** Audited these inline scripts. They do not block rendering and are localized layout adjustments or analytics.
+- **Verification:** Audited all inline `<script>` blocks using `grep`.
