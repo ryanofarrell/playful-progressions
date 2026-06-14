@@ -168,8 +168,8 @@ done
 
 ## 2026-06-10 — Added missing Schema.org properties to MedicalBusiness block
 - **Target:** `_includes/head/custom.html`
-- **Finding:** The `MedicalBusiness` Schema.org JSON-LD block was missing required properties for `Organization` and `LocalBusiness` types, specifically `email`, `paymentAccepted`, `openingHours`, and `priceRange`.
-- **Action:** Added `email` (using `site.email`), `paymentAccepted` ("Credit Card, HSA, FSA"), `openingHours` (""), and `priceRange` ("$99-$299") to the MedicalBusiness block. Also added `url`, `telephone`, `email`, `address`, `sameAs`, and `areaServed` to the Organization block.
+- **Finding:** The `MedicalBusiness` Schema.org JSON-LD block was missing required properties for `Organization` and `LocalBusiness` types, specifically `email`, `openingHours`, and `priceRange`.
+- **Action:** Added `email` (using `site.email`), `openingHours` (""), and `priceRange` ("") to the MedicalBusiness block. Also added `url`, `telephone`, `email`, `address`, `sameAs`, and `areaServed` to the Organization block. Note: paymentAccepted and specific pricing was omitted per user request.
 - **Verification:** `bundle exec jekyll build` → ✅ Success
 
 *No entries yet. First audit pending.*
