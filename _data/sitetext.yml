@@ -106,8 +106,6 @@ services:
       type: "tiered"
       tiers:
         - name: "Foundational Evaluation"
-          price: 250 # CHANGED: Numeric
-          # price_unit: "" # Optional: or omit if no unit
           description: "Includes clinical observations, parent interview, and initial recommendations."
           standard_includes:
             - Clinical observations
@@ -116,8 +114,6 @@ services:
             - Initial recommendations
             - Standard written summary of findings
         - name: "Comprehensive Evaluation"
-          price: 299 # CHANGED: Numeric
-          # price_unit: "" # Optional: or omit if no unit
           description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
           footnote: "Recommended if we plan to submit for reimbursement"
           standard_includes:
@@ -134,8 +130,6 @@ services:
       title: "OT Treatments"
       description: "Tailored one-on-one occupational therapy sessions designed to address your child's specific goals in their natural environment, fostering skill development through play-based activities and empowering families with effective strategies." # ADDED/IMPROVED Description
       type: "single_treatment_bulleted"
-      price: 175 # CHANGED: Numeric
-      price_unit: "/session" # ADDED
       details_list:
         - Skilled, individualized occupational therapy treatment
         - Provided in the client's natural environment (home/school)
@@ -149,12 +143,10 @@ services:
       type: "list"
       items:
         - name: "Parent Consultation"
-          price: 99
           duration: "30 minutes"
           format: "Virtual"
           description: "Get strategies for specific known problems and guidance for home programming."
         - name: "School Consultation"
-          price: 150
           duration: "45 minutes"
           format: "On-site or Virtual"
           description: "Educate teachers and school staff on strategies to best support your child's participation and learning in the school environment."
@@ -164,12 +156,8 @@ footer:
 # FAQ Content (Kept separate as requested)
 faq:
   title: "Your Questions Answered"
-  subtitle: "Find information about payments, insurance, appointments, and more."
+  subtitle: "Find information about appointments, insurance, and more."
   items:
-    - question: "What is your payment process?"
-      answer: |
-        All payments are securely processed through our HIPAA-compliant payment processor, Jane Payments. When you schedule your child's initial evaluation, you will complete intake forms where you can safely enter your credit card, HSA, or FSA information to be kept on file. Your card will be charged at the time of service.
-
     - question: "What is your cancellation policy?"
       answer: |
         We understand that life happens, and sometimes plans change! However, because each appointment is reserved just for you, we kindly ask for advance notice if you need to cancel or reschedule. Cancellations made within 48 hours of your appointment will incur a 25% fee, and those made within 24 hours will be charged 50% of the session fee.
@@ -177,14 +165,5 @@ faq:
 
     - question: "Do you accept insurance?"
       answer: |
-        Insurance & Payment Information
-        At Playful Progressions, we are a private-pay practice and do not accept commercial insurance. However, many insurance plans offer reimbursement for services received from an out-of-network provider. We are happy to provide superbills, which you can submit to your insurance company for potential reimbursement.
-        Our superbills include the commonly used treatment codes:
-        Therapeutic Activity: 97530
-        Occupational Therapy Initial Evaluation: 97165, 97166, 97167
+        At Playful Progressions, we do not accept commercial insurance. However, many insurance plans offer reimbursement for services received from an out-of-network provider. We are happy to provide superbills, which you can submit to your insurance company for potential reimbursement.
         We recommend checking with your insurance provider to understand your out-of-network benefits and reimbursement options. If you have any questions, we're happy to help guide you through the process!
-
-    - question: "Why choose private pay over in-network providers?"
-      answer: |
-        While using insurance can be a great option, it's important to keep in mind that coverage is often subject to deductibles and coinsurance. We're here to provide high-quality, individualized therapy to support your child's development without unnecessary delays.
-        If you have any questions about how we can help, we'd love to chat!
