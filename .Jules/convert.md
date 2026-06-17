@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [x] `services.html` — Has hook? Contextually relevant? (2026-06-17)
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,9 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+### ⚠️ ESCALATION → Palette 🎨
+## 2026-06-17 — Fix raw HTML soft hooks in `services.html`
+- **Target:** `services.html`
+- **Finding:** The page currently has two "soft hooks" hardcoded in raw HTML at the bottom ("Not Sure Where to Begin?" and "Looking for Free Resources?"). This violates both the requirement to use the `soft_hook.html` component and the "max 1 hook per page" frequency rule.
+- **Action:** Escalating to Palette to remove the raw HTML `soft-hook-card` grid (around line 265) and replace it with a single include: `{% include soft_hook.html title="Looking for free resources?" text="Check out our blog for expert articles on child development, occupational therapy activities, and parenting tips." btn_text="Read the Blog" btn_link="/blog/" %}`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
