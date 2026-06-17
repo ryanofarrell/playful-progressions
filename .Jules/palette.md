@@ -98,7 +98,7 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ### Layouts (`_layouts/`)
 - [x] `default.html` ✅ 2026-06-03
 - [x] `home.html` ✅ 2026-06-10
-- [ ] `post.html`
+- [x] `post.html` ✅ 2026-06-17
 - [ ] `page.html`
 - [ ] `single.html`
 - [ ] `minimal.html`
@@ -142,6 +142,12 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ## Execution Log
 
 <!-- Palette's cumulative journal. New entries go at the top. -->
+
+### 2026-06-17 — Fix semantic HTML heading hierarchy in post layout
+- **Target:** `_layouts/post.html`
+- **Finding:** The "About the Author" section heading was improperly nested as an `<h3>`, making it a subsection of the preceding "Ready to connect?" CTA section, breaking the logical heading hierarchy.
+- **Action:** Upgraded the `<h3>` to an `<h2>` while applying the `.h3` utility class to maintain visual styling consistent with the rest of the site layout.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-06-10 — No accessibility issues found
 - **Target:** `_layouts/home.html`
