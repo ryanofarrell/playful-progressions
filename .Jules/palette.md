@@ -98,7 +98,7 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ### Layouts (`_layouts/`)
 - [x] `default.html` ✅ 2026-06-03
 - [x] `home.html` ✅ 2026-06-10
-- [ ] `post.html`
+- [x] `post.html` ✅ 2025-02-17
 - [ ] `page.html`
 - [ ] `single.html`
 - [ ] `minimal.html`
@@ -142,6 +142,17 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ## Execution Log
 
 <!-- Palette's cumulative journal. New entries go at the top. -->
+
+### 2025-02-17 — Fix heading hierarchy on post layout
+- **Target:** `_layouts/post.html`
+- **Finding:** The "About the Author" section was incorrectly marked as an `<h3>`, breaking semantic hierarchy as it logically follows an `<h2>` ("Ready to connect?"). A Screen Reader User (Persona 1) would miss the logical section break.
+- **Action:** Upgraded the heading to an `<h2>` and added the `.h3` Bootstrap utility class to preserve intended visual styling according to accessibility practices.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Convert 📈
+- **File:** `_includes/soft_hook.html`
+- **Issue:** The component incorrectly uses an `<h3>` for its title, which breaks semantic heading hierarchy when included at the end of posts or pages without a preceding `<h2>`.
+- **Suggested Fix:** Change to an `<h2>` or allow the heading level to be passed as a parameter.
 
 ### 2026-06-10 — No accessibility issues found
 - **Target:** `_layouts/home.html`
