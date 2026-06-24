@@ -170,7 +170,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md` ✅ 2026-06-24
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
@@ -181,4 +181,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-06-24 — Update front matter for motor planning post
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Missing required schema fields (`description`), invalid array formats (`tag`, `categories`, `concepts`), missing items in tag/concept taxonomies, and unverified/incorrect image paths.
+- **Action:** Added `description`, reformatted `tags`, `categories`, and `concepts` to conform to schema with canonical slugs, updated image paths to explicit AVIF files, and added 'Development' tag to `_data/tags.yml`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
