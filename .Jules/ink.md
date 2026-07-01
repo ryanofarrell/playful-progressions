@@ -68,6 +68,7 @@ Use these exact slugs in the `concepts` array. Do not invent new ones without do
 | `daily-living` | Daily Living Skills (ADLs) |
 | `attention` | Attention & Focus |
 | `body-awareness` | Body Awareness (Proprioception) |
+| `occupational-therapy` | Occupational Therapy |
 
 > **To add a new concept:** Add it to this table AND to `_data/tags.yml` in the same commit.
 
@@ -170,7 +171,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md`
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
@@ -181,4 +182,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2025-05-30 — Front Matter Fix
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Missing required front matter fields (description, tags), title over 60 chars, missing 'w' in image filenames.
+- **Action:** Fixed front matter and added 'Occupational Therapy' to tags.yml and taxonomy table. Renamed image files.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
