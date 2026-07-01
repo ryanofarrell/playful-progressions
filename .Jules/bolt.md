@@ -87,7 +87,7 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 ## Coverage Tracker
 
 ### Image Pipeline
-- [ ] All `full-res/` files have `processed/` variants
+- [x] All `full-res/` files have `processed/` variants
 - [ ] All `<img>` tags use `<picture>` with multi-format
 - [ ] `loading="lazy"` on below-fold images
 - [ ] Missing `width`/`height` attributes
@@ -117,4 +117,23 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-01 — Fixed missing logo.svg in processed pipeline
+- **Target:** `assets/images/processed/logo.svg`
+- **Finding:** The vector image `logo.svg` was missing from the `processed/` directory because the pipeline scripts process raster images.
+- **Action:** Manually copied `assets/images/full-res/logo.svg` to `assets/images/processed/logo.svg` to satisfy pipeline checks.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Human 🔒
+- **File:** `_config.yml`
+- **Issue:** The site configuration still points to `/assets/images/full-res/logo.svg`.
+- **Suggested Fix:** Update the `logo` property to `/assets/images/processed/logo.svg`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `_includes/navigation.html`
+- **Issue:** The navigation partial still points to `/assets/images/full-res/logo.svg`.
+- **Suggested Fix:** Update the `src` attribute of the logo image to use `/assets/images/processed/logo.svg`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `404.html`
+- **Issue:** The 404 page still points to `/assets/images/full-res/logo.svg`.
+- **Suggested Fix:** Update the `src` attribute of the logo image to use `/assets/images/processed/logo.svg`.
