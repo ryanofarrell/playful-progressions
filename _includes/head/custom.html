@@ -26,9 +26,28 @@
             "name": {{ site.author | jsonify }},
             "url": "{{ '/meet-maria' | relative_url | prepend: site.url }}"
           },
+          {%- assign sitetext = site.data.sitetext -%}
           "publisher": {
             "@type": "Organization",
             "name": {{ site.name | jsonify }},
+            "url": {{ site.url | jsonify }},
+            "telephone": {{ site.phone-numeric | jsonify }},
+            "email": {{ site.email | jsonify }},
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Atlanta",
+              "addressRegion": "GA",
+              "addressCountry": "US"
+            },
+            "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"],
+            "areaServed": [
+              {%- for neighborhood in sitetext.location_info.neighborhoods -%}
+                {
+                  "@type": "City",
+                  "name": {{ neighborhood | append: ", GA" | jsonify }}
+                }{%- unless forloop.last -%},{%- endunless -%}
+              {%- endfor -%}
+            ],
             "logo": {
               "@type": "ImageObject",
               "url": "{{ site.logo | relative_url | prepend: site.url }}"
@@ -52,6 +71,10 @@
       "logo": {{ site.logo | prepend: site.url | jsonify }},
       "telephone": {{ site.phone-numeric | jsonify }},
       "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
+      "email": {{ site.email | jsonify }},
+      "paymentAccepted": "Credit Card, HSA, FSA",
+      "openingHours": "",
+      "priceRange": "$99-$299",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",
