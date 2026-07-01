@@ -135,7 +135,7 @@ done
 ## Coverage Tracker
 
 ### Schema.org Blocks
-- [ ] `_includes/head/custom.html` — Organization + LocalBusiness schema
+- [x] `_includes/head/custom.html` — Organization + LocalBusiness schema - 2026-07-01
 - [ ] `services.html` — Service + ItemList schema
 - [ ] `faq.html` — FAQPage schema (verify it exists or create)
 
@@ -165,5 +165,11 @@ done
 ## Execution Log
 
 <!-- Search's cumulative journal. New entries go at the top. -->
+
+## 2026-07-01 - Fix missing Schema properties in custom.html
+- **Target:** `_includes/head/custom.html`
+- **Finding:** Organization (publisher) and MedicalBusiness schemas were missing required properties.
+- **Action:** Added url, telephone, email, address, areaServed, sameAs to publisher; added email, paymentAccepted, openingHours, priceRange to MedicalBusiness.
+- **Verification:** `bundle exec jekyll build` -> ✅ Success
 
 *No entries yet. First audit pending.*
