@@ -4,3 +4,5 @@ tag_colors:
     color: $secondary # Using $info as an example, choose a Bootstrap color variable or hex code
   "Posts":
     color: $secondary
+  "occupational-therapy":
+    color: $secondary
