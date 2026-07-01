@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [x] `services.html` — Has hook? Contextually relevant?
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2025-07-01 — Refactor hardcoded engagement hooks to reusable component
+- **Target:** `services.html`
+- **Finding:** Found multiple hardcoded `soft-hook-card` blocks at the bottom of the page, violating the max 1 hook per page rule and failing to use the established `soft_hook.html` component.
+- **Action:** Replaced the hardcoded HTML with a single `{% include soft_hook.html %}` instance containing value-first language linking to the blog.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
