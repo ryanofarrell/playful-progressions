@@ -170,7 +170,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md` ✅ 2026-07-08
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
@@ -181,4 +181,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-08 — Fixed front matter schema fields
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Missing `description`, invalid `title` length, incorrect `tag` vs `tags`, non-canonical `concepts`, and incorrect image filenames.
+- **Action:** Added description, shortened title, updated tags/concepts format, and renamed image files to include 'w'.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
