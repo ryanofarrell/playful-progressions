@@ -201,7 +201,7 @@ layout: default
                 <div class="col-md-6 col-lg-4 mb-4">
                   <div class="blog-card h-100">
                     {% if post.header.teaser %}
-                      <a href="{{ post.url | relative_url }}">
+                      <a href="{{ post.url | relative_url }}" aria-hidden="true" tabindex="-1">
                         {% assign related_teaser_src = post.header.teaser | relative_url %}
                         {% assign related_teaser_base = related_teaser_src | split: "." | first %}
                         <picture>
