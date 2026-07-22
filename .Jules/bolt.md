@@ -87,7 +87,7 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 ## Coverage Tracker
 
 ### Image Pipeline
-- [ ] All `full-res/` files have `processed/` variants
+- [x] All `full-res/` files have `processed/` variants 2026-07-22
 - [ ] All `<img>` tags use `<picture>` with multi-format
 - [ ] `loading="lazy"` on below-fold images
 - [ ] Missing `width`/`height` attributes
@@ -117,4 +117,18 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-22 — Ensure all full-res images are in processed dir
+- **Target:** `assets/images/full-res/logo.svg`
+- **Finding:** Missing `processed/` variant for `logo.svg`.
+- **Action:** Copied `assets/images/full-res/logo.svg` to `assets/images/processed/logo.svg`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Human 🔒
+- **File:** `_config.yml`
+- **Issue:** Logo path referenced `full-res` instead of `processed`.
+- **Suggested Fix:** Change `logo` value from `/assets/images/full-res/logo.svg` to `/assets/images/processed/logo.svg`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `_includes/navigation.html`, `404.html`
+- **Issue:** Logo paths referenced `full-res` instead of `processed`.
+- **Suggested Fix:** Change image src from `/assets/images/full-res/logo.svg` to `/assets/images/processed/logo.svg`.
