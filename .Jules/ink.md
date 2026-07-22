@@ -170,7 +170,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [ ] `2025-05-30-basics-motor-planning.md`
+- [x] `2025-05-30-basics-motor-planning.md` (2026-07-22)
 - [ ] *(run `ls _posts/` to discover remaining posts and add them here)*
 
 ### Taxonomy
@@ -181,4 +181,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-22 — Fix front matter fields for basics of motor planning
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Missing `description`, invalid `tag`/`tags` format, `title` > 60 chars, invalid `concepts` array items, missing exact optimal image paths for `teaser` and `image`.
+- **Action:** Updated front matter schema to match the required specification, added missing fields, corrected canonical concepts and tags arrays, and linked avif images.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
