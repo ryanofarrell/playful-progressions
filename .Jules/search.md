@@ -135,7 +135,7 @@ done
 ## Coverage Tracker
 
 ### Schema.org Blocks
-- [ ] `_includes/head/custom.html` — Organization + LocalBusiness schema
+- [x] `_includes/head/custom.html` — Organization + LocalBusiness schema (2026-07-22)
 - [ ] `services.html` — Service + ItemList schema
 - [ ] `faq.html` — FAQPage schema (verify it exists or create)
 
@@ -166,4 +166,8 @@ done
 
 <!-- Search's cumulative journal. New entries go at the top. -->
 
-*No entries yet. First audit pending.*
+## 2026-07-22 — Fix Schema.org compliance in custom.html
+- **Target:** `_includes/head/custom.html`
+- **Finding:** Article.publisher was missing Organization schema fields (url, telephone, email, address, sameAs, areaServed), and MedicalBusiness was missing email, paymentAccepted, openingHours, and priceRange.
+- **Action:** Added required Schema fields to both the embedded Organization and MedicalBusiness blocks.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
