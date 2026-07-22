@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [x] `services.html` — Has hook? Contextually relevant? (2026-07-22)
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-22 — Replaced hardcoded hooks with soft_hook.html component
+- **Target:** `services.html`
+- **Finding:** Page contained two hardcoded soft-hook cards, violating component reusability and maximum frequency rules.
+- **Action:** Removed hardcoded cards and replaced them with a single `soft_hook.html` include targeting the blog.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
