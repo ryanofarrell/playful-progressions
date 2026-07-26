@@ -11,6 +11,9 @@ const testCases = [
   { input: null, expected: "", message: "null should return empty string" },
   { input: undefined, expected: "", message: "undefined should return empty string" },
   { input: "   ", expected: "", message: "String with only spaces should return empty string" },
+  { input: 123, expected: "", message: "number should return empty string" },
+  { input: true, expected: "", message: "boolean should return empty string" },
+  { input: {}, expected: "", message: "object should return empty string" },
 ];
 
 console.log("Running PPNameUtils.extractFirstName tests...");
