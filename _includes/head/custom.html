@@ -1,3 +1,4 @@
+{%- assign sitetext = site.data.sitetext -%}
 {%- if page.layout == "post" -%}
   <script type="application/ld+json">
     {
@@ -29,6 +30,24 @@
           "publisher": {
             "@type": "Organization",
             "name": {{ site.name | jsonify }},
+            "url": {{ site.url | jsonify }},
+            "telephone": {{ site.phone-numeric | jsonify }},
+            "email": {{ site.email | jsonify }},
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Atlanta",
+              "addressRegion": "GA",
+              "addressCountry": "US"
+            },
+            "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"],
+            "areaServed": [
+              {%- for neighborhood in sitetext.location_info.neighborhoods -%}
+                {
+                  "@type": "City",
+                  "name": {{ neighborhood | append: ", GA" | jsonify }}
+                }{%- unless forloop.last -%},{%- endunless -%}
+              {%- endfor -%}
+            ],
             "logo": {
               "@type": "ImageObject",
               "url": "{{ site.logo | relative_url | prepend: site.url }}"
@@ -37,7 +56,6 @@
         }
   </script>
 {%- else -%}
-  {%- assign sitetext = site.data.sitetext -%}
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -47,6 +65,9 @@
         "https://schema.org/Pediatric"
       ],
       "name": {{ site.name | jsonify }},
+      "email": {{ site.email | jsonify }},
+      "paymentAccepted": ["Credit Card", "HSA", "FSA"],
+      "priceRange": "$$",
       "description": {{ sitetext.about.body | strip_html | normalize_whitespace | jsonify }},
       "url": {{ site.url | jsonify }},
       "logo": {{ site.logo | prepend: site.url | jsonify }},

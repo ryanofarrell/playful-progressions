@@ -135,7 +135,7 @@ done
 ## Coverage Tracker
 
 ### Schema.org Blocks
-- [ ] `_includes/head/custom.html` — Organization + LocalBusiness schema
+- [x] `_includes/head/custom.html` — Organization + LocalBusiness schema (2026-05-27)
 - [ ] `services.html` — Service + ItemList schema
 - [ ] `faq.html` — FAQPage schema (verify it exists or create)
 
@@ -165,5 +165,11 @@ done
 ## Execution Log
 
 <!-- Search's cumulative journal. New entries go at the top. -->
+
+## 2026-05-27 — Added missing Schema.org properties to custom head
+- **Target:** `_includes/head/custom.html`
+- **Finding:** The `MedicalBusiness` and `Article` > `Organization` schema blocks were missing required properties per the persona guidelines, including `paymentAccepted` and `areaServed`.
+- **Action:** Injected `email` and `paymentAccepted` into `MedicalBusiness`. Added `url`, `telephone`, `email`, `address`, `sameAs`, and `areaServed` to the `Organization` publisher object in the `Article` schema. Assigned `sitetext` globally.
+- **Verification:** `bundle exec jekyll build` → ✅ Success. Validated JSON output with custom python script.
 
 *No entries yet. First audit pending.*
