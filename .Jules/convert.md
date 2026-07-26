@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [✅ 2026-05-27] `services.html` — Has hook? Contextually relevant?
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,11 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-05-27 — Escalate hardcoded, multiple hooks in services.html
+- **Target:** `services.html`
+- **Finding:** Contains two hardcoded `soft-hook-card` blocks at the bottom, which violate the "Max 1 soft hook per page" frequency rule and duplicate the UI code instead of using `_includes/soft_hook.html`.
+- **Action:** ⚠️ ESCALATION → Palette 🎨
+  - **File:** `services.html`
+  - **Issue:** The page has multiple hardcoded engagement cards that compete for attention.
+  - **Suggested Fix:** Replace the two hardcoded `soft-hook-card` div structures with a single `{% include soft_hook.html %}` call (e.g., the "Looking for Free Resources?" one).
+- **Verification:** `bundle exec jekyll build` → ✅ Success
