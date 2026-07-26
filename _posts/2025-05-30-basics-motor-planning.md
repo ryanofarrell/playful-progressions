@@ -1,15 +1,19 @@
 ---
 layout: post
-title: "Basics of Motor Planning: Helping Children Navigate Their World"
+title: "Basics of Motor Planning: Helping Children Navigate"
 date: 2025-05-30 09:00:00 -0400 # Replace with your desired publication date
 categories: posts
-tag: Posts
-concepts: ["motor planning", "praxis", "body awareness", "tactile processing", "ideation", "executive function"]
+tags: ["Posts", "5 Minute Friday"]
+concepts:
+  - motor-planning
+  - body-awareness
+  - executive-function
 excerpt: "An exploration of motor planning (praxis), its essential components like body awareness, tactile processing, and ideation, and practical ways to support children's development in these areas."
+description: "Explore motor planning (praxis), its essential components like body awareness, tactile processing, and ideation, and ways to support children's development."
 classes: wide
 header:
-  teaser: "/assets/images/processed/blog/motor-planning.jpeg" 
-image: "/assets/images/processed/blog/motor-planning.jpeg" 
+  teaser: "/assets/images/processed/blog/motor-planning-400w.avif"
+image: "/assets/images/processed/blog/motor-planning-800w.avif"
 ---
 
 Have you ever tried to bring in all of your groceries at once, just to save another trip to the car? This requires significant motor planning. Motor planning, also known as praxis, is the ability to perform a new or skilled motor task, and is dependent upon adequate body awareness, tactile processing, ideation, initiation, timing, sequencing, feedback and feedforward. It is how quickly we learn a motor skill and the ability to generalize it to other situations. A weakness with motor planning impacts the ability to think of what to do. For example, a child who has difficulty with motor planning may have difficulty carrying out multi step tasks such as getting themselves ready for school.
