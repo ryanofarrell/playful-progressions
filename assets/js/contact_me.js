@@ -5,6 +5,32 @@
  */
 
 $(function () {
+  var $success = $("#success");
+
+  // Helper function to show alert messages using jQuery object creation
+  var showAlert = function (isSuccess, message) {
+    $success.html(
+      $("<div>")
+        .addClass(
+          "alert alert-" +
+            (isSuccess ? "success" : "danger") +
+            " alert-dismissible",
+        )
+        .attr("role", "alert")
+        .append(
+          $("<button>")
+            .attr({
+              type: "button",
+              class: "close",
+              "data-dismiss": "alert",
+              "aria-label": "Close",
+            })
+            .append($("<span>").attr("aria-hidden", "true").html("&times;")),
+        )
+        .append($("<strong>").text(message)),
+    );
+  };
+
   // Initialize jqBootstrapValidation for the contact form
   $("#contactForm input,#contactForm textarea").jqBootstrapValidation({
     preventSubmit: true, // Prevent default HTML form submission
@@ -58,36 +84,19 @@ $(function () {
           if (response.ok) {
             // Check if Formspree indicated success
             // Success message
-            $("#success").html("<div class='alert alert-success'>");
-            $("#success > .alert-success")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#success > .alert-success").append(
-              "<strong>Your message has been sent. </strong>",
-            );
-            $("#success > .alert-success").append("</div>");
+            showAlert(true, "Your message has been sent. ");
             // Clear all fields
             $("#contactForm").trigger("reset");
             // Formspree handles the redirect via the _next hidden input, so no manual redirect needed here
           } else {
             // Handle cases where Formspree responded but indicated an error
             // This might happen with spam detection, etc.
-            $("#success").html("<div class='alert alert-danger'>");
-            $("#success > .alert-danger")
-              .html(
-                "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-              )
-              .append("</button>");
-            $("#success > .alert-danger").append(
-              $("<strong>").text(
-                "Sorry " +
-                  firstName +
-                  ", there was an issue sending your message. Please try again later or contact us directly!",
-              ),
+            showAlert(
+              false,
+              "Sorry " +
+                firstName +
+                ", there was an issue sending your message. Please try again later or contact us directly!",
             );
-            $("#success > .alert-danger").append("</div>");
           }
         },
 
@@ -100,20 +109,12 @@ $(function () {
             jqXHR,
           ); // Log error details
           // Fail message
-          $("#success").html("<div class='alert alert-danger'>");
-          $("#success > .alert-danger")
-            .html(
-              "<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;",
-            )
-            .append("</button>");
-          $("#success > .alert-danger").append(
-            $("<strong>").text(
-              "Sorry " +
-                firstName +
-                ", it seems that my mail server is not responding or there was a network issue. Please try again later!",
-            ),
+          showAlert(
+            false,
+            "Sorry " +
+              firstName +
+              ", it seems that my mail server is not responding or there was a network issue. Please try again later!",
           );
-          $("#success > .alert-danger").append("</div>");
           // No reset here, let user see their input to try again
         },
 
@@ -134,17 +135,8 @@ $(function () {
     $(this).tab("show");
   });
 
-  // Clear success/failure messages when the name input is focused
-  $("#name").focus(function () {
-    $("#success").html("");
-  });
-
-  // Clear success/failure messages when other inputs are focused
-  $("#email").focus(function () {
-    $("#success").html("");
-  });
-
-  $("#message").focus(function () {
-    $("#success").html("");
+  // Clear success/failure messages when inputs are focused
+  $("#name, #email, #message").focus(function () {
+    $success.html("");
   });
 });
