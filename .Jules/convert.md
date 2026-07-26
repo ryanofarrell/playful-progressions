@@ -153,9 +153,9 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
-- [ ] `contact.html` — Has hook? Next step clear?
-- [ ] `faq.html` — Has hook? Guides to services or blog?
+- [x] `services.html` — ✅ 2025-05-30
+- [x] `contact.html` — ✅ 2025-05-30
+- [x] `faq.html` — ✅ 2025-05-30
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
 - [ ] `service_areas.html` — Has hook? Guides to contact?
 
@@ -170,4 +170,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2025-05-30 — Added soft hook to FAQ page
+- **Target:** `faq.html`
+- **Finding:** The FAQ page ended without a soft hook, leading to a potential dead end.
+- **Action:** Appended the `soft_hook.html` component to the bottom of the page, guiding users to explore services.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
