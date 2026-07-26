@@ -135,7 +135,7 @@ done
 ## Coverage Tracker
 
 ### Schema.org Blocks
-- [ ] `_includes/head/custom.html` — Organization + LocalBusiness schema
+- [x] `_includes/head/custom.html` — Organization + LocalBusiness schema (✅ 2024-05-20)
 - [ ] `services.html` — Service + ItemList schema
 - [ ] `faq.html` — FAQPage schema (verify it exists or create)
 
@@ -165,5 +165,11 @@ done
 ## Execution Log
 
 <!-- Search's cumulative journal. New entries go at the top. -->
+
+## 2024-05-20 — Add missing Schema.org properties to MedicalBusiness block
+- **Target:** `_includes/head/custom.html`
+- **Finding:** The `MedicalBusiness` Schema.org block was missing required and recommended properties like `email` and `paymentAccepted` to satisfy LocalBusiness requirements.
+- **Action:** Added `"email": {{ site.email | jsonify }}` and `"paymentAccepted": "Credit Card, HSA, FSA"` to the JSON-LD payload.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 *No entries yet. First audit pending.*
