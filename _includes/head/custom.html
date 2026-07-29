@@ -73,7 +73,11 @@
         {%- endfor -%}
       {%- endfor -%}
       "knowsAbout": {{ expertise | jsonify }},
-      "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"]
+      "sameAs": ["{{ site.instagram_url }}", "{{ site.google_business_url }}"],
+      "email": {{ site.email | jsonify }},
+      "paymentAccepted": "Credit Card, HSA, FSA",
+      "openingHours": "",
+      "priceRange": "$99-$299"
     }
   </script>
 {%- endif -%}
