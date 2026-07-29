@@ -87,7 +87,7 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 ## Coverage Tracker
 
 ### Image Pipeline
-- [ ] All `full-res/` files have `processed/` variants
+- [x] ✅ 2026-07-29 All `full-res/` files have `processed/` variants
 - [ ] All `<img>` tags use `<picture>` with multi-format
 - [ ] `loading="lazy"` on below-fold images
 - [ ] Missing `width`/`height` attributes
@@ -117,4 +117,23 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-29 — Fix missing logo.svg in processed directory
+- **Target:** `assets/images/full-res/logo.svg`
+- **Finding:** SVG missing from `processed/` directory, failing the pipeline presence check.
+- **Action:** Manually copied `logo.svg` to `processed/` directory since SVGs should not be rasterized.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Human
+- **File:** `_config.yml`
+- **Issue:** Logo path points to `full-res/` instead of `processed/`.
+- **Suggested Fix:** Update `logo: /assets/images/full-res/logo.svg` to `logo: /assets/images/processed/logo.svg`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `_includes/navigation.html`
+- **Issue:** Logo path points to `full-res/` instead of `processed/`.
+- **Suggested Fix:** Update `src="{{ '/assets/images/full-res/logo.svg' | relative_url }}"` to `src="{{ '/assets/images/processed/logo.svg' | relative_url }}"`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `404.html`
+- **Issue:** Logo path points to `full-res/` instead of `processed/`.
+- **Suggested Fix:** Update `src="{{ '/assets/images/full-res/logo.svg' | relative_url }}"` to `src="{{ '/assets/images/processed/logo.svg' | relative_url }}"`.
