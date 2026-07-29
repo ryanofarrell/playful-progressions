@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [x] `services.html` — 2026-07-29 Has hook? Contextually relevant?
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-07-29 — Replaced hardcoded hook in services.html
+- **Target:** `services.html`
+- **Finding:** The services page used hardcoded HTML for the bottom engagement hook rather than the `soft_hook.html` include.
+- **Action:** Replaced hardcoded hook block with the `soft_hook.html` component.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
