@@ -58,6 +58,10 @@
         "addressRegion": "GA",
         "addressCountry": "US"
       },
+      "email": {{ site.email | jsonify }},
+      "openingHours": "",
+      "priceRange": "$99-$299",
+      "paymentAccepted": "Credit Card, HSA, FSA",
       "areaServed": [
         {%- for neighborhood in sitetext.location_info.neighborhoods -%}
           {
