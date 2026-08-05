@@ -87,7 +87,7 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 ## Coverage Tracker
 
 ### Image Pipeline
-- [ ] All `full-res/` files have `processed/` variants
+- [x] 2026-08-05 All `full-res/` files have `processed/` variants
 - [ ] All `<img>` tags use `<picture>` with multi-format
 - [ ] `loading="lazy"` on below-fold images
 - [ ] Missing `width`/`height` attributes
@@ -117,4 +117,23 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-08-05 — Copied logo.svg to processed directory
+- **Target:** `assets/images/full-res/logo.svg`
+- **Finding:** SVGs are not processed by ImageMagick and thus missing from `assets/images/processed/` causing build pipeline consistency issues.
+- **Action:** Manually copied `logo.svg` to `assets/images/processed/`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Human 🔒
+- **File:** `_config.yml`
+- **Issue:** References `/assets/images/full-res/logo.svg` instead of processed directory.
+- **Suggested Fix:** Update `logo` property to `/assets/images/processed/logo.svg`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `_includes/navigation.html`
+- **Issue:** References `/assets/images/full-res/logo.svg` instead of processed directory.
+- **Suggested Fix:** Update `src` attribute to `/assets/images/processed/logo.svg`.
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `404.html`
+- **Issue:** References `/assets/images/full-res/logo.svg` instead of processed directory.
+- **Suggested Fix:** Update `src` attribute to `/assets/images/processed/logo.svg`.
