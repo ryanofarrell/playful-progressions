@@ -135,7 +135,7 @@ done
 ## Coverage Tracker
 
 ### Schema.org Blocks
-- [ ] `_includes/head/custom.html` — Organization + LocalBusiness schema
+- [x] `_includes/head/custom.html` — Organization + LocalBusiness schema
 - [ ] `services.html` — Service + ItemList schema
 - [ ] `faq.html` — FAQPage schema (verify it exists or create)
 
@@ -166,4 +166,8 @@ done
 
 <!-- Search's cumulative journal. New entries go at the top. -->
 
-*No entries yet. First audit pending.*
+## 2026-08-05 — Add required LocalBusiness and Organization properties to schema
+- **Target:** `_includes/head/custom.html`
+- **Finding:** The `MedicalBusiness` schema was missing required properties for Organization (`email`) and LocalBusiness (`openingHours`, `priceRange`, `paymentAccepted`).
+- **Action:** Added `email` (using `site.email`), `openingHours` (empty string per Groundedness Rule), `priceRange` (`"$99-$299"` based on `_data/sitetext.yml`), and `paymentAccepted` (`"Credit Card, HSA, FSA"` based on FAQ).
+- **Verification:** `bundle exec jekyll build` → ✅ Success
