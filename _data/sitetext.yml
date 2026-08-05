@@ -106,7 +106,7 @@ services:
       type: "tiered"
       tiers:
         - name: "Foundational Evaluation"
-          price: 250 # CHANGED: Numeric
+          price: 299 # CHANGED: Numeric
           # price_unit: "" # Optional: or omit if no unit
           description: "Includes clinical observations, parent interview, and initial recommendations."
           standard_includes:
@@ -116,7 +116,7 @@ services:
             - Initial recommendations
             - Standard written summary of findings
         - name: "Comprehensive Evaluation"
-          price: 299 # CHANGED: Numeric
+          price: 349 # CHANGED: Numeric
           # price_unit: "" # Optional: or omit if no unit
           description: "Includes all foundational elements plus in-depth analysis, detailed report, and follow-up consultation."
           footnote: "Recommended if we plan to submit for reimbursement"
@@ -129,6 +129,18 @@ services:
             - Detailed written summary of findings
             - Standardized assesments (PDMS-3 & Beery VMI)
             - Follow-up consultation to review findings and plan
+
+    - id: "re-evaluations"
+      title: "OT Re-Evaluation"
+      description: "Periodic re-evaluations to track progress and update treatment plans."
+      type: "tiered"
+      tiers:
+        - name: "Bi-annual re-evaluation"
+          price: 199
+          description: "After 6 months of treatment, a re-evaluation will be required.  A re-evaluation includes a 30-minute parent call to communicate progress to date, goals moving forward, and a review of treatment interventions strategies and outcomes thus far.  A written report will include progress and updates on clinical observations and updated goals and treatment plan."
+        - name: "Annual re-evaluation"
+          price: 250
+          description: "After one year of treatment, standardized testing will be required-administered alongside a written report with progress to date and updated clinical findings.  Annual re-evaluations will also include a 30-minute parent meeting to communicate results, new goals, and a path forward for continuation or discharge planning"
 
     - id: "treatments"
       title: "OT Treatments"
