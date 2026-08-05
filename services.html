@@ -150,6 +150,7 @@ permalink: /services/
                       <h4 class="tier-name">{{ tier.name }}</h4>
                       <p class="price">${{ tier.price | default: 0 }}{{ tier.price_unit }}</p>
                       <p class="tier-description">{{ tier.description }}</p>
+                      {% if tier.standard_includes or tier.additional_includes %}
                       <h5>Includes:</h5>
                       <ul class="tier-includes-list">
                         {% if tier.standard_includes %}
@@ -169,6 +170,7 @@ permalink: /services/
                           {% endfor %}
                         {% endif %}
                       </ul>
+                      {% endif %}
                       {% if tier.footnote %}
                         <p class="tier-footnote text-muted mt-2 mb-0">
                           <small>&#42; {{ tier.footnote }}</small>
