@@ -98,7 +98,7 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ### Layouts (`_layouts/`)
 - [x] `default.html` ✅ 2026-06-03
 - [x] `home.html` ✅ 2026-06-10
-- [ ] `post.html`
+- [✅] 2026-08-12 `post.html`
 - [ ] `page.html`
 - [ ] `single.html`
 - [ ] `minimal.html`
@@ -142,6 +142,12 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ## Execution Log
 
 <!-- Palette's cumulative journal. New entries go at the top. -->
+
+### 2026-08-12 — Redundant link in blog card
+- **Target:** `_layouts/post.html`
+- **Finding:** Visually redundant links (teaser image and title) pointing to the same destination create unnecessary tab stops and repetitive screen reader announcements.
+- **Action:** Added `aria-hidden="true"` and `tabindex="-1"` to the image link in the blog card to remove it from the accessibility tree and tab order, relying on the title link for navigation.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-06-10 — No accessibility issues found
 - **Target:** `_layouts/home.html`
