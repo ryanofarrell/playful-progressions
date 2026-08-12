@@ -87,7 +87,7 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 ## Coverage Tracker
 
 ### Image Pipeline
-- [ ] All `full-res/` files have `processed/` variants
+- [✅] 2026-08-12 All `full-res/` files have `processed/` variants
 - [ ] All `<img>` tags use `<picture>` with multi-format
 - [ ] `loading="lazy"` on below-fold images
 - [ ] Missing `width`/`height` attributes
@@ -117,4 +117,16 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-08-12 — Copied missing logo.svg to processed directory
+- **Target:** `assets/images/processed/logo.svg`
+- **Finding:** SVG images are vector graphics and skip the regular `process_my_images.sh` pipeline, resulting in missing processed variants.
+- **Action:** Manually copied `assets/images/full-res/logo.svg` to `assets/images/processed/logo.svg`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+### ⚠️ ESCALATION → 🚫 Human-Only Files
+- **File:** `_config.yml`
+- **Issue:** Logo path points to `full-res` folder.
+- **Suggested Fix:** Update logo path to `assets/images/processed/logo.svg`.
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `_includes/navigation.html`
+- **Issue:** Logo path points to `full-res` folder.
+- **Suggested Fix:** Update logo path to `assets/images/processed/logo.svg`.
