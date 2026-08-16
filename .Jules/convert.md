@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [x] `services.html` — Has hook? Contextually relevant? 2026-06-24
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-06-24 — Fix hardcoded hooks on services page
+- **Target:** `services.html`
+- **Finding:** The page contained two hardcoded `.soft-hook-card` blocks instead of using the reusable `_includes/soft_hook.html` component. Additionally, it violated the rule of having a maximum of 1 `soft_hook` per page.
+- **Action:** Replaced the hardcoded `.soft-hook-card` blocks with a single `{% include soft_hook.html %}` component linking to the blog.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
