@@ -132,10 +132,7 @@ section .testimonial-card {
     right: 0;
   }
 
-  // Refined carousel dot indicators
-  // Positioned inside the carousel at the bottom (above the padding-bottom
-  // breathing room we added to carousel-inner). This keeps dots fully within
-  // the testimonial-card boundary on all screen sizes.
+  // Refined carousel dot indicators with accessible 48x48px touch targets
   ol.carousel-indicators {
     position: absolute;
     right: 0;
@@ -144,6 +141,7 @@ section .testimonial-card {
     z-index: 15;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding-left: 0;
     margin-right: 15%;
     margin-left: 15%;
@@ -152,27 +150,22 @@ section .testimonial-card {
     
     li {
       position: relative;
-      width: 10px !important;
-      height: 10px !important;
-      border-radius: 50% !important;
-      background-color: rgba($primary, 0.25) !important;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px !important;
+      height: 48px !important;
+      background: transparent !important;
       border: none !important;
-      transition: all 0.3s ease !important;
-      margin: 0 6px !important;
+      margin: 0 !important;
+      padding: 0 !important;
       opacity: 1;
       cursor: pointer;
 
-      &.active {
-        width: 24px !important;
-        border-radius: 6px !important; // Pill shape active indicator
-        background-color: $primary !important;
-      }
-
       .carousel-indicator-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 48px !important;
         height: 48px !important;
         border: none !important;
@@ -183,12 +176,27 @@ section .testimonial-card {
         outline: none !important;
         box-shadow: none !important;
         border-radius: 50%;
-        z-index: 2;
 
         &:focus-visible {
           outline: 2px solid $primary !important;
-          outline-offset: 2px;
+          outline-offset: -2px;
         }
+      }
+
+      .carousel-indicator-dot {
+        display: block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: rgba($primary, 0.25);
+        transition: all 0.3s ease;
+        pointer-events: none;
+      }
+
+      &.active .carousel-indicator-dot {
+        width: 24px;
+        border-radius: 6px; // Pill shape active indicator
+        background-color: $primary;
       }
     }
   }
