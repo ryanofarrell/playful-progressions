@@ -14,14 +14,22 @@
     var mainNav = document.querySelector("#mainNav");
 
     if (togglers.length > 0 && navCollapse) {
-      togglers.forEach(function (toggler) {
-        toggler.addEventListener("click", function (e) {
+      function toggleMenu(e) {
+        if (e) {
           e.preventDefault();
           e.stopPropagation();
-          var isOpen = navCollapse.classList.toggle("show");
-          togglers.forEach(function (t) {
-            t.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          });
+        }
+        var isOpen = navCollapse.classList.toggle("show");
+        togglers.forEach(function (t) {
+          t.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
+
+      togglers.forEach(function (toggler) {
+        toggler.addEventListener("click", toggleMenu);
+        toggler.addEventListener("touchend", function (e) {
+          e.preventDefault();
+          toggleMenu(e);
         });
       });
 
@@ -40,11 +48,9 @@
 
       // Close menu when clicking outside navbar
       document.addEventListener("click", function (e) {
-        if (
-          navCollapse.classList.contains("show") &&
-          mainNav &&
-          !mainNav.contains(e.target)
-        ) {
+        if (!navCollapse.classList.contains("show")) return;
+        var isClickInsideNav = mainNav && mainNav.contains(e.target);
+        if (!isClickInsideNav) {
           navCollapse.classList.remove("show");
           togglers.forEach(function (t) {
             t.setAttribute("aria-expanded", "false");

@@ -1,5 +1,19 @@
 // Styling for the navbar
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
 #mainNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  width: 100%;
   /* Base styles (mobile default and desktop default on dark headers) */
   background-color: $gray-100; /* Mobile default: light grey background (from original) */
   transition: background-color 0.2s ease-in-out; /* Smooth background transition */
@@ -8,6 +22,13 @@
   /* Adjust mobile navbar height */
   padding-top: 10px; /* Add some top padding */
   padding-bottom: 10px; /* Add some bottom padding */
+
+  > .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   /* Container for Mobile Toggler and Contact Icons */
   .navbar-toggler-container {
@@ -23,13 +44,21 @@
     font-size: 12px;
     padding: 13px;
     text-transform: uppercase;
-    color: white; /* Toggler text color - Changed to dark for light background */
+    color: white; /* Toggler text color */
     border: 0;
-    background-color: $primary; /* Toggler background color - Changed to transparent for light background */
+    background-color: $primary; /* Toggler background color */
     @include heading-font;
     margin-bottom: 5px; /* Space below the toggler */
     width: 120px; /* Adjust this value as needed */
-    // Add hover/focus styles for toggler on mobile if desired
+    cursor: pointer;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+
+    * {
+      pointer-events: none; // Ensures click event target is consistently the button
+    }
+
     &:hover,
     &:focus {
       color: white;
@@ -59,6 +88,7 @@
     flex-grow: 1;
     align-items: center;
     text-align: center;
+    width: 100%;
 
     &:not(.show) {
       display: none !important;
@@ -81,13 +111,28 @@
       padding-top: 0 !important;
       padding-bottom: 0 !important;
       margin-top: 0 !important;
+      border-radius: 0 !important;
     }
   }
 
   /* Navigation links and buttons (Mobile default) */
   /* These styles apply to the collapsed menu links on ALL mobile pages */
   .navbar-nav {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      flex-direction: row;
+      width: auto;
+    }
+
     .nav-item {
+      display: block;
+
       .nav-link-text {
         font-size: 90%;
         font-weight: 400;
@@ -95,13 +140,17 @@
         letter-spacing: 1px;
         color: $primary; /* Default: primary link text */
         @include heading-font;
+        display: block;
+        text-align: center;
       }
       .nav-button {
         color: white; /* Default: white text on action button */
         @include heading-font;
+        display: inline-block;
       }
       .nav-link {
         /* Generic nav-link styles */
+        display: block;
         &.active,
         &:hover,
         &:focus {
