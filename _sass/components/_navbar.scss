@@ -53,6 +53,37 @@
     }
   }
 
+  /* Collapsible Navigation Menu (Mobile default + Desktop expanded) */
+  .navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    align-items: center;
+    text-align: center;
+
+    &:not(.show) {
+      display: none !important;
+    }
+
+    &.show {
+      display: block !important;
+      width: 100%;
+      background-color: $gray-100;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 992px) {
+      display: flex !important;
+      flex-basis: auto;
+      background-color: transparent !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      margin-top: 0 !important;
+    }
+  }
+
   /* Navigation links and buttons (Mobile default) */
   /* These styles apply to the collapsed menu links on ALL mobile pages */
   .navbar-nav {

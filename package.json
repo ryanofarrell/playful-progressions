@@ -4,8 +4,8 @@
     "description": "Jekyll site with PurgeCSS",
     "main": "index.js",
     "scripts": {
-        "build": "jekyll build && npx purgecss --config ./purgecss.config.js",
-        "minify:js": "terser assets/js/jqBootstrapValidation.js -o assets/js/jqBootstrapValidation.min.js -c -m",
+        "test": "node assets/js/name_utils.test.js",
+        "build": "bundle exec jekyll build && npx purgecss --config ./purgecss.config.js",
         "critical:css": "npm-run-all critical:prepare --parallel critical:home critical:contact critical:services critical:blog critical:maria critical:resources critical:faq && npm run critical:repath && npm run critical:combine",
         "critical:prepare": "mkdir -p _tmp",
         "critical:home": "critical _site/index.html --base _site/ > _tmp/critical-home.css",
