@@ -144,8 +144,9 @@
     // -------------------------------------------------------------------------
     // 5. FAQ Accordion Interaction
     // -------------------------------------------------------------------------
-    var faqButtons = document.querySelectorAll(".faq-btn, [data-toggle=\"collapse\"][data-target]");
+    var faqButtons = document.querySelectorAll(".faq-btn, .accordion [data-toggle=\"collapse\"], .card-header [data-toggle=\"collapse\"]");
     faqButtons.forEach(function (button) {
+      if (button.classList.contains("navbar-toggler")) return;
       button.addEventListener("click", function () {
         var targetSelector = button.getAttribute("data-target") || button.getAttribute("href");
         if (!targetSelector || targetSelector === "#") return;

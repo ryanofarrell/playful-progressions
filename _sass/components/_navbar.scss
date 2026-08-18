@@ -82,26 +82,25 @@
     }
   }
 
-  /* Collapsible Navigation Menu (Mobile default + Desktop expanded) */
+  /* Collapsible Navigation Menu (Mobile hidden by default, visible when .show; Desktop always flex) */
   .navbar-collapse {
     flex-basis: 100%;
     flex-grow: 1;
     align-items: center;
-    text-align: center;
-    width: 100%;
 
-    &:not(.show) {
-      display: none !important;
-    }
-
-    &.show {
-      display: block !important;
+    @media (max-width: 991.98px) {
+      display: none;
       width: 100%;
-      background-color: $gray-100;
-      padding-top: 15px;
-      padding-bottom: 15px;
-      margin-top: 10px;
-      border-radius: 8px;
+      text-align: center;
+
+      &.show {
+        display: block !important;
+        background-color: $gray-100;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+      }
     }
 
     @media (min-width: 992px) {
@@ -304,8 +303,11 @@
         }
         .navbar-nav {
           .nav-item {
+            .nav-link-text {
+              color: $gray-900 !important; /* Shrunk: dark grey link color */
+            }
             .nav-link {
-              color: $gray-900; /* Shrunk: dark grey link color */
+              color: $gray-900 !important; /* Shrunk: dark grey link color */
               &.active,
               &:hover,
               &:focus {
@@ -319,7 +321,7 @@
               color: $gray-600; /* Pipe color when shrunk on dark */
             }
             .contact-icon {
-              /* Color inherits from shrunk .nav-link styles */
+              color: $gray-700 !important;
             }
           }
         }
@@ -330,7 +332,7 @@
 
         /* Contact icon color when navbar is shrunk (on dark header) */
         .contact-icon {
-          color: $gray-300; /* Light grey color when shrunk on dark */
+          color: $gray-700;
           &:hover,
           &:focus {
             color: $action;
