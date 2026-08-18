@@ -185,18 +185,20 @@ section .testimonial-card {
 
       .carousel-indicator-dot {
         display: block;
-        width: 10px;
+        width: 24px;
         height: 10px;
-        border-radius: 50%;
-        background-color: rgba($primary, 0.25);
-        transition: all 0.3s ease;
+        border-radius: 6px;
+        background-color: $primary;
+        opacity: 0.25;
+        transform: scaleX(0.42);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+        will-change: transform, opacity;
         pointer-events: none;
       }
 
       &.active .carousel-indicator-dot {
-        width: 24px;
-        border-radius: 6px; // Pill shape active indicator
-        background-color: $primary;
+        opacity: 1;
+        transform: scaleX(1);
       }
     }
   }
