@@ -20,7 +20,11 @@ const otherAtRules = new Set();
 ast.children.forEach(node => {
   if (node.type === "Atrule") {
     if (node.name === "font-face") {
-      fontFaces.add(csso.syntax.generate(node));
+      const gen = csso.syntax.generate(node);
+      // Exclude non-critical fonts from inline critical CSS; they load asynchronously via agency.css
+      if (!gen.includes("Font Awesome") && !gen.includes("Caveat")) {
+        fontFaces.add(gen);
+      }
     } else if (node.name === "media") {
       const query = node.prelude ? csso.syntax.generate(node.prelude) : "";
       if (!mediaQueries.has(query)) {
