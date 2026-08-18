@@ -16,7 +16,7 @@
         "critical:resources": "critical _site/resources/index.html --base _site/ > _tmp/critical-resources.css",
         "critical:faq": "critical _site/faq/index.html --base _site/ > _tmp/critical-faq.css",
         "critical:repath": "find ./_tmp -type f -name '*.css' -exec sed -i.bak 's|url(../assets|url(/assets|g; s|url(assets|url(/assets|g; s|url(\"../assets|url(\"/assets|g; s|url(\"assets|url(\"/assets|g' {} +",
-        "critical:combine": "cat _tmp/*.css | csso > _includes/critical.css && rm -rf _tmp"
+        "critical:combine": "cat _tmp/*.css | csso > _includes/critical.css && node scripts/dedupe_critical.js && rm -rf _tmp"
     },
     "author": "",
     "license": "ISC",
