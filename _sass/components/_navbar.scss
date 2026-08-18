@@ -132,6 +132,7 @@
     .nav-item {
       display: block;
 
+      .nav-link,
       .nav-link-text {
         font-size: 90%;
         font-weight: 400;
@@ -141,20 +142,19 @@
         @include heading-font;
         display: block;
         text-align: center;
+        transition: color 0.15s ease-in-out;
+
+        &.active,
+        &:hover,
+        &:focus {
+          color: $action !important; /* Action hover color */
+        }
       }
+
       .nav-button {
         color: white; /* Default: white text on action button */
         @include heading-font;
         display: inline-block;
-      }
-      .nav-link {
-        /* Generic nav-link styles */
-        display: block;
-        &.active,
-        &:hover,
-        &:focus {
-          color: $action; /* Default active/hover color */
-        }
       }
     }
   }
@@ -251,17 +251,16 @@
 
     .navbar-nav {
       .nav-item {
+        .nav-link,
         .nav-link-text {
           padding: 1.1em 1em !important; /* Desktop padding */
           color: white; /* Desktop: white link text on dark headers */
-        }
-        .nav-link {
-          /* Generic nav-link style for desktop */
-          color: white; /* Desktop: white link text on dark headers */
+          transition: color 0.15s ease-in-out;
+
           &.active,
           &:hover,
           &:focus {
-            color: $action; /* Active/hover color */
+            color: $action !important; /* Active/hover color */
           }
         }
       }
@@ -303,15 +302,14 @@
         }
         .navbar-nav {
           .nav-item {
+            .nav-link,
             .nav-link-text {
               color: $gray-900 !important; /* Shrunk: dark grey link color */
-            }
-            .nav-link {
-              color: $gray-900 !important; /* Shrunk: dark grey link color */
+
               &.active,
               &:hover,
               &:focus {
-                color: $action;
+                color: $action !important;
               }
             }
           }
@@ -362,17 +360,16 @@
       }
       .navbar-nav {
         .nav-item {
+          .nav-link,
           .nav-link-text {
             padding: 1.1em 1em !important;
-            color: $primary; /* Primary link text */
-          }
-          .nav-link {
-            /* Generic nav-link style on light background (desktop) */
-            color: $primary;
+            color: $primary !important; /* Primary link text */
+            transition: color 0.15s ease-in-out;
+
             &.active,
             &:hover,
             &:focus {
-              color: $action;
+              color: $action !important;
             }
           }
         }
