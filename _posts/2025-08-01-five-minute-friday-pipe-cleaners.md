@@ -8,8 +8,8 @@ classes: wide
 tag: 5 Minute Friday
 concepts: ["fine motor", "sensory exploration", "pincer grasp", "bilateral coordination", "pre-writing", "problem-solving", "play ideas"]
 header:
-  teaser: /assets/images/processed/blog/5mf-pipe-cleaners.jpg
-image: /assets/images/processed/blog/5mf-pipe-cleaners.jpg
+  teaser: /assets/images/processed/blog/5mf-pipe-cleaners.jpeg
+image: /assets/images/processed/blog/5mf-pipe-cleaners.jpeg
 
 ---
 

@@ -7,7 +7,7 @@ excerpt: Is OT telehealth effective? Discover 5 surprising benefits, from unmatc
 classes: wide
 tag: Posts
 concepts: ["telehealth", "parent coaching", "home environment", "pediatric OT"]
-image: /assets/images/processed/blog/tele-health.jpeg # <-- ADD THIS LINE
+image: /assets/images/processed/blog/tele-health.jpeg
 header:
     teaser: /assets/images/processed/blog/tele-health.jpeg
 

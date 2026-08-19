@@ -33,7 +33,14 @@ html {
 
 body {
   overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   @include body-font;
+}
+
+main#main-content {
+  flex: 1 0 auto;
 }
 
 p {

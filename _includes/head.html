@@ -1,26 +1,11 @@
 <head>
   {% if site.analytics.google and jekyll.environment == "production" %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}"></script>
     <script>
-        const loadGTM = () => {
-          const script = document.createElement('script');
-          script.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google }}';
-          script.async = true;
-          document.head.appendChild(script);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '{{ site.analytics.google }}');
-        };
-
-        const gtmEvents = ['scroll', 'mousemove', 'keydown', 'touchstart'];
-
-        const triggerGTM = () => {
-          loadGTM();
-          gtmEvents.forEach(event => window.removeEventListener(event, triggerGTM));
-        };
-
-        gtmEvents.forEach(event => window.addEventListener(event, triggerGTM, { passive: true, once: true }));
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics.google }}');
     </script>
   {% endif %}
 
@@ -61,12 +46,6 @@
   <link
     rel="preload"
     href="{{ '/assets/fonts/montserrat-v30-latin-700.woff2' | relative_url }}"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous">
-  <link
-    rel="preload"
-    href="{{ '/assets/fonts/merriweather-v32-latin-italic.woff2' | relative_url }}"
     as="font"
     type="font/woff2"
     crossorigin="anonymous">

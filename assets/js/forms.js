@@ -3,6 +3,16 @@
  * Provides client-side validation, accessible feedback, and Formspree AJAX submission without jQuery.
  */
 document.addEventListener("DOMContentLoaded", function () {
+  function escapeHtml(str) {
+    if (!str) return "";
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
   function setupForm(formId, successContainerId, options) {
     const form = document.getElementById(formId);
     const feedbackContainer = document.getElementById(successContainerId);
@@ -24,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-          <strong>${message}</strong>
+          <strong>${escapeHtml(message)}</strong>
         </div>
       `;
 

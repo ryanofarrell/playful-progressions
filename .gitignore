@@ -9,3 +9,6 @@ vendor
 node_modules
 
 gemini
+
+.DS_Store
+**/.DS_Store
