@@ -5,8 +5,15 @@ _site
 vendor
 
 .vscode
+.ruby-lsp
 
 node_modules
+_tmp
+*.bak
+
+*.log
+combined_output*.txt
+commands.txt
 
 gemini
 

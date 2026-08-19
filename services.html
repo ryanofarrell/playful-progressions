@@ -26,7 +26,8 @@ permalink: /services/
           "url": {{ page.url | absolute_url | append: "#" | append: offering.id | jsonify }},
           "serviceType": "Pediatric Occupational Therapy",
           "provider": {
-            "@type": "Organization",
+            "@type": "MedicalBusiness",
+            "@id": "{{ site.url }}#organization",
             "name": {{ site.name | jsonify }},
             "url": {{ site.url | absolute_url | jsonify }},
             "logo": {{ site.logo | absolute_url | jsonify }},

@@ -32,11 +32,11 @@
 
   {% include footer.html %}
 
-  <script src="{{ 'assets/js/site.js' | relative_url }}?v=1.0.2" defer></script>
+  <script src="{{ 'assets/js/site.js' | relative_url }}?v={{ site.asset_version | default: '1.0.0' }}" defer></script>
 
   {% if page.include_contact_form or page.include_play_group_form %}
-    <script src="{{ 'assets/js/name_utils.js' | relative_url }}?v=1.0.2" defer></script>
-    <script src="{{ 'assets/js/forms.js' | relative_url }}?v=1.0.2" defer></script>
+    <script src="{{ 'assets/js/name_utils.js' | relative_url }}?v={{ site.asset_version | default: '1.0.0' }}" defer></script>
+    <script src="{{ 'assets/js/forms.js' | relative_url }}?v={{ site.asset_version | default: '1.0.0' }}" defer></script>
   {% endif %}
 
 </body>

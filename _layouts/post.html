@@ -44,7 +44,7 @@ layout: default
                 type="image/webp">
               <img
                 src="{{ teaser_src }}"
-                alt="{{ page.title }} Teaser Image"
+                alt="{{ page.header.teaser_alt | default: page.title }}"
                 class="img-fluid rounded shadow-sm"
                 loading="eager"
                 width="1600"
@@ -219,7 +219,7 @@ layout: default
                             type="image/webp">
                           <img
                             src="{{ related_teaser_src }}"
-                            alt="{{ post.title }} Teaser"
+                            alt="{{ post.header.teaser_alt | default: post.title }}"
                             class="blog-card-img"
                             loading="lazy">
                         </picture>
