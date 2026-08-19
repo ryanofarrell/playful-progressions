@@ -153,7 +153,7 @@ done
 ## Coverage Tracker
 
 ### Static Pages — Hook Audit
-- [ ] `services.html` — Has hook? Contextually relevant?
+- [✅] 2026-08-19 `services.html` — Has hook? Contextually relevant?
 - [ ] `contact.html` — Has hook? Next step clear?
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
@@ -170,4 +170,8 @@ done
 
 ## Execution Log
 
-*No entries yet. First audit pending.*
+## 2026-08-19 — Refactor hardcoded hooks to include component
+- **Target:** `services.html`
+- **Finding:** The page has multiple hardcoded hooks and does not use the `soft_hook.html` reusable component.
+- **Action:** Replaced hardcoded blocks with a single `{% include soft_hook.html ... %}` as specified.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
