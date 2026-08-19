@@ -21,7 +21,7 @@ subtitle: Latest posts and articles
       </div>
     </div>
     <div class="row" id="blog-post-list">
-      {% for post in paginator.posts %}
+      {% for post in site.posts %}
         <div class="col-md-6 col-lg-4 mb-4 blog-post-card" data-tags="{% if post.tag %}{{ post.tag | slugify }}{% endif %}">
           <div class="blog-card">
             <a href="{{ post.url | relative_url }}">
@@ -88,47 +88,14 @@ subtitle: Latest posts and articles
       {% endfor %}
     </div>
 
-    {% if paginator.total_pages > 1 %}
-      <nav aria-label="Blog pagination" class="mt-4">
-        <ul class="pagination justify-content-center">
-          {% if paginator.previous_page %}
-            <li class="page-item">
-              <a class="page-link" href="{{ paginator.previous_page_path | relative_url }}">Previous</a>
-            </li>
-          {% else %}
-            <li class="page-item disabled">
-              <span class="page-link">Previous</span>
-            </li>
-          {% endif %}
-
-          {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-              <li class="page-item active">
-                <span class="page-link">{{ page }}</span>
-              </li>
-            {% elsif page == 1 %}
-              <li class="page-item">
-                <a class="page-link" href="{{ '/blog/' | relative_url }}">{{ page }}</a>
-              </li>
-            {% else %}
-              <li class="page-item">
-                <a class="page-link" href="{{ site.paginate_path | replace: ':num', page | relative_url }}">{{ page }}</a>
-              </li>
-            {% endif %}
-          {% endfor %}
-
-          {% if paginator.next_page %}
-            <li class="page-item">
-              <a class="page-link" href="{{ paginator.next_page_path | relative_url }}">Next</a>
-            </li>
-          {% else %}
-            <li class="page-item disabled">
-              <span class="page-link">Next</span>
-            </li>
-          {% endif %}
-        </ul>
-      </nav>
-    {% endif %}
+    <div class="row mt-3 mb-5 d-none" id="blog-load-more-container">
+      <div class="col-12 text-center">
+        <button id="btn-load-more" class="btn btn-primary btn-lg px-4 py-2" type="button">
+          Load More Posts
+        </button>
+        <div id="blog-posts-status" class="text-muted mt-2 small" aria-live="polite"></div>
+      </div>
+    </div>
 
   </div>
 </section>
