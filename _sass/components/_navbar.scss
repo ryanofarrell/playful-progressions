@@ -304,14 +304,14 @@
           width: 1px;
           height: 18px;
           background-color: rgba(255, 255, 255, 0.4); /* Default pipe color (on dark desktop) */
-          margin-right: 12px;
+          margin-right: 14px;
           margin-left: 4px;
         }
 
         .contact-icon {
           font-size: 1.25rem; /* Adjust icon size, match mobile */
-          padding: 6px !important; /* Hit area padding */
-          margin-left: 6px; /* Space between icons on desktop */
+          padding: 8px !important; /* Hit area padding */
+          margin-left: 12px; /* Space between icons on desktop */
           line-height: 1;
         }
       }
@@ -419,8 +419,12 @@
         .desktop-contact-icons {
           &::before {
             background-color: $gray-400; /* Pipe color on light desktop */
+            margin-right: 14px;
+            margin-left: 4px;
           }
           .contact-icon {
+            padding: 8px !important;
+            margin-left: 12px;
             color: $primary !important;
             &:hover,
             &:focus {
