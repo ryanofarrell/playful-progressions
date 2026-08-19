@@ -52,7 +52,11 @@
       "url": {{ site.url | jsonify }},
       "logo": {{ site.logo | prepend: site.url | jsonify }},
       "telephone": {{ site.phone-numeric | jsonify }},
+      "email": {{ site.email | jsonify }},
       "image": "{{ sitetext.team.people[0].image | prepend: site.url }}",
+      "paymentAccepted": "credit card, HSA, FSA",
+      "openingHours": "",
+      "priceRange": "$99-$349",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Atlanta",
