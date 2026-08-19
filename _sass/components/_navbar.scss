@@ -126,11 +126,17 @@
 
     @media (min-width: 992px) {
       flex-direction: row;
+      align-items: center;
       width: auto;
     }
 
     .nav-item {
       display: block;
+
+      @media (min-width: 992px) {
+        display: flex;
+        align-items: center;
+      }
 
       .nav-link,
       .nav-link-text {
@@ -172,11 +178,20 @@
   /* Common styles for Contact Icons */
   /* Base size and spacing between icons (mobile spacing) */
   .contact-icon {
-    display: inline-block; // Ensure it respects box model properties
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.3rem; /* Adjust icon size */
     border-radius: 50%; // Rounded for focus ring
     padding: 2px; // specific padding to avoid overlap with content
-    transition: box-shadow 0.2s; // Smooth transition
+    line-height: 1;
+    transition: color 0.15s ease-in-out, box-shadow 0.2s; // Smooth transition
+
+    svg {
+      display: block;
+      width: 1em;
+      height: 1em;
+    }
 
     &:focus {
       outline: none; // Remove default outline
@@ -208,12 +223,18 @@
       ); /* Instagram gradient */
       color: white; /* White icon color on gradient */
       border-radius: 50%; /* Make it a circle */
-      padding: 5px; /* Adjust padding to control circle size */
-      width: 1.3em; /* Ensure a fixed width */
-      height: 1.3em; /* Ensure a fixed height */
+      padding: 4px; /* Adjust padding to control circle size */
+      width: 1.25em; /* Ensure a fixed width */
+      height: 1.25em; /* Ensure a fixed height */
       display: inline-flex; /* Use flexbox to center the icon within the circle */
       justify-content: center;
       align-items: center;
+      line-height: 1;
+
+      svg {
+        display: block;
+      }
+
       // Ensure it doesn't inherit color changes from parent .contact-icon hover/active
       &:hover,
       &:focus,
@@ -251,10 +272,15 @@
 
     .navbar-nav {
       .nav-item {
+        display: flex;
+        align-items: center;
+
         .nav-link,
         .nav-link-text {
           padding: 1.1em 1em !important; /* Desktop padding */
           color: white; /* Desktop: white link text on dark headers */
+          display: inline-flex;
+          align-items: center;
           transition: color 0.15s ease-in-out;
 
           &.active,
@@ -267,21 +293,26 @@
       /* Desktop Contact Icons Container */
       /* Controlled by Bootstrap d-none d-lg-flex utility class in HTML */
       .desktop-contact-icons {
+        display: inline-flex !important;
         align-items: center;
         margin-left: 15px; /* Space between last nav link and icons */
 
         /* Add vertical pipe separator before the icons */
         &::before {
-          content: "|"; /* The pipe character */
-          margin-right: 15px; /* Space between pipe and first icon */
-          color: $gray-500; /* Default pipe color (on dark desktop) */
-          font-size: 1.5rem; /* Adjust pipe size */
-          vertical-align: middle; /* Align pipe with icons */
+          content: "";
+          display: inline-block;
+          width: 1px;
+          height: 18px;
+          background-color: rgba(255, 255, 255, 0.4); /* Default pipe color (on dark desktop) */
+          margin-right: 12px;
+          margin-left: 4px;
         }
 
         .contact-icon {
-          font-size: 1.3rem; /* Adjust icon size, match mobile */
-          margin-left: 15px; /* Increased space between icons on desktop */
+          font-size: 1.25rem; /* Adjust icon size, match mobile */
+          padding: 6px !important; /* Hit area padding */
+          margin-left: 6px; /* Space between icons on desktop */
+          line-height: 1;
         }
       }
     }
@@ -316,10 +347,15 @@
           /* Desktop Contact Icons when Shrunk */
           .desktop-contact-icons {
             &::before {
-              color: $gray-600; /* Pipe color when shrunk on dark */
+              background-color: $gray-400; /* Pipe color when shrunk on dark */
             }
             .contact-icon {
               color: $gray-700 !important;
+
+              &:hover,
+              &:focus {
+                color: $action !important;
+              }
             }
           }
         }
@@ -360,10 +396,15 @@
       }
       .navbar-nav {
         .nav-item {
+          display: flex;
+          align-items: center;
+
           .nav-link,
           .nav-link-text {
             padding: 1.1em 1em !important;
             color: $primary !important; /* Primary link text */
+            display: inline-flex;
+            align-items: center;
             transition: color 0.15s ease-in-out;
 
             &.active,
@@ -373,18 +414,18 @@
             }
           }
         }
-      }
 
-      /* Desktop contact icons on light background */
-      .desktop-contact-icons {
-        &::before {
-          color: $gray-700; /* Pipe color on light desktop */
-        }
-        .contact-icon {
-          color: $primary; /* Primary icon color on light background */
-          &:hover,
-          &:focus {
-            color: darken($primary, 10%); /* Hover effect */
+        /* Desktop contact icons on light background */
+        .desktop-contact-icons {
+          &::before {
+            background-color: $gray-400; /* Pipe color on light desktop */
+          }
+          .contact-icon {
+            color: $primary !important;
+            &:hover,
+            &:focus {
+              color: darken($primary, 10%) !important;
+            }
           }
         }
       }
