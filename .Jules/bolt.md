@@ -111,13 +111,19 @@ find assets/js/ -name '*.js' -not -name '*.test.js' -exec wc -c {} + | tail -1
 
 ### Build Pipeline
 - [ ] `package.json` — audit npm scripts
-- [ ] Inline `<script>` audit
+- [x] Inline `<script>` audit ✅ 2026-09-16
 
 ---
 
 ## Execution Log
 
 <!-- Bolt's cumulative journal. New entries go at the top. -->
+
+### 2026-09-16 — Escalate inline script in page layout
+- **Target:** `_layouts/page.html`
+- **Finding:** Inline `<script>` block setting the background class on load is render-blocking/inline.
+- **Action:** ⚠️ ESCALATION → Palette 🎨
+- **Verification:** Logged escalation for cross-persona file.
 
 ### 2026-09-05 — Add missing vector logo to processed images directory
 - **Target:** `assets/images/processed/logo.svg`
