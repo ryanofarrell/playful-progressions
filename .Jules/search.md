@@ -136,8 +136,8 @@ done
 
 ### Schema.org Blocks
 - [x] `_includes/head/custom.html` — Organization + LocalBusiness schema ✅ 2026-09-05
-- [ ] `services.html` — Service + ItemList schema
-- [ ] `faq.html` — FAQPage schema (verify it exists or create)
+- [x] `services.html` — Service + ItemList schema ✅ 2026-09-16
+- [x] `faq.html` — FAQPage schema (verify it exists or create) ✅ 2026-09-16
 
 ### Post SEO Audit
 - [ ] `2025-05-30-basics-motor-planning.md`
@@ -165,6 +165,12 @@ done
 ## Execution Log
 
 <!-- Search's cumulative journal. New entries go at the top. -->
+
+### 2026-09-16 — Add FAQPage Schema and audit services schema
+- **Target:** `_includes/head/custom.html` and `services.html`
+- **Finding:** `services.html` Service + ItemList schema was already valid and present. `faq.html` was missing the FAQPage schema.
+- **Action:** Added dynamic FAQPage schema to `_includes/head/custom.html` that pulls questions and answers from `_data/sitetext.yml`.
+- **Verification:** `bundle exec jekyll build && npx purgecss --config ./purgecss.config.js` → ✅ Success
 
 ### 2026-09-05 — Complete Organization and LocalBusiness Schema.org properties
 - **Target:** `_includes/head/custom.html`
