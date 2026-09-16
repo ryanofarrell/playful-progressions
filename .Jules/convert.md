@@ -154,7 +154,7 @@ done
 
 ### Static Pages — Hook Audit
 - [x] `services.html` — Has hook? Contextually relevant? ✅ 2026-09-05
-- [ ] `contact.html` — Has hook? Next step clear?
+- [x] `contact.html` — Has hook? Next step clear? ✅ 2026-09-16
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
 - [ ] `service_areas.html` — Has hook? Guides to contact?
@@ -171,6 +171,15 @@ done
 ## Execution Log
 
 <!-- Convert's cumulative journal. New entries go at the top. -->
+
+### 2026-09-16 — Escalate contact.html dead end link to Palette
+- **Target:** `contact.html`
+- **Finding:** The soft hook component at the bottom of the page points externally to Instagram, creating a dead end with no internal links out.
+- **Action:** ⚠️ ESCALATION → Palette 🎨
+  - **File:** `contact.html`
+  - **Issue:** The soft hook points to an external site (Instagram), creating a dead end.
+  - **Suggested Fix:** Update the `btn_link` parameter to point to an internal page (e.g., `/faq/`) and update `btn_text` to match, removing the `external=true` parameter.
+- **Verification:** N/A (Escalation only)
 
 ### 2026-09-05 — Replace hardcoded two-column CTA with reusable soft_hook component
 - **Target:** `services.html`
