@@ -188,7 +188,7 @@ done
 
 ### Posts (populate by running `ls _posts/`)
 - [x] `2025-05-30-basics-motor-planning.md` ✅ 2026-09-05
-- [x] `2024-01-06-five-minute-friday-blanket-rides.md` ✅ 2026-09-05
+- [x] `2024-01-06-five-minute-friday-blanket-rides.md` ✅ 2026-09-23
 - [x] `2024-01-20-sensory-processing-in-womb.md` ✅ 2026-09-05
 - [x] `2024-02-03-five-minute-friday-painters-tape.md` ✅ 2026-09-05
 - [x] `2024-02-10-benefits-ot-telehealth.md` ✅ 2026-09-05
@@ -233,6 +233,12 @@ done
 ## Execution Log
 
 <!-- Ink's cumulative journal. New entries go at the top. -->
+
+### 2026-09-23 — Add H2 headings, expand word count, and add soft CTA to Blanket Rides post
+- **Target:** `_posts/2024-01-06-five-minute-friday-blanket-rides.md`
+- **Finding:** Missing H2 heading in first 200 words, under 500 words minimum, and missing soft CTA.
+- **Action:** Added H2 headings, expanded content to >500 words, and appended `soft_hook.html` include.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Complete blog concepts, tags, scoring algorithm, and Resources hub alignment
 - **Target:** All 36 posts in `_posts/`, `_layouts/post.html`, `blog/index.html`, and `topics/*.html`
