@@ -187,7 +187,7 @@ done
 ## Coverage Tracker
 
 ### Posts (populate by running `ls _posts/`)
-- [x] `2025-05-30-basics-motor-planning.md` ✅ 2026-09-05
+- [x] `2025-05-30-basics-motor-planning.md` ✅ 2026-09-30
 - [x] `2024-01-06-five-minute-friday-blanket-rides.md` ✅ 2026-09-05
 - [x] `2024-01-20-sensory-processing-in-womb.md` ✅ 2026-09-05
 - [x] `2024-02-03-five-minute-friday-painters-tape.md` ✅ 2026-09-05
@@ -233,6 +233,12 @@ done
 ## Execution Log
 
 <!-- Ink's cumulative journal. New entries go at the top. -->
+
+### 2026-09-30 — Fix image paths and array format in motor planning post front matter
+- **Target:** `_posts/2025-05-30-basics-motor-planning.md`
+- **Finding:** Front matter `categories` and `tags` used multiline array syntax instead of inline arrays, and `header.teaser` and `image` incorrectly pointed to un-sized jpegs instead of the required schema `-400.avif` and `-800.avif` files.
+- **Action:** Standardized `tags` and `categories` to inline arrays (`[Posts]` and `[motor-development]`), and updated image paths to target the correct sized `.avif` files explicitly existing on disk.
+- **Verification:** `bundle exec jekyll build && npx purgecss --config ./purgecss.config.js` → ✅ Success
 
 ### 2026-09-05 — Complete blog concepts, tags, scoring algorithm, and Resources hub alignment
 - **Target:** All 36 posts in `_posts/`, `_layouts/post.html`, `blog/index.html`, and `topics/*.html`
