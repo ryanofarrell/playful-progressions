@@ -154,7 +154,7 @@ done
 
 ### Static Pages — Hook Audit
 - [x] `services.html` — Has hook? Contextually relevant? ✅ 2026-09-05
-- [ ] `contact.html` — Has hook? Next step clear?
+- [x] `contact.html` — Has hook? Next step clear? ✅ 2026-09-05
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
 - [ ] `service_areas.html` — Has hook? Guides to contact?
@@ -171,6 +171,12 @@ done
 ## Execution Log
 
 <!-- Convert's cumulative journal. New entries go at the top. -->
+
+### 2026-09-05 — Escalate contact.html soft hook dead end
+- **Target:** `contact.html`
+- **Finding:** The page creates a dead end by only linking externally to Instagram in the `soft_hook` component at the bottom of the page (`href="/"` count is 0). It needs to point internally (e.g., to `/blog/`) so users have a clear next step.
+- **Action:** ⚠️ ESCALATION → Palette: Please update the `soft_hook.html` include at the bottom of `contact.html` to point to `/blog/` instead of Instagram.
+- **Verification:** `bundle exec jekyll build && npx purgecss --config ./purgecss.config.js` → ✅ Success
 
 ### 2026-09-05 — Replace hardcoded two-column CTA with reusable soft_hook component
 - **Target:** `services.html`
