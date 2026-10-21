@@ -6,6 +6,7 @@ categories:
 - motor-development
 tags:
 - Posts
+- Local Guides
 concepts:
 - gross-motor
 - sensory-processing
