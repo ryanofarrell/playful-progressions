@@ -154,7 +154,7 @@ done
 
 ### Static Pages — Hook Audit
 - [x] `services.html` — Has hook? Contextually relevant? ✅ 2026-09-05
-- [ ] `contact.html` — Has hook? Next step clear?
+- [x] `contact.html` — Has hook? Next step clear? ✅ 2026-10-21
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
 - [ ] `service_areas.html` — Has hook? Guides to contact?
@@ -171,6 +171,16 @@ done
 ## Execution Log
 
 <!-- Convert's cumulative journal. New entries go at the top. -->
+
+### 2026-10-21 — Escalate contact.html dead end to Palette
+- **Target:** `contact.html`
+- **Finding:** Page has a `soft_hook` linking to an external site (Instagram) and zero internal links out, creating a dead end.
+- **Action:** None (RACI escalation).
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `contact.html`
+- **Issue:** The `soft_hook` links to an external site and there are zero internal links, creating a dead end.
+- **Suggested Fix:** Update the `soft_hook` include to link to an internal page like `/faq/` or `/blog/`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Replace hardcoded two-column CTA with reusable soft_hook component
 - **Target:** `services.html`
