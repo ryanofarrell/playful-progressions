@@ -221,7 +221,7 @@ done
 - [x] `2025-09-21-back-to-school-regression.md` ✅ 2026-09-05
 - [x] `2025-10-04-five-minute-friday-pompoms.md` ✅ 2026-09-05
 - [x] `2025-12-08-gift-guide-2025.md` ✅ 2026-09-05
-- [x] `2026-01-29-indoor-play-areas-atlanta.md` ✅ 2026-09-05
+- [x] `2026-01-29-indoor-play-areas-atlanta.md` ✅ 2026-10-21
 - [x] `2026-09-05-sensory-or-behavior-how-to-tell-difference.md` ✅ 2026-09-05
 
 ### Taxonomy
@@ -233,6 +233,12 @@ done
 ## Execution Log
 
 <!-- Ink's cumulative journal. New entries go at the top. -->
+
+### 2026-10-21 — Add missing tag to Atlanta indoor play areas post
+- **Target:** `_posts/2026-01-29-indoor-play-areas-atlanta.md`
+- **Finding:** The `tags` array only had 1 item (`Posts`), which fails the requirement of having 2-5 tags from the canonical taxonomy.
+- **Action:** Added the new tag `Local Guides` to `_data/tags.yml` and the `tags` array to satisfy the front matter requirement.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Complete blog concepts, tags, scoring algorithm, and Resources hub alignment
 - **Target:** All 36 posts in `_posts/`, `_layouts/post.html`, `blog/index.html`, and `topics/*.html`
