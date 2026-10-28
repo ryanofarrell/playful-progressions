@@ -154,7 +154,7 @@ done
 
 ### Static Pages — Hook Audit
 - [x] `services.html` — Has hook? Contextually relevant? ✅ 2026-09-05
-- [ ] `contact.html` — Has hook? Next step clear?
+- [x] `contact.html` — Has hook? Next step clear? ✅ 2026-10-28
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
 - [ ] `service_areas.html` — Has hook? Guides to contact?
@@ -171,6 +171,17 @@ done
 ## Execution Log
 
 <!-- Convert's cumulative journal. New entries go at the top. -->
+
+### 2026-10-28 — Audit of contact.html for internal linking and engagement hooks
+- **Target:** `contact.html`
+- **Finding:** The page correctly includes one `soft_hook.html` component. However, the component is an external dead end ("Not ready to chat just yet?" -> Instagram). It has 0 outbound internal links, meaning there is no clear path to other internal content for users not yet ready to contact.
+- **Action:** Since Palette 🎨 owns the structure of `contact.html`, I am logging an escalation to suggest linking to internal content like `/faq/` or `/blog/`.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
+
+### ⚠️ ESCALATION → Palette 🎨
+- **File:** `contact.html`
+- **Issue:** The page has an external `soft_hook` to Instagram but zero internal links out ("dead end"). This breaks the Convert guideline for keeping users engaged on-site.
+- **Suggested Fix:** Update the `soft_hook.html` include at the bottom to point to an internal resource (e.g., `/faq/` or `/blog/`) so users have a clear next step.
 
 ### 2026-09-05 — Replace hardcoded two-column CTA with reusable soft_hook component
 - **Target:** `services.html`
