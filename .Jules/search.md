@@ -137,7 +137,7 @@ done
 ### Schema.org Blocks
 - [x] `_includes/head/custom.html` — Organization + LocalBusiness schema ✅ 2026-09-05
 - [ ] `services.html` — Service + ItemList schema
-- [ ] `faq.html` — FAQPage schema (verify it exists or create)
+- [x] `faq.html` — FAQPage schema (verify it exists or create) ✅ 2026-11-04
 
 ### Post SEO Audit
 - [ ] `2025-05-30-basics-motor-planning.md`
@@ -165,6 +165,12 @@ done
 ## Execution Log
 
 <!-- Search's cumulative journal. New entries go at the top. -->
+
+### 2026-11-04 — Implement FAQPage Schema.org markup
+- **Target:** `faq.html`
+- **Finding:** Missing FAQPage schema structured data.
+- **Action:** Added JSON-LD `<script type="application/ld+json">` block utilizing `FAQPage` and iterating through `site.data.sitetext.faq.items` to properly structure `Question` and `Answer` fields.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Complete Organization and LocalBusiness Schema.org properties
 - **Target:** `_includes/head/custom.html`
