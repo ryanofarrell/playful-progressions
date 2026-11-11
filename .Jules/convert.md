@@ -154,7 +154,7 @@ done
 
 ### Static Pages — Hook Audit
 - [x] `services.html` — Has hook? Contextually relevant? ✅ 2026-09-05
-- [ ] `contact.html` — Has hook? Next step clear?
+- [x] `contact.html` — Has hook? Next step clear? ✅ 2026-11-11
 - [ ] `faq.html` — Has hook? Guides to services or blog?
 - [ ] `meet-maria.html` — Has hook? Guides to services or contact?
 - [ ] `service_areas.html` — Has hook? Guides to contact?
@@ -171,6 +171,12 @@ done
 ## Execution Log
 
 <!-- Convert's cumulative journal. New entries go at the top. -->
+
+### 2026-11-11 — Update engagement hook on contact page to prevent dead end
+- **Target:** `contact.html`
+- **Finding:** The `contact.html` page contained a `soft_hook` linking externally to Instagram, acting as a dead end for site exploration.
+- **Action:** Updated the `soft_hook` to link internally to the `/faq/` page to guide users appropriately.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Replace hardcoded two-column CTA with reusable soft_hook component
 - **Target:** `services.html`
