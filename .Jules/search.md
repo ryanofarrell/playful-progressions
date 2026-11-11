@@ -136,7 +136,7 @@ done
 
 ### Schema.org Blocks
 - [x] `_includes/head/custom.html` — Organization + LocalBusiness schema ✅ 2026-09-05
-- [ ] `services.html` — Service + ItemList schema
+- [x] `services.html` — Service + ItemList schema ✅ 2026-11-11
 - [ ] `faq.html` — FAQPage schema (verify it exists or create)
 
 ### Post SEO Audit
@@ -165,6 +165,12 @@ done
 ## Execution Log
 
 <!-- Search's cumulative journal. New entries go at the top. -->
+
+### 2026-11-11 — Audit Schema.org Service + ItemList properties
+- **Target:** `services.html`
+- **Finding:** No issues found. The required and optional properties are correctly implemented and structured.
+- **Action:** None
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Complete Organization and LocalBusiness Schema.org properties
 - **Target:** `_includes/head/custom.html`
