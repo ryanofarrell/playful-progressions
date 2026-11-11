@@ -99,7 +99,7 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 - [x] `default.html` ✅ 2026-06-03
 - [x] `home.html` ✅ 2026-06-10
 - [x] `post.html` ✅ 2026-09-05
-- [ ] `page.html`
+- [x] `page.html` ✅ 2026-11-11
 - [ ] `single.html`
 - [ ] `minimal.html`
 
@@ -142,6 +142,12 @@ grep -rn '#[0-9a-fA-F]\{3,6\}' _sass/ --include='*.scss' | grep -v '_bootstrap\|
 ## Execution Log
 
 <!-- Palette's cumulative journal. New entries go at the top. -->
+
+### 2026-11-11 — Replace inline javascript styling with server-side Liquid logic
+- **Target:** `_layouts/page.html`
+- **Finding:** Used an inline script to assign a background class to the body based on front matter, potentially causing a flash of unstyled content and an unnecessary reliance on Javascript.
+- **Action:** Replaced the `<script>` tag with a conditional Liquid variable applied directly to the `.container` instead.
+- **Verification:** `bundle exec jekyll build` → ✅ Success
 
 ### 2026-09-05 — Eliminate redundant tab stop on related post card images
 - **Target:** `_layouts/post.html`

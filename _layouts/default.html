@@ -6,6 +6,8 @@
   {%- comment -%} Add body class for styling based on background {%- endcomment -%}
   {% if page.layout == "home" %}
     <body id="page-top">
+  {% elsif page.background == "grey" or page.background == "gray" %}
+    <body id="page-top" class="bg-light">
   {% else %}
     <body id="page-top" class="body-light-background">
   {% endif %}
